@@ -1,6 +1,4 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": ".next",
-  "installCommand": "npm install",
-  "root": "website"
+  "cleanUrls": true,
+  "trailingSlash": true
 }
