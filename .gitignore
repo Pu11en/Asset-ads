@@ -6,11 +6,13 @@ output/
 references/
 *.log
 .DS_Store
-webapp/
 src/
 supabase/
 pipeline/
+webapp/
+site/
 asset-ads.db
 pool.json
 batch_log.txt
 .hermes/
+.vercel

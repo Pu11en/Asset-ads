@@ -1,8 +1,11 @@
 {
   "framework": null,
-  "buildCommand": "echo 'Static site' && exit 0",
+  "buildCommand": "echo 'Static + API' && exit 0",
   "outputDirectory": ".",
   "installCommand": "echo 'No deps' && exit 0",
   "cleanUrls": true,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/api/delete-image", "destination": "/api/delete-image/index.js" }
+  ]
 }
