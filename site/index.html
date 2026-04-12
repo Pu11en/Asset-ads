@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Island Splash — Ads</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #0a0a0a; color: #e0e0e0; min-height: 100vh; }
+    header { background: #111; border-bottom: 2px solid #FF6B35; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+    h1 { color: #FF6B35; font-size: 1.3rem; }
+    .tag { background: rgba(255,107,53,.12); color: #FF6B35; border: 1px solid rgba(255,107,53,.25); padding: 3px 10px; border-radius: 20px; font-size: .75rem; font-weight: 700; }
+    main { max-width: 1100px; margin: 0 auto; padding: 20px; }
+    h2 { color: #888; font-size: .9rem; margin-bottom: 14px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+    .card { background: #141414; border-radius: 10px; overflow: hidden; border: 1px solid #1e1e1e; transition: border-color .2s; cursor: pointer; }
+    .card:hover { border-color: #FF6B35; }
+    .card img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; background: #1a1a1a; }
+    .card-info { padding: 8px 10px; }
+    .card-name { font-size: .78rem; color: #aaa; font-weight: 600; }
+    #modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.92); z-index: 100; align-items: center; justify-content: center; flex-direction: column; }
+    #modal.open { display: flex; }
+    #modal-img { max-width: 90vw; max-height: 75vh; object-fit: contain; border-radius: 8px; }
+    #modal-name { color: #FF6B35; margin-top: 14px; font-size: 1.1rem; font-weight: 700; }
+    #modal-close { margin-top: 8px; color: #444; font-size: .8rem; }
+    .footer { text-align: center; padding: 30px; color: #2a2a2a; font-size: .75rem; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Island Splash</h1>
+  <span class="tag">22 ads</span>
+</header>
+
+<main>
+  <h2>All Ads</h2>
+  <div class="grid" id="grid"></div>
+</main>
+
+<div id="modal" onclick="closeModal()">
+  <img id="modal-img" src="" alt="">
+  <div id="modal-name"></div>
+  <div id="modal-close">click anywhere to close</div>
+</div>
+
+<div class="footer">Island Splash — Caribbean Tropical Drinks</div>
+
+<script>
+const ADS = [
+  { f: "ad_1_tree_stump.png",          n: "Tree Stump Lifestyle" },
+  { f: "ad_2_ingredient_flatlay.png", n: "Ingredient Flatlay" },
+  { f: "ad_3_mango_splash.png",        n: "Mango Wave" },
+  { f: "ad_3_mango_splash_v2.png",    n: "Mango Wave v2" },
+  { f: "ad_4_Panel1_Sorrel.png",      n: "Sorrel" },
+  { f: "ad_4_Panel2_Mango.png",       n: "Mango" },
+  { f: "ad_4_Panel3_PineGinger.png",  n: "Pine Ginger" },
+  { f: "ad_4_Panel4_GuavaPine.png",   n: "Guava Pine" },
+  { f: "ad_4_quad_panel.png",         n: "Sorrel Quad Panel" },
+  { f: "ad_4_quad_panel_v2.png",      n: "Sorrel Quad Panel v2" },
+  { f: "island-splash_mango-passion_f0f06f46.jpg",                        n: "Mango Passion" },
+  { f: "island-splash_mango-passion-guava-pine-lime-mauby_96c96442.jpg", n: "Mango Multi" },
+  { f: "island-splash_mauby_31e78b19.jpg",                                n: "Mauby" },
+  { f: "island-splash_peanut-punch-pine-ginger-lime-guava-pine_46dc764c.jpg", n: "Peanut Punch" },
+  { f: "island-splash_sorrel_22f5722f.jpg",  n: "Sorrel" },
+  { f: "island-splash_sorrel_8d2972da.jpg",  n: "Sorrel v2" },
+  { f: "island_splash_carousel_final.png",   n: "Carousel Final" },
+  { f: "slide_1_mango_passion.png",         n: "Slide 1 — Mango" },
+  { f: "slide_2_lime_pine_ginger.png",      n: "Slide 2 — Lime & Pine Ginger" },
+  { f: "slide_3_guava_sorrel_mauby.png",    n: "Slide 3 — Guava, Sorrel, Mauby" },
+  { f: "slide_4_peanut_punch.png",          n: "Slide 4 — Peanut Punch" },
+  { f: "slide_5_mango_passion_cta.png",     n: "Slide 5 — CTA" },
+];
+
+const grid = document.getElementById('grid');
+ADS.forEach(ad => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `<img src="images/${ad.f}" alt="${ad.n}" loading="lazy"><div class="card-info"><div class="card-name">${ad.n}</div></div>`;
+  card.onclick = () => openModal(ad);
+  grid.appendChild(card);
+});
+
+function openModal(ad) {
+  document.getElementById('modal-img').src = 'images/' + ad.f;
+  document.getElementById('modal-name').textContent = ad.n;
+  document.getElementById('modal').classList.add('open');
+}
+function closeModal() { document.getElementById('modal').classList.remove('open'); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+
+</body>
+</html>
