@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Island Splash — Asset Ads</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f0f0f;
+      color: #e0e0e0;
+      min-height: 100vh;
+    }
+    header {
+      background: #111;
+      border-bottom: 2px solid #FF6B35;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      font-size: 1.4rem;
+      color: #FF6B35;
+      font-weight: 800;
+    }
+    header .tagline {
+      color: #666;
+      font-size: 0.85rem;
+    }
+    .badges {
+      display: flex;
+      gap: 8px;
+    }
+    .badge {
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .badge-orange {
+      background: rgba(255,107,53,0.15);
+      color: #FF6B35;
+      border: 1px solid rgba(255,107,53,0.3);
+    }
+    .badge-teal {
+      background: rgba(0,180,216,0.15);
+      color: #00B4D8;
+      border: 1px solid rgba(0,180,216,0.3);
+    }
+    .badge-green {
+      background: rgba(144,190,109,0.15);
+      color: #90BE6D;
+      border: 1px solid rgba(144,190,109,0.3);
+    }
+    main {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: 1.1rem;
+      color: #aaa;
+      font-weight: 600;
+    }
+    .tabs {
+      display: flex;
+      gap: 4px;
+      padding: 0 24px 16px;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .tab {
+      padding: 8px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      background: #1a1a1a;
+      color: #888;
+      border: none;
+      font-weight: 600;
+    }
+    .tab.active {
+      background: #FF6B35;
+      color: #fff;
+    }
+    .tab:hover:not(.active) {
+      background: #222;
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: #161616;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #222;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: #FF6B35; }
+    .card img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      display: block;
+    }
+    .card-info {
+      padding: 10px 12px;
+    }
+    .card-name {
+      font-size: 0.8rem;
+      color: #aaa;
+      font-weight: 600;
+    }
+    .card-id {
+      font-size: 0.7rem;
+      color: #444;
+      font-family: monospace;
+      margin-top: 3px;
+    }
+
+    /* Instagram Preview */
+    .insta-card {
+      background: #161616;
+      border-radius: 14px;
+      border: 1px solid #222;
+      overflow: hidden;
+      max-width: 400px;
+    }
+    .insta-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+    }
+    .insta-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #FF6B35, #00B4D8);
+    }
+    .insta-username {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #FF6B35;
+    }
+    .insta-img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      display: block;
+    }
+    .insta-actions {
+      padding: 8px 14px;
+      display: flex;
+      gap: 14px;
+      font-size: 1.4rem;
+      color: #FF6B35;
+    }
+    .insta-caption {
+      padding: 0 14px 14px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+    .insta-caption .un {
+      font-weight: 800;
+      color: #FF6B35;
+      margin-right: 6px;
+    }
+    .insta-hashtags {
+      color: #00B4D8;
+      margin-top: 4px;
+    }
+    .empty {
+      text-align: center;
+      padding: 60px;
+      color: #444;
+      font-size: 1rem;
+    }
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .post-card {
+      background: #161616;
+      border-radius: 14px;
+      border: 1px solid #222;
+      overflow: hidden;
+    }
+    .post-header {
+      padding: 12px 16px;
+      border-bottom: 1px solid #1a1a1a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .post-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    .carousel-row {
+      display: flex;
+      gap: 4px;
+      padding: 12px;
+      overflow-x: auto;
+    }
+    .carousel-row img {
+      width: 100px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .post-body {
+      padding: 12px 16px;
+    }
+    .caption-text {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: #ccc;
+      white-space: pre-wrap;
+    }
+    .hashtags-text {
+      font-size: 0.8rem;
+      color: #00B4D8;
+      margin-top: 6px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 8px;
+      padding: 8px 16px 12px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Island Splash</h1>
+    <p class="tagline">Asset Ads — Generated Content</p>
+  </div>
+  <div class="badges">
+    <span class="badge badge-orange" id="ad-count">0 ads</span>
+    <span class="badge badge-teal" id="post-count">0 posts</span>
+  </div>
+</header>
+
+<div class="tabs">
+  <button class="tab active" onclick="showTab('ads')">All Ads</button>
+  <button class="tab" onclick="showTab('posts')">Posts</button>
+  <button class="tab" onclick="showTab('preview')">Preview</button>
+</div>
+
+<main>
+  <!-- ALL ADS TAB -->
+  <div id="tab-ads" class="tab-content active">
+    <div class="section-header">
+      <h2 class="section-title">All Generated Ads</h2>
+    </div>
+    <div class="grid" id="ads-grid"></div>
+  </div>
+
+  <!-- POSTS TAB -->
+  <div id="tab-posts" class="tab-content">
+    <div class="section-header">
+      <h2 class="section-title">Instagram Posts</h2>
+    </div>
+    <div class="post-grid" id="posts-grid"></div>
+  </div>
+
+  <!-- PREVIEW TAB -->
+  <div id="tab-preview" class="tab-content">
+    <div class="section-header">
+      <h2 class="section-title">Instagram Preview</h2>
+    </div>
+    <div id="insta-preview-container"></div>
+  </div>
+</main>
+
+<script>
+// ── DATA ──────────────────────────────────────────────
+// Paste your ads.json data here
+const ADS = [
+  { id: "ad_1_tree_stump", filename: "ad_1_tree_stump.png", product_name: "Tree Stump Lifestyle" },
+  { id: "ad_2_ingredient_flatlay", filename: "ad_2_ingredient_flatlay.png", product_name: "Ingredient Flatlay" },
+  { id: "ad_3_mango_splash", filename: "ad_3_mango_splash.png", product_name: "Mango Wave" },
+  { id: "ad_3_mango_splash_v2", filename: "ad_3_mango_splash_v2.png", product_name: "Mango Wave v2" },
+  { id: "ad_4_quad_panel", filename: "ad_4_quad_panel.png", product_name: "Sorrel Quad" },
+  { id: "ad_4_Panel1_Sorrel", filename: "ad_4_Panel1_Sorrel.png", product_name: "Sorrel Panel 1" },
+  { id: "ad_4_Panel2_Mango", filename: "ad_4_Panel2_Mango.png", product_name: "Mango Panel 2" },
+  { id: "ad_4_Panel3_PineGinger", filename: "ad_4_Panel3_PineGinger.png", product_name: "Pine Ginger Panel 3" },
+  { id: "ad_4_Panel4_GuavaPine", filename: "ad_4_Panel4_GuavaPine.png", product_name: "Guava Pine Panel 4" },
+  { id: "mango_passion", filename: "island-splash_mango-passion_f0f06f46.jpg", product_name: "Mango Passion" },
+  { id: "mango_multi", filename: "island-splash_mango-passion-guava-pine-lime-mauby_96c96442.jpg", product_name: "Mango Multi" },
+  { id: "mauby", filename: "island-splash_mauby_31e78b19.jpg", product_name: "Mauby" },
+  { id: "peanut_punch", filename: "island-splash_peanut-punch-pine-ginger-lime-guava-pine_46dc764c.jpg", product_name: "Peanut Punch" },
+  { id: "sorrel", filename: "island-splash_sorrel_22f5722f.jpg", product_name: "Sorrel" },
+  { id: "sorrel_8d", filename: "island-splash_sorrel_8d2972da.jpg", product_name: "Sorrel v2" },
+  { id: "carousel_final", filename: "island_splash_carousel_final.png", product_name: "Carousel Final" },
+  { id: "slide_1_mango_passion", filename: "slide_1_mango_passion.png", product_name: "Slide 1 Mango" },
+  { id: "slide_2_lime_pine_ginger", filename: "slide_2_lime_pine_ginger.png", product_name: "Slide 2 Lime" },
+  { id: "slide_3_guava_sorrel_mauby", filename: "slide_3_guava_sorrel_mauby.png", product_name: "Slide 3 Guava" },
+  { id: "slide_4_peanut_punch", filename: "slide_4_peanut_punch.png", product_name: "Slide 4 Peanut" },
+  { id: "slide_5_mango_passion_cta", filename: "slide_5_mango_passion_cta.png", product_name: "Slide 5 CTA" }
+];
+
+const POSTS = [
+  {
+    id: "post_1",
+    caption: "Every sip is a trip to the islands! 🌴\n\nSlide 1: Mango Passion — Grab Your Wave\nSlide 2: Lime & Pine Ginger — Hydrate Naturally\nSlide 3: Guava, Sorrel & Mauby — Tropical Vibes\nSlide 4: Peanut Punch — Fuel Your Day\nSlide 5: The final call to action",
+    hashtags: "#IslandSplash #TropicalJuice #CaribbeanFlavours #NaturalFruit #IslandLife",
+    status: "draft",
+    ads: ["slide_1_mango_passion", "slide_2_lime_pine_ginger", "slide_3_guava_sorrel_mauby", "slide_4_peanut_punch", "slide_5_mango_passion_cta"]
+  },
+  {
+    id: "post_2",
+    caption: "Natural fruit, zero artificial junk. Just the Caribbean in a bottle.",
+    hashtags: "#IslandSplash #TropicalJuice #CaribbeanFlavours #NaturalFruit #IslandLife",
+    status: "draft",
+    ads: ["mango_passion", "mauby", "peanut_punch", "sorrel"]
+  }
+];
+
+// ── HELPERS ───────────────────────────────────────────
+function getAd(id) { return ADS.find(a => a.id === id); }
+function showTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('tab-' + name).classList.add('active');
+  if (name === 'preview') renderPreview(0, 0);
+}
+
+// ── RENDER ADS ────────────────────────────────────────
+function renderAds() {
+  document.getElementById('ad-count').textContent = ADS.length + ' ads';
+  const grid = document.getElementById('ads-grid');
+  grid.innerHTML = ADS.map(ad => `
+    <div class="card" onclick="openPreview('${ad.id}')">
+      <img src="images/ads/${ad.filename}" alt="${ad.product_name}" onerror="this.src='https://placehold.co/400x500/222/FF6B35?text=${encodeURIComponent(ad.product_name)}')">
+      <div class="card-info">
+        <div class="card-name">${ad.product_name}</div>
+        <div class="card-id">${ad.id}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── RENDER POSTS ───────────────────────────────────────
+function renderPosts() {
+  document.getElementById('post-count').textContent = POSTS.length + ' posts';
+  const grid = document.getElementById('posts-grid');
+  if (!POSTS.length) {
+    grid.innerHTML = '<div class="empty">No posts yet.</div>';
+    return;
+  }
+  grid.innerHTML = POSTS.map((post, idx) => `
+    <div class="post-card">
+      <div class="post-header">
+        <span class="post-title">Post ${idx + 1}</span>
+        <span class="badge badge-teal">${post.status || 'draft'}</span>
+      </div>
+      <div class="carousel-row">
+        ${post.ads.map(adId => {
+          const ad = getAd(adId);
+          return ad ? `<img src="images/ads/${ad.filename}" alt="${ad.product_name}" onerror="this.src='https://placehold.co/100x130/222/FF6B35?text=${encodeURIComponent(ad.product_name)}')">` : '';
+        }).join('')}
+      </div>
+      <div class="post-body">
+        <div class="caption-text">${escapeHtml(post.caption)}</div>
+        <div class="hashtags-text">${escapeHtml(post.hashtags)}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── INSTAGRAM PREVIEW ─────────────────────────────────
+let selectedPostIdx = 0;
+let selectedSlideIdx = 0;
+
+function renderPreview(postIdx, slideIdx) {
+  selectedPostIdx = postIdx;
+  selectedSlideIdx = slideIdx;
+  const post = POSTS[postIdx];
+  const adId = post.ads[slideIdx];
+  const ad = getAd(adId);
+  const container = document.getElementById('insta-preview-container');
+  if (!post || !ad) {
+    container.innerHTML = '<div class="empty">Select an ad or post to preview.</div>';
+    return;
+  }
+  const postList = POSTS.map((p, i) => `
+    <button class="tab ${i === postIdx ? 'active' : ''}" onclick="renderPreview(${i}, 0)">Post ${i+1}</button>
+  `).join('');
+  const slides = post.ads.map((adId, i) => {
+    const a = getAd(adId);
+    return a ? `<img src="images/ads/${a.filename}" alt="${a.product_name}" onclick="renderPreview(${postIdx},${i})" style="cursor:pointer;opacity:${i===slideIdx?1:0.5};border:${i===slideIdx?'2px solid #FF6B35':'2px solid transparent'}" onerror="this.src='https://placehold.co/100x130/222/FF6B35?text=${encodeURIComponent(a.product_name)}'">` : '';
+  }).join('');
+  container.innerHTML = `
+    <div class="post-header" style="border:none;padding:0 0 12px 0">
+      <span class="section-title">${postList}</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start">
+      <div>
+        <div style="display:flex;gap:6px;margin-bottom:8px;overflow-x:auto">${slides}</div>
+        <div class="insta-card">
+          <div class="insta-header">
+            <div class="insta-avatar"></div>
+            <span class="insta-username">islandsplashjuice</span>
+          </div>
+          <img src="images/ads/${ad.filename}" alt="${ad.product_name}" class="insta-img" onerror="this.src='https://placehold.co/400x400/222/FF6B35?text=${encodeURIComponent(ad.product_name)}'">
+          <div class="insta-actions"><span>♡</span><span>💬</span><span>✈️</span></div>
+          <div class="insta-caption">
+            <span class="un">islandsplashjuice</span>
+            ${escapeHtml(post.caption.split('\n')[0])}
+            <div class="insta-hashtags">${escapeHtml(post.hashtags)}</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="section-title" style="margin-bottom:8px">Caption</p>
+        <div style="background:#161616;border-radius:10px;padding:14px;font-size:0.85rem;line-height:1.6;white-space:pre-wrap;border:1px solid #222">${escapeHtml(post.caption)}</div>
+        <p class="section-title" style="margin:16px 0 8px">Hashtags</p>
+        <div style="background:#161616;border-radius:10px;padding:14px;font-size:0.85rem;color:#00B4D8;border:1px solid #222">${escapeHtml(post.hashtags)}</div>
+      </div>
+    </div>
+  `;
+}
+
+function openPreview(adId) {
+  // Find ad in posts and jump to that post's preview
+  let postIdx = 0, slideIdx = 0;
+  POSTS.forEach((post, pi) => {
+    post.ads.forEach((a, si) => {
+      if (a === adId) { postIdx = pi; slideIdx = si; }
+    });
+  });
+  showTab('preview');
+  // Simulate tab click
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab')[2].classList.add('active');
+  document.getElementById('tab-preview').classList.add('active');
+  renderPreview(postIdx, slideIdx);
+}
+
+function escapeHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ── INIT ──────────────────────────────────────────────
+renderAds();
+renderPosts();
+renderPreview(0, 0);
+</script>
+
+</body>
+</html>

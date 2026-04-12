@@ -1,0 +1,162 @@
+[
+  {
+    "id": "ad_1_tree_stump",
+    "filename": "ad_1_tree_stump.png",
+    "path": "/images/ads/ad_1_tree_stump.png",
+    "product_name": "Tree Stump Lifestyle",
+    "caption": "Natural refreshment straight from the Caribbean",
+    "status": "success"
+  },
+  {
+    "id": "ad_2_ingredient_flatlay",
+    "filename": "ad_2_ingredient_flatlay.png",
+    "path": "/images/ads/ad_2_ingredient_flatlay.png",
+    "product_name": "Ingredient Flatlay",
+    "caption": "Real fruit, real flavor",
+    "status": "success"
+  },
+  {
+    "id": "ad_3_mango_splash",
+    "filename": "ad_3_mango_splash.png",
+    "path": "/images/ads/ad_3_mango_splash.png",
+    "product_name": "Mango Wave",
+    "caption": "Grab Your Wave",
+    "status": "success"
+  },
+  {
+    "id": "ad_3_mango_splash_v2",
+    "filename": "ad_3_mango_splash_v2.png",
+    "path": "/images/ads/ad_3_mango_splash_v2.png",
+    "product_name": "Mango Wave v2",
+    "caption": "Grab Your Wave",
+    "status": "success"
+  },
+  {
+    "id": "ad_4_quad_panel",
+    "filename": "ad_4_quad_panel.png",
+    "path": "/images/ads/ad_4_quad_panel.png",
+    "product_name": "Sorrel",
+    "caption": "Fuel Your Day",
+    "status": "success"
+  },
+  {
+    "id": "ad_4_panel1_sorrel",
+    "filename": "ad_4_Panel1_Sorrel.png",
+    "path": "/images/ads/ad_4_Panel1_Sorrel.png",
+    "product_name": "Sorrel Panel 1",
+    "caption": "Fuel Your Day",
+    "status": "success"
+  },
+  {
+    "id": "ad_4_panel2_mango",
+    "filename": "ad_4_Panel2_Mango.png",
+    "path": "/images/ads/ad_4_Panel2_Mango.png",
+    "product_name": "Mango Panel 2",
+    "caption": "Grab Your Wave",
+    "status": "success"
+  },
+  {
+    "id": "ad_4_panel3_pineginger",
+    "filename": "ad_4_Panel3_PineGinger.png",
+    "path": "/images/ads/ad_4_Panel3_PineGinger.png",
+    "product_name": "Pine Ginger Panel 3",
+    "caption": "Hydrate Naturally",
+    "status": "success"
+  },
+  {
+    "id": "ad_4_panel4_guavapine",
+    "filename": "ad_4_Panel4_GuavaPine.png",
+    "path": "/images/ads/ad_4_Panel4_GuavaPine.png",
+    "product_name": "Guava Pine Panel 4",
+    "caption": "Tropical refreshment",
+    "status": "success"
+  },
+  {
+    "id": "mango_passion",
+    "filename": "island-splash_mango-passion_f0f06f46.jpg",
+    "path": "/images/ads/island-splash_mango-passion_f0f06f46.jpg",
+    "product_name": "Mango Passion",
+    "caption": "Grab Your Wave",
+    "status": "success"
+  },
+  {
+    "id": "mango_passion_multi",
+    "filename": "island-splash_mango-passion-guava-pine-lime-mauby_96c96442.jpg",
+    "path": "/images/ads/island-splash_mango-passion-guava-pine-lime-mauby_96c96442.jpg",
+    "product_name": "Mango Passion Multi",
+    "caption": "Grab Your Wave",
+    "status": "success"
+  },
+  {
+    "id": "mauby",
+    "filename": "island-splash_mauby_31e78b19.jpg",
+    "path": "/images/ads/island-splash_mauby_31e78b19.jpg",
+    "product_name": "Mauby",
+    "caption": "Hydrate Naturally",
+    "status": "success"
+  },
+  {
+    "id": "peanut_punch",
+    "filename": "island-splash_peanut-punch-pine-ginger-lime-guava-pine_46dc764c.jpg",
+    "path": "/images/ads/island-splash_peanut-punch-pine-ginger-lime-guava-pine_46dc764c.jpg",
+    "product_name": "Peanut Punch",
+    "caption": "Fuel Your Day",
+    "status": "success"
+  },
+  {
+    "id": "sorrel",
+    "filename": "island-splash_sorrel_22f5722f.jpg",
+    "path": "/images/ads/island-splash_sorrel_22f5722f.jpg",
+    "product_name": "Sorrel",
+    "caption": "Fuel Your Day",
+    "status": "success"
+  },
+  {
+    "id": "carousel_final",
+    "filename": "island_splash_carousel_final.png",
+    "path": "/images/ads/island_splash_carousel_final.png",
+    "product_name": "Island Splash Carousel",
+    "caption": "Tropical vibes all day",
+    "status": "success"
+  },
+  {
+    "id": "slide_1_mango_passion",
+    "filename": "slide_1_mango_passion.png",
+    "path": "/images/ads/slide_1_mango_passion.png",
+    "product_name": "Slide 1 Mango",
+    "caption": "Grab Your Wave",
+    "status": "success"
+  },
+  {
+    "id": "slide_2_lime_pine_ginger",
+    "filename": "slide_2_lime_pine_ginger.png",
+    "path": "/images/ads/slide_2_lime_pine_ginger.png",
+    "product_name": "Slide 2 Lime",
+    "caption": "Hydrate Naturally",
+    "status": "success"
+  },
+  {
+    "id": "slide_3_guava_sorrel_mauby",
+    "filename": "slide_3_guava_sorrel_mauby.png",
+    "path": "/images/ads/slide_3_guava_sorrel_mauby.png",
+    "product_name": "Slide 3 Guava",
+    "caption": "Tropical refreshment",
+    "status": "success"
+  },
+  {
+    "id": "slide_4_peanut_punch",
+    "filename": "slide_4_peanut_punch.png",
+    "path": "/images/ads/slide_4_peanut_punch.png",
+    "product_name": "Slide 4 Peanut",
+    "caption": "Fuel Your Day",
+    "status": "success"
+  },
+  {
+    "id": "slide_5_mango_passion_cta",
+    "filename": "slide_5_mango_passion_cta.png",
+    "path": "/images/ads/slide_5_mango_passion_cta.png",
+    "product_name": "Slide 5 CTA",
+    "caption": "Grab Your Wave",
+    "status": "success"
+  }
+]
