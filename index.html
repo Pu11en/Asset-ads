@@ -28,9 +28,9 @@
     .btn:hover { opacity: .8; }
     .btn-close { background: #222; color: #888; }
     .btn-delete { background: #c0392b; color: #fff; }
-    #modal-status { margin-top: 10px; font-size: .8rem; min-height: 18px; }
-    #modal-status.pending { color: #90BE6D; }
-    #modal-status.error { color: #e74c3c; }
+    .btn-delete:hover { background: #e74c3c; }
+    .delete-hint { margin-top: 12px; background: rgba(255,107,53,.08); border: 1px solid rgba(255,107,53,.2); border-radius: 8px; padding: 10px 16px; font-size: .82rem; color: #888; line-height: 1.5; }
+    .delete-hint strong { color: #FF6B35; }
     .footer { text-align: center; padding: 30px; color: #2a2a2a; font-size: .75rem; }
   </style>
 </head>
@@ -55,6 +55,9 @@
       <button class="btn btn-close" onclick="closeModal()">Close</button>
     </div>
     <div id="modal-status"></div>
+    <div class="delete-hint" id="delete-hint" style="display:none">
+      Just say: <strong>delete <span id="delete-name"></span></strong><br>in the chat and I'll remove it from the site.
+    </div>
   </div>
 </div>
 
@@ -117,11 +120,21 @@ function closeModal() {
 
 function deleteAd() {
   if (!currentAd) return;
-  var confirmed = confirm('Delete "' + currentAd.n + '"? Tell me "delete ' + currentAd.n + '" and I\'ll remove it from the site.');
-  if (!confirmed) return;
   var status = document.getElementById('modal-status');
-  status.textContent = 'Just tell me: delete ' + currentAd.n;
-  status.className = 'error';
+  var hint = document.getElementById('delete-hint');
+  var nameSpan = document.getElementById('delete-name');
+  status.textContent = '';
+  hint.style.display = 'none';
+  // Check if already marked
+  if (currentAd.n.indexOf('[DELETE]') > -1) {
+    status.textContent = 'Already queued for deletion!';
+    status.style.color = '#90BE6D';
+    return;
+  }
+  nameSpan.textContent = currentAd.n;
+  hint.style.display = 'block';
+  status.textContent = 'Tell me to delete "' + currentAd.n + '" and I\'ll do it.';
+  status.style.color = '#FF6B35';
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
