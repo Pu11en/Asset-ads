@@ -307,22 +307,18 @@ POST-PROCESSING: Color grading characteristics. Film grain or digital noise stru
 OUTPUT: Write a single paragraph starting with "Shot with..." using specific technical terms. End with a 5–6 keyword summary. Detailed enough to recreate this exact visual aesthetic on any subject matter."""
 
 
-def _product_copy_block(selected: list[dict], brand_name: str) -> str:
-    """Build per-product text guidance: allowed headlines + body copy lines."""
+def _brand_voice_block(selected: list[dict], brand: dict) -> str:
+    """Build brand voice guidance for freeform text generation."""
     lines = []
+    lines.append("  Brand voice: " + brand.get('identity', {}).get('voice', 'plain and honest, no fluff'))
     for p in selected:
-        lines.append(f"  {brand_name} {p['name']}:")
-        hl = p.get("allowed_headlines", [])
-        bc = p.get("allowed_body_copy", [])
-        if hl:
-            lines.append(f"    Headlines (pick ONE): {', '.join(repr(h) for h in hl)}")
+        note = p.get("voice_note", "")
+        if note:
+            lines.append("  " + p['name'] + ": " + note)
         else:
-            lines.append(f"    Headlines: none provided — keep ad text-free or use brand name only")
-        if bc:
-            lines.append(f"    Body copy lines (pick 2–4 to match ref's text density): {', '.join(repr(b) for b in bc)}")
-        else:
-            lines.append(f"    Body copy: none provided — keep ad text-free")
+            lines.append("  " + p['name'] + ": use brand voice, keep it plain and honest")
     return "\n".join(lines)
+
 
 
 def build_composer_system(brand: dict, selected: list[dict]) -> str:
@@ -330,7 +326,7 @@ def build_composer_system(brand: dict, selected: list[dict]) -> str:
     name = brand["display_name"]
     palette = brand["identity"]["palette"]["description"]
     vibe_examples = ", ".join(f'"{p}"' for p in brand["identity"].get("allowed_vibe_phrases", [])) or '"Brand", "Vibe"'
-    copy_block = _product_copy_block(selected, name)
+    voice_block = _brand_voice_block(selected, brand)
 
     cap_lines = []
     for p in selected:
@@ -351,7 +347,7 @@ NON-NEGOTIABLE RULES WHEN WRITING THE PROMPT:
   2a. NEVER instruct to preserve, keep, or render any of the reference's: text, headlines, taglines, body copy, URLs, phone numbers, logos, wordmarks, brand marks, watermarks, ghosted/repeated text patterns, or decorative typography. These are the reference brand's identity and do NOT belong in the {name} ad. Only the reference's SUBJECT (person, pose, product-grip, scene) and COMPOSITION (camera framing, text-zone positions) transfer. All text and logos in the output come from the {name} TEXT STRATEGY and LOGO blocks you write — nothing else.
   2b. FIRST SECTION OF YOUR OUTPUT is a FORBIDDEN IN OUTPUT bullet list. Read the REVERSE ANALYSIS and extract every single text string, headline, tagline, logo name, wordmark, brand name, URL, phone number, social handle, event badge, date string, booth number, decorative-type element, ghosted pattern, and watermark mentioned. Quote them verbatim in quotes. Be exhaustive — if the reverse analysis names 10 text strings, your list has at least 10 bullets. This list is the first thing the image model reads. Missing strings is a failure.
   3. The style overlay is a COLOR GRADE + LIGHTING + GRAIN + LENS FEEL on top of the recreated scene — NOT a repaint of the background. Take the Vibe Shift's lighting/grain/lens/contrast characteristics verbatim; replace its color-palette description with the {name} brand palette ({palette}). The scene keeps its structure; colors shift.
-  4. Text: match the reference's font feel (if ref has thin sans-serif, use thin sans-serif; if ref has heavy serif, use heavy serif). Colors from brand palette. Do NOT invent URLs, hashtags, pricing, phone numbers, social handles. Do NOT invent taglines, slogans, or benefit statements — use ONLY the text provided in the TEXT CONTENT GUIDANCE block below. If the reference has minimal/no text, keep the ad minimal/no text.
+  4. Text: match the reference's font feel (thin sans-serif -> thin sans-serif, heavy serif -> heavy serif). Colors from brand palette. Do NOT invent URLs, hashtags, pricing, phone numbers, social handles. Write text that matches the brand voice guidance — plain, honest, ranch-real. If the reference has minimal/no text, keep the ad minimal/no text.
   5. Product replacement: swap the reference's product(s) for {name} product(s). The product images are provided as NUMBERED INPUTS. INPUT 1 is always the reference. INPUTS 2..N+1 are the {name} product images in the same order as the SELECTED PRODUCTS list you receive. Reference them by input index in your PRODUCT REPLACEMENT block (e.g., "Bottle in the front-right position: paste INPUT 2 ({name} <product name>) as the bottle label, pixel-faithful, do not redraw"). Do NOT say "using the provided image" generically — always say the INPUT number. Do NOT redraw the label design; the INPUT image IS the label.
   5a. CONTAINER + CAP RULES (brand fact, by selected product):
 {cap_block}
@@ -381,15 +377,14 @@ REFERENCE SUBJECT & COMPOSITION:
 PRODUCT REPLACEMENT:
 (the N products in ref → N {name} products. For each, specify its scene position and the exact INPUT index whose label to paste pixel-faithful. Apply the per-product cap/container rule from rule 5a. Do not inherit container or cap styles from the reference.)
 
-TEXT CONTENT GUIDANCE (copy available for selected products — use ONLY these, do not invent):
-{copy_block}
+TEXT CONTENT GUIDANCE:
+{voice_block}
 
 TEXT STRATEGY:
-- Pick ONE headline from the list above for your selected product.
-- Pick 2–4 body copy lines from the list above (match the density of the reference's text block — if the ref has a 4-line list, include 4 lines).
-- Match the reference's font feel (serif headline → serif, sans-serif → sans-serif).
+- Write a headline matching the brand voice. Follow the reference font feel (serif headline -> serif, sans-serif -> sans-serif).
+- Write body copy lines matching the reference text density. Keep each line short and honest.
 - Render all text in brand palette colors (navy #204050, dark brown #301800, cream #F0E0B0).
-- Do NOT add any text not in the list above. If no list is provided for a product, keep the ad text-free.
+- Write freely using the brand voice. Do NOT invent clinical, corporate, or spa-fluff language.
 
 LOGO:
 (the LAST INPUT image — render small, ~8% of frame width, single bottom corner, no banner, no box, no lockup text added.)

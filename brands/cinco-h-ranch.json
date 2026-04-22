@@ -3,7 +3,6 @@
   "slug": "cinco-h-ranch",
   "display_name": "Cinco H Ranch Naturals",
   "product_required": true,
-
   "paths": {
     "logo_path": "/home/drewp/asset-ads/brand_assets/cinco-h-ranch/logo/logo.png",
     "products_dir": "/home/drewp/asset-ads/brand_assets/cinco-h-ranch/products",
@@ -11,15 +10,37 @@
     "pool_dir": "/home/drewp/asset-ads/brand_assets/cinco-h-ranch/references",
     "rules_path": null
   },
-
   "identity": {
-    "vibe": "Texas ranch skincare — honest, no fluff, historic homestead recipes, built for real life",
+    "vibe": "Texas ranch skincare \u2014 honest, no fluff, historic homestead recipes, built for real life",
     "palette": {
-      "hex": ["#204050", "#301800", "#F0E0B0", "#B03030"],
+      "hex": [
+        "#204050",
+        "#301800",
+        "#F0E0B0",
+        "#B03030"
+      ],
       "description": "navy #204050, dark brown #301800, cream #F0E0B0, accent red #B03030 (arrows/highlights only, NOT pink)"
     },
-    "prop_themes": ["ranch", "Texas", "leather", "wood", "natural fibers", "horseback", "honey", "tallow", "open range", "homestead"],
-    "forbidden_prop_themes": ["clinical", "lab coat", "spa", "competitor branding", "pharmacy aisle", "gym"],
+    "prop_themes": [
+      "ranch",
+      "Texas",
+      "leather",
+      "wood",
+      "natural fibers",
+      "horseback",
+      "honey",
+      "tallow",
+      "open range",
+      "homestead"
+    ],
+    "forbidden_prop_themes": [
+      "clinical",
+      "lab coat",
+      "spa",
+      "competitor branding",
+      "pharmacy aisle",
+      "gym"
+    ],
     "allowed_headlines": [
       "THE RANCH STANDARD",
       "BUILT FOR THE RANCH",
@@ -32,57 +53,79 @@
       "All natural",
       "Tallow base",
       "The Ranch Standard"
-    ]
+    ],
+    "voice": "Cinco H Ranch Naturals sounds like a Texas rancher who makes skincare from kitchen-table recipes. Plainspoken, honest, no fluff. Real ingredients (tallow, lard, essential oils, honey). Historical homestead vibes \u2014 like grandma's apothecary. Talks about 'nourishing' and 'real ingredients' and 'for the health of your skin and your soul.' Never corporate, never clinical, never spa-fluff (no 'indulgent', no 'luxurious escape', no 'transform your skin'). Headlines are short and direct. Body copy sounds like a product description, not a marketing claim. Texas pride without being loud about it."
   },
-
   "global_forbidden_text": [
-    { "pattern": "#",            "severity": "error",   "reason": "no hashtags" },
-    { "pattern": "www.",         "severity": "error",   "reason": "no URLs" },
-    { "pattern": ".com",         "severity": "error",   "reason": "no URLs" },
-    { "pattern": "@",            "severity": "error",   "reason": "no social handles" },
-    { "pattern": "FREE",         "severity": "error",   "reason": "no fake promotions" },
-    { "pattern": "% OFF",        "severity": "error",   "reason": "no fake promotions" },
-    { "pattern": "GIVEAWAY",     "severity": "error",   "reason": "no fake promotions" },
-    { "pattern": "clinical",     "severity": "error",   "reason": "no clinical trial language" },
-    { "pattern": "clinically",   "severity": "error",   "reason": "no clinical trial language" },
-    { "pattern": "treats",       "severity": "error",   "reason": "no medical claims" },
-    { "pattern": "cures",        "severity": "error",   "reason": "no medical claims" },
-    { "pattern": "PrevEntS skin cancer", "severity": "error", "reason": "no medical claims" },
-    { "pattern": "$",            "severity": "warning", "reason": "no pricing" }
+    {
+      "pattern": "#",
+      "severity": "error",
+      "reason": "no hashtags"
+    },
+    {
+      "pattern": "www.",
+      "severity": "error",
+      "reason": "no URLs"
+    },
+    {
+      "pattern": ".com",
+      "severity": "error",
+      "reason": "no URLs"
+    },
+    {
+      "pattern": "@",
+      "severity": "error",
+      "reason": "no social handles"
+    },
+    {
+      "pattern": "FREE",
+      "severity": "error",
+      "reason": "no fake promotions"
+    },
+    {
+      "pattern": "% OFF",
+      "severity": "error",
+      "reason": "no fake promotions"
+    },
+    {
+      "pattern": "GIVEAWAY",
+      "severity": "error",
+      "reason": "no fake promotions"
+    },
+    {
+      "pattern": "$",
+      "severity": "warning",
+      "reason": "no pricing"
+    }
   ],
-
   "ad_creative_rules": [
-    "Every element in a reference layout STAYS — replace with CINCO brand equivalent.",
-    "Reference controls layout; brand controls colors, text, and product.",
+    "Every product label MUST come EXACTLY from the provided product image. Do NOT redraw, recolor, modify, or invent label artwork.",
+    "No mascots, cartoon characters, personified objects, or fantasy elements.",
+    "Logo appears once only, small, in a corner \u2014 no effects, no boxes, no oversized placement.",
+    "Background and color grade must use ONLY the brand palette (navy #204050, dark brown #301800, cream #F0E0B0, accent red #B03030). Replace ALL reference colors with brand colors.",
+    "Style overlay applies as final unifying step over the entire image.",
     "4:5 ratio for all social ads.",
-    "Never invent label text — preserve provided label artwork pixel-faithful.",
-    "No competitor text leaks — audit every generation.",
-    "TEXT STRATEGY block: ONLY use the headlines and body copy lines provided in the product config below. Do NOT invent new taglines, slogans, benefit statements, or copy. The allowed text list is the complete list — if something isn't in it, do not write it."
+    "Text in the ad must sound like it was written by the brand: honest, plainspoken, ranch-real. Never clinical, corporate, or spa-fluff. Match the reference font style."
   ],
-
   "products": [
     {
       "name": "Honey Vanilla Soap",
       "label_file": "honey-vanilla-soap.png",
       "pool_slug": "soap",
       "container": "soap-bar",
-      "cap_rule": "N/A — bar soap, no cap",
-      "triggers": ["soap", "honey", "vanilla", "bar"],
-      "keywords": ["honey", "vanilla", "soap", "lather", "bath"],
-      "allowed_headlines": [
-        "SPA STYLE BAR",
-        "NATURAL CLEANSE",
-        "100% NATURAL",
-        "THE RANCH STANDARD"
+      "cap_rule": "N/A \u2014 bar soap, no cap",
+      "triggers": [
+        "soap",
+        "honey",
+        "vanilla",
+        "bar"
       ],
-      "allowed_body_copy": [
-        "Spa Style Bar",
-        "Gentle Natural Cleansing",
-        "For the Health of Your Skin and Soul",
-        "Nourishing Lather",
-        "100% Natural Ingredients",
-        "Made with Texas Honey",
-        "Homestead Inspired"
+      "keywords": [
+        "honey",
+        "vanilla",
+        "soap",
+        "lather",
+        "bath"
       ],
       "allowed_claims": [
         "Gentle everyday cleansing",
@@ -90,35 +133,86 @@
         "Soft, hydrated skin"
       ],
       "forbidden_text": [
-        { "pattern": "medicated",     "severity": "error",   "reason": "no medical claims" },
-        { "pattern": "antibacterial", "severity": "error",   "reason": "no medical claims" }
-      ]
+        {
+          "pattern": "antibacterial",
+          "severity": "error",
+          "reason": "no antibacterial claims"
+        },
+        {
+          "pattern": "kills bacteria",
+          "severity": "error",
+          "reason": "no antibacterial claims"
+        },
+        {
+          "pattern": "germ-killing",
+          "severity": "error",
+          "reason": "no antibacterial claims"
+        },
+        {
+          "pattern": "treats",
+          "severity": "error",
+          "reason": "no medical claims"
+        },
+        {
+          "pattern": "cures",
+          "severity": "error",
+          "reason": "no medical claims"
+        },
+        {
+          "pattern": "prevents",
+          "severity": "error",
+          "reason": "no medical/preventative claims"
+        },
+        {
+          "pattern": "medicated",
+          "severity": "error",
+          "reason": "no medical claims"
+        },
+        {
+          "pattern": "clinically",
+          "severity": "error",
+          "reason": "no clinical trial language"
+        },
+        {
+          "pattern": "organic",
+          "severity": "warning",
+          "reason": "no USDA certification"
+        },
+        {
+          "pattern": "unclogs",
+          "severity": "error",
+          "reason": "no pore claim"
+        },
+        {
+          "pattern": "restores pH",
+          "severity": "error",
+          "reason": "no pH claim without evidence"
+        }
+      ],
+      "voice_note": "Soap: emphasize the tallow+lard base (mimics skin's natural oils), real honey, real essential oils. Keywords to use naturally: 'real ingredients', 'nourishing lather', 'for the health of your skin and your soul', 'small batch'. Do NOT use: antibacterial language, medical claims, 'deeply cleanses' as if it treats something."
     },
     {
       "name": "Rejuvenating Face + Body Cream",
       "label_file": "rejuvenating.png",
       "pool_slug": "cream",
       "container": "jar",
-      "cap_rule": "N/A — jar with screw lid, lid stays as shown in product image",
-      "triggers": ["cream", "rejuv", "rejuvenating", "moisturizer", "jar", "tallow"],
-      "keywords": ["cream", "face", "body", "moisturizer", "tallow", "frankincense", "geranium"],
-      "allowed_headlines": [
-        "REBUILD YOUR SKIN BARRIER",
-        "HONEST MOISTURE",
-        "100% NATURAL",
-        "THE RANCH STANDARD",
-        "LUXURIOUS NATURAL MOISTURIZING"
+      "cap_rule": "cream/off-white screw lid \u2014 stays as shown in product image; do NOT make it black or any other color",
+      "triggers": [
+        "cream",
+        "rejuv",
+        "rejuvenating",
+        "moisturizer",
+        "jar",
+        "tallow"
       ],
-      "allowed_body_copy": [
-        "Rebuild and Reinforce Your Natural Skin Barrier",
-        "Nourishes and Hydrates",
-        "With Tallow and Lard — Closely Matches Skin's Natural Sebum",
-        "Luxurious Natural Moisturizing Care",
-        "Anti-Aging Properties",
-        "For Face and Body",
-        "Handmade in Small Batches",
-        "Historical Homestead Inspired",
-        "100% All-Natural Ingredients"
+      "keywords": [
+        "cream",
+        "face",
+        "body",
+        "moisturizer",
+        "tallow",
+        "frankincense",
+        "geranium"
       ],
       "allowed_claims": [
         "Deep Hydration",
@@ -127,37 +221,45 @@
         "Rebuilds and reinforces natural skin barrier"
       ],
       "forbidden_text": [
-        { "pattern": "SPF",              "severity": "error",   "reason": "this is not a sunscreen product" },
-        { "pattern": "anti-aging cure",  "severity": "error",   "reason": "no medical claims" },
-        { "pattern": "treats",           "severity": "error",   "reason": "no medical claims" }
-      ]
+        {
+          "pattern": "SPF",
+          "severity": "error",
+          "reason": "this is not a sunscreen"
+        },
+        {
+          "pattern": "treats",
+          "severity": "error",
+          "reason": "no medical claims"
+        },
+        {
+          "pattern": "anti-aging cure",
+          "severity": "error",
+          "reason": "no medical claims"
+        }
+      ],
+      "voice_note": "Cream: emphasize how tallow closely matches skin's natural sebum, frankincense, geranium, carrot seed oils. Keywords: 'rebuild your natural skin barrier', 'nourishes and hydrates', 'small batch'. Do NOT use: SPF language (not a sunscreen), medical claims, 'anti-aging cure'."
     },
     {
       "name": "Sunscreen Stick",
       "label_file": "sunscreen.png",
       "pool_slug": "sunscreen",
       "container": "twist-up stick",
-      "cap_rule": "twist-up stick — keep cap on as shown in product image",
-      "triggers": ["sunscreen", "stick", "sun", "spf", "mineral"],
-      "keywords": ["sunscreen", "mineral", "zinc", "stick", "outdoor", "ranch", "sun"],
-      "allowed_headlines": [
-        "MINERAL PROTECTION",
-        "TEXAS TOUGH",
-        "BUILT FOR THE RANCH",
-        "100% NATURAL",
-        "HANDMADE SUN PROTECTION"
+      "cap_rule": "twist-up stick with light/neutral cap \u2014 keep cap on as shown; do NOT make cap black",
+      "triggers": [
+        "sunscreen",
+        "stick",
+        "sun",
+        "spf",
+        "mineral"
       ],
-      "allowed_body_copy": [
-        "Natural Mineral-Based Protective Balm",
-        "Non-Nano Zinc Oxide Shield",
-        "For Face Lips Nose Ears Shoulders",
-        "Mess-Free Application",
-        "Nourishing Tallow and Lard Base",
-        "Beeswax Firm Hold in Texas Heat",
-        "Bioavailable Fats and Fat-Soluble Vitamins",
-        "Warm Inviting Scent",
-        "Handmade on the Ranch",
-        "100% All-Natural Ingredients"
+      "keywords": [
+        "sunscreen",
+        "mineral",
+        "zinc",
+        "stick",
+        "outdoor",
+        "ranch",
+        "sun"
       ],
       "allowed_claims": [
         "Mineral-based protection",
@@ -165,12 +267,33 @@
         "Moisturizing"
       ],
       "forbidden_text": [
-        { "pattern": "SPF",              "severity": "error",   "reason": "no SPF number — no testing done" },
-        { "pattern": "SPF rated",        "severity": "error",   "reason": "say mineral-based not SPF rated" },
-        { "pattern": "prevents skin cancer", "severity": "error", "reason": "no medical claims" },
-        { "pattern": "broad spectrum",   "severity": "warning", "reason": "no testing to support claim" },
-        { "pattern": "waterproof",       "severity": "warning", "reason": "no testing to support claim" }
-      ]
+        {
+          "pattern": "SPF",
+          "severity": "error",
+          "reason": "no SPF number"
+        },
+        {
+          "pattern": "SPF rated",
+          "severity": "error",
+          "reason": "no SPF number"
+        },
+        {
+          "pattern": "prevents skin cancer",
+          "severity": "error",
+          "reason": "no medical claims"
+        },
+        {
+          "pattern": "broad spectrum",
+          "severity": "warning",
+          "reason": "no testing"
+        },
+        {
+          "pattern": "waterproof",
+          "severity": "warning",
+          "reason": "no testing"
+        }
+      ],
+      "voice_note": "Sunscreen Stick: emphasize tallow+lard base + non-nano zinc oxide + beeswax. Keywords: 'mineral protection', 'nourishing', 'Texas sun', 'real ingredients'. Do NOT use: any SPF number, 'prevents skin cancer', 'waterproof', 'broad spectrum' \u2014 no testing done."
     }
   ]
 }
