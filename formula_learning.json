@@ -1,0 +1,38 @@
+{
+  "enforcement_additions": [
+    {
+      "rule": "text_must_be_island_splash_branding",
+      "text": "All text in the ad must be approved Island Splash branding only. ALLOWED: flavor names from product labels (Mango Passion, Mauby, Peanut Punch, Lime, Guava Pine, Sorrel, Pine Ginger), brand vibe phrases (Caribbean, island time, tropical, family recipe, etc.), short descriptors of flavor or health benefits when the reference layout calls for body copy. FORBIDDEN: hashtags, # symbols, URLs, www, .com, social handles (@), fake promotions/discounts (FREE, 50% OFF, GIVEAWAY), pricing, phone numbers, foreign languages, AI-invented pseudo-words. All text must be real, correct English.",
+      "active": true,
+      "triggered_at": "20260420_collapsed",
+      "source": "manual_audit_drew"
+    },
+    {
+      "rule": "labels_come_from_product_images",
+      "text": "Every bottle label MUST come EXACTLY from the provided product image. Do NOT redraw, recolor, modify, or invent labels. Do NOT add 'Premium Formula', 'Juice Dropsy', sub-taglines, ingredient lists, or any text beneath the flavor name. The product image IS the label — preserve it pixel-faithful. All bottles in one ad use the same Island Splash label format (white and orange circular label with sunburst logo).",
+      "active": true,
+      "triggered_at": "20260420_collapsed",
+      "source": "manual_audit_drew"
+    },
+    {
+      "rule": "visual_fidelity_to_brand",
+      "text": "No mascots, cartoon characters, smiley fruits, or personified objects. Props must be tropical/Caribbean themed (NO gym equipment, dumbbells, sports gear, or unrelated lifestyle props). Island Splash logo appears once only, small, in a corner — no effects, no boxes around it, no oversized placement. Layout must match the reference's compositional structure (product positions, text zones, visual hierarchy).",
+      "active": true,
+      "triggered_at": "20260420_collapsed",
+      "source": "manual_audit_drew"
+    },
+    {
+      "rule": "brand_color_palette_only",
+      "text": "Background and color grade must use ONLY Island Splash palette: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), warm sand/tan (#A89078). Replace ALL reference colors with brand colors. Style overlay (color grade, lighting mood) applies as final unifying step over the entire image so products, scene, and text feel like one cohesive shot — not pasted layers.",
+      "active": true,
+      "triggered_at": "20260420_collapsed",
+      "source": "manual_audit_drew"
+    }
+  ],
+  "prompt_additions": [],
+  "known_issues": [],
+  "total_audits": 31,
+  "last_audit": "20260420_032518",
+  "total_rules": 4,
+  "_collapsed_from": "Previously 14 overlapping rules. Removed no_health_regulatory_claims so Hermes can use health/benefit language when reference layout calls for body copy."
+}
