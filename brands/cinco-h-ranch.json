@@ -127,11 +127,6 @@
         "lather",
         "bath"
       ],
-      "allowed_claims": [
-        "Gentle everyday cleansing",
-        "Nourishing lather",
-        "Soft, hydrated skin"
-      ],
       "forbidden_text": [
         {
           "pattern": "antibacterial",
@@ -214,12 +209,6 @@
         "frankincense",
         "geranium"
       ],
-      "allowed_claims": [
-        "Deep Hydration",
-        "Barrier Support",
-        "Nourishing Feel",
-        "Rebuilds and reinforces natural skin barrier"
-      ],
       "forbidden_text": [
         {
           "pattern": "SPF",
@@ -260,11 +249,6 @@
         "outdoor",
         "ranch",
         "sun"
-      ],
-      "allowed_claims": [
-        "Mineral-based protection",
-        "Nourishing protection",
-        "Moisturizing"
       ],
       "forbidden_text": [
         {
