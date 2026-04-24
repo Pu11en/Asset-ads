@@ -5,7 +5,8 @@
     "path": "/images/ads/ad_1_tree_stump.png",
     "product_name": "Tree Stump Lifestyle",
     "caption": "Natural refreshment straight from the Caribbean",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
   },
   {
     "id": "ad_2_ingredient_flatlay",
@@ -13,7 +14,8 @@
     "path": "/images/ads/ad_2_ingredient_flatlay.png",
     "product_name": "Ingredient Flatlay",
     "caption": "Real fruit, real flavor",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
   },
   {
     "id": "ad_3_mango_splash",
@@ -21,7 +23,8 @@
     "path": "/images/ads/ad_3_mango_splash.png",
     "product_name": "Mango Wave",
     "caption": "Grab Your Wave",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
   },
   {
     "id": "ad_3_mango_splash_v2",
@@ -29,7 +32,8 @@
     "path": "/images/ads/ad_3_mango_splash_v2.png",
     "product_name": "Mango Wave v2",
     "caption": "Grab Your Wave",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
   },
   {
     "id": "ad_4_quad_panel",
@@ -37,7 +41,8 @@
     "path": "/images/ads/ad_4_quad_panel.png",
     "product_name": "Sorrel",
     "caption": "Fuel Your Day",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
   },
   {
     "id": "ad_4_panel1_sorrel",
@@ -45,7 +50,8 @@
     "path": "/images/ads/ad_4_Panel1_Sorrel.png",
     "product_name": "Sorrel Panel 1",
     "caption": "Fuel Your Day",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
   },
   {
     "id": "ad_4_panel2_mango",
@@ -53,7 +59,8 @@
     "path": "/images/ads/ad_4_Panel2_Mango.png",
     "product_name": "Mango Panel 2",
     "caption": "Grab Your Wave",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
   },
   {
     "id": "ad_4_panel3_pineginger",
@@ -61,7 +68,8 @@
     "path": "/images/ads/ad_4_Panel3_PineGinger.png",
     "product_name": "Pine Ginger Panel 3",
     "caption": "Hydrate Naturally",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
   },
   {
     "id": "ad_4_panel4_guavapine",
@@ -69,7 +77,8 @@
     "path": "/images/ads/ad_4_Panel4_GuavaPine.png",
     "product_name": "Guava Pine Panel 4",
     "caption": "Tropical refreshment",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
   },
   {
     "id": "mango_passion",
@@ -77,7 +86,8 @@
     "path": "/images/ads/island-splash_mango-passion_f0f06f46.jpg",
     "product_name": "Mango Passion",
     "caption": "Grab Your Wave",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
   },
   {
     "id": "mango_passion_multi",
@@ -85,7 +95,8 @@
     "path": "/images/ads/island-splash_mango-passion-guava-pine-lime-mauby_96c96442.jpg",
     "product_name": "Mango Passion Multi",
     "caption": "Grab Your Wave",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
   },
   {
     "id": "mauby",
@@ -93,7 +104,8 @@
     "path": "/images/ads/island-splash_mauby_31e78b19.jpg",
     "product_name": "Mauby",
     "caption": "Hydrate Naturally",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
   },
   {
     "id": "peanut_punch",
@@ -101,7 +113,8 @@
     "path": "/images/ads/island-splash_peanut-punch-pine-ginger-lime-guava-pine_46dc764c.jpg",
     "product_name": "Peanut Punch",
     "caption": "Fuel Your Day",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
   },
   {
     "id": "sorrel",
@@ -109,7 +122,8 @@
     "path": "/images/ads/island-splash_sorrel_22f5722f.jpg",
     "product_name": "Sorrel",
     "caption": "Fuel Your Day",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
   },
   {
     "id": "carousel_final",
@@ -117,7 +131,8 @@
     "path": "/images/ads/island_splash_carousel_final.png",
     "product_name": "Island Splash Carousel",
     "caption": "Tropical vibes all day",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
   },
   {
     "id": "slide_1_mango_passion",
@@ -125,7 +140,8 @@
     "path": "/images/ads/slide_1_mango_passion.png",
     "product_name": "Slide 1 Mango",
     "caption": "Grab Your Wave",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
   },
   {
     "id": "slide_2_lime_pine_ginger",
@@ -133,7 +149,8 @@
     "path": "/images/ads/slide_2_lime_pine_ginger.png",
     "product_name": "Slide 2 Lime",
     "caption": "Hydrate Naturally",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
   },
   {
     "id": "slide_3_guava_sorrel_mauby",
@@ -141,7 +158,8 @@
     "path": "/images/ads/slide_3_guava_sorrel_mauby.png",
     "product_name": "Slide 3 Guava",
     "caption": "Tropical refreshment",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
   },
   {
     "id": "slide_4_peanut_punch",
@@ -149,7 +167,8 @@
     "path": "/images/ads/slide_4_peanut_punch.png",
     "product_name": "Slide 4 Peanut",
     "caption": "Fuel Your Day",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
   },
   {
     "id": "slide_5_mango_passion_cta",
@@ -157,6 +176,49 @@
     "path": "/images/ads/slide_5_mango_passion_cta.png",
     "product_name": "Slide 5 CTA",
     "caption": "Grab Your Wave",
-    "status": "success"
+    "status": "success",
+    "brand": "island-splash"
+  },
+  {
+    "id": "cinco-h-ranch_20260422_050226_891",
+    "filename": "cinco-h-ranch_20260422_050226_891.png",
+    "path": "/images/ads/cinco-h-ranch_20260422_050226_891.png",
+    "product_name": "Cinco H Ranch Ad",
+    "caption": "** ",
+    "status": "success",
+    "brand": "cinco-h-ranch"
+  },
+  {
+    "id": "cinco-h-ranch_20260422_065352_601",
+    "filename": "cinco-h-ranch_20260422_065352_601.png",
+    "path": "/images/ads/cinco-h-ranch_20260422_065352_601.png",
+    "product_name": "Cinco H Ranch Ad",
+    "caption": "** ",
+    "status": "success",
+    "brand": "cinco-h-ranch"
+  },
+  {
+    "id": "cinco_soap",
+    "filename": "honey-vanilla-soap.png",
+    "path": "/images/products/honey-vanilla-soap.png",
+    "product_name": "Honey Vanilla Soap",
+    "status": "product",
+    "brand": "cinco-h-ranch"
+  },
+  {
+    "id": "cinco_cream",
+    "filename": "rejuvenating.png",
+    "path": "/images/products/rejuvenating.png",
+    "product_name": "Rejuvenating Face + Body Cream",
+    "status": "product",
+    "brand": "cinco-h-ranch"
+  },
+  {
+    "id": "cinco_sunscreen",
+    "filename": "sunscreen.png",
+    "path": "/images/products/sunscreen.png",
+    "product_name": "Sunscreen Stick",
+    "status": "product",
+    "brand": "cinco-h-ranch"
   }
 ]

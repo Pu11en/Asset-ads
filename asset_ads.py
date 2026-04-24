@@ -333,6 +333,27 @@ def build_composer_system(brand: dict, selected: list[dict]) -> str:
         cap_lines.append(f"    - {name} {p['name']} ({p['container']}): {p['cap_rule']}")
     cap_block = "\n".join(cap_lines) if cap_lines else f"    - All {name} products: see product config"
 
+    # Collect all forbidden text patterns for the composer
+    forbidden_patterns = list(brand.get("global_forbidden_text", []))
+    selected_names = {p["name"] for p in selected}
+    for p in brand.get("products", []):
+        if p["name"] in selected_names:
+            forbidden_patterns.extend(p.get("forbidden_text", []))
+    # Deduplicate by pattern string
+    seen = set()
+    unique_forbidden = []
+    for item in forbidden_patterns:
+        pat = item.get("pattern", "")
+        if pat and pat.lower() not in seen:
+            seen.add(pat.lower())
+            unique_forbidden.append(item)
+    if unique_forbidden:
+        forbidden_lines = "\n".join(f"    - '{item['pattern']}' — {item['reason']}" for item in unique_forbidden)
+        forbidden_block = f"""FORBIDDEN WORDS — NEVER use these in the TEXT STRATEGY, STRICT CONSTRAINTS, or any instruction that tells the image model what TO render. You may list them in the FORBIDDEN IN OUTPUT section (rule 2b) but nowhere else:
+{forbidden_lines}"""
+    else:
+        forbidden_block = ""
+
     return f"""You are a senior art director writing a final image-generation prompt for gemini-3-pro-image-preview. You will receive:
   - a REVERSE ANALYSIS of a reference ad (what's in it, verbatim)
   - a VIBE SHIFT analysis (the reference's pure cinematic aesthetic)
@@ -347,7 +368,9 @@ NON-NEGOTIABLE RULES WHEN WRITING THE PROMPT:
   2a. NEVER instruct to preserve, keep, or render any of the reference's: text, headlines, taglines, body copy, URLs, phone numbers, logos, wordmarks, brand marks, watermarks, ghosted/repeated text patterns, or decorative typography. These are the reference brand's identity and do NOT belong in the {name} ad. Only the reference's SUBJECT (person, pose, product-grip, scene) and COMPOSITION (camera framing, text-zone positions) transfer. All text and logos in the output come from the {name} TEXT STRATEGY and LOGO blocks you write — nothing else.
   2b. FIRST SECTION OF YOUR OUTPUT is a FORBIDDEN IN OUTPUT bullet list. Read the REVERSE ANALYSIS and extract every single text string, headline, tagline, logo name, wordmark, brand name, URL, phone number, social handle, event badge, date string, booth number, decorative-type element, ghosted pattern, and watermark mentioned. Quote them verbatim in quotes. Be exhaustive — if the reverse analysis names 10 text strings, your list has at least 10 bullets. This list is the first thing the image model reads. Missing strings is a failure.
   3. The style overlay is a COLOR GRADE + LIGHTING + GRAIN + LENS FEEL on top of the recreated scene — NOT a repaint of the background. Take the Vibe Shift's lighting/grain/lens/contrast characteristics verbatim; replace its color-palette description with the {name} brand palette ({palette}). The scene keeps its structure; colors shift.
+  3a. KEEP the product subject (the advertised item itself). DROP all produce/ingredient/raw-material elements shown alongside the product in the reference — these are the reference brand's ingredient showcase and do not transfer. For example: if a juice brand shows a half-cut orange next to the bottle, do NOT include an orange in the {name} ad; if a sunscreen shows papaya leaves or fruit as ingredients, do NOT include papaya in the {name} ad. Only the product itself and the scene backdrop/setting transfer.
   4. Text: match the reference's font feel (thin sans-serif -> thin sans-serif, heavy serif -> heavy serif). Colors from brand palette. Do NOT invent URLs, hashtags, pricing, phone numbers, social handles. Write text that matches the brand voice guidance — plain, honest, ranch-real. If the reference has minimal/no text, keep the ad minimal/no text.
+  4b. {forbidden_block}
   5. Product replacement: swap the reference's product(s) for {name} product(s). The product images are provided as NUMBERED INPUTS. INPUT 1 is always the reference. INPUTS 2..N+1 are the {name} product images in the same order as the SELECTED PRODUCTS list you receive. Reference them by input index in your PRODUCT REPLACEMENT block (e.g., "Bottle in the front-right position: paste INPUT 2 ({name} <product name>) as the bottle label, pixel-faithful, do not redraw"). Do NOT say "using the provided image" generically — always say the INPUT number. Do NOT redraw the label design; the INPUT image IS the label.
   5a. CONTAINER + CAP RULES (brand fact, by selected product):
 {cap_block}
@@ -516,18 +539,54 @@ def collect_forbidden_patterns(brand: dict, selected: list[dict]) -> list[dict]:
 
 def _pattern_to_regex(needle: str) -> str:
     """Convert a plain-text needle to a regex that matches the needle literally,
-    except '#' which is treated as a hashtag (not hex) via a lookaround."""
+    except '#' which is treated as a hashtag (not hex) via a lookaround.
+    Pure alphabetic patterns get whitespace boundaries to avoid false positives
+    inside hyphenated or compound words (e.g., 'FREE' matching 'noise-free')."""
     if needle == "#":
         # Match # only when NOT preceded or followed by a hex digit (i.e., not part of a color code like #F0E0B0)
         return r"(?<![0-9A-Fa-f])#(?![0-9A-Fa-f])"
-    # Escape regex metacharacters for literal matching
-    return re.escape(needle)
+    escaped = re.escape(needle)
+    # If the pattern is purely alphabetic, enforce whitespace boundaries
+    if needle.isalpha():
+        return r"(?<![^\s])" + escaped + r"(?![^\s])"
+    return escaped
+
+
+def _strip_forbidden_block(text: str) -> str:
+    """Remove blocks that legitimately contain forbidden strings as negative
+    instructions: FORBIDDEN IN OUTPUT, STRICT CONSTRAINTS, and TEXT CONTENT GUIDANCE."""
+    # Known major section headers in the composer prompt
+    section_pattern = r"(?:FORBIDDEN\s+IN\s+OUTPUT|STRICT\s+CONSTRAINTS|REFERENCE\s+SUBJECT|PRODUCT\s+REPLACEMENT|TEXT\s+CONTENT\s+GUIDANCE|TEXT\s+STRATEGY|LOGO|STYLE\s+OVERLAY)"
+    # Strip FORBIDDEN IN OUTPUT block
+    text = re.sub(
+        r"FORBIDDEN\s+IN\s+OUTPUT.*?\n(?=\s*" + section_pattern + r")",
+        "",
+        text,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    # Strip STRICT CONSTRAINTS block
+    text = re.sub(
+        r"STRICT\s+CONSTRAINTS:\s*.*?\n(?=\s*" + section_pattern + r")",
+        "",
+        text,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    # Strip TEXT CONTENT GUIDANCE block
+    text = re.sub(
+        r"TEXT\s+CONTENT\s+GUIDANCE:\s*.*?\n(?=\s*" + section_pattern + r")",
+        "",
+        text,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    return text
 
 
 def scan_forbidden(text: str, patterns: list[dict]) -> list[dict]:
     """Return list of {pattern, severity, reason} hits found in text (case-insensitive).
-    Uses regex matching; '#' is treated specially to exclude hex color codes."""
-    haystack = text.lower()
+    Uses regex matching; '#' is treated specially to exclude hex color codes.
+    The FORBIDDEN IN OUTPUT block is excluded from scanning since it legitimately
+    contains the forbidden strings as instructions to the image model."""
+    haystack = _strip_forbidden_block(text).lower()
     hits: list[dict] = []
     for p in patterns:
         needle = str(p.get("pattern", ""))

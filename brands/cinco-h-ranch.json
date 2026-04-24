@@ -48,13 +48,13 @@
       "100% NATURAL"
     ],
     "allowed_vibe_phrases": [
-      "Ranch",
-      "Honest",
-      "All natural",
-      "Tallow base",
-      "The Ranch Standard"
+      "THE RANCH STANDARD",
+      "BUILT FOR THE RANCH",
+      "REAL INGREDIENTS",
+      "TEXAS MADE",
+      "SMALL BATCH"
     ],
-    "voice": "Cinco H Ranch Naturals sounds like a Texas rancher who makes skincare from kitchen-table recipes. Plainspoken, honest, no fluff. Real ingredients (tallow, lard, essential oils, honey). Historical homestead vibes \u2014 like grandma's apothecary. Talks about 'nourishing' and 'real ingredients' and 'for the health of your skin and your soul.' Never corporate, never clinical, never spa-fluff (no 'indulgent', no 'luxurious escape', no 'transform your skin'). Headlines are short and direct. Body copy sounds like a product description, not a marketing claim. Texas pride without being loud about it."
+    "voice": "Cinco H Ranch Naturals \u2014 ranch, honest, no fluff. Short declarative headlines like 'THE RANCH STANDARD', 'BUILT FOR THE RANCH'. Never clinical, never spa-fluff, never corporate. Texas pride, natural ingredients, small-batch. No competitor names, no clinical trial language."
   },
   "global_forbidden_text": [
     {
@@ -99,13 +99,14 @@
     }
   ],
   "ad_creative_rules": [
-    "Every product label MUST come EXACTLY from the provided product image. Do NOT redraw, recolor, modify, or invent label artwork.",
-    "No mascots, cartoon characters, personified objects, or fantasy elements.",
-    "Logo appears once only, small, in a corner \u2014 no effects, no boxes, no oversized placement.",
-    "Background and color grade must use ONLY the brand palette (navy #204050, dark brown #301800, cream #F0E0B0, accent red #B03030). Replace ALL reference colors with brand colors.",
-    "Style overlay applies as final unifying step over the entire image.",
-    "4:5 ratio for all social ads.",
-    "Text in the ad must sound like it was written by the brand: honest, plainspoken, ranch-real. Never clinical, corporate, or spa-fluff. Match the reference font style."
+    "Every element in a reference layout STAYS \u2014 replace with CINCO brand equivalent",
+    "Reference controls layout; brand controls colors/text/product",
+    "4:5 ratio for all social ads",
+    "Never invent label text \u2014 preserve provided label artwork",
+    "Short declarative headlines like 'THE RANCH STANDARD', 'BUILT FOR THE RANCH'",
+    "No competitor text leaks \u2014 audit every generation",
+    "Background and color grade use brand palette: Navy #204050, Dark Brown #301800, Cream #F0E0B0, Accent Red #B03030",
+    "Logo small in corner \u2014 no effects, no boxes, no oversized placement"
   ],
   "products": [
     {
@@ -184,7 +185,13 @@
           "reason": "no pH claim without evidence"
         }
       ],
-      "voice_note": "Soap: emphasize the tallow+lard base (mimics skin's natural oils), real honey, real essential oils. Keywords to use naturally: 'real ingredients', 'nourishing lather', 'for the health of your skin and your soul', 'small batch'. Do NOT use: antibacterial language, medical claims, 'deeply cleanses' as if it treats something."
+      "voice_note": "Honey Vanilla Soap: real Texas honey, lavender + vanilla essential oils. Claims: Gentle everyday cleansing / Nourishing lather / Soft, hydrated skin. Format: bar soap, all natural. NO medical claims, no clinical language.",
+      "real_claims": [
+        "Gentle everyday cleansing",
+        "Nourishing lather",
+        "Soft, hydrated skin"
+      ],
+      "real_ingredients": "Tallow base / Real Texas Honey / Lavender essential oil / Vanilla essential oil"
     },
     {
       "name": "Rejuvenating Face + Body Cream",
@@ -226,7 +233,13 @@
           "reason": "no medical claims"
         }
       ],
-      "voice_note": "Cream: emphasize how tallow closely matches skin's natural sebum, frankincense, geranium, carrot seed oils. Keywords: 'rebuild your natural skin barrier', 'nourishes and hydrates', 'small batch'. Do NOT use: SPF language (not a sunscreen), medical claims, 'anti-aging cure'."
+      "voice_note": "Rejuvenating Face + Body Cream: Beef Tallow + Lard base (mimics natural sebum). Frankincense, Helichrysum, Geranium, Carrot Seed oils. Claims: Deep Hydration / Barrier Support / Nourishing Feel. Format: 2 oz or 8 oz jars, unwhipped. NO SPF claims, no medical claims, no clinical language.",
+      "real_claims": [
+        "Deep Hydration",
+        "Barrier Support",
+        "Nourishing Feel",
+        "Rebuilds and reinforces natural skin barrier"
+      ]
     },
     {
       "name": "Sunscreen Stick",
@@ -277,7 +290,12 @@
           "reason": "no testing"
         }
       ],
-      "voice_note": "Sunscreen Stick: emphasize tallow+lard base + non-nano zinc oxide + beeswax. Keywords: 'mineral protection', 'nourishing', 'Texas sun', 'real ingredients'. Do NOT use: any SPF number, 'prevents skin cancer', 'waterproof', 'broad spectrum' \u2014 no testing done."
+      "voice_note": "Sunscreen Stick: Beef Tallow + Lard base, Beeswax, Non-nano Zinc Oxide, Carrot Seed Oil. Claims: Mineral-based protection / Nourishing protection / Moisturizing. Format: 2 oz twist-up stick for face, lips, nose, ears, shoulders. NO SPF number claims (no testing done), no 'prevents skin cancer', say 'mineral-based' not 'SPF rated'.",
+      "real_claims": [
+        "Mineral-based protection",
+        "Nourishing protection",
+        "Moisturizing"
+      ]
     }
   ]
 }

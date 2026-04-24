@@ -1,18 +1,35 @@
+# Python
 __pycache__/
 *.pyc
-*.lock
+
+# Environment + secrets
 .env
-output/
-references/
+.env.local
+*.lock
+
+# Logs + OS junk
 *.log
 .DS_Store
-src/
-supabase/
-pipeline/
-webapp/
-site/
+
+# Local-only runtime data (anchored to repo root so skill/ and website/ stay clean)
+/output/
+/references/
+/src/
+/supabase/
+/pipeline/
+/webapp/
+/site/
+/brands/*/media/
+/brand_assets/*/generated/
+
+# Local databases
 asset-ads.db
 pool.json
 batch_log.txt
-.hermes/
+
+# Deploys
 .vercel
+.next/
+
+# Hermes workspace (user-level, not repo-level)
+.hermes/

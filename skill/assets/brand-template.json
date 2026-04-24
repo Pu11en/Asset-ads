@@ -1,0 +1,25 @@
+{
+  "slug": "",
+  "name": "",
+  "tagline": "",
+  "voice": {
+    "tone": "",
+    "brief": "",
+    "headlines": []
+  },
+  "products": [
+    {
+      "slug": "",
+      "name": "",
+      "allowed_claims": [],
+      "ref_dir": ""
+    }
+  ],
+  "forbidden": [],
+  "social": {
+    "instagram": "",
+    "facebook": "",
+    "tiktok": "",
+    "connected_accounts": []
+  }
+}
