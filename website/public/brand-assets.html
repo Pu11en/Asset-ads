@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Assets</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #243C3C, #F0A86C);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            opacity: 0.9;
+        }
+        
+        .brand-selector {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            padding: 1rem;
+            background: #111;
+        }
+        
+        .brand-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #F0A86C;
+            background: transparent;
+            color: #F0A86C;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .brand-btn:hover, .brand-btn.active {
+            background: #F0A86C;
+            color: #0a0a0a;
+        }
+        
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: #111;
+            border-bottom: 1px solid #333;
+        }
+        
+        .tab {
+            padding: 0.75rem 1.5rem;
+            background: #222;
+            border: none;
+            color: #888;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .tab:hover, .tab.active {
+            background: #F0A86C;
+            color: #0a0a0a;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            padding: 1.5rem;
+            background: #111;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #F0A86C;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: #888;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+        }
+        
+        .card {
+            background: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: scale(1.02);
+        }
+        
+        .card img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+        
+        .card-info {
+            padding: 1rem;
+        }
+        
+        .card-name {
+            font-size: 0.875rem;
+            color: #888;
+            word-break: break-all;
+        }
+        
+        .card-size {
+            font-size: 0.75rem;
+            color: #555;
+            margin-top: 0.25rem;
+        }
+        
+        .pool-section {
+            padding: 2rem;
+        }
+        
+        .pool-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .pool-title {
+            font-size: 1.25rem;
+            color: #F0A86C;
+        }
+        
+        .pool-count {
+            background: #333;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+        }
+        
+        .empty {
+            text-align: center;
+            padding: 4rem;
+            color: #555;
+        }
+        
+        .logo-display {
+            max-width: 300px;
+            margin: 2rem auto;
+        }
+        
+        .logo-display img {
+            width: 100%;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        
+        .product-card {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .product-card img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: contain;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-name {
+            font-size: 0.875rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🏝️ Brand Assets</h1>
+        <p>View all reference images, products, and logos</p>
+    </header>
+    
+    <div class="brand-selector" id="brandSelector"></div>
+    
+    <div class="tabs">
+        <button class="tab active" data-tab="refs">References</button>
+        <button class="tab" data-tab="products">Products</button>
+        <button class="tab" data-tab="logo">Logo</button>
+    </div>
+    
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-value" id="totalRefs">-</div>
+            <div class="stat-label">Reference Images</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value" id="totalPools">-</div>
+            <div class="stat-label">Ref Pools</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value" id="totalProducts">-</div>
+            <div class="stat-label">Products</div>
+        </div>
+    </div>
+    
+    <div id="content"></div>
+    
+    <script>
+        let brandData = null;
+        let currentBrand = null;
+        let currentTab = 'refs';
+        
+        async function loadData() {
+            try {
+                const res = await fetch('/data/brand-assets.json');
+                brandData = await res.json();
+                
+                // Set first brand as default
+                if (brandData.brands.length > 0) {
+                    currentBrand = brandData.brands[0].slug;
+                }
+                
+                renderBrandSelector();
+                renderContent();
+            } catch (e) {
+                console.error('Failed to load data:', e);
+                document.getElementById('content').innerHTML = `
+                    <div class="empty">
+                        <p>Failed to load brand data.</p>
+                        <p>Run: python3 skill/scripts/generate_brand_data.py</p>
+                    </div>
+                `;
+            }
+        }
+        
+        function renderBrandSelector() {
+            const container = document.getElementById('brandSelector');
+            container.innerHTML = brandData.brands.map(brand => `
+                <button class="brand-btn ${brand.slug === currentBrand ? 'active' : ''}" 
+                        onclick="selectBrand('${brand.slug}')">
+                    ${brand.name}
+                </button>
+            `).join('');
+        }
+        
+        function selectBrand(slug) {
+            currentBrand = slug;
+            renderBrandSelector();
+            renderContent();
+        }
+        
+        function renderContent() {
+            const brand = brandData.brands.find(b => b.slug === currentBrand);
+            if (!brand) return;
+            
+            // Update stats
+            document.getElementById('totalRefs').textContent = brand.total_refs || 0;
+            document.getElementById('totalPools').textContent = Object.keys(brand.refs || {}).length;
+            document.getElementById('totalProducts').textContent = brand.products?.length || 0;
+            
+            const container = document.getElementById('content');
+            
+            if (currentTab === 'refs') {
+                renderRefs(brand, container);
+            } else if (currentTab === 'products') {
+                renderProducts(brand, container);
+            } else if (currentTab === 'logo') {
+                renderLogo(brand, container);
+            }
+        }
+        
+        function renderRefs(brand, container) {
+            const refs = brand.refs || {};
+            const poolNames = Object.keys(refs);
+            
+            if (poolNames.length === 0) {
+                container.innerHTML = `
+                    <div class="empty">
+                        <p>No reference images found.</p>
+                        <p>Run drain_board.py to add references.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            let html = '';
+            
+            for (const poolName of poolNames) {
+                const pool = refs[poolName];
+                html += `
+                    <div class="pool-section">
+                        <div class="pool-header">
+                            <h2 class="pool-title">${poolName}</h2>
+                            <span class="pool-count">${pool.count} images</span>
+                        </div>
+                        <div class="grid">
+                            ${pool.images.map(img => `
+                                <div class="card">
+                                    <img src="${img.path}" alt="${img.name}" loading="lazy">
+                                    <div class="card-info">
+                                        <div class="card-name">${img.name}</div>
+                                        <div class="card-size">${formatSize(img.size)}</div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            container.innerHTML = html;
+        }
+        
+        function renderProducts(brand, container) {
+            const products = brand.products || [];
+            
+            if (products.length === 0) {
+                container.innerHTML = `
+                    <div class="empty">
+                        <p>No products configured.</p>
+                        <p>Edit brands/${currentBrand}.json to add products.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = `
+                <div class="pool-section">
+                    <div class="pool-header">
+                        <h2 class="pool-title">Products</h2>
+                        <span class="pool-count">${products.length} products</span>
+                    </div>
+                    <div class="products-grid">
+                        ${products.map(prod => `
+                            <div class="product-card">
+                                <div class="card-name">${prod.name}</div>
+                                <div class="card-size">${prod.container || 'bottle'}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+        
+        function renderLogo(brand, container) {
+            if (!brand.logo) {
+                container.innerHTML = `
+                    <div class="empty">
+                        <p>No logo found.</p>
+                        <p>Add logo to: brand_assets/${currentBrand}/logo/</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = `
+                <div class="pool-section" style="text-align: center;">
+                    <div class="logo-display">
+                        <img src="${brand.logo.path}" alt="${brand.logo.name}">
+                    </div>
+                    <p class="card-name">${brand.logo.name}</p>
+                    <p class="card-size">${formatSize(brand.logo.size)}</p>
+                </div>
+            `;
+        }
+        
+        function formatSize(bytes) {
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+        }
+        
+        // Tab switching
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                currentTab = tab.dataset.tab;
+                renderContent();
+            });
+        });
+        
+        // Load data on page load
+        loadData();
+    </script>
+</body>
+</html>

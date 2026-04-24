@@ -48,7 +48,7 @@ REPO_ROOT = Path(__file__).resolve().parent
 BRANDS_DIR = REPO_ROOT / "brands"
 OUTPUT_DIR = REPO_ROOT / "output"
 
-POOL_PROCESSED_DIRNAME = "processed"
+POOL_PROCESSED_DIRNAME = "used-refs"
 POOL_EXTS = (".jpg", ".jpeg", ".png", ".webp")
 POOL_PACING_SECONDS = 20
 

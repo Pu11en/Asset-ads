@@ -1,7 +1,7 @@
 ---
 name: asset-ads
-description: Run a multi-brand social-media ad pipeline. Onboard new brands, manage reference image pools per product, generate on-brand ad creatives from those references, and (later) schedule posts to connected social accounts.
-version: 0.1.0
+description: Run a multi-brand social-media ad pipeline. Onboard new brands, manage reference image pools per product, generate on-brand ad creatives from those references, and schedule posts to connected social accounts.
+version: 0.3.0
 author: Drew Pullen
 license: MIT
 platforms: [linux, macos]
@@ -19,55 +19,79 @@ can view on the web.
 
 ## When to Use
 
-- User wants to create ads for a product or brand.
-- User mentions "references", "ad pool", "generate an ad", "schedule a post".
-- User says they want to onboard a new brand.
-- User wants to review, delete, or approve generated creatives.
+- User wants to create ads for a product or brand
+- User mentions "references", "ad pool", "generate an ad", "schedule a post"
+- User says they want to onboard a new brand
+- User wants to add reference photos
+- User says "drain Pinterest", "pull from Pinterest", "fill my pool"
 
-## Core Concepts
+## The 5 Flows
 
-- **Brand** — a named workspace (`brands/<slug>.json` = config, `brand_assets/<slug>/` = media).
-- **Reference pool** — real photos of the brand's product in lifestyle settings. Input only. See `references/ref-pools.md`.
-- **Ad pool** — generated creatives. Output only. **Never feed an ad back in as a reference.**
-- **Flow** — a named multi-step pipeline (onboard, add-refs, generate, schedule).
+### Flow 1: Onboard Brand
+Create a new brand from scratch.
 
-## The Four Flows
+**Trigger:** "add a brand", "new brand", "set up my brand", "onboard"
 
-1. **Onboard brand** — interview the user, produce `brands/<slug>.json` + folder scaffold.
-   See `references/onboard-brand.md`.
-2. **Add references** — intake images into a product's ref pool from chat uploads.
-   See `references/add-refs.md`.
-3. **Generate ad** — call `scripts/generate_ad.py` with a locked product, pick
-   from ref pool, return creative + write to website data.
-   See `references/ad-generation-pipeline.md`.
-4. **Schedule post** — stage 2, not built yet. See `references/scheduling-pipeline.md`.
+```bash
+python3 skill/scripts/onboard_brand.py --name "Brand Name" --products "Product 1" "Product 2"
+```
 
-## Output Contract (how the dashboard sees results)
+See `references/onboard-brand.md`
 
-After generating an ad, append a record to `website/public/data/ads.json` and
-drop the PNG into `website/public/images/ads/<brand-slug>/`. The Next.js site
-on Vercel reads this and renders it. That's the view-only user dashboard.
+### Flow 2: Add References
+Add reference photos to a product's pool.
 
-## Brand Config Schema
+**Trigger:** "add these photos", "add to the pool", "upload refs"
 
-See `references/brand-config-schema.md` for the JSON shape.
-Real examples in `brands/island-splash.json`, `brands/cinco-h-ranch.json`.
+Two ways:
+1. **User sends images** → Use `add_refs.py`
+2. **Drain Pinterest board** → Use `drain_board.py`
 
-## Scripts
+See `references/add-refs.md` and `references/drain-board.md`
 
-Python entry points currently live at the **repo root** (they use `Path(__file__).parent`
-to locate `brands/` and `output/`). Always run from repo root.
+### Flow 3: Generate Ad
+Create an ad creative using reference photos and brand config.
 
-- `asset_ads.py` — main multi-brand ad generation engine.
-- `generate_splash_ad.py` — Island Splash carousel generator (imports from `src/gemini.py`).
-- `batch_splash_ads.py` — batch runner over a folder of refs.
-- `schedule_runner.py` — cron-fired post scheduler (stage 2, uses Blotato).
+**Trigger:** "generate ad", "create an ad", "make me an ad"
 
-Phase 1 TODO: relocate these into `skill/scripts/` once we refactor path handling
-and the `gemini` helper module. See `skill/scripts/README.md`.
+See `references/ad-generation-pipeline.md`
+
+### Flow 4: Schedule Post
+Post approved ads to social platforms.
+
+**Trigger:** "post this ad", "publish it", "schedule for tomorrow"
+
+```bash
+python3 skill/scripts/schedule_post.py --post --brand <slug> --ad-id <id>
+```
+
+See `references/schedule-post.md`
+
+## Quick Reference
+
+| User Says | Agent Does |
+|-----------|------------|
+| "onboard new brand" | Run `onboard_brand.py`, interview user |
+| "drain Pinterest board" | Run `drain_board.py` |
+| "add these photos" | Run `add_refs.py` |
+| "generate ad" | Run generation pipeline |
+| "post this ad" | Run `schedule_post.py --post` |
+| "show scheduled" | Run `schedule_post.py --show-scheduled` |
+
+## Scripts Location
+
+All scripts are in `skill/scripts/`. Run from repo root:
+
+```bash
+python3 skill/scripts/onboard_brand.py [args]
+python3 skill/scripts/add_refs.py [args]
+python3 skill/scripts/drain_board.py [args]
+python3 skill/scripts/schedule_post.py [args]
+```
 
 ## Non-negotiables
 
-- Reference pools and ad pools are **strictly separate**. Never mix.
-- No medical claims in any brand copy. See per-brand `forbidden` list in the config.
-- Generated output is **local-only** by default (`output/` is gitignored). The dashboard's copy under `website/public/images/ads/` is the exception — that ships to Vercel.
+- Reference pools and ad pools are **strictly separate**. Never mix
+- No medical claims in any brand copy
+- Generated output is **local-only** by default (`output/` is gitignored)
+- The dashboard copy under `website/public/images/ads/` ships to Vercel

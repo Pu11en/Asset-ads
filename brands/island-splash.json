@@ -3,6 +3,14 @@
   "slug": "island-splash",
   "display_name": "Island Splash",
 
+  "scheduling": {
+    "posts_per_day": 2,
+    "time_slots": ["09:00", "17:00"],
+    "platforms": ["instagram"],
+    "instagram_account_id": "TODO: run blotato_list_accounts and fill in the IG account id",
+    "carousel_max_slides": 10
+  },
+
   "paths": {
     "logo_path": "/home/drewp/.hermes/profiles/hermes-11/logos/island-splash/logo.png",
     "products_dir": "/home/drewp/splash-website/assets/products",

@@ -33,3 +33,9 @@ batch_log.txt
 
 # Hermes workspace (user-level, not repo-level)
 .hermes/
+
+# Reference images (too big for git)
+/brand_assets/*/references/
+/brand_assets/*/products/
+/brand_assets/*/logo/
+

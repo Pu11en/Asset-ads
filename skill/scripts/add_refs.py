@@ -1,0 +1,258 @@
+#!/usr/bin/env python3
+"""
+Add reference images to a brand's product pool.
+
+Usage:
+  python3 skill/scripts/add_refs.py --brand island-splash --product "Mango Passion" --image /path/to/photo.jpg
+  python3 skill/scripts/add_refs.py --brand island-splash --product "Mango Passion" --images /path/to/photo1.jpg /path/to/photo2.jpg
+  python3 skill/scripts/add_refs.py --brand island-splash --list-products
+  python3 skill/scripts/add_refs.py --brand island-splash --product "Mango Passion" --show-pool
+"""
+
+import argparse
+import json
+import shutil
+import sys
+from datetime import datetime
+from pathlib import Path
+
+
+def slugify(text: str) -> str:
+    """Convert any text to URL-safe slug."""
+    import re
+    text = text.lower()
+    text = re.sub(r'[^a-z0-9\s-]', '', text)
+    text = re.sub(r'[\s_]+', '-', text)
+    return text.strip('-')
+
+
+def load_brand(brand_slug: str) -> dict:
+    """Load brand config."""
+    config_path = Path("brands") / f"{brand_slug}.json"
+    if not config_path.exists():
+        raise FileNotFoundError(f"Brand not found: {config_path}")
+    
+    with open(config_path) as f:
+        return json.load(f)
+
+
+def get_product_ref_dir(brand_slug: str, product_name: str) -> Path:
+    """Get the reference directory for a product."""
+    brand = load_brand(brand_slug)
+    
+    # Find the product
+    product = None
+    for p in brand.get('products', []):
+        if p['name'].lower() == product_name.lower():
+            product = p
+            break
+    
+    if not product:
+        # Try slug matching
+        prod_slug = slugify(product_name)
+        for p in brand.get('products', []):
+            if slugify(p['name']) == prod_slug:
+                product = p
+                break
+    
+    if not product:
+        raise ValueError(f"Product not found: {product_name}. Run --list-products to see available products.")
+    
+    # Build ref dir path
+    # Check if ref_dir is absolute or relative
+    ref_dir = product.get('ref_dir', '')
+    if not ref_dir:
+        # Default to brand_assets/<brand>/references/<product>/
+        ref_dir = f"brand_assets/{brand_slug}/references/{slugify(product['name'])}"
+    
+    path = Path(ref_dir)
+    if not path.is_absolute():
+        # Relative to repo root (where script is run from)
+        path = Path(ref_dir)
+    
+    return path
+
+
+def list_products(brand_slug: str) -> list:
+    """List all products for a brand."""
+    brand = load_brand(brand_slug)
+    products = brand.get('products', [])
+    
+    print(f"\n=== Products for {brand.get('display_name', brand_slug)} ===\n")
+    
+    if not products:
+        print("No products found. Edit brands/{brand_slug}.json to add products.")
+        return []
+    
+    for i, prod in enumerate(products, 1):
+        prod_slug = slugify(prod['name'])
+        ref_dir = Path(f"brand_assets/{brand_slug}/references/{prod_slug}")
+        
+        # Count existing refs
+        ref_count = 0
+        if ref_dir.exists():
+            refs = list(ref_dir.glob("*.jpg")) + list(ref_dir.glob("*.jpeg")) + list(ref_dir.glob("*.png"))
+            ref_count = len(refs)
+        
+        status = f"[{ref_count} refs]" if ref_count > 0 else "[no refs]"
+        print(f"  {i}. {prod['name']} {status}")
+    
+    print()
+    return products
+
+
+def show_pool(brand_slug: str, product_name: str) -> list:
+    """Show current reference pool for a product."""
+    ref_dir = get_product_ref_dir(brand_slug, product_name)
+    
+    if not ref_dir.exists():
+        print(f"\nNo reference pool yet for {product_name}. Run add_refs.py to add images.\n")
+        return []
+    
+    refs = sorted(ref_dir.glob("*.jpg")) + sorted(ref_dir.glob("*.jpeg")) + sorted(ref_dir.glob("*.png"))
+    
+    print(f"\n=== Reference Pool: {brand_slug} / {product_name} ===\n")
+    
+    if not refs:
+        print("No reference images found.\n")
+        return []
+    
+    for i, ref in enumerate(refs, 1):
+        size_kb = ref.stat().st_size // 1024
+        print(f"  {i}. {ref.name} ({size_kb} KB)")
+    
+    print(f"\nTotal: {len(refs)} reference images\n")
+    return refs
+
+
+def add_ref(brand_slug: str, product_name: str, image_path: str) -> str:
+    """Add a single reference image to the pool."""
+    image_path = Path(image_path)
+    
+    if not image_path.exists():
+        raise FileNotFoundError(f"Image not found: {image_path}")
+    
+    # Validate it's an image
+    if image_path.suffix.lower() not in ['.jpg', '.jpeg', '.png', '.webp']:
+        raise ValueError(f"Not an image file: {image_path.suffix}")
+    
+    # Get ref directory
+    ref_dir = get_product_ref_dir(brand_slug, product_name)
+    ref_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Find next index
+    existing = list(ref_dir.glob("*.jpg")) + list(ref_dir.glob("*.jpeg")) + list(ref_dir.glob("*.png"))
+    
+    # Find highest ref number
+    max_num = 0
+    for ref in existing:
+        name = ref.stem
+        # Match pattern: product-name_ref_N
+        parts = name.split('_ref_')
+        if len(parts) == 2:
+            try:
+                num = int(parts[1])
+                max_num = max(max_num, num)
+            except ValueError:
+                pass
+    
+    next_num = max_num + 1
+    
+    # Generate filename
+    prod_slug = slugify(product_name)
+    new_name = f"{prod_slug}_ref_{next_num}{image_path.suffix.lower()}"
+    dest_path = ref_dir / new_name
+    
+    # Copy the file
+    shutil.copy2(image_path, dest_path)
+    
+    return str(dest_path)
+
+
+def add_refs(brand_slug: str, product_name: str, image_paths: list) -> list:
+    """Add multiple reference images."""
+    created = []
+    for path in image_paths:
+        try:
+            dest = add_ref(brand_slug, product_name, path)
+            created.append(dest)
+        except Exception as e:
+            print(f"⚠️  Skipped {path}: {e}")
+    return created
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Add reference images to a brand's product pool")
+    parser.add_argument("--brand", required=True, help="Brand slug (e.g. island-splash)")
+    parser.add_argument("--product", help="Product name (e.g. 'Mango Passion')")
+    parser.add_argument("--image", help="Single image path to add")
+    parser.add_argument("--images", nargs='+', help="Multiple image paths to add")
+    parser.add_argument("--list-products", action='store_true', help="List all products for the brand")
+    parser.add_argument("--show-pool", action='store_true', help="Show current reference pool for product")
+    
+    args = parser.parse_args()
+    
+    # Validate brand exists
+    try:
+        brand = load_brand(args.brand)
+    except FileNotFoundError:
+        print(f"\n❌ Brand not found: {args.brand}")
+        print(f"Run onboard_brand.py to create it first.\n")
+        return 1
+    
+    # List products mode
+    if args.list_products:
+        list_products(args.brand)
+        return 0
+    
+    # Show pool mode
+    if args.show_pool:
+        if not args.product:
+            print("\n❌ --product required for --show-pool\n")
+            return 1
+        show_pool(args.brand, args.product)
+        return 0
+    
+    # Add refs mode
+    if not args.product:
+        print("\n❌ --product required\n")
+        print("Usage:")
+        print("  --list-products  List all products for the brand")
+        print("  --show-pool      Show current reference pool")
+        print("  --product X      Specify product name")
+        print("  --image Y        Add single image")
+        print("  --images Y Z     Add multiple images\n")
+        return 1
+    
+    images = []
+    if args.image:
+        images.append(args.image)
+    if args.images:
+        images.extend(args.images)
+    
+    if not images:
+        print("\n❌ --image or --images required\n")
+        return 1
+    
+    # Add the refs
+    print(f"\n=== Adding refs to {args.brand} / {args.product} ===\n")
+    
+    created = add_refs(args.brand, args.product, images)
+    
+    if created:
+        print(f"✅ Added {len(created)} reference(s):")
+        for path in created:
+            print(f"   {path}")
+        
+        # Show updated pool count
+        pool = show_pool(args.brand, args.product)
+        print(f"\n✅ Pool now has {len(pool)} reference image(s)")
+    else:
+        print("\n❌ No images added\n")
+        return 1
+    
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
