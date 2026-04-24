@@ -1,0 +1,36 @@
+[
+  {
+    "id": "local_1777032028505",
+    "blotato_id": "822137",
+    "ad_ids": [
+      "island-splash_20260424_043709_284.png",
+      "island-splash_20260424_043527_007.png",
+      "island-splash_20260424_043308_566.png",
+      "island-splash_20260424_044513_447.png",
+      "island-splash_20260424_044325_100.png"
+    ],
+    "caption": "Natural tropical vibes in every sip \ud83c\udf48  \n(Mango Passion, Mauby, Peanut Punch, Pine Ginger & Sorrel)  \nTag a tropical lover \ud83c\udf3a",
+    "hashtags": "#GingerRoot #NutMilk #PassionFruit #Sorrel #Pineapple",
+    "scheduled_at": "2026-04-25T09:00:00Z",
+    "slot": "9am",
+    "platform": "instagram",
+    "status": "pending"
+  },
+  {
+    "id": "local_1777038197668",
+    "blotato_id": "dc5d9084-7f5a-4c8b-8108-b0dd51114b0d",
+    "ad_ids": [
+      "splash_20260421_162637_568.png",
+      "island-splash_20260424_044858_323.png",
+      "splash_20260420_122603.png",
+      "splash_20260420_103950.png",
+      "island-splash_20260424_045502_670.png"
+    ],
+    "caption": "Real escape to the islands \ud83c\udf0a",
+    "hashtags": "#PineGinger #KeyLime #CaribbeanMade #TropicalPine #Lime",
+    "scheduled_at": "2026-04-24T17:00:00Z",
+    "slot": "5pm",
+    "platform": "instagram",
+    "status": "pending"
+  }
+]

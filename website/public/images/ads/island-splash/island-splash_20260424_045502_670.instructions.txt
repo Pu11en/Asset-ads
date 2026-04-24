@@ -1,0 +1,109 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/processed/img_1e08681ed0db.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260424_045502_670.png
+PRODUCTS: Guava Pine
+TIMESTAMP: 2026-04-24T04:56:26.577861
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** The main subject is a uniquely shaped, bright green bottle of a mint-lemon flavored beverage, positioned on a reflective surface. It is accompanied by fresh lemons and mint leaves, which serve as ingredient call-outs and reinforce the product's flavor.
+
+**PRODUCT COUNT:** 1
+
+**PRODUCT DETAILS:**
+*   **Product 1:** A clear plastic Codd-neck style bottle containing a vibrant, translucent green liquid. It is positioned on the right side of the frame. The bottle is shown from a straight-on angle and occupies about two-thirds of the image's height. The white plastic cap is on and sealed.
+
+**COMPOSITION:**
+*   **Top-left:** The "breeze" logo and the tagline "POP. FIZZ. BREEZE." are placed here over a blurred green and white background.
+*   **Top-center:** The background continues with blurred green, white, and red shapes. The top of the bottle's neck and cap are visible.
+*   **Top-right:** The top of the bottle is prominent. A blurred cityscape, including a tall spire, is visible in the background under the blurred flag colors.
+*   **Middle-left:** The text "PRODUCT OF UAE" is here, along with the large word "MINT" and the beginning of the script word "lemon".
+*   **Middle-center:** The word "lemon" crosses into this zone, positioned over two whole lemons. The left side of the bottle enters this area.
+*   **Middle-right:** The main body and label of the beverage bottle are centered in this zone, next to a sprig of mint.
+*   **Bottom-left:** A reflective white surface shows reflections of the lemons and text. Two mint leaves and a piece of lemon peel are on the surface.
+*   **Bottom-center:** The lemons and more mint leaves rest on the reflective surface, along with their reflections.
+*   **Bottom-right:** The base of the bottle and its reflection are shown, with mint leaves nearby.
+*   **Framing:** This is a medium close-up, tightly framed on the product and its ingredients.
+*   **Visual Hierarchy:** The eye is drawn first to the bright green bottle and the large "MINT lemon" text, then to the whole lemons.
+
+**PRODUCE / INGREDIENTS:**
+*   Two whole yellow lemons.
+*   Multiple fresh green mint leaves and one mint sprig.
+*   One small piece of yellow lemon peel.
+
+**TEXT:**
+*   **Top-left logo:** "breeze" in a white, lowercase, stylized sans-serif font with a bottle icon.
+*   **Top-left headline:** "POP. FIZZ. BREEZE." in a heavy, dark green, uppercase sans-serif font, enclosed in quotation marks.
+*   **Middle-left subheadline:** "PRODUCT OF UAE" in a dark green, uppercase sans-serif font, underlined and in quotation marks.
+*   **Center-left text:** "MINT" in a very large, light green, uppercase sans-serif font with a white outline and shadow. "lemon" is layered on top in a flowing, lime-green script font.
+*   **On the bottle label:**
+    *   "breeze" (logo)
+    *   "MINT LEMON" (in English, uppercase sans-serif)
+    *   "نعناع ليمون" (in Arabic)
+    *   "Carbonated Flavoured Drink" (in English)
+    *   "مشروب غازي بنكهة" (in Arabic)
+    *   "Goli S" (in a script font)
+
+**DECORATIVE ELEMENTS:**
+*   A thin, curved white line swoops from the upper left, behind the text, toward the bottle.
+*   The logo includes a stylized icon of the bottle.
+*   The background incorporates the colors of the UAE flag in a blurred, abstract manner.
+
+**BACKGROUND:**
+*   The background is a composite photographic scene with a shallow depth of field. The upper portion consists of abstract, blurred horizontal bands of green, white, red, and black, evoking the UAE flag. The lower portion shows a blurry, sunlit cityscape with a prominent skyscraper and hints of water. The foreground is a clean, white, highly reflective surface.
+
+**LIGHTING:**
+*   The scene is lit with bright, soft, diffused light, coming primarily from the front-left.
+*   Soft highlights appear on the bottle, lemons, and mint leaves.
+*   Shadows are soft and cast lightly behind and to the right of the objects on the surface.
+
+**MOOD:**
+*   Refreshing
+*   Vibrant
+*   Modern
+*   Crisp
+*   Patriotic
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution digital cinema camera and a sharp prime lens, this image utilizes a wide aperture to create a shallow depth of field that isolates the foreground with smooth, clean bokeh in the background. The scene is lit with a large, high-key, diffused light source, emulating bright, indirect daylight, which produces soft-edged shadows and bright, blooming highlights with minimal harshness. The color science is built on a vibrant and heavily saturated analogous palette of electric lime green and bright lemon yellow, set against clean, near-white tones. In post-production, a polished commercial grade selectively boosts the luminance and saturation of the key colors, while shadows remain open and are subtly biased towards a cool cyan. The contrast curve is gentle to support the high-key aesthetic, and a soft glow or halation is applied to the highlights, resulting in an exceptionally clean, glossy, and luminous visual.
+
+**Keywords:** High-Key, Vibrant Saturation, Soft Light, Shallow Depth of Field, Commercial Gloss, Clean Digital.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The wordmark "breeze" in a white, lowercase, stylized sans-serif font
+*   The bottle icon within the "breeze" logo
+*   The headline "POP. FIZZ. BREEZE."
+*   The subheadline "PRODUCT OF UAE"
+*   The large text "MINT" in light green, uppercase sans-serif
+*   The large text "lemon" in lime-green script
+*   The bottle label text "MINT LEMON"
+*   The bottle label text "نعناع ليمون"
+*   The bottle label text "Carbonated Flavoured Drink"
+*   The bottle label text "مشروب غازي بنكهة"
+*   The bottle label text "Goli S"
+*   The thin, curved white swoosh line
+*   Any background elements resembling the green, white, red, and black colors of the UAE flag
+
+STRICT CONSTRAINTS:
+Aspect ratio 4:5. The background and color grade must use ONLY the Island Splash palette: dark teal #243C3C, warm golden orange #F0A86C, deep coral orange #E4843C, warm sand/tan #A89078. The bottle label MUST be pasted from the provided product image; do not redraw, modify, or invent labels. No mascots, cartoon characters, or personified objects. No hashtags, URLs, social media handles, promotional language, or pricing. The Island Splash logo appears only once, small, in a bottom corner.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference composition faithfully. The subject is a single beverage bottle standing on a clean, highly reflective surface. The camera angle is a straight-on medium close-up, with the bottle positioned on the right side of the frame. The background is photographic with a very shallow depth of field, creating soft, abstract, blurred shapes. DO NOT include any produce or ingredients; NO lemons, NO mint leaves, NO fruit of any kind. The shot is clean, focused only on the bottle and the surface it rests on.
+
+PRODUCT REPLACEMENT:
+The single Codd-neck bottle on the right is replaced by one Island Splash bottle. The bottle is a standard glass long-neck beverage bottle. Apply a matte BLACK cap. The bottle label: paste INPUT 2 (Island Splash Guava Pine) as the bottle label, pixel-faithful, do not redraw.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Guava Pine: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+- Top-left headline: "REAL TROPICAL FLAVOR." Rendered in a heavy, uppercase sans-serif font in dark teal #243C3C.
+- Center-left large text: "Guava Pine" layered in two styles. "Guava" in a very large, uppercase sans-serif font in warm golden orange #F0A86C. "Pine" is layered on top in a flowing, script font in deep coral orange #E4843C.
+- Position the text in the same zones as the reference text.
+
+LOGO:
+Render INPUT 3 (Island Splash logo) as a small, clean badge, approximately 8% of the frame width, in the bottom-right corner. No background box, no banner, no additional text.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Applied as the final pass over the entire image. The image is shot with a high-resolution digital cinema camera and a sharp prime lens, utilizing a wide aperture to create a shallow depth of field that isolates the foreground with smooth, clean bokeh in the background. The scene is lit with a large, high-key, diffused light source, emulating bright, indirect daylight, which produces soft-edged shadows and bright, blooming highlights with minimal harshness. The color science is built on the Island Splash brand palette: warm golden orange (#F0A86C) and deep coral orange (#E4843C) are vibrant and saturated against a backdrop of warm sand/tan (#A89078). In post-production, a polished commercial grade selectively boosts the luminance and saturation of the key colors, while shadows remain open and are subtly biased towards dark teal (#243C3C). The contrast curve is gentle to support the high-key aesthetic, and a soft glow or halation is applied to the highlights, resulting in an exceptionally clean, glossy, and luminous visual.

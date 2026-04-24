@@ -1,0 +1,47 @@
+{
+  "pools": {
+    "soap": {
+      "images": [],
+      "usage_count": {
+        "img_13473aeff98e.jpg": 1,
+        "img_5e7cbb46decf.jpg": 1,
+        "img_7af7772eab88.jpg": 1,
+        "img_9f168c27a954.jpg": 1,
+        "img_a5709efbfd33.jpg": 1,
+        "img_ddb94b1af4ce.jpg": 1,
+        "img_e8eeda28c6d7.jpg": 1,
+        "soap_ref.jpg": 1,
+        "soap_ref2.jpg": 1
+      }
+    },
+    "sunscreen": {
+      "images": [],
+      "usage_count": {
+        "sunscreen_ref1.jpg": 1,
+        "sunscreen_ref2.jpg": 1,
+        "sunscreen_ref3.jpg": 1
+      }
+    },
+    "cream": {
+      "images": [],
+      "usage_count": {
+        "cream_ref.jpg": 1
+      }
+    }
+  },
+  "products": [
+    {
+      "name": "Honey Vanilla Soap",
+      "slug": "soap"
+    },
+    {
+      "name": "Rejuvenating Face + Body Cream",
+      "slug": "cream"
+    },
+    {
+      "name": "Sunscreen Stick",
+      "slug": "sunscreen"
+    }
+  ],
+  "total": 0
+}

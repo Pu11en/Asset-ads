@@ -1,0 +1,116 @@
+BRAND: cinco-h-ranch (Cinco H Ranch Naturals)
+REF: /home/drewp/asset-ads/brand_assets/cinco-h-ranch/references/soap/img_7af7772eab88.jpg
+OUTPUT: /home/drewp/asset-ads/output/cinco-h-ranch_20260424_032828_303.png
+PRODUCTS: Honey Vanilla Soap
+TIMESTAMP: 2026-04-24T03:30:25.713977
+
+=== REVERSE ANALYSIS ===
+Here is a reverse-engineering of the ad's composition.
+
+### SUBJECT
+The main subject is a woman with dark hair tied back, seen from the chest up. She is sitting in a body of water, angled slightly towards the right of the frame. Her eyes are closed with a serene, relaxed expression. She is actively using a bar of soap: her left hand holds the soap bar against her right cheek, while her right hand lathers the product on her face.
+
+### PRODUCT COUNT
+3
+
+### PRODUCT DETAILS
+1.  **Soap Bar:** A rectangular, two-toned bar of soap (light beige on top, brown on the bottom). It is held in the subject's left hand and is in use on her face.
+2.  **Product Box 1:** A small, rectangular cardboard box sitting on a rock in the lower right. It is shown at a three-quarter angle, displaying its front and right side. The box is closed.
+3.  **Product Box 2:** A second, identical cardboard box positioned directly behind the first one, partially obscured. Only its side is visible. The box is closed.
+
+### COMPOSITION
+*   **Top-left:** Out-of-focus background of green foliage and light-barked tree trunks.
+*   **Top-center:** The headline text "START YOUR SELF CARE WITH CELESTIC SOUL" against the blurry forest background.
+*   **Top-right:** Blurry background of green leaves and trees.
+*   **Middle-left:** The woman's face in profile, with text labels "Reduce Puffiness" and "Rich in Lactic Acid" pointing towards her skin.
+*   **Center:** The woman's hands, the soap bar, and her cheek, forming the central action of the image.
+*   **Middle-right:** The woman's right shoulder and neck, with text labels "Sooth irritation" and "Prevents Premature Aging" pointing towards her skin.
+*   **Bottom-left:** The woman's shoulder and the surface of the water, with blurry green leaves in the immediate foreground.
+*   **Bottom-center:** The brand logo "Celestic SOUL" superimposed over the water, framed by foreground leaves.
+*   **Bottom-right:** A mossy rock in the water holding the two product boxes, with out-of-focus leaves in the foreground.
+
+**Framing:** Medium shot.
+**Visual Hierarchy:** The viewer's eye is drawn first to the woman's face and hands, then to the text labels explaining the benefits, and finally to the product boxes and brand logo.
+
+### PRODUCE / INGREDIENTS
+On the product box, there are small illustrations of ingredients: cinnamon sticks and a bowl of brown powder.
+
+### TEXT
+*   **Headline:** "START YOUR" on the first line, "SELF CARE" on the second line. The font is a heavy, white, sans-serif.
+*   **Subheadline:** "WITH CELESTIC SOUL". The font is a thinner, all-caps, white, sans-serif.
+*   **Benefit Callouts:** "Reduce Puffiness", "Rich in Lactic Acid", "Sooth irritation", "Prevents Premature Aging". The font is a thin, white, sans-serif in sentence case.
+*   **Brand Logo:** "Celestic" in a white script font inside a blue/green circular graphic, followed by "SOUL" in a smaller, white, all-caps sans-serif font.
+*   **Product Box Label:** "Celestic", "COFFEE CHANDAN". Other smaller text is present but illegible.
+
+### DECORATIVE ELEMENTS
+*   Thin white lines extend from small white dots to connect the benefit callouts to the subject's face.
+*   The "Celestic" part of the logo is enclosed in a circular, globe-like element with a bright swoosh or lens flare effect.
+
+### BACKGROUND
+The background is a photographic scene of a lush, green forest. The subject is in a natural pool or stream of calm water. The surrounding environment includes trees with light-colored bark, abundant green foliage, and mossy rocks. The background is softly out of focus, creating a shallow depth of field.
+
+### LIGHTING
+The lighting is soft and diffused, characteristic of natural, indirect light (like in a shaded forest or on an overcast day). The light source appears to be coming from the front and slightly to the right of the subject, creating gentle highlights on her forehead, cheekbones, nose, and shoulders. Shadows are soft and subtle, gently defining her features without harsh contrast.
+
+### MOOD
+*   Serene
+*   Natural
+*   Calm
+*   Relaxing
+*   Nurturing
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution full-frame digital camera and a sharp prime lens (likely in the 50mm-85mm range) at a wide aperture to create a shallow depth of field with soft, creamy bokeh in the background. The lighting is meticulously crafted to emulate diffused natural light, using a large, soft source to create gentle, wrapping light with very soft, open shadows and a controlled, smooth highlight roll-off. The overall dynamic range is wide, with a medium-low contrast profile. The color science is defined by a warm, earthy palette dominated by lush, vibrant greens and rich, golden-brown mid-tones. Saturation is moderately high but feels organic. The color grade introduces a subtle teal/cyan tint into the shadows to create color separation against the warm skin tones and highlights. The post-processing is clean and polished, featuring a gentle S-curve with slightly lifted blacks, no visible grain or digital noise, and a smooth overall texture.
+
+**Keywords:** LUSH, WARM, DIFFUSED, ORGANIC, POLISHED, SERENE
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The headline "START YOUR SELF CARE WITH CELESTIC SOUL"
+*   The benefit callout "Reduce Puffiness"
+*   The benefit callout "Rich in Lactic Acid"
+*   The benefit callout "Sooth irritation"
+*   The benefit callout "Prevents Premature Aging"
+*   The brand name and logo "Celestic SOUL"
+*   The wordmark "Celestic" in script font
+*   The product name "COFFEE CHANDAN" on the box label
+*   The circular, globe-like graphic with a bright swoosh effect in the logo
+*   Thin white lines and dots connecting text to the subject's face
+*   Any illustrations of cinnamon sticks or bowls of brown powder on the product packaging
+
+STRICT CONSTRAINTS:
+*   Final aspect ratio must be exactly 4:5 portrait.
+*   The final image must be color-graded using ONLY the brand palette: Navy #204050, Dark Brown #301800, Cream #F0E0B0. Accent Red #B03030 is forbidden in the general color grade and reserved for small highlights like arrows if used.
+*   The product label from INPUT 2 must be preserved pixel-faithful; do not redraw, re-render, or alter the text or design on the label art.
+*   ABSOLUTELY NO forbidden words: '#', 'www.', '.com', '@', 'FREE', '% OFF', 'GIVEAWAY', '$', 'antibacterial', 'kills bacteria', 'germ-killing', 'treats', 'cures', 'prevents', 'medicated', 'clinically', 'organic', 'unclogs', 'restores pH'.
+*   No text, logos, or brand marks from any other brand may appear.
+*   Do not invent any elements not described in the reference, such as water splashes, ice crystals, or bursting fruit.
+*   Do not include any raw ingredients like honeycombs, vanilla beans, or lavender sprigs in the scene.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference scene faithfully. The subject is a woman with dark hair tied back, seen from the chest up, sitting in a calm body of water in a forest. Her eyes are closed with a serene expression. She is actively using a bar of soap: her left hand holds the soap bar against her right cheek, and her right hand is gently lathering the product on her face. The composition must match the reference: a medium shot with a shallow depth of field, rendering the forest background in a soft, creamy bokeh. In the lower right corner, two product boxes sit on a mossy rock in the water. Keep the thin lines that extend from the benefit callouts to the subject's face. The overall mood is serene, natural, and calm.
+
+PRODUCT REPLACEMENT:
+*   Soap bar held in the woman's left hand: Replace with one (1) Cinco H Ranch Naturals Honey Vanilla Soap bar. The bar should look natural and rustic, creamy-beige in color, rectangular.
+*   Product Box 1 (front-facing, on rock): Replace with a simple, rectangular kraft-paper style product box for the Cinco H Ranch Naturals Honey Vanilla Soap. Paste the label from INPUT 2 onto the front of this box, pixel-faithful, do not redraw it.
+*   Product Box 2 (behind the first, on rock): An identical kraft-paper style box, seen from its side profile, partially obscured.
+
+TEXT CONTENT GUIDANCE:
+Brand voice: Cinco H Ranch Naturals — ranch, honest, no fluff. Short declarative headlines like 'THE RANCH STANDARD', 'BUILT FOR THE RANCH'. Never clinical, never spa-fluff, never corporate. Texas pride, natural ingredients, small-batch. No competitor names, no clinical trial language.
+Honey Vanilla Soap: real Texas honey, lavender + vanilla essential oils. Claims: Gentle everyday cleansing / Nourishing lather / Soft, hydrated skin. Format: bar soap, all natural. NO medical claims, no clinical language.
+
+TEXT STRATEGY:
+*   Headline: In the top-center position, render a two-line headline. Font is a heavy, bold sans-serif in color cream #F0E0B0.
+    *   Line 1: "PURE & SIMPLE."
+    *   Line 2: "THE RANCH WAY."
+*   Benefit Callouts: In the same positions as the reference, render four callouts in a thin, elegant sans-serif font, color cream #F0E0B0. Connect each callout to the woman's face with a very thin line in the same cream color.
+    *   Top-left callout: "Gentle Cleansing"
+    *   Bottom-left callout: "With Real Texas Honey"
+    *   Top-right callout: "Nourishing Lather"
+    *   Bottom-right callout: "Softens Skin"
+
+LOGO:
+Using the logo from INPUT 3, render it as a small, clean badge in the bottom-right corner, placed subtly near the rock. The logo should be approximately 8% of the total image width. Do not add a background box, banner, or any other effects to the logo.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+This style must be applied as the final pass over the entire image. Shot with a high-resolution full-frame digital camera and a sharp 85mm prime lens at a wide aperture to create a shallow depth of field with soft, creamy bokeh in the background. The lighting is meticulously crafted to emulate diffused natural light, using a large, soft source to create gentle, wrapping light with very soft, open shadows and a controlled, smooth highlight roll-off. The overall dynamic range is wide, with a medium-low contrast profile. The color science is defined by the Cinco H Ranch Naturals palette. The scene is color-graded to have deep, moody tones, with the lush greens of the forest shifted towards a dark navy #204050 in the shadows and deep foliage. Mid-tones are dominated by rich, dark brown #301800, especially on tree bark and rocks. Highlights and skin tones are warmed with a creamy #F0E0B0 light. Saturation is desaturated and naturalistic. The post-processing is clean and polished, featuring a gentle S-curve with slightly lifted blacks, no visible grain or digital noise, and a smooth overall texture.

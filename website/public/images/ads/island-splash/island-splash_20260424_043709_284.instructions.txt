@@ -1,0 +1,102 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/processed/web_img_e164b8953045.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260424_043709_284.png
+PRODUCTS: Mango Passion, Pine Ginger, Mauby, Peanut Punch
+TIMESTAMP: 2026-04-24T04:38:43.754060
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** The main focus is a group of four colorful beverage cans, arranged in a staggered, overlapping cluster. They are angled slightly towards the viewer's right and are covered in condensation droplets, suggesting they are cold and refreshing.
+
+**PRODUCT COUNT:** 4
+
+**PRODUCT DETAILS:**
+*   **Product 1:** An orange aluminum can, positioned on the far left. It is partially obscured by the can in front of it. The top and bottom are visible. It is a standard-sized beverage can with a silver top, and it is closed.
+*   **Product 2:** A yellow aluminum can, positioned front and center-left. It is the most prominent and fully visible can in the frame. It is a standard-sized beverage can with a silver top, and it is closed.
+*   **Product 3:** A green aluminum can, positioned behind the yellow and red cans. The top and a portion of the middle and bottom are visible. It is a standard-sized beverage can with a silver top, and it is closed.
+*   **Product 4:** A red aluminum can, positioned on the right. It is mostly visible, slightly overlapped by the green can. It is a standard-sized beverage can with a silver top, and it is closed.
+
+**COMPOSITION:**
+*   **Top-left:** The upper portion of the orange background with the white "YAY" text and a splash element.
+*   **Top-center:** The orange background with the white "LƏZZƏTİ" text. The tops of the yellow and green cans are visible.
+*   **Top-right:** The "avrora" logo in the corner, on the orange background. The tops of the green and red cans are visible.
+*   **Mid-left:** The upper half of the orange can and the yellow can, featuring their brand logos.
+*   **Mid-center:** The primary visual focus, containing the main bodies of the yellow and green cans with the "ICE TEA" text.
+*   **Mid-right:** The main body of the red can, featuring its brand logo and "ICE TEA" text.
+*   **Bottom-left:** The lower portion of the orange and yellow cans, showing illustrations of a peach and a lemon.
+*   **Bottom-center:** The lower portion of the yellow and green cans, showing illustrations of a lemon, chamomile flower, and mango.
+*   **Bottom-right:** The lower portion of the red can, showing illustrations of cubed mango and sliced pineapple.
+The framing is a tight shot, focusing closely on the product cluster. The visual hierarchy is led by the text at the top and the prominent yellow can, then flows to the surrounding cans.
+
+**PRODUCE / INGREDIENTS:**
+Visible on the can labels are: a peach, a whole lemon, a slice of lemon, a chamomile flower, a whole mango, cubed mango, a slice of pineapple, and green tea leaves.
+
+**TEXT:**
+*   **Headline:** At the top left, the text reads "YAY LƏZZƏTİ". The font is a heavy, rounded, sans-serif display type, in white.
+*   **Brand Logo:** In the top right corner, the text "avrora" is visible next to a logo. The font is a clean, white, sans-serif.
+*   **Product Brand:** On each can, the brand name "Bérg tea" appears. The font is a stylized, heavy, sans-serif in black with a white outline.
+*   **Product Type:** On each can, the words "ICE TEA" are displayed. The font is a very heavy, blocky, sans-serif in white with a thin black outline.
+*   **Flavor (Orange Can):** The partially visible word "ftalı" (likely Şaftalı for Peach).
+*   **Flavor (Yellow Can):** "Limon" and "soyuq çay".
+*   **Flavor (Green Can):** "Çobanyastığı", "anqo", "uq çay".
+*   **Flavor (Red Can):** "Mango", "Ananas", "soyuq çay".
+All flavor text is in a clean, white, sans-serif font.
+
+**DECORATIVE ELEMENTS:**
+*   A white, splash-like shape is located to the left of the "YAY" text.
+*   Thin, white, straight lines form an angular, geometric frame overlaying the image.
+*   Light orange/yellow triangular shapes are visible on the left and bottom-left edges of the frame.
+
+**BACKGROUND:** The background is a gradient, transitioning from a light yellow-orange at the top to a deeper orange at the bottom. It features a subtle pattern of faint, diagonal lines, creating a faceted appearance.
+
+**LIGHTING:** The lighting is bright and soft, appearing to come from the front and slightly to the left. It creates clear, small highlights on the condensation droplets on the cans. Shadows are minimal and soft, serving primarily to define the rounded shapes of the cans.
+
+**MOOD:** Vibrant, Refreshing, Summery, Fruity.
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution full-frame or medium format digital camera and a sharp macro prime lens, achieving pristine edge-to-edge clarity with a controlled, shallow depth of field. The color science is defined by a hyper-saturated, warm palette dominated by vibrant yellows, oranges, and reds, with clean, pure white highlights and no discernible color cast in the minimal shadows. Lighting is a key characteristic, employing large, diffuse artificial sources to create soft, wrapping, high-key illumination that produces broad, gentle highlights and eliminates hard shadows. The overall contrast is moderate, with a compressed dynamic range featuring lifted black points and bright, near-clipped whites. Post-processing is extensive, marked by a heavily manipulated contrast curve, significant boosts to color vibrancy, and aggressive local contrast enhancement to emphasize texture, resulting in a polished, hyper-real, and immaculately clean commercial aesthetic.
+
+**Keywords:** Vibrant, High-Key, Saturated, Commercial, Hyper-Real, Clean.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The headline text "YAY LƏZZƏTİ"
+*   The brand logo and wordmark "avrora"
+*   The product brand name "Bérg tea"
+*   The product type text "ICE TEA"
+*   The flavor text strings "ftalı", "Limon", "soyuq çay", "Çobanyastığı", "anqo", "uq çay", "Mango", and "Ananas"
+*   Any illustrations of produce on the containers, including peaches, lemons, chamomile flowers, mangos, pineapples, or tea leaves.
+*   The white, splash-like decorative shape near the headline.
+*   The thin, white, straight lines forming an angular, geometric frame overlay.
+*   The light orange/yellow triangular decorative shapes on the frame edges.
+
+STRICT CONSTRAINTS:
+The background and color grade must use ONLY the Island Splash brand palette: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), warm sand/tan (#A89078). All beverage bottles must have a matte BLACK cap, no exceptions. All product labels must be pasted pixel-faithful from the provided input images; do not redraw, recolor, modify, or invent labels. No mascots, cartoon characters, or personified objects. The output must NOT contain any of the following: '#', 'www.', '.com', '@', 'FREE', '% OFF', 'GIVEAWAY', or '$' symbols. The Island Splash logo appears only once as specified in the LOGO section.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference scene faithfully: a tight shot of a group of four cold beverage bottles, arranged in a staggered, overlapping cluster and angled slightly towards the viewer's right. The bottles must be covered in realistic condensation droplets. The composition remains the same: one bottle on the far left partially obscured, one front-center-left as the most prominent, one behind the front two, and one on the right slightly overlapped. The background is a simple gradient using colors from the brand palette. Do NOT add any splashes, raw fruit, produce, leaves, or geometric decorative elements; the scene contains only the bottles and the simple background.
+
+PRODUCT REPLACEMENT:
+The four aluminum cans from the reference are replaced by four Island Splash glass bottles, all with matte BLACK caps.
+*   Can in far-left position: replace with an Island Splash bottle. Paste the label from INPUT 2 (Island Splash Mango Passion), pixel-faithful, do not redraw.
+*   Can in front-center-left position: replace with an Island Splash bottle. Paste the label from INPUT 3 (Island Splash Pine Ginger), pixel-faithful, do not redraw.
+*   Can in the rear position: replace with an Island Splash bottle. Paste the label from INPUT 4 (Island Splash Mauby), pixel-faithful, do not redraw.
+*   Can in the right-side position: replace with an Island Splash bottle. Paste the label from INPUT 5 (Island Splash Peanut Punch), pixel-faithful, do not redraw.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Mango Passion: use brand voice, keep it plain and honest
+  Pine Ginger: use brand voice, keep it plain and honest
+  Mauby: use brand voice, keep it plain and honest
+  Peanut Punch: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+- Headline in the top-left corner: "Island Flavor."
+- Render the headline in a heavy, rounded, sans-serif display font.
+- Use the dark teal (#243C3C) color from the brand palette for the text.
+- There is no body copy.
+
+LOGO:
+Render the logo from INPUT 6 as a small, clean badge in the bottom-right corner. It should be approximately 8% of the total image width. Do not place it in a box or add any other text to it.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+The final image is captured with a high-resolution full-frame digital camera and a sharp macro prime lens for pristine edge-to-edge clarity and a controlled, shallow depth of field. A color grade overlay shifts the entire scene to the Island Splash brand palette: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), and warm sand/tan (#A89078). Lighting is soft and high-key, from large, diffuse sources, creating broad, gentle highlights on the condensation and eliminating hard shadows. The contrast is moderate, with lifted black points and bright whites. Post-processing includes a manipulated contrast curve, boosts to color vibrancy, and aggressive local contrast enhancement to emphasize the texture of the condensation, resulting in a polished, hyper-real, and immaculately clean commercial aesthetic. This entire style is applied as the final pass over the entire image.

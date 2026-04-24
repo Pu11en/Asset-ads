@@ -1,0 +1,112 @@
+BRAND: cinco-h-ranch (Cinco H Ranch Naturals)
+REF: /home/drewp/asset-ads/brand_assets/cinco-h-ranch/references/soap/img_ddb94b1af4ce.jpg
+OUTPUT: /home/drewp/asset-ads/output/cinco-h-ranch_20260424_034210_008.png
+PRODUCTS: Honey Vanilla Soap
+TIMESTAMP: 2026-04-24T03:43:56.479065
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** The main subject is a woman with brown hair pulled back, viewed from the shoulders up on the right side of the frame. She has her eyes closed and a gentle smile, looking down and to her left. Below her face, a pair of hands cup a bar of soap. Water is splashing on the soap and hands, with a stream also running down from the woman's chin.
+
+**PRODUCT COUNT:** 1
+
+**PRODUCT DETAILS:**
+*   **Product 1:** A solid bar of soap (not in a container).
+*   **Position:** Held in cupped hands in the lower-center of the image.
+*   **Angle:** Tilted slightly forward, viewed from a high angle.
+*   **Size:** Occupies roughly 20% of the image's width.
+*   **Description:** The soap is a translucent, rectangular green bar with what appears to be lighter green flecks or pieces inside. It is wet.
+
+**COMPOSITION:**
+*   **Top-left:** A circular green logo and the headline "Nature Our".
+*   **Top-center:** The rest of the headline, "Ingredient".
+*   **Top-right:** The upper part of the woman's head and hair against a bright, blurred background.
+*   **Center-left:** The subheadline and two green text boxes ("100% Natural Extracts" and "Dermatologist Tested").
+*   **Center-center:** The woman's smiling profile.
+*   **Center-right:** The woman's neck and shoulder.
+*   **Bottom-left:** A sprig of mint and the hands holding the soap bar with water splashing.
+*   **Bottom-center:** The hands and soap, a text banner, and splashing water.
+*   **Bottom-right:** A sprig of mint and the woman's arm/shoulder.
+*   **Framing:** This is a medium close-up, tightly framed on the subject and product.
+*   **Visual Hierarchy:** The primary focus is the woman's face, followed by the product in her hands, with the text elements on the left providing key information.
+
+**PRODUCE / INGREDIENTS:**
+Two sprigs of fresh mint leaves are visible, one in the bottom-left corner and one in the bottom-right. Two tiny, stylized mint leaves are also floating near the subheadline text.
+
+**TEXT:**
+*   **Logo Area (Top Left):**
+    *   **Headline:** "Nature Our Ingredient". Font is a heavy, green serif.
+    *   **Subheadline:** "Mint to Refresh & Lime to Brighten.". Font is a thin, clean, green sans-serif.
+*   **Center Left:**
+    *   "100% Natural Extracts" in a white, sans-serif font inside a green, rounded rectangle.
+    *   "Dermatologist Tested" in a white, sans-serif font inside a green, rounded rectangle.
+*   **Bottom Banner:**
+    *   **Slogan:** "Find Your Fresh Start". Font is a white, clean sans-serif.
+
+**DECORATIVE ELEMENTS:**
+*   **Icon:** In the top-left corner, there is a green circle containing a white stylized image of two leaves and a water drop.
+*   **Lines:** Two thin green lines extend from the text boxes on the left, each ending in a solid green circle.
+*   **Banner:** A semi-transparent, brownish-peach horizontal banner strip is located at the bottom of the image.
+*   **Splashes:** Water splashes are prominent around the soap and hands. A stream of water is also shown running down from the woman's chin.
+
+**BACKGROUND:**
+The background is a bright, heavily blurred photographic scene, suggesting white or light-colored tiles, consistent with a clean bathroom or shower setting.
+
+**LIGHTING:**
+The lighting is soft and bright, originating from the front and slightly to the left of the subject. It creates gentle highlights on the woman's skin, the water, and the soap, with very soft, minimal shadows. The overall effect is clean and high-key.
+
+**MOOD:**
+*   Refreshing
+*   Natural
+*   Clean
+*   Gentle
+*   Serene
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a full-frame digital cinema camera using a telephoto prime lens at a wide aperture, creating an extremely shallow depth of field with a clean, out-of-focus background and soft, creamy bokeh. The scene is illuminated with high-key, diffuse lighting from a large, soft source, producing minimal, open shadows with very gentle feathering and broad, luminous highlights that roll off smoothly without clipping. The color science is defined by a controlled, high-saturation palette, featuring a vibrant, cool-toned emerald green juxtaposed with warm, glowing peach skin tones against a clean, neutral white. The digital post-processing is pristine, with no visible grain or noise, and utilizes a gentle contrast curve that lifts the blacks and compresses the highlights to create a bright, airy dynamic range, often enhanced with a subtle bloom effect on the brightest areas.
+
+**Keywords:** High-Key, Luminous, Shallow Depth of Field, Vibrant & Clean, Soft Contrast, Commercial Gloss.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+- The headline "Nature Our Ingredient"
+- The subheadline "Mint to Refresh & Lime to Brighten."
+- The text string "100% Natural Extracts"
+- The text string "Dermatologist Tested"
+- The slogan "Find Your Fresh Start"
+- The circular green logo containing two white stylized leaves and a water drop.
+- The semi-transparent, brownish-peach horizontal banner at the bottom.
+- Any thin green decorative lines with solid green circle endpoints.
+- Any green, rounded rectangular text boxes.
+- Any sprigs of fresh mint leaves.
+- Any tiny, stylized floating mint leaf graphics.
+
+STRICT CONSTRAINTS:
+- Final output must be a 4:5 aspect ratio portrait image.
+- Background and overall color grade must adhere strictly to the brand palette: navy #204050, dark brown #301800, cream #F0E0B0. Accent red #B03030 is for highlights or arrows only, not for general color grading.
+- No mascots, cartoon characters, or props not explicitly described in the reference subject.
+- The final rendered image must contain no hashtags, URLs, social media handles, pricing, or forbidden words like 'organic', 'cures', 'prevents', or 'clinically'.
+- When the bar soap is shown being held or in active use with water, it must be rendered as a plain, opaque, cream-colored tallow soap bar WITHOUT its label. The label does not appear on soap in use.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference subject and composition faithfully. The main subject is a woman with brown hair pulled back, seen from the shoulders up, occupying the right side of the frame. Her eyes are closed with a gentle, serene smile, her head tilted down and to her left. Below her face, a pair of hands cup a bar of soap. Clear water is splashing onto the soap and hands, and a stream of water runs down from her chin. The composition is a tight, medium close-up. The left side of the frame is the primary zone for text. The background is a bright, heavily blurred, clean setting like a shower. DO NOT include the mint leaves, decorative lines, or colored banners from the reference image. The scene contains only the woman, the soap, and the splashing water against the blurred background.
+
+PRODUCT REPLACEMENT:
+- The single green translucent soap bar held in the hands is replaced by one (1) Cinco H Ranch Naturals Honey Vanilla Soap. Following the brand rules for soap-in-use, render this as a solid, opaque, rectangular bar of cream-colored tallow soap. The bar must be rendered PLAIN, with NO label, logo, or text debossed on it.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: Cinco H Ranch Naturals — ranch, honest, no fluff. Short declarative headlines like 'THE RANCH STANDARD', 'BUILT FOR THE RANCH'. Never clinical, never spa-fluff, never corporate. Texas pride, natural ingredients, small-batch. No competitor names, no clinical trial language.
+  Honey Vanilla Soap: real Texas honey, lavender + vanilla essential oils. Claims: Gentle everyday cleansing / Nourishing lather / Soft, hydrated skin. Format: bar soap, all natural. NO medical claims, no clinical language.
+
+TEXT STRATEGY:
+- Headline (top-left): "RANCH-RAISED CLEAN." in a heavy, classic serif font. Render in dark brown #301800.
+- Body Copy (center-left): Two short lines of copy.
+  - Line 1: "Gentle, nourishing lather."
+  - Line 2: "For soft, hydrated skin."
+- Render the body copy in a clean, thin sans-serif font, in dark brown #301800.
+- All text should be placed against the bright, blurred background, with high legibility.
+
+LOGO:
+- Render the logo from the LAST INPUT image. Place it as a small badge in the bottom-left corner, approximately 8% of the total image width. It must be rendered cleanly with no background box, banner, or additional lockup text.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Applied as the final pass over the entire image: Shot with a full-frame digital cinema camera using a telephoto prime lens at a wide aperture, creating an extremely shallow depth of field with a clean, out-of-focus background and soft, creamy bokeh. The scene is illuminated with high-key, diffuse lighting from a large, soft source, producing minimal, open shadows with very gentle feathering and broad, luminous highlights that roll off smoothly without clipping. The color science is defined by the Cinco H Ranch Naturals brand palette, featuring a warm, earthy grade that shifts whites toward cream #F0E0B0, deepens shadows with navy #204050 and dark brown #301800, and enhances skin tones with natural warmth. The digital post-processing is pristine, with no visible grain or noise, and utilizes a gentle contrast curve that lifts the blacks and compresses the highlights to create a bright, airy dynamic range, enhanced with a subtle bloom effect on the brightest areas.

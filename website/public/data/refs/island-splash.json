@@ -1,0 +1,18 @@
+{
+  "pools": {
+    "all-drinks": {
+      "images": [],
+      "usage_count": {}
+    }
+  },
+  "products": [
+    { "name": "Mango Passion", "slug": "mango-passion" },
+    { "name": "Mauby", "slug": "mauby" },
+    { "name": "Peanut Punch", "slug": "peanut-punch" },
+    { "name": "Lime", "slug": "lime" },
+    { "name": "Guava Pine", "slug": "guava-pine" },
+    { "name": "Sorrel", "slug": "sorrel" },
+    { "name": "Pine Ginger", "slug": "pine-ginger" }
+  ],
+  "total": 0
+}

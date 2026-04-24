@@ -1,0 +1,123 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/processed/img_1145accc9b6f.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260424_045113_525.png
+PRODUCTS: Mango Passion, Mauby, Peanut Punch, Pine Ginger, Sorrel
+TIMESTAMP: 2026-04-24T04:52:43.241548
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** The main focus is a row of five fruit juice cans arranged on a white platform. The cans are the central element, set within a vibrant, summery nature scene that includes a tree, flowers, a hummingbird, and a wooden sign.
+
+**PRODUCT COUNT:** 5
+
+**PRODUCT DETAILS:**
+There are five identical aluminum beverage cans, distinguished only by their flavor-specific labels.
+*   **Can 1 (Mango):** Positioned on the far left, seen from a straight-on, slightly low angle. It occupies the lower-left portion of the frame. The lid is a standard, closed can top.
+*   **Can 2 (Pomegranate):** Positioned second from the left, seen from a straight-on, slightly low angle. The lid is a standard, closed can top.
+*   **Can 3 (Peach):** Positioned in the center, seen from a straight-on, slightly low angle. The lid is a standard, closed can top.
+*   **Can 4 (Guanabana):** Positioned second from the right, seen from a straight-on, slightly low angle. The lid is a standard, closed can top.
+*   **Can 5 (Guava):** Positioned on the far right, seen from a straight-on, slightly low angle. The lid is a standard, closed can top.
+
+**COMPOSITION:**
+*   **Top-left:** A tree branch with a pink flower extends into the frame. The background is a soft-focus, sunlit green space with floating leaves.
+*   **Top-center:** A hanging wooden sign is the main element, suspended from a tree branch with pink flowers. A hummingbird is in flight by a flower.
+*   **Top-right:** The tree trunk and more branches with pink flowers and green leaves.
+*   **Middle-left:** The top portion of the Mango juice can against a blurry green background.
+*   **Middle-center:** The top portions of the Pomegranate, Peach, and Guanabana juice cans, directly below the wooden sign.
+*   **Middle-right:** The top portion of the Guava juice can, with the tree trunk to its right.
+*   **Bottom-left:** The base of the Mango and Pomegranate cans on a white platform, with out-of-focus grass and flowers in the foreground.
+*   **Bottom-center:** The base of the Peach and Guanabana cans on the platform. The foreground features grass, white and yellow flowers, a ladybug, and yellow butterflies.
+*   **Bottom-right:** The base of the Guava can on the platform, with grass, flowers, and a yellow butterfly in the foreground.
+The framing is a medium shot, with the visual hierarchy leading from the cans up to the "SUMMER" sign and then to the surrounding natural elements.
+
+**PRODUCE / INGREDIENTS:**
+*   **Mango:** A whole mango and diced mango pieces are depicted on the can.
+*   **Pomegranate:** Whole pomegranates and pomegranate arils are depicted on the can.
+*   **Peach:** Whole and sliced peaches are depicted on the can.
+*   **Guanabana (Soursop):** A whole and a cross-section of a guanabana fruit are depicted on the can.
+*   **Guava:** Whole and sliced guavas with pink flesh are depicted on the can.
+
+**TEXT:**
+*   **On the wooden sign (Top-center):**
+    *   "FRUIT JUICE" in a thin, yellow, sans-serif font.
+    *   "SUMMER" in a large, heavy, green, textured sans-serif font.
+*   **On each can label:**
+    *   Logo: "Dr. Fruit" in a green, stylized sans-serif font.
+    *   Sub-logo: "PREMIUM" in a small, black, sans-serif font.
+    *   Flavor Name (e.g., "MANGO JUICE", "POMEGRANATE JUICE", "PEACH JUICE", "GUANABANA JUICE", "GUAVA JUICE") in large, colorful, rounded sans-serif fonts.
+    *   Sub-text: "Drink" in a small, black, script font.
+    *   Volume: "16.9 fl.oz (500 ml)" in a small, black, sans-serif font.
+
+**DECORATIVE ELEMENTS:**
+*   Pink flowers (cosmos) on the tree branches.
+*   A green and blue hummingbird in flight.
+*   Green leaves, some of which appear to be floating in the air.
+*   Foreground elements include green blades of grass, small white and yellow flowers, three yellow butterflies, and one red ladybug.
+*   A weathered wooden sign hangs from the tree branch.
+*   The cans rest on a clean, white, curved platform.
+
+**BACKGROUND:**
+The background is a soft-focus, photographic scene of a lush, green, sunlit outdoor environment, possibly a garden or tropical setting. Vague shapes of foliage, like palm fronds, are visible. A bright, lens-flare-like glow emanates from the upper left.
+
+**LIGHTING:**
+The lighting is bright and diffused, coming from the top left of the image. It creates soft highlights on the cans, flowers, and leaves. Shadows are very soft and minimal, visible just behind the base of the cans on the white platform.
+
+**MOOD:**
+Summery, Fresh, Natural, Vibrant, Refreshing.
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution digital camera system, likely a medium format or full-frame sensor, paired with a sharp, macro-capable prime lens to achieve pristine clarity and detail on the product. The depth of field is shallow, created by a moderately open aperture, which isolates the subjects with tack-sharp focus against a softly defocused background with smooth, clean bokeh. The lighting is high-key and meticulously controlled, mimicking bright, diffused daylight with a large, soft source from above and forward, complemented by a distinct rim light that adds a luminous glow and separation. The color science is defined by a hyper-saturated and vibrant palette with a slightly warm overall temperature, pushing the fruit tones of red, yellow, and orange to their peak without contaminating the clean, neutral whites of the product packaging. Shadows are bright and open with no deep blacks, while highlights are pushed to the edge of clipping to create a brilliant, airy feel. In post-production, a heavy commercial grade has been applied, utilizing targeted hue/saturation adjustments to enhance specific colors, a gentle contrast curve to add pop without crushing detail, and digital compositing to create a flawless, noise-free, and idealized final image.
+
+**Keywords:** Hyper-Real, Vibrant, High-Key, Polished, Saturated, Commercial.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+- The wooden sign text "FRUIT JUICE"
+- The wooden sign text "SUMMER"
+- The logo wordmark "Dr. Fruit"
+- The sub-logo text "PREMIUM"
+- The flavor name "MANGO JUICE"
+- The flavor name "POMEGRANATE JUICE"
+- The flavor name "PEACH JUICE"
+- The flavor name "GUANABANA JUICE"
+- The flavor name "GUAVA JUICE"
+- The sub-text "Drink" in a script font
+- The volume text "16.9 fl.oz (500 ml)"
+- Any depiction of mango, pomegranate, peach, guanabana, or guava fruit pieces on or around the products.
+
+STRICT CONSTRAINTS:
+- Render in a 4:5 aspect ratio.
+- The color palette for the entire image must strictly be Island Splash brand colors: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), and warm sand/tan (#A89078).
+- The provided product labels must be pasted pixel-faithful onto the bottles. Do NOT redraw, recolor, modify, or invent labels.
+- Do not render any mascots, cartoon characters, or personified fruits.
+- Do not render any text containing hashtags, '#', URLs, 'www.', '.com', social media handles, '@', promotional language like 'FREE' or '% OFF', or pricing symbols like '$'. All text must be in English.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference ad's scene and composition faithfully. The subject is a row of five beverage bottles arranged on a clean white platform in a vibrant, summery nature setting. The composition includes a tree with flowers, a hummingbird in flight, and a hanging wooden sign above the bottles. The framing is a medium shot. The foreground features grass, flowers, butterflies, and a ladybug on and around the platform. DO NOT add any splashes, droplets, ice, or other generic beverage ad clichés. DO NOT include any whole or cut fruit ingredients in the scene; the bottles and the natural backdrop are the only subjects.
+
+PRODUCT REPLACEMENT:
+Replace the five aluminum cans from the reference with five Island Splash glass bottles. All bottles must have matte BLACK caps.
+- The bottle on the far left: a glass bottle. Paste INPUT 2 (Island Splash Mango Passion) as the bottle label, pixel-faithful, do not redraw.
+- The bottle second from the left: a glass bottle. Paste INPUT 3 (Island Splash Mauby) as the bottle label, pixel-faithful, do not redraw.
+- The bottle in the center: a glass bottle. Paste INPUT 4 (Island Splash Peanut Punch) as the bottle label, pixel-faithful, do not redraw.
+- The bottle second from the right: a glass bottle. Paste INPUT 5 (Island Splash Pine Ginger) as the bottle label, pixel-faithful, do not redraw.
+- The bottle on the far right: a glass bottle. Paste INPUT 6 (Island Splash Sorrel) as the bottle label, pixel-faithful, do not redraw.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Mango Passion: use brand voice, keep it plain and honest
+  Mauby: use brand voice, keep it plain and honest
+  Peanut Punch: use brand voice, keep it plain and honest
+  Pine Ginger: use brand voice, keep it plain and honest
+  Sorrel: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+- On the hanging wooden sign, render text matching the reference's font feel.
+- Top line in a thin, sans-serif font: "A Taste of the Islands"
+- Bottom line in a large, heavy, textured sans-serif font: "FAMILY RECIPE"
+- Render all text in the Island Splash brand palette, using dark teal #243C3C.
+
+LOGO:
+- Render the logo from the LAST INPUT image. Place it once in the bottom-right corner. It should be small, approximately 8% of the total image width. Do not place it in a colored box or add any other text to it.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Shot with a high-resolution digital camera system, likely a medium format or full-frame sensor, paired with a sharp, macro-capable prime lens to achieve pristine clarity and detail on the product. The depth of field is shallow, created by a moderately open aperture, which isolates the subjects with tack-sharp focus against a softly defocused background with smooth, clean bokeh. The lighting is high-key and meticulously controlled, mimicking bright, diffused daylight with a large, soft source from above and forward, complemented by a distinct rim light that adds a luminous glow and separation. The color science is defined by the Island Splash brand palette: a rich dark teal (#243C3C), a warm golden orange (#F0A86C), a deep coral orange (#E4843C), and a warm sand/tan (#A89078). Shadows are bright and open with no deep blacks, while highlights are pushed to the edge of clipping to create a brilliant, airy feel. In post-production, a heavy commercial grade has been applied, utilizing targeted hue/saturation adjustments to enhance specific colors, a gentle contrast curve to add pop without crushing detail, and digital compositing to create a flawless, noise-free, and idealized final image, applied as the final pass over the entire image.

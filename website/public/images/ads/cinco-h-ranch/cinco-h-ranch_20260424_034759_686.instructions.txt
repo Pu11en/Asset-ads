@@ -1,0 +1,112 @@
+BRAND: cinco-h-ranch (Cinco H Ranch Naturals)
+REF: /home/drewp/asset-ads/brand_assets/cinco-h-ranch/references/soap/img_e8eeda28c6d7.jpg
+OUTPUT: /home/drewp/asset-ads/output/cinco-h-ranch_20260424_034759_686.png
+PRODUCTS: Honey Vanilla Soap, Honey Vanilla Soap, Honey Vanilla Soap, Honey Vanilla Soap
+TIMESTAMP: 2026-04-24T03:49:51.590706
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** Four bars of handcrafted soap are arranged in a still life. The primary subject is a single bar of soap in the foreground, wrapped in a white paper label. Behind it, another bar stands on its end, stacked on top of a third bar lying flat. A fourth bar is partially visible on the right. The soap bars have a rustic, uneven top edge.
+
+**PRODUCT COUNT:** 4
+
+**PRODUCT DETAILS:**
+*   **Product 1-4 (Soap):** Four rectangular bars of light greenish-beige soap with small, dark specks distributed throughout. The tops are textured and uneven, suggesting they were hand-poured and cut. The main bar in the center-front is wrapped in a white paper label. The other bars are unwrapped. They are positioned in the center and left of the frame, creating a small grouping.
+*   **Product Container (Prop):** In the background, on the right, is a small, dark amber glass bottle with a black dropper top. It is out of focus.
+
+**COMPOSITION:**
+*   **Top-left:** Out-of-focus green fern leaves on a light background.
+*   **Top-center:** The textured top edge of the tallest soap bar against a bright, out-of-focus background.
+*   **Top-right:** An out-of-focus stem of eucalyptus leaves and the top of a dark glass bottle.
+*   **Middle-left:** The side of the stacked soap bars and a small pinecone.
+*   **Center:** The primary subject: a soap bar with a white paper label, which is the main focal point.
+*   **Middle-right:** The edge of another soap bar and bright green mint leaves.
+*   **Bottom-left:** A cluster of fresh, green mint leaves in sharp focus.
+*   **Bottom-center:** A rustic, dark wood board holding the soap. Fresh mint leaves and scattered, dried, light brown flakes are visible on the board and the surface in front of it.
+*   **Bottom-right:** The edge of the wood board, more mint leaves, and scattered dried flakes on a light, textured surface.
+
+The framing is a tight close-up. The visual hierarchy is established with the labeled soap bar as the primary focus, followed by the surrounding soap and natural ingredients.
+
+**PRODUCE / INGREDIENTS:**
+*   Fresh mint leaves are visible in the foreground.
+*   A stem with rounded green leaves, resembling eucalyptus, is in the upper right background.
+*   Out-of-focus fern fronds are in the upper left background.
+*   A small, brown pinecone is on the left side.
+*   Scattered, light brown, flaky pieces (possibly oats or other botanicals) are on the wooden board and the foreground surface.
+
+**TEXT:**
+All text is on the white paper label in the center of the image. The text is black.
+*   **Brand Name:** THE RADIANT ARTISAN (centered, all-caps, clean serif font).
+*   **Product Name:** *Herbal Forest* (centered, larger, elegant script font).
+*   **Ingredients list:** ↬ Spearmint, Eucalyptus, and Patchouli ↫ (centered, smaller, sans-serif font).
+*   **Product Type:** HANDCRAFTED SOAP (centered, all-caps, sans-serif font).
+*   **Claims:** VEGAN | CRUELTY FREE (centered, all-caps, sans-serif font, separated by a vertical line).
+*   **Weight:** 4oz | 120g (centered, sans-serif font, separated by a vertical line).
+
+**DECORATIVE ELEMENTS:**
+*   A thin, horizontal line is above and below the brand name "THE RADIANT ARTISAN".
+*   Two small, stylized leaf-like flourishes are on either side of the ingredients list.
+
+**BACKGROUND:** The soap and props are arranged on a rustic, dark brown wooden board with a rough edge. This board sits on a light-colored, slightly textured surface that is visible in the foreground and background. The upper background is bright white/light gray and softly out of focus.
+
+**LIGHTING:** The lighting is soft and diffused, coming from the front and slightly to the side. It creates gentle highlights on the top edges of the soap and the surfaces of the mint leaves. The shadows are soft and subtle, appearing behind the soap bars and underneath the leaves, giving the scene depth without harshness.
+
+**MOOD:**
+*   Natural
+*   Earthy
+*   Handcrafted
+*   Fresh
+*   Calm
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a full-frame digital camera and a sharp prime lens around 85mm, utilizing a wide aperture (approx. f/2.2) to create a very shallow depth of field with soft, creamy bokeh and precise, narrow focus. The color science is built on a natural and slightly desaturated palette, dominated by earthy greens and warm browns against clean, neutral-to-cool highlights. Saturation is controlled, lending a gentle, organic feel. The lighting is bright and airy, achieved with a single large, diffuse key light from the side, resulting in extremely soft-edged, open shadows and a high-key exposure that avoids clipping. Post-processing involves a gentle contrast curve that lifts the shadows slightly, infusing them with a hint of warmth, while maintaining clean whites and a smooth tonal roll-off, producing an exceptionally clean, noise-free image with a polished yet natural look.
+
+**Keywords:** Bright & Airy, Shallow Depth of Field, Soft Diffuse Light, Desaturated Natural Palette, Low Contrast, Organic.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The brand name "THE RADIANT ARTISAN"
+*   The product name "*Herbal Forest*"
+*   The ingredients list "↬ Spearmint, Eucalyptus, and Patchouli ↫"
+*   The product type "HANDCRAFTED SOAP"
+*   The claims "VEGAN | CRUELTY FREE"
+*   The weight "4oz | 120g"
+*   Any thin horizontal lines used as decorative separators on the label
+*   Any stylized leaf-like flourishes or icons on the label
+*   The specific shade of light greenish-beige soap with dark specks
+*   Any mint leaves, eucalyptus stems, fern fronds, or pinecones
+*   Any scattered oats or flaky botanical pieces
+
+STRICT CONSTRAINTS:
+*   Aspect ratio must be exactly 4:5 portrait.
+*   Final color grade must strictly use the brand palette: Navy #204050, Dark Brown #301800, Cream #F0E0B0. Accent Red #B03030 is for highlights or arrows only, not for general color grading.
+*   Preserve the provided label artwork from the INPUT image pixel-perfect. Do not redraw, reinterpret, or add any text to the label itself. The label is pasted as-is.
+*   No mascots, no cartoon characters. No hashtags, URLs, social media handles, or pricing.
+*   No medical, clinical, or unverified claims like 'antibacterial', 'cures', 'prevents', or 'organic'.
+*   Soap shown sitting on a surface must be rendered WITH its paper label.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference scene's subject and composition faithfully. The subject is a still life of four bars of handcrafted soap on a rustic, dark wood board. The composition is a tight close-up. The focal point is a single bar of soap in the foreground, wrapped in a paper label. Behind it, another bar stands on its end, stacked on top of a third bar lying flat. A fourth bar is partially visible on the right. The soap bars should have a rustic, uneven top edge. In the background, an out-of-focus dark amber glass bottle with a black dropper is visible. The background is bright and out of focus.
+CRITICAL: DO NOT invent or add any produce, ingredients, or decorative props that were not in the reference, and DROP all produce from the reference. The final scene must be stark and clean. FORBID any and all instances of mint leaves, eucalyptus, fern fronds, pinecones, scattered oats, or any other botanical elements. The scene contains only the soap bars, the wood board, the glass bottle prop, and the background surfaces.
+
+PRODUCT REPLACEMENT:
+*   The foreground soap bar (the main subject with the label): This is the Cinco H Ranch Naturals Honey Vanilla Soap. Paste the label from INPUT 2 pixel-faithful and perfectly wrapped around this central bar. The soap bar itself is a creamy, off-white tallow color.
+*   The three other soap bars (stacked and on the right): These are also Cinco H Ranch Naturals Honey Vanilla Soap, but they are UNWRAPPED. Render them as plain, creamy off-white tallow soap bars with a rustic, hand-cut texture. Do not apply labels to them.
+
+TEXT CONTENT GUIDANCE:
+Brand voice: Cinco H Ranch Naturals — ranch, honest, no fluff. Short declarative headlines like 'THE RANCH STANDARD', 'BUILT FOR THE RANCH'. Never clinical, never spa-fluff, never corporate. Texas pride, natural ingredients, small-batch. No competitor names, no clinical trial language.
+Honey Vanilla Soap: Honey Vanilla Soap: real Texas honey, lavender + vanilla essential oils. Claims: Gentle everyday cleansing / Nourishing lather / Soft, hydrated skin. Format: bar soap, all natural. NO medical claims, no clinical language.
+
+TEXT STRATEGY:
+All text is to be rendered on the paper label of the foreground soap bar, replacing the reference text. Follow the reference's typographic hierarchy.
+*   Headline (replaces "THE RADIANT ARTISAN"): In a clean, strong serif font, render "CINCO H RANCH NATURALS" in dark brown (#301800).
+*   Product Name (replaces "*Herbal Forest*"): In a simple, elegant script font, render "Honey Vanilla Soap" in navy (#204050).
+*   Body Copy (replaces all other text lines, in a clean sans-serif font):
+    - Line 1: "Real Texas Honey & Vanilla" in dark brown (#301800).
+    - Line 2: "HANDCRAFTED TALLOW SOAP" in dark brown (#301800).
+    - Line 3: "4.5 oz" in dark brown (#301800).
+
+LOGO:
+Using the LAST input image, render the Cinco H Ranch Naturals logo as a small, clean badge in the bottom-right corner. It should be approximately 8% of the total image width. Do not place it in a box, on a banner, or add any other text to it.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Applied as the final pass over the entire image: The scene is shot with a full-frame digital camera and a sharp 85mm prime lens at a wide aperture (f/2.2), creating a very shallow depth of field with soft, creamy bokeh and a precise, narrow focus on the labeled soap bar. The lighting is bright and airy, from a single large, diffuse key light from the side, creating extremely soft-edged, open shadows and a high-key exposure that avoids clipping whites. The color science is rebuilt on the Cinco H Ranch Naturals brand palette, dominated by rich dark brown (#301800) and deep navy (#204050) in the shadows and midtones, with warm cream (#F0E0B0) for highlights. A gentle contrast curve lifts the shadows slightly, infusing them with warmth, while maintaining clean whites and a smooth tonal roll-off, producing an exceptionally clean, noise-free image with a polished yet natural look.

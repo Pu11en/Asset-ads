@@ -1,0 +1,107 @@
+BRAND: cinco-h-ranch (Cinco H Ranch Naturals)
+REF: /home/drewp/asset-ads/brand_assets/cinco-h-ranch/references/soap/img_5e7cbb46decf.jpg
+OUTPUT: /home/drewp/asset-ads/output/cinco-h-ranch_20260424_032642_833.png
+PRODUCTS: Honey Vanilla Soap
+TIMESTAMP: 2026-04-24T03:28:08.298424
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** A single bar of light brown, rectangular soap with rounded edges. It is wet, with a small cluster of white soap bubbles on its top surface. The soap sits centered within a matching light brown, oval-shaped soap dish.
+
+**PRODUCT COUNT:** 1
+
+**PRODUCT DETAILS:**
+*   **Product 1:** A solid bar of soap in a soap dish. The bar is rectangular, positioned at a three-quarter angle, occupying the middle and bottom right of the frame. It takes up about one-third of the image's width. The soap dish is oval and sits directly under the soap bar.
+
+**COMPOSITION:**
+*   **Top-left:** A purple rectangular badge with the word "Product," and the beginning of the headline "Gentle,".
+*   **Top-center:** The end of the headline, ", Natural Soap".
+*   **Top-right:** A white line-art icon of a soap bar with bubbles.
+*   **Mid-left:** The subheadline "Features" and the first two bullet points.
+*   **Mid-center:** The left side of the soap bar.
+*   **Mid-right:** The main body of the soap bar with bubbles on top, resting in its dish.
+*   **Bottom-left:** The third bullet point.
+*   **Bottom-center:** The front of the soap dish.
+*   **Bottom-right:** The right side of the soap and soap dish.
+*   **Framing:** The shot is a medium close-up, tightly framed around the product and its accompanying text.
+*   **Visual Hierarchy:** The eye is drawn first to the large headline "Gentle, Natural Soap," then to the image of the soap bar itself, and finally to the "Features" list.
+
+**PRODUCE / INGREDIENTS:** NONE
+
+**TEXT:**
+*   In a purple badge at the top left: "Product"
+*   Headline: "Gentle, Natural Soap"
+*   Subheadline: "Features"
+*   Body copy (bullet points):
+    *   "Made with organic ingredients"
+    *   "Suitable for all skin types"
+    *   "Biodegradable and eco-friendly"
+*   **Fonts:** "Product" is a medium-weight sans-serif in a dark color. "Gentle, Natural Soap" is a heavy, rounded sans-serif in an off-white color. "Features" is a bold, medium-weight sans-serif in a golden-yellow color. The bullet point text is a lighter-weight sans-serif in off-white.
+
+**DECORATIVE ELEMENTS:**
+*   A thin, off-white, wavy, horizontal line is centered below the main headline.
+*   A white line-art icon of a soap bar with two bubbles is in the top-right corner.
+*   A solid, light purple rectangle with rounded corners serves as a badge behind the word "Product".
+*   Small, golden-yellow circular bullet points precede each feature.
+
+**BACKGROUND:** The background is a smooth, clean digital gradient that transitions from a lighter, muted brown at the top to a darker, richer chocolate brown at the bottom.
+
+**LIGHTING:** The lighting is soft and diffuse, coming from the front and slightly to the upper left. It creates gentle, broad highlights on the top and left-facing surfaces of the soap bar and on the bubbles. Shadows are soft and cast to the right and back of the soap within the dish.
+
+**MOOD:** Natural, Gentle, Clean, Minimalist, Earthy.
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution full-frame digital camera and a sharp macro prime lens, creating a clean, artifact-free image with a shallow depth of field for subject separation. The lighting is singular and deliberate, originating from a large, heavily diffused source that wraps gently around the subject from an elevated angle, producing exceptionally soft-edged shadows and broad, low-intensity highlights with a smooth roll-off. The color science is defined by a warm, monochromatic palette dominated by rich chocolates, caramels, and creamy off-whites, with saturation kept moderate and earthy. Shadows are clean but tinted with a deep brown, while highlights maintain a distinct warmth, avoiding pure white. Post-processing is minimal and precise, featuring a low-contrast curve that preserves detail in all tonal ranges and a complete absence of digital noise or film grain, resulting in a polished and immaculate commercial aesthetic.
+
+**Keywords:** Warm, Monochromatic, Soft-Light, Clean, Commercial, Earthy.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+- The word "Product"
+- The headline "Gentle, Natural Soap"
+- The subheadline "Features"
+- The body copy string "Made with organic ingredients"
+- The body copy string "Suitable for all skin types"
+- The body copy string "Biodegradable and eco-friendly"
+- The purple rectangular badge with rounded corners
+- The thin, wavy, off-white horizontal line element
+- The white line-art icon of a soap bar with bubbles
+- Any golden-yellow circular bullet points
+- Any text in purple or golden-yellow
+
+STRICT CONSTRAINTS:
+- Final aspect ratio must be 4:5 portrait.
+- Render the Cinco H Ranch Naturals brand palette exclusively: Navy #204050, Dark Brown #301800, Cream #F0E0B0. Use Accent Red #B03030 only for small highlights like bullet points if needed.
+- Do not invent any elements not described in the reference, such as water splashes, extra bubbles, raw ingredients (honey, vanilla, lavender), or plants. The scene is minimal.
+- Do not render any text, logos, or brand marks from the reference image. All text and logos must come from the TEXT STRATEGY and LOGO sections below.
+- Do not use hashtags, URLs, social media handles, QR codes, or pricing.
+- Do not make any medical, clinical, or unproven claims.
+
+REFERENCE SUBJECT & COMPOSITION:
+- Recreate the reference subject and composition faithfully. The subject is a single, rectangular bar of soap with rounded edges, shown wet with a small cluster of white soap bubbles on its top surface. The soap sits centered within a matching oval-shaped soap dish. The bar is positioned at a three-quarter angle, occupying the middle and bottom right of the frame.
+- The shot is a medium close-up, tightly framed around the soap dish.
+- Preserve the composition's text zones: top-left (for a small badge), top-center (for the main headline), mid-left (for a subheadline and list), and bottom-left (for the rest of the list).
+- The background is a smooth, clean digital gradient transitioning from a lighter to a darker shade from the brand palette (e.g., light cream to dark brown).
+
+PRODUCT REPLACEMENT:
+- The single soap bar in the soap dish must be rendered to look exactly like the Cinco H Ranch Naturals Honey Vanilla Soap bar shown in INPUT 2. The color, texture, and embossed "CH" shape must be a pixel-faithful reproduction of INPUT 2.
+- The oval soap dish should be a solid, simple ceramic in a brand color, like dark brown #301800.
+
+TEXT CONTENT GUIDANCE:
+- Brand voice: Cinco H Ranch Naturals — ranch, honest, no fluff. Short declarative headlines like 'THE RANCH STANDARD', 'BUILT FOR THE RANCH'. Texas pride, natural ingredients, small-batch.
+
+TEXT STRATEGY:
+- **Top-left badge:** A small rectangular badge in dark brown #301800 with the text "SOAP" in a medium-weight sans-serif, in cream #F0E0B0.
+- **Headline (top-center):** "RANCH SOAP. REAL CLEAN." rendered in a heavy, rounded sans-serif font in cream #F0E0B0.
+- **Decorative line:** A thin, straight, horizontal line in cream #F0E0B0 centered below the headline.
+- **Icon (top-right):** A simple line-art icon of a soap bar with a few bubbles, rendered in cream #F0E0B0.
+- **Subheadline (mid-left):** "SIMPLE TRUTHS" in a bold, medium-weight sans-serif in cream #F0E0B0.
+- **Body Copy (mid-left and bottom-left):** Three bullet points, rendered in a lighter-weight sans-serif in cream #F0E0B0. The bullets themselves are small, solid cream #F0E0B0 circles.
+    - Made with real Texas honey.
+    - A gentle, nourishing lather.
+    - Leaves skin feeling soft.
+
+LOGO:
+- Render the Cinco H Ranch Naturals logo from INPUT 3 as a small badge, approximately 8% of the total image width. Place it in the bottom-right corner. It must have a transparent background; do not place it in a box or banner.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+- Applied as the final pass over the entire image: The scene is shot with a high-resolution full-frame digital camera and a sharp macro prime lens, creating a clean, artifact-free image with a shallow depth of field for subject separation. The lighting is singular and deliberate, originating from a large, heavily diffused source that wraps gently around the subject from an elevated angle, producing exceptionally soft-edged shadows and broad, low-intensity highlights with a smooth roll-off. The color science is defined by the Cinco H Ranch Naturals brand palette, dominated by rich dark brown #301800, deep navy #204050, and warm cream #F0E0B0. Shadows are clean but tinted with deep brown #301800, while highlights maintain a distinct warmth, avoiding pure white. Post-processing is minimal and precise, featuring a low-contrast curve that preserves detail in all tonal ranges and a complete absence of digital noise or film grain, resulting in a polished and immaculate commercial aesthetic.

@@ -1,0 +1,133 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/processed/web_ref_c.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260424_043527_007.png
+PRODUCTS: Sorrel, Guava Pine, Lime
+TIMESTAMP: 2026-04-24T04:37:07.101016
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:**
+The main subject is a trio of natural juice bottles. They are arranged in a slightly fanned-out display, with the central bottle standing straight and the two flanking bottles tilted slightly outwards. The bottles are positioned centrally to be the primary focus of the advertisement.
+
+**PRODUCT COUNT:**
+3
+
+**PRODUCT DETAILS:**
+*   **Product 1 (Left):** A clear plastic bottle with a green label and a green cap. It is positioned on the left side of the group and stands upright. It occupies approximately half the height of the white frame it sits within. The cap is on and sealed.
+*   **Product 2 (Center):** A clear plastic bottle with a yellow label and a green cap. It is positioned in the center, standing upright. It is the same size as the other bottles. The cap is on and sealed.
+*   **Product 3 (Right):** A clear plastic bottle with a red and orange label and a green cap. It is positioned on the right side of the group and is tilted towards the right. It is the same size as the other bottles. The cap is on and sealed.
+
+**COMPOSITION:**
+*   **Top-left:** The top of a white frame containing a circular logo and a social media handle, set against a pink textured background.
+*   **Top-center:** The top portion of the central juice bottle inside the white frame.
+*   **Top-right:** A large "YUM YUM" graphic and the top of the right-most juice bottle, against the pink background.
+*   **Center-left:** A call-to-action box that reads "NATURAL JUICE" and the left juice bottle.
+*   **Center-center:** The main bodies of all three juice bottles are centrally located, forming the primary focal point.
+*   **Center-right:** The body of the tilted right-most juice bottle.
+*   **Bottom-left:** The bottom of the white frame featuring heart, comment, and share icons.
+*   **Bottom-center:** The bottom of the white frame with a bookmark icon, and below the frame, a white search bar containing a website URL.
+*   **Bottom-right:** The bottom of the tilted right-most juice bottle and the pink background.
+*   **Framing:** The composition is framed as a screenshot of a social media post, with the products presented in a medium shot.
+*   **Visual Hierarchy:** The three juice bottles are the most dominant element, followed by the "YUM YUM" graphic and the "ORDER NOW!" callout. The social media interface elements are secondary.
+
+**PRODUCE / INGREDIENTS:**
+*   **On the green bottle's label:** Whole and halved soursop fruit.
+*   **On the yellow bottle's label:** A whole yellow fruit (possibly guava), a whole strawberry, and slices of banana and apple/pear.
+*   **On the red bottle's label:** Whole and sliced tomatoes.
+
+**TEXT:**
+*   **Instagram Handle:** `thanhcongvina.beverage` (clean, black sans-serif).
+*   **Graphic Text:** `YUM YUM` (stylized, heavy display font, white with a red outline).
+*   **Call-to-Action Box:** `NATURAL JUICE` (heavy, white sans-serif) and `ORDER NOW!` (heavy, white sans-serif on a red background).
+*   **Product Labels (Common to all):**
+    *   `NATURAL PRODUCT` (white sans-serif on a brown badge).
+    *   `NATURAL JUICE` (heavy, black sans-serif).
+    *   `NFC` (black sans-serif).
+    *   `NOT FROM CONCENTRATE` (thin, black sans-serif).
+    *   `1000ml` (black sans-serif).
+*   **Product Labels (Flavors):**
+    *   `Soursop Juice` (dark green script).
+    *   `Yellow` (yellow script).
+    *   `Tomato Juice` (red script).
+*   **Website Bar:** `www.thanhcongvina.com` (gray sans-serif).
+
+**DECORATIVE ELEMENTS:**
+*   **Frame:** A large, white, rounded-corner rectangle simulating a social media post frame.
+*   **Icons:**
+    *   A circular blue icon with a white bird logo.
+    *   Social media icons below the main image: a red heart, a comment bubble outline, a paper plane outline, and a bookmark outline.
+    *   A magnifying glass icon inside the website search bar.
+*   **Shapes & Graphics:**
+    *   A tilted pink rectangle with an inner white rectangle on the left side, serving as a callout box.
+    *   A large, comic-book style "YUM YUM" graphic with radiating lines.
+    *   Each bottle label features a logo (a white bird) inside a colored shape resembling a hot air balloon (green, yellow, and orange-red respectively).
+    *   Yellow sun-ray lines emanate from the top of each label design.
+
+**BACKGROUND:**
+The background is an abstract, textured surface in shades of light pink. It has a crinkled or fabric-like appearance.
+
+**LIGHTING:**
+The lighting is bright, soft, and diffuse, characteristic of studio lighting. There are no harsh shadows. Gentle, broad highlights are visible on the curved surfaces of the bottles, creating a clean, commercial look.
+
+**MOOD:**
+*   Vibrant
+*   Fresh
+*   Modern
+*   Appetizing
+*   Playful
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution full-frame digital camera and a sharp, distortion-free prime lens set to a deep depth of field to maintain focus across all elements. The image is constructed using high-key commercial lighting from large, heavily diffused sources, resulting in exceptionally soft, open shadows and broad, controlled highlights that prevent specular blowouts. The color science is defined by a highly saturated, vibrant palette, with clean, neutral whites and poppy primary tones set against a pastel pink background. The overall color temperature is neutral, with no significant warm or cool bias in the clean highlights or lifted shadows. In post-production, a gentle contrast curve is applied to elevate the mid-tones and create a bright, airy feel, while targeted saturation boosts make the product colors pop. The final image is a noise-free, digitally sharpened composite, exhibiting a clean, graphic quality with no film grain or analog texture.
+
+**Keywords:** High-Key, Vibrant Saturation, Soft Commercial Lighting, Graphic, Digitally Clean, Pastel Pop.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The Instagram handle "`thanhcongvina.beverage`"
+*   The graphic text "`YUM YUM`"
+*   The call-to-action box text "`NATURAL JUICE`"
+*   The call-to-action button text "`ORDER NOW!`"
+*   The product label badge text "`NATURAL PRODUCT`"
+*   The product label text "`NATURAL JUICE`", "`NFC`", "`NOT FROM CONCENTRATE`", "`1000ml`"
+*   The flavor names "`Soursop Juice`", "`Yellow`", and "`Tomato Juice`"
+*   The URL in the search bar "`www.thanhcongvina.com`"
+*   The circular blue icon with a white bird logo in the top-left
+*   The white bird logo inside a colored shape on any bottle label
+*   Any mention of the brand "Thanh Cong Vina"
+*   The social media icons: heart, comment bubble, paper plane, bookmark
+*   The magnifying glass icon in the search bar
+*   Any fruit imagery on the labels, including soursop, guava, strawberry, banana, apple, pear, or tomato
+
+STRICT CONSTRAINTS:
+Render at a 4:5 aspect ratio.
+The background and overall color grade must use ONLY the Island Splash brand palette: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), and warm sand/tan (#A89078).
+Every bottle label MUST come EXACTLY from the provided product input images. Do NOT redraw, recolor, modify, or invent labels. Preserve them pixel-faithful.
+No mascots, cartoon characters, or personified objects.
+Do not render any of the following forbidden text elements: hashtags (#), URLs (www, .com), social media handles (@), promotional text (FREE, % OFF, GIVEAWAY), or pricing ($). All text must be in English.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference's subject and composition faithfully. The subject is a trio of clear plastic juice bottles arranged in a slightly fanned-out display. The central bottle stands straight, and the two flanking bottles are tilted slightly outwards. The bottles are the primary focus, positioned centrally within a large, white, rounded-corner rectangle that simulates a social media post frame. The background is a simple, abstract textured surface.
+DO NOT add any produce, ingredients, splashes, or other decorative elements that were not in the reference. Specifically, do not render any soursop, guava, tomato, or any other fruits on or around the bottles.
+
+PRODUCT REPLACEMENT:
+The three bottles in the scene are replaced with Island Splash products. All bottles are clear plastic.
+*   Bottle 1 (Left, upright): Replace with Island Splash Sorrel. Paste the label from INPUT 2, pixel-faithful, do not redraw. The cap must be matte BLACK.
+*   Bottle 2 (Center, upright): Replace with Island Splash Guava Pine. Paste the label from INPUT 3, pixel-faithful, do not redraw. The cap must be matte BLACK.
+*   Bottle 3 (Right, tilted): Replace with Island Splash Lime. Paste the label from INPUT 4, pixel-faithful, do not redraw. The cap must be matte BLACK.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Sorrel: use brand voice, keep it plain and honest
+  Guava Pine: use brand voice, keep it plain and honest
+  Lime: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+*   Top-Right Graphic Text: In the top-right, where the reference had "YUM YUM", render the words "ISLAND GOOD" in a heavy, stylized display font. Color: deep coral orange (#E4843C).
+*   Center-Left Call-to-Action Box: In the center-left, where the reference had a call-to-action, render a simple colored box. Inside the box, render the text "A TASTE OF HOME" in a heavy, clean sans-serif font. Color: dark teal (#243C3C) on a warm sand/tan (#A89078) background box.
+*   No other text, handles, or URLs should be present in the ad.
+
+LOGO:
+Use the LAST INPUT image. Render the Island Splash logo as a small, clean badge in the bottom-right corner of the image. It should be approximately 8% of the frame width. Render the logo directly on the background with no background box, banner, or additional lockup text.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+This style overlay is applied as the final pass over the entire image, unifying the composition, products, and text into a single cohesive shot.
+The image is shot with a high-resolution full-frame digital camera and a sharp, distortion-free prime lens set to a deep depth of field to maintain focus across all elements. The lighting is high-key commercial style, from large, heavily diffused sources, resulting in exceptionally soft, open shadows and broad, controlled highlights. In post-production, a gentle contrast curve elevates the mid-tones for a bright, airy feel. The final image is a noise-free, digitally sharpened composite with a clean, graphic quality. The overall color science is defined by a color grade that shifts the entire palette to Island Splash brand colors: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), and warm sand/tan (#A89078), creating a warm, tropical feel with golden highlights and teal-tinted shadows.

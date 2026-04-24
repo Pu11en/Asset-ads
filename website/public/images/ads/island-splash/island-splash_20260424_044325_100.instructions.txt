@@ -1,0 +1,124 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/processed/web_img_33e8092cf836.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260424_044325_100.png
+PRODUCTS: Sorrel
+TIMESTAMP: 2026-04-24T04:45:11.113943
+
+=== REVERSE ANALYSIS ===
+Here is a reverse-engineered description of the ad's composition.
+
+**SUBJECT:** The main subject is a can of Baly Brasil Energy Drink, Caipirinha flavor. The can is positioned upright and centered on top of a circular piece of a wooden log. It is angled slightly to its left, presenting the front label to the viewer.
+
+**PRODUCT COUNT:** 1
+
+**PRODUCT DETAILS:**
+*   **Container type:** Aluminum beverage can.
+*   **Position in frame:** The can is centered horizontally and occupies the middle and lower thirds of the image vertically.
+*   **Angle:** The can is facing the camera, rotated slightly to its left.
+*   **Size relative to image:** The can occupies approximately 45% of the image's height.
+*   **Cap/lid state:** The can is sealed, with the pull-tab lid intact and unopened.
+
+**COMPOSITION:**
+*   **Top-left:** The letters "NO" from the headline text, the silhouette of a palm tree, and a small circular agency logo.
+*   **Top-center:** The letters "VO" from the headline text, the top rim of the can, and a floating lime wedge.
+*   **Top-right:** The letter "S" from the headline text, the word "sabores," another floating lime wedge, and the silhouette of a palm tree.
+*   **Mid-left:** The letters "IA + PS," the side of the can, and the blurred beach background.
+*   **Mid-center:** The main label of the energy drink can, featuring the brand and flavor name, set against the ocean horizon at sunset.
+*   **Mid-right:** The right side of the can, a floating lime wedge, and a palm tree silhouette.
+*   **Bottom-left:** A large, out-of-focus lime wedge in the foreground, the wooden log, and a block of fine print text.
+*   **Bottom-center:** The base of the can on the wooden log and the fine print text.
+*   **Bottom-right:** The edge of the wooden log, the Baly Brasil logo, and the blurred beach background.
+*   **Framing:** The shot is a medium close-up, focusing on the product within its environment.
+*   **Visual hierarchy:** The primary focus is the can, followed by the large headline "NOVOS," and then the surrounding limes and background.
+
+**PRODUCE / INGREDIENTS:**
+There are three visible photographic lime wedges floating in the air around the can and one larger, out-of-focus lime wedge in the foreground. The can's label features an illustration of a lime slice and a whole lime.
+
+**TEXT:**
+*   **Headline:** "NOVOS" in a very large, bold, green, semi-transparent sans-serif font.
+*   **Subheadline:** "sabores" in a smaller, white, script font.
+*   **Left side text:** "IA + PS" in a simple, white, sans-serif font.
+*   **Can Label:**
+    *   "REDUZIDO EM AÇÚCARES" (Black, sans-serif)
+    *   "BALY" (Large, green, custom sans-serif)
+    *   "BRASIL" (Smaller, green, sans-serif)
+    *   "ENERGY DRINK" (Black, sans-serif)
+    *   "SABOR" (Small, black, sans-serif)
+    *   "Caipirinha" (Large, green, script font)
+    *   "SEM ÁLCOOL" (Black, sans-serif, inside a circular badge)
+    *   "EDIÇÃO LIMITADA" (Black, sans-serif, inside a rectangular shape)
+*   **Logos:**
+    *   Top-left: A circular white logo with stylized letters and "CREATION AGENCY" in small, white, sans-serif text.
+    *   Bottom-right: "BALY BRASIL" in the brand's green, sans-serif font.
+*   **Fine print:** A block of very light, semi-transparent placeholder text is visible on the surface of the wooden log.
+
+**DECORATIVE ELEMENTS:**
+*   A white glow outlines the large green "NOVOS" text.
+*   On the can, there is a circular green badge with the text "SEM ÁLCOOL."
+*   On the can, there is a green-bordered rectangular shape containing the text "EDIÇÃO LIMITADA."
+*   A small, circular logo for "CREATION AGENCY" is in the top-left corner.
+
+**BACKGROUND:** The background is a photographic scene of a tropical beach at sunset. Silhouettes of palm trees frame the left and right sides. The center shows the ocean meeting the horizon, which has a warm, golden glow from the sun. The entire background is softly blurred.
+
+**LIGHTING:** The lighting appears to come from two main sources. A strong backlight from the setting sun creates a warm glow on the horizon and a rim light effect on the can and palm trees. A second, soft, diffuse light from the front illuminates the can's label, making it readable. Highlights are visible on the metal rim of the can and the surface of the limes. Shadows are soft, such as the one cast by the can onto the wood.
+
+**MOOD:**
+*   Tropical
+*   Refreshing
+*   Sunset
+*   Relaxed
+*   Vibrant
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution full-frame or medium format digital camera and a sharp prime lens, this image employs a shallow depth of field to isolate the subject, creating a soft, creamy bokeh in the background. The lighting is meticulously crafted to simulate a warm, low-angle golden-hour sun, which functions as both a backlight and a key light, creating soft highlights and gentle rim lighting. This is balanced with a large, diffused frontal fill light that lifts the shadows and ensures clean product visibility. The color science is defined by a warm color temperature, pushing a selectively saturated palette of lush, vibrant greens against warm, sandy beiges and golden tones. Shadows are open and contain a subtle cool green/teal tint, providing color contrast against the warm highlights which exhibit a soft bloom and a smooth roll-off. Post-processing is polished and clean, with a controlled S-curve for moderate contrast, a complete absence of grain or noise for a pristine finish, and a subtle halation effect that adds a dreamy, atmospheric quality to the entire scene.
+
+**Keywords:** Commercial, Golden-Hour, Saturated, Polished, Atmospheric, Digital
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The headline "NOVOS"
+*   The subheadline "sabores"
+*   The text "IA + PS"
+*   The can label text "REDUZIDO EM AÇÚCARES"
+*   The wordmark "BALY"
+*   The wordmark "BRASIL"
+*   The text "ENERGY DRINK"
+*   The text "SABOR"
+*   The flavor name "Caipirinha"
+*   The text "SEM ÁLCOOL" and its circular badge
+*   The text "EDIÇÃO LIMITADA" and its rectangular shape
+*   The circular logo with "CREATION AGENCY"
+*   The "BALY BRASIL" brand logo
+*   The block of semi-transparent placeholder fine print text on the wooden log
+*   Any illustrative or photographic limes or lime wedges
+
+STRICT CONSTRAINTS:
+*   Render the scene in a 4:5 aspect ratio.
+*   The background and color grade must use ONLY the Island Splash brand palette: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), warm sand/tan (#A89078).
+*   The product label MUST be preserved pixel-faithful from its input image. Do NOT redraw, recolor, modify, or invent labels.
+*   The final image must not contain any mascots, cartoon characters, or smiley fruits.
+*   Do not include any hashtags, # symbols, URLs, www, .com, social media handles, @ symbols, fake promotions, discounts, FREE, % OFF, GIVEAWAY, or pricing information.
+*   The Island Splash logo appears ONCE, small, in a bottom corner, with no background box or extra text.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference composition faithfully. The main subject is a single glass beverage bottle, positioned upright and centered on top of a circular piece of a wooden log. The bottle is angled slightly to its left, presenting the front label to the viewer. The background is a photographic scene of a tropical beach at sunset, with soft silhouettes of palm trees framing the left and right sides. The ocean meets the horizon, which has a warm glow. The entire background is softly blurred. The shot is a medium close-up, focusing on the product. The final image MUST NOT contain any floating limes, lime wedges, or any other produce or ingredient garnishes.
+
+PRODUCT REPLACEMENT:
+*   The central aluminum can is replaced with one glass bottle of Island Splash Sorrel.
+*   Paste INPUT 2 (Island Splash Sorrel) as the bottle label, pixel-faithful. Do not redraw, add text, or modify the label design.
+*   The bottle must have a matte BLACK cap, do not inherit the cap style from the reference.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Sorrel: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+*   Headline: At the top of the frame, render the words "Island Brewed" in a very large, bold, semi-transparent sans-serif font, similar in weight and scale to the reference headline.
+*   Subheadline: Below and to the right of the headline, render the word "Sorrel" in a smaller, flowing script font.
+*   All text should be colored using the brand palette, such as warm golden orange (#F0A86C) or deep coral orange (#E4843C), with a soft glow effect.
+
+LOGO:
+Render the image from the LAST INPUT as a small badge, approximately 8% of the frame width, in the bottom-right corner. It should be placed flat on the image with no background box, banner, or additional text.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Applied as the final pass over the entire image: shot with a high-resolution full-frame or medium format digital camera and a sharp prime lens, this image employs a shallow depth of field to isolate the subject, creating a soft, creamy bokeh in the background. The lighting is meticulously crafted to simulate a warm, low-angle golden-hour sun, which functions as both a backlight and a key light, creating soft highlights and gentle rim lighting. This is balanced with a large, diffused frontal fill light that lifts the shadows and ensures clean product visibility. The color science is defined by a warm color temperature, pushing a selectively saturated palette of dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), and warm sand/tan (#A89078). Shadows are open and contain a subtle dark teal tint, providing color contrast against the warm highlights which exhibit a soft bloom and a smooth roll-off. Post-processing is polished and clean, with a controlled S-curve for moderate contrast, a complete absence of grain or noise for a pristine finish, and a subtle halation effect that adds a dreamy, atmospheric quality to the entire scene.

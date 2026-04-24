@@ -1,25 +1,115 @@
 {
-  "generated_at": "2026-04-24T00:06:35.437564",
+  "generated_at": "2026-04-24T00:20:13.875253",
   "brands": [
     {
-      "slug": "cinco-h-ranch",
-      "name": "Cinco H Ranch Naturals",
+      "slug": "island-splash",
+      "name": "island-splash",
       "tagline": "",
-      "vibe": "Texas ranch skincare \u2014 honest, no fluff, historic homestead recipes, built for real life",
-      "palette": {
-        "hex": [
-          "#204050",
-          "#301800",
-          "#F0E0B0",
-          "#B03030"
-        ],
-        "description": "navy #204050, dark brown #301800, cream #F0E0B0, accent red #B03030 (arrows/highlights only, NOT pink)"
+      "vibe": "",
+      "palette": {},
+      "logo": null,
+      "products": [
+        {
+          "name": "Mango Passion",
+          "label_file": "MangoPassion.png",
+          "container": "bottle",
+          "cap_rule": "matte BLACK cap \u2014 always, with no exceptions; never inherit cap color from reference",
+          "keywords": [
+            "mango",
+            "passion fruit",
+            "passionfruit"
+          ],
+          "allowed_claims": [],
+          "forbidden_text": []
+        },
+        {
+          "name": "Mauby",
+          "label_file": "Mauby.png",
+          "container": "bottle",
+          "cap_rule": "matte BLACK cap \u2014 always, with no exceptions; never inherit cap color from reference",
+          "keywords": [
+            "mauby",
+            "bark"
+          ],
+          "allowed_claims": [],
+          "forbidden_text": []
+        },
+        {
+          "name": "Peanut Punch",
+          "label_file": "peanutpunch.png",
+          "container": "bottle",
+          "cap_rule": "matte BLACK cap \u2014 always, with no exceptions; never inherit cap color from reference",
+          "keywords": [
+            "peanut"
+          ],
+          "allowed_claims": [],
+          "forbidden_text": []
+        },
+        {
+          "name": "Lime",
+          "label_file": "Lime.png",
+          "container": "bottle",
+          "cap_rule": "matte BLACK cap \u2014 always, with no exceptions; never inherit cap color from reference",
+          "keywords": [
+            "lime",
+            "citrus"
+          ],
+          "allowed_claims": [],
+          "forbidden_text": []
+        },
+        {
+          "name": "Guava Pine",
+          "label_file": "GuavaPine.png",
+          "container": "bottle",
+          "cap_rule": "matte BLACK cap \u2014 always, with no exceptions; never inherit cap color from reference",
+          "keywords": [
+            "guava",
+            "pineapple"
+          ],
+          "allowed_claims": [],
+          "forbidden_text": []
+        },
+        {
+          "name": "Sorrel",
+          "label_file": "sorrel.png",
+          "container": "bottle",
+          "cap_rule": "matte BLACK cap \u2014 always, with no exceptions; never inherit cap color from reference",
+          "keywords": [
+            "sorrel",
+            "hibiscus"
+          ],
+          "allowed_claims": [],
+          "forbidden_text": []
+        },
+        {
+          "name": "Pine Ginger",
+          "label_file": "pineginger.png",
+          "container": "bottle",
+          "cap_rule": "matte BLACK cap \u2014 always, with no exceptions; never inherit cap color from reference",
+          "keywords": [
+            "pineapple",
+            "ginger"
+          ],
+          "allowed_claims": [],
+          "forbidden_text": []
+        }
+      ],
+      "refs": {
+        "all-drinks": {
+          "count": 0,
+          "images": []
+        }
       },
-      "logo": {
-        "name": "logo.png",
-        "path": "/images/logos/cinco-h-ranch/logo.png",
-        "size": 1164555
-      },
+      "product_images": [],
+      "total_refs": 0
+    },
+    {
+      "slug": "cinco-h-ranch",
+      "name": "cinco-h-ranch",
+      "tagline": "",
+      "vibe": "",
+      "palette": {},
+      "logo": null,
       "products": [
         {
           "name": "Honey Vanilla Soap",
@@ -278,819 +368,8 @@
           ]
         }
       },
-      "product_images": [
-        {
-          "name": "honey-vanilla-soap.png",
-          "path": "/images/products/cinco-h-ranch/honey-vanilla-soap.png",
-          "size": 972892
-        },
-        {
-          "name": "rejuvenating.png",
-          "path": "/images/products/cinco-h-ranch/rejuvenating.png",
-          "size": 1091653
-        },
-        {
-          "name": "sunscreen.png",
-          "path": "/images/products/cinco-h-ranch/sunscreen.png",
-          "size": 1025523
-        }
-      ],
-      "total_refs": 8
-    },
-    {
-      "slug": "island-splash",
-      "name": "Island Splash",
-      "tagline": "",
-      "vibe": "Florida Caribbean juice \u2014 fun, laid-back, tropical, island time",
-      "palette": {
-        "hex": [
-          "#243C3C",
-          "#F0A86C",
-          "#E4843C",
-          "#A89078"
-        ],
-        "description": "dark teal #243C3C, warm golden orange #F0A86C, deep coral orange #E4843C, warm sand/tan #A89078"
-      },
-      "logo": null,
-      "products": [
-        {
-          "name": "Mango Passion",
-          "label_file": "MangoPassion.png",
-          "container": "bottle",
-          "cap_rule": "matte BLACK cap \u2014 always, with no exceptions; never inherit cap color from reference",
-          "keywords": [
-            "mango",
-            "passion fruit",
-            "passionfruit"
-          ],
-          "allowed_claims": [],
-          "forbidden_text": []
-        },
-        {
-          "name": "Mauby",
-          "label_file": "Mauby.png",
-          "container": "bottle",
-          "cap_rule": "matte BLACK cap \u2014 always, with no exceptions; never inherit cap color from reference",
-          "keywords": [
-            "mauby",
-            "bark"
-          ],
-          "allowed_claims": [],
-          "forbidden_text": []
-        },
-        {
-          "name": "Peanut Punch",
-          "label_file": "peanutpunch.png",
-          "container": "bottle",
-          "cap_rule": "matte BLACK cap \u2014 always, with no exceptions; never inherit cap color from reference",
-          "keywords": [
-            "peanut"
-          ],
-          "allowed_claims": [],
-          "forbidden_text": []
-        },
-        {
-          "name": "Lime",
-          "label_file": "Lime.png",
-          "container": "bottle",
-          "cap_rule": "matte BLACK cap \u2014 always, with no exceptions; never inherit cap color from reference",
-          "keywords": [
-            "lime",
-            "citrus"
-          ],
-          "allowed_claims": [],
-          "forbidden_text": []
-        },
-        {
-          "name": "Guava Pine",
-          "label_file": "GuavaPine.png",
-          "container": "bottle",
-          "cap_rule": "matte BLACK cap \u2014 always, with no exceptions; never inherit cap color from reference",
-          "keywords": [
-            "guava",
-            "pineapple"
-          ],
-          "allowed_claims": [],
-          "forbidden_text": []
-        },
-        {
-          "name": "Sorrel",
-          "label_file": "sorrel.png",
-          "container": "bottle",
-          "cap_rule": "matte BLACK cap \u2014 always, with no exceptions; never inherit cap color from reference",
-          "keywords": [
-            "sorrel",
-            "hibiscus"
-          ],
-          "allowed_claims": [],
-          "forbidden_text": []
-        },
-        {
-          "name": "Pine Ginger",
-          "label_file": "pineginger.png",
-          "container": "bottle",
-          "cap_rule": "matte BLACK cap \u2014 always, with no exceptions; never inherit cap color from reference",
-          "keywords": [
-            "pineapple",
-            "ginger"
-          ],
-          "allowed_claims": [],
-          "forbidden_text": []
-        }
-      ],
-      "refs": {
-        "mango-passion": {
-          "count": 114,
-          "images": [
-            {
-              "name": "mango-passion_ref_1.png",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_1.png",
-              "size": 44409,
-              "type": "png"
-            },
-            {
-              "name": "mango-passion_ref_10.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_10.jpg",
-              "size": 151873,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_100.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_100.jpg",
-              "size": 199925,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_101.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_101.jpg",
-              "size": 65697,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_102.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_102.jpg",
-              "size": 124821,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_103.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_103.jpg",
-              "size": 507341,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_104.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_104.jpg",
-              "size": 39192,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_105.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_105.jpg",
-              "size": 76036,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_106.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_106.jpg",
-              "size": 673477,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_107.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_107.jpg",
-              "size": 333347,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_108.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_108.jpg",
-              "size": 85869,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_109.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_109.jpg",
-              "size": 164604,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_11.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_11.jpg",
-              "size": 66288,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_110.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_110.jpg",
-              "size": 502183,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_111.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_111.jpg",
-              "size": 175439,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_112.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_112.jpg",
-              "size": 105300,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_113.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_113.jpg",
-              "size": 232561,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_114.png",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_114.png",
-              "size": 3339288,
-              "type": "png"
-            },
-            {
-              "name": "mango-passion_ref_12.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_12.jpg",
-              "size": 123771,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_13.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_13.jpg",
-              "size": 194363,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_14.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_14.jpg",
-              "size": 37164,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_15.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_15.jpg",
-              "size": 69293,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_16.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_16.jpg",
-              "size": 109341,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_17.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_17.jpg",
-              "size": 49504,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_18.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_18.jpg",
-              "size": 95348,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_19.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_19.jpg",
-              "size": 517621,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_2.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_2.jpg",
-              "size": 61231,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_20.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_20.jpg",
-              "size": 17569,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_21.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_21.jpg",
-              "size": 39401,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_22.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_22.jpg",
-              "size": 10201,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_23.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_23.jpg",
-              "size": 47607,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_24.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_24.jpg",
-              "size": 16922,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_25.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_25.jpg",
-              "size": 13535,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_26.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_26.jpg",
-              "size": 71313,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_27.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_27.jpg",
-              "size": 41751,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_28.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_28.jpg",
-              "size": 12354,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_29.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_29.jpg",
-              "size": 60482,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_3.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_3.jpg",
-              "size": 138457,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_30.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_30.jpg",
-              "size": 11916,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_31.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_31.jpg",
-              "size": 54844,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_32.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_32.jpg",
-              "size": 41382,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_33.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_33.jpg",
-              "size": 16774,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_34.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_34.jpg",
-              "size": 79879,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_35.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_35.jpg",
-              "size": 12100,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_36.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_36.jpg",
-              "size": 60494,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_37.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_37.jpg",
-              "size": 15475,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_38.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_38.jpg",
-              "size": 83713,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_39.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_39.jpg",
-              "size": 43805,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_4.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_4.jpg",
-              "size": 138457,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_40.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_40.jpg",
-              "size": 10242,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_41.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_41.jpg",
-              "size": 51933,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_42.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_42.jpg",
-              "size": 16199,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_43.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_43.jpg",
-              "size": 87341,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_44.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_44.jpg",
-              "size": 10306,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_45.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_45.jpg",
-              "size": 54237,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_46.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_46.jpg",
-              "size": 23835,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_47.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_47.jpg",
-              "size": 41880,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_48.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_48.jpg",
-              "size": 22782,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_49.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_49.jpg",
-              "size": 11035,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_5.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_5.jpg",
-              "size": 56401,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_50.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_50.jpg",
-              "size": 70619,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_51.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_51.jpg",
-              "size": 45756,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_52.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_52.jpg",
-              "size": 13480,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_53.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_53.jpg",
-              "size": 70422,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_54.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_54.jpg",
-              "size": 27882,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_55.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_55.jpg",
-              "size": 10074,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_56.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_56.jpg",
-              "size": 49774,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_57.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_57.jpg",
-              "size": 45919,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_58.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_58.jpg",
-              "size": 60061,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_59.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_59.jpg",
-              "size": 11747,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_6.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_6.jpg",
-              "size": 115254,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_60.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_60.jpg",
-              "size": 15717,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_61.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_61.jpg",
-              "size": 10201,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_62.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_62.jpg",
-              "size": 12295,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_63.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_63.jpg",
-              "size": 12393,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_64.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_64.jpg",
-              "size": 14779,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_65.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_65.jpg",
-              "size": 18125,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_66.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_66.jpg",
-              "size": 16569,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_67.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_67.jpg",
-              "size": 184811,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_68.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_68.jpg",
-              "size": 121529,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_69.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_69.jpg",
-              "size": 199078,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_7.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_7.jpg",
-              "size": 184811,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_70.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_70.jpg",
-              "size": 81925,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_71.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_71.jpg",
-              "size": 81925,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_72.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_72.jpg",
-              "size": 41565,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_73.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_73.jpg",
-              "size": 81925,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_74.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_74.jpg",
-              "size": 131873,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_75.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_75.jpg",
-              "size": 63867,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_76.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_76.jpg",
-              "size": 131929,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_77.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_77.jpg",
-              "size": 105094,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_78.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_78.jpg",
-              "size": 29410,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_79.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_79.jpg",
-              "size": 53645,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_8.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_8.jpg",
-              "size": 45735,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_80.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_80.jpg",
-              "size": 12659,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_81.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_81.jpg",
-              "size": 38214,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_82.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_82.jpg",
-              "size": 38214,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_83.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_83.jpg",
-              "size": 14387,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_84.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_84.jpg",
-              "size": 43114,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_85.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_85.jpg",
-              "size": 43114,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_86.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_86.jpg",
-              "size": 13950,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_87.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_87.jpg",
-              "size": 43182,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_88.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_88.jpg",
-              "size": 43182,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_89.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_89.jpg",
-              "size": 13290,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_9.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_9.jpg",
-              "size": 93697,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_90.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_90.jpg",
-              "size": 38516,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_91.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_91.jpg",
-              "size": 38516,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_92.png",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_92.png",
-              "size": 307831,
-              "type": "png"
-            },
-            {
-              "name": "mango-passion_ref_93.png",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_93.png",
-              "size": 343061,
-              "type": "png"
-            },
-            {
-              "name": "mango-passion_ref_94.png",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_94.png",
-              "size": 354751,
-              "type": "png"
-            },
-            {
-              "name": "mango-passion_ref_95.png",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_95.png",
-              "size": 342221,
-              "type": "png"
-            },
-            {
-              "name": "mango-passion_ref_96.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_96.jpg",
-              "size": 355951,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_97.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_97.jpg",
-              "size": 68840,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_98.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_98.jpg",
-              "size": 142581,
-              "type": "jpg"
-            },
-            {
-              "name": "mango-passion_ref_99.jpg",
-              "path": "/images/refs/island-splash/mango-passion/mango-passion_ref_99.jpg",
-              "size": 199925,
-              "type": "jpg"
-            }
-          ]
-        }
-      },
       "product_images": [],
-      "total_refs": 114
+      "total_refs": 8
     }
   ]
 }

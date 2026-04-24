@@ -1,0 +1,137 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/processed/web_ref_d.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260424_044858_323.png
+PRODUCTS: Lime
+TIMESTAMP: 2026-04-24T04:50:55.408724
+
+=== REVERSE ANALYSIS ===
+Here is a reverse-engineered description of the ad's composition.
+
+### SUBJECT
+The primary subject is a white aluminum can of "dadū Fresh MIXED BERRIES" juice, positioned centrally and diagonally. A secondary subject is a top-down view of a glass filled with the juice, berries, and ice, located in the upper portion of the image. Large, stylized text reading "PURE MIXED BERRIES JUICE" wraps around the can, also acting as a key focal point.
+
+### PRODUCT COUNT
+1
+
+### PRODUCT DETAILS
+*   **Product 1:**
+    *   **Container type:** White aluminum beverage can with a silver-colored top.
+    *   **Position in frame:** In the center of the image, angled diagonally from the lower-left to the upper-right.
+    *   **Angle:** Shot from a slightly high, straight-on angle.
+    *   **Size relative to image:** The can occupies approximately 60% of the image's height.
+    *   **Cap/lid state:** The can is sealed and unopened.
+
+### COMPOSITION
+*   **3x3 Grid Description:**
+    *   **Top-left:** The words "PURE MIXED" in large purple font.
+    *   **Top-center:** A glass of red juice with berries and ice, seen from above.
+    *   **Top-right:** The "dadū Fresh" logo and the letter "E" from the word "JUICE".
+    *   **Center-left:** The letters "JU" from "JUICE" and a mint leaf.
+    *   **Center:** The white product can is the main focus.
+    *   **Center-right:** The letters "IC" and "E" from "JUICE".
+    *   **Bottom-left:** A "Shop Now" button, website URL, and text "Supports Eye Health".
+    *   **Bottom-center:** The base of the can, and text indicating availability on Amazon and Flipkart.
+    *   **Bottom-right:** Text about product benefits ("Boosts Skin Glow") and features ("Pure Fruit Juice").
+*   **Framing:** This is a medium close-up, tightly framed around the product and key marketing text.
+*   **Visual Hierarchy:** The eye is drawn first to the large purple text "PURE MIXED BERRIES JUICE" and the central white can, then to the glass at the top, and finally to the smaller text callouts at the bottom.
+
+### PRODUCE / INGREDIENTS
+*   **In the glass:** Two raspberries, one blackberry, one blueberry, five ice cubes, and one mint sprig.
+*   **On the can label:** An illustration of one strawberry, one blackberry, one raspberry, and two blueberries, with green leaves.
+*   **Floating decoratively:** Two individual mint leaves are placed near the large text.
+
+### TEXT
+*   **Headline:** PURE MIXED BERRIES JUICE
+    *   **Font:** Heavy, sans-serif display font.
+    *   **Color:** Dark purple with a subtle gradient and a drop shadow.
+*   **Logo (Top-right):** dadū Fresh, Love nature - Stay Healthy
+    *   **Font:** "dadū" is a custom sans-serif, "Fresh" is a thin script, the tagline is a simple sans-serif.
+    *   **Color:** "dadū" and tagline are black, "Fresh" is green.
+*   **Can Label:**
+    *   Pure Fruit Juice (Red, sans-serif)
+    *   dadū Fresh MIXED BERRIES (Black, green, and red; fonts match the main logo and a bold sans-serif for "MIXED BERRIES")
+    *   Love Nature Stay Healthy (Black, sans-serif)
+    *   NO ADDED SUGAR | NO PRESERVATIVE NOT FROM CONCENTRATE (Red, all-caps, sans-serif)
+    *   250 mL (Black, bold sans-serif)
+*   **Benefit Callouts (Bottom):**
+    *   Supports Eye Health (Dark purple, bold sans-serif)
+    *   Boosts Skin Glow (Dark purple, bold sans-serif)
+*   **Call to Action (Bottom-left):**
+    *   Shop Now (White, bold sans-serif, inside a purple button)
+    *   www.dadufresh.com (Dark purple, sans-serif)
+*   **Availability (Bottom-center):**
+    *   Also Available On (Brownish-orange, sans-serif)
+    *   amazon / Flipkart (Brand logos are used)
+*   **Footer Text (Bottom-right):**
+    *   Pure Fruit Juice, NO ADDED SUGAR | NO PRESERVATIVE NOT FROM CONCENTRATE (Dark purple, sans-serif, all-caps for the second line)
+
+### DECORATIVE ELEMENTS
+*   **Arrows:** Two hand-drawn style arrows in dark purple, one curving from "Supports Eye Health" and one squiggly arrow from "Boosts Skin Glow," both pointing toward the can.
+*   **Shapes:** A solid dark purple rectangle with rounded corners serves as the "Shop Now" button.
+*   **Icons:** A green square with a white dot (Indian vegetarian mark) is on the can. Amazon and Flipkart logos are at the bottom.
+*   **Splashes:** On the can's label, there is a red liquid splash emanating from the illustrated berries.
+*   **Lines:** The base of the can features thin, diagonal white and grey stripes.
+
+### BACKGROUND
+The background is a solid, light pinkish-beige surface with a subtle, soft radial gradient that is slightly brighter behind the product. A soft, diffused shadow is cast by the can and the glass.
+
+### LIGHTING
+The lighting is bright, soft, and diffuse, typical of a studio setting. The primary light source appears to be positioned in front of and slightly above the subject. This creates soft highlights on the can's rim, the ice cubes, and the berries, without producing harsh shadows.
+
+### MOOD
+*   Fresh
+*   Healthy
+*   Vibrant
+*   Clean
+*   Natural
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution digital camera, likely a medium format equivalent, paired with a sharp macro prime lens to achieve pristine clarity and tack-sharp focus on the primary subject. The depth of field is shallow and precisely controlled, creating a soft, out-of-focus background gradient while keeping key elements in focus. The lighting is artificial, high-key, and extremely diffused, originating from a large, soft source that wraps smoothly around objects, producing minimal, very soft shadows and broad, controlled highlights without any specular clipping. The color science is defined by a highly saturated and vibrant palette with a dominant creamy pink and magenta background, creating a warm yet clean atmosphere. Whites are rendered bright and neutral, while primary colors are selectively boosted for maximum pop. The post-processing is extensive, resulting in a clinically clean, noise-free image with a gentle contrast curve that avoids pure blacks, giving it a bright, airy feel with a subtle unifying pink tint in the mid-tones.
+
+**Keywords:** Bright, High-Key, Clean, Saturated, Commercial, Polished.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The headline "PURE MIXED BERRIES JUICE"
+*   The wordmark "dadū Fresh"
+*   The tagline "Love nature - Stay Healthy"
+*   The can label text "Pure Fruit Juice"
+*   The can label text "MIXED BERRIES"
+*   The can label text "NO ADDED SUGAR | NO PRESERVATIVE NOT FROM CONCENTRATE"
+*   The can label text "250 mL"
+*   The benefit callout "Supports Eye Health"
+*   The benefit callout "Boosts Skin Glow"
+*   The call to action button with text "Shop Now"
+*   The URL "www.dadufresh.com"
+*   The text "Also Available On"
+*   The "amazon" logo or name
+*   The "Flipkart" logo or name
+*   The hand-drawn style arrows pointing to the product
+*   The Indian vegetarian mark (green square with white dot)
+*   Any illustrations of strawberries, blackberries, raspberries, or blueberries
+*   Any red liquid splashes
+
+STRICT CONSTRAINTS:
+Aspect ratio 4:5. The background and color grade must use ONLY the Island Splash palette: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), warm sand/tan (#A89078). Every bottle label MUST come EXACTLY from the provided product image; do not redraw, recolor, or modify labels. Island Splash Lime bottles must have a matte BLACK cap. The Island Splash logo appears once only, small, in a corner. No mascots, cartoons, or personified objects. FORBIDDEN in the rendered text: hashtags, #, URLs, www, .com, social handles, @, fake promotions, FREE, % OFF, GIVEAWAY, pricing, $.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the scene's subject and composition faithfully. The primary subject is a beverage bottle, positioned centrally and diagonally, angled from lower-left to upper-right. A secondary subject is a top-down view of a glass filled with a light-colored liquid, located in the upper portion of the image. Large, stylized text wraps around the central bottle. The framing is a medium close-up, tightly focused on the product and text zones. The background is a solid, clean surface. DO NOT include any produce, ingredients, or garnishes; NO berries, NO mint leaves, NO ice cubes, NO decorative fruit or splashes anywhere in the image. The glass contains only the liquid.
+
+PRODUCT REPLACEMENT:
+The central white aluminum can is replaced by one Island Splash Lime bottle. The bottle is clear glass, showing a pale yellow-green liquid. It has a matte BLACK cap. Paste INPUT 2 (Island Splash Lime label) onto the bottle, pixel-faithful, do not redraw the label.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Lime: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+- Headline wrapping around the bottle: "Real Lime. That's It." Render this in a heavy, clean, sans-serif display font in dark teal (#243C3C).
+- Small benefit callout, bottom-left: "Made from real limes." Render in a simple sans-serif font in warm sand/tan (#A89078).
+- Small benefit callout, bottom-right: "Sunshine in a bottle." Render in a simple sans-serif font in warm sand/tan (#A89078).
+- All text should have a subtle, soft drop shadow for legibility, matching the reference's text style.
+
+LOGO:
+Render the logo from the LAST INPUT image as a small badge, approximately 8% of the frame width, in the bottom-right corner. No background box, no banner, no additional text lockup.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Shot with a high-resolution digital camera, medium format equivalent, paired with a sharp macro prime lens to achieve pristine clarity and tack-sharp focus on the primary subject. The depth of field is shallow and precisely controlled, creating a soft, out-of-focus background while keeping key elements in focus. The lighting is artificial, high-key, and extremely diffused, originating from a large, soft source that wraps smoothly around objects, producing minimal, very soft shadows and broad, controlled highlights without any specular clipping. The color science is defined by the Island Splash brand palette: a rich blend of dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), and warm sand/tan (#A89078). The background is a solid warm sand/tan. The post-processing is extensive, resulting in a clinically clean, noise-free image with a gentle contrast curve that avoids pure blacks, giving it a bright, airy feel with a subtle unifying warm golden tint in the mid-tones. This style is applied as the final pass over the entire image.

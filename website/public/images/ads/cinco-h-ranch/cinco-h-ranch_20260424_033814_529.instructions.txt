@@ -1,0 +1,129 @@
+BRAND: cinco-h-ranch (Cinco H Ranch Naturals)
+REF: /home/drewp/asset-ads/brand_assets/cinco-h-ranch/references/soap/img_a5709efbfd33.jpg
+OUTPUT: /home/drewp/asset-ads/output/cinco-h-ranch_20260424_033814_529.png
+PRODUCTS: Honey Vanilla Soap
+TIMESTAMP: 2026-04-24T03:41:49.995451
+
+=== REVERSE ANALYSIS ===
+**SUBJECT**
+The subject is a flat-lay product shot featuring a box and a bar of baby soap. The soap and its packaging are centrally located and surrounded by the raw ingredients used in the product, such as coconut, aloe, honey, and olives.
+
+**PRODUCT COUNT**
+1
+
+**PRODUCT DETAILS**
+- **Product 1:** A rectangular cardboard box for "BABYBAMP Gentle Baby Cleansing Soap". It is positioned in the center-left of the frame, angled to show the front and right side. It is white on top and a wavy blue on the bottom, with black and gray text and a simple line drawing of a baby in a tub. The box is closed.
+
+*Note: A separate bar of white, rectangular soap with the brand name "BABYBAMP" embossed on it lies to the right of the box.*
+
+**COMPOSITION**
+- **Top-left:** A halved coconut and a sprig of what appears to be an olive branch with black berries.
+- **Top-center:** The headline text, aloe vera leaves, and the top of the product box.
+- **Top-right:** A small glass jar of honey with a dipper.
+- **Center-left:** The product box and a small bowl of olive oil.
+- **Center-center:** The main focus, showing the product box and the bar of soap resting on a light-colored towel.
+- **Center-right:** The bar of soap and cubes of shea butter.
+- **Bottom-left:** The bowl of olive oil on the towel.
+- **Bottom-center:** A small glass bowl of green olives.
+- **Bottom-right:** The cubes of shea butter and the bowl of green olives.
+- **Framing:** This is a medium close-up, flat-lay composition.
+- **Visual Hierarchy:** The eye is first drawn to the headline, then to the centrally placed product box and soap bar, and finally to the surrounding ingredients and their descriptive text labels.
+
+**PRODUCE / INGREDIENTS**
+- One half of a coconut
+- Three pieces of green aloe vera
+- A small jar of honey with a honey dipper
+- Cubes of yellow shea butter
+- A small glass bowl of yellow olive oil
+- A sprig with green leaves and small, round black berries
+- A small glass bowl of green olives with leaves attached
+
+**TEXT**
+- **Headline (Top Center):** "One Bar. Many Benefits." (Font: Serif, medium weight, gold/brown color).
+- **Labels (around the image):**
+    - "Coconut" / "Gently cleanses &" / "maintiure balance" (Note: "moisture" is misspelled as "maintiure").
+    - "Olive Oil" / "Hydrates & strengthens" / "natural barrier".
+    - "Manuka Vera –" / "Cools & soothes" / "sensitive skin".
+    - "Shea Butter" / "Deeply moisturize" / "& softens".
+    - "Ceramides" / "Locks in moisture" / "& restores skin health".
+    (Font for all labels: Ingredient names are in a heavy, clean sans-serif; descriptions are in a lighter weight of the same sans-serif. All are in a dark gray/black color).
+- **On Product Box:**
+    - "BABYBAMP"
+    - "FOR LOVING PRECIOUS SKIN, NATURALLY"
+    - "GENTLE BABY CLEANSING SOAP"
+    - Various small icons on the blue portion.
+- **On Soap Bar:** "BABYBAMP" is embossed on the surface.
+
+**DECORATIVE ELEMENTS**
+- Two thin, black, straight lines connect the text labels to their corresponding ingredients ("Manuka Vera" to the honey, and "Ceramides" to the olives).
+
+**BACKGROUND**
+The background is a solid, light beige or cream-colored surface. A light-colored, textured towel is laid diagonally across the middle of the frame, underneath the products and some of the ingredients.
+
+**LIGHTING**
+The lighting is bright and soft, appearing to come from the top-left. This creates gentle, diffused shadows to the right and bottom of the objects, giving them dimension without harshness. Highlights are soft, visible on the honey jar and olive oil.
+
+**MOOD**
+- Natural
+- Gentle
+- Clean
+- Soothing
+- Informative
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a full-frame digital cinema camera and a macro prime lens, utilizing a shallow depth of field to create a soft, gentle fall-off from the plane of sharp focus. The visual aesthetic is dominated by high-key, diffused lighting from a large, soft source, producing minimal, open shadows and broad, blooming highlights with a delicate roll-off. The color science is built on a very warm, low-contrast palette, characterized by creamy whites, beige midtones, and lifted, warm-toned shadows. Saturation is moderate but leans towards a desaturated, pastel quality, avoiding any harsh or vibrant hues. The post-processing involves a gentle S-curve with significantly raised black points and a global warm tint, contributing to an overall clean, pristine, and ethereal feel with no visible grain or digital noise.
+
+**Keywords:** Warm, High-Key, Soft, Creamy, Low-Contrast, Ethereal
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+  - The headline "One Bar. Many Benefits."
+  - The brand name "BABYBAMP" (on the box and embossed on the soap bar)
+  - The tagline "FOR LOVING PRECIOUS SKIN, NATURALLY"
+  - The product name "GENTLE BABY CLEANSING SOAP"
+  - The text label "Coconut"
+  - The text label "Gently cleanses &"
+  - The text label "maintiure balance"
+  - The text label "Olive Oil"
+  - The text label "Hydrates & strengthens"
+  - The text label "natural barrier"
+  - The text label "Manuka Vera –"
+  - The text label "Cools & soothes"
+  - The text label "sensitive skin"
+  - The text label "Shea Butter"
+  - The text label "Deeply moisturize"
+  - The text label "& softens"
+  - The text label "Ceramides"
+  - The text label "Locks in moisture"
+  - The text label "& restores skin health"
+  - The two thin, black, straight lines used as decorative pointers
+  - Any icons on the blue portion of the product box
+
+STRICT CONSTRAINTS:
+- 4:5 aspect ratio (portrait).
+- The brand palette must be used for all colors, backgrounds, and text: Navy #204050, Dark Brown #301800, Cream #F0E0B0. Accent Red #B03030 is for small highlights/arrows only, not for general color.
+- Do not invent or redraw the product label. The provided label artwork must be preserved pixel-faithful.
+- Do not render any hashtags, URLs, social media handles, QR codes, or pricing.
+- Do not render any of the forbidden words: organic, antibacterial, kills bacteria, germ-killing, treats, cures, prevents, medicated, clinically, unclogs, restores pH.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference's composition as a medium close-up, flat-lay shot. The subject is a single bar of soap. The soap rests in the center of the frame on a light-colored, textured towel, which is laid diagonally on a solid, flat background. Maintain the central placement of the product and the top-center placement for a headline. DO NOT include any of the raw ingredients or produce from the reference image, such as coconuts, aloe vera leaves, jars of honey, bowls of olive oil, shea butter, or olive sprigs. The scene must contain ONLY the bar of soap, the towel, and the background.
+
+PRODUCT REPLACEMENT:
+- In the center of the frame, where the reference image shows a box and a separate bar of soap, place ONE single rectangular bar of Cinco H Ranch Naturals Honey Vanilla Soap.
+- The bar of soap should have a natural, tallow-like texture.
+- Wrap the center of the soap bar with the paper label from INPUT 2. Paste the label pixel-faithful, do not redraw or alter the design.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: Cinco H Ranch Naturals — ranch, honest, no fluff. Short declarative headlines like 'THE RANCH STANDARD', 'BUILT FOR THE RANCH'. Never clinical, never spa-fluff, never corporate. Texas pride, natural ingredients, small-batch. No competitor names, no clinical trial language.
+  Honey Vanilla Soap: Honey Vanilla Soap: real Texas honey, lavender + vanilla essential oils. Claims: Gentle everyday cleansing / Nourishing lather / Soft, hydrated skin. Format: bar soap, all natural. NO medical claims, no clinical language.
+
+TEXT STRATEGY:
+- Headline (Top Center): "THE RANCH STANDARD". Render this in a medium-weight serif font, matching the feel of the reference headline. Use the brand's Dark Brown #301800 for the text color.
+- Do NOT render any of the smaller text blocks or ingredient labels seen in the reference ad. The only text in the image is the headline.
+
+LOGO:
+- Render the logo from the LAST INPUT image. Place it in the bottom-right corner. It should be small, approximately 8% of the total image width. Render it without any background box, banner, or additional text.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Applied as the final pass over the entire image: Shot with a full-frame digital cinema camera and a macro prime lens, utilizing a shallow depth of field to create a soft, gentle fall-off from the plane of sharp focus. The visual aesthetic is dominated by high-key, diffused lighting from a large, soft source, producing minimal, open shadows and broad, blooming highlights with a delicate roll-off. The color science is built on the Cinco H Ranch Naturals palette, characterized by cream #F0E0B0 whites and midtones, with shadows rendered in deep navy #204050 and dark brown #301800. The post-processing involves a gentle S-curve with significantly raised black points, contributing to an overall clean, pristine, and ethereal feel with no visible grain or digital noise.

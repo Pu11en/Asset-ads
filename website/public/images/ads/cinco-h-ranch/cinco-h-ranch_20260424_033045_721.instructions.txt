@@ -1,0 +1,124 @@
+BRAND: cinco-h-ranch (Cinco H Ranch Naturals)
+REF: /home/drewp/asset-ads/brand_assets/cinco-h-ranch/references/soap/img_9f168c27a954.jpg
+OUTPUT: /home/drewp/asset-ads/output/cinco-h-ranch_20260424_033045_721.png
+PRODUCTS: Honey Vanilla Soap
+TIMESTAMP: 2026-04-24T03:32:42.831076
+
+=== REVERSE ANALYSIS ===
+### SUBJECT
+The main focus is a bar of "Lemonade" soap and its corresponding box, displayed side-by-side on a round wooden pedestal. The box is on the left, standing vertically. The bar of soap is on the right, also standing vertically.
+
+### PRODUCT COUNT
+1
+
+### PRODUCT DETAILS
+**Product 1 (Container):**
+*   **Container Type:** A white, rectangular cardboard box.
+*   **Position:** In the bottom-center of the frame, to the left of the soap bar, resting on a wooden pedestal.
+*   **Angle:** Facing the viewer, angled slightly to the right, showing its front and a narrow view of its right side.
+*   **Size:** It occupies approximately the bottom third of the image's height.
+*   **Cap/Lid State:** The box is closed.
+
+**Product 2 (Soap Bar):**
+*   **Product Type:** A rectangular bar of soap, shown outside its packaging.
+*   **Position:** In the bottom-center of the frame, to the right of the box, resting on the wooden pedestal.
+*   **Angle:** Facing the viewer squarely.
+*   **Details:** The bar has three distinct layers: a green and white marbled top section, a thin solid white middle stripe, and a solid light green bottom section. The top is textured to look like frosting and is decorated with small yellow and reddish-pink wedges.
+
+### COMPOSITION
+*   **Top-Left:** Large, out-of-focus green leaves enter the frame. The beginning of the headline text "Lemonade" is present.
+*   **Top-Center:** The main headline "Lemonade" and the subheadline are centered at the top.
+*   **Top-Right:** More green leaves enter the frame from the top right corner.
+*   **Middle-Left:** The "Daily Routine" text block is positioned here, with a soft shadow from a leaf behind it.
+*   **Middle-Center:** The center of the image is the textured background, with soft, dappled shadows of leaves.
+*   **Middle-Right:** The "Tools of Beauty" text block is positioned here.
+*   **Bottom-Left:** A dark green arrow points from the "Daily Routine" text down toward the product box on the wooden pedestal.
+*   **Bottom-Center:** The product box and soap bar are centrally located on a wooden pedestal.
+*   **Bottom-Right:** A dark green arrow points from the "Tools of Beauty" text down toward the bar of soap.
+*   **Framing:** The shot is a medium close-up, focusing on the product.
+*   **Visual Hierarchy:** The eye is drawn first to the large "Lemonade" headline, then down to the product at the bottom, guided by the text blocks and arrows.
+
+### PRODUCE / INGREDIENTS
+Several large, green plant leaves are visible entering the frame from the top left and top right corners. An illustration on the product box depicts lemons, a lime, and a cucumber slice.
+
+### TEXT
+*   **Headline:** Lemonade
+*   **Subheadline:** Ditch your regular chemically based Bathing Soap & Gel
+*   **Body Copy (Left):** Daily Routine / Use it daily and try the difference
+*   **Body Copy (Right):** Tools of Beauty / Help you to take care of your skin
+*   **Product Box Text:**
+    *   Soapywise
+    *   Handcrafted Skincare
+    *   Lemonade
+    *   Fresh Lime, Cucumber & Lemon
+    *   Cold Process Luxury Bath Soap
+*   **Font Feel:** The headline "Lemonade" is a heavy, dark green sans-serif. All other copy on the background ("Ditch your...", "Daily Routine", etc.) is a thinner, clean, dark green sans-serif. On the box, "Soapywise" is a script-style font, while the rest of the text is a clean, simple sans-serif.
+*   **Text Zones:** The headline and subheadline are at the top. Body copy is in the middle-left and middle-right. Product-specific text is on the packaging in the bottom-center.
+
+### DECORATIVE ELEMENTS
+*   **Arrows:** Two dark green, hand-drawn style arrows. The left arrow curves down from "Daily Routine" to the box. The right arrow curves down from "Tools of Beauty" to the soap bar.
+*   **Illustrations:** The product box features yellow line-art drawings of soap bars and bubbles, along with a colored illustration of a beverage glass with lemons, lime, and cucumber.
+*   **Soap Toppings:** The top of the soap bar is decorated with a white, swirled, frosting-like texture, a small yellow wedge, and a small reddish-pink wedge.
+
+### BACKGROUND
+The background is a solid, light-colored (off-white or light grey) wall with a fine, rough texture, similar to plaster or concrete. Soft, dappled shadows from unseen leaves are cast across its surface.
+
+### LIGHTING
+The lighting is soft and diffused, appearing to come from the top or top-left. It creates gentle highlights on the leaves, the product, and the wooden pedestal. Shadows are soft-edged, most notably the shadows of the leaves on the background wall and the soft shadow cast by the product on the pedestal.
+
+### MOOD
+*   Natural
+*   Fresh
+*   Clean
+*   Gentle
+*   Artisanal
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution full-frame or medium format digital camera, likely using a sharp macro prime lens around 85-100mm to achieve a clean, controlled shallow depth of field that isolates the subject. The lighting is sourced from a single, large, heavily diffused key light, positioned high and to the front, creating soft, wrapping shadows with gentle penumbras and a bright, high-key feel. The color science is defined by a neutral-to-cool white balance, where whites and neutrals are kept impeccably clean with a subtle cyan bias, particularly in the soft shadows. The color palette is meticulously graded to feature vibrant, lush greens and punchy yellows against these cool neutrals, with saturation boosted selectively for a clean, commercial pop. The post-processing exhibits a gentle S-curve, lifting the mid-tones for an airy brightness while maintaining detail, with slightly lifted blacks to avoid harsh contrast, resulting in a digitally pristine image devoid of any grain or noise.
+
+**Keywords:** Bright & Airy, Clean Commercial, Vibrant Natural Greens, Soft Diffused Light, Cool Neutrals, High-Key.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The wordmark "Soapywise" in a script-style font
+*   The headline "Lemonade"
+*   The subheadline "Ditch your regular chemically based Bathing Soap & Gel"
+*   The text block "Daily Routine / Use it daily and try the difference"
+*   The text block "Tools of Beauty / Help you to take care of your skin"
+*   Any text string on the product packaging, including "Handcrafted Skincare", "Fresh Lime, Cucumber & Lemon", "Cold Process Luxury Bath Soap"
+*   Any line-art illustrations of soap bars or bubbles on the packaging
+*   Any colored illustrations of a beverage glass, lemons, limes, or cucumbers on the packaging
+*   Any actual lemons, limes, or cucumbers in the scene
+*   Any decorative toppings on the soap bar, such as the white frosting texture or the small yellow and reddish-pink wedges
+
+STRICT CONSTRAINTS:
+*   The final image aspect ratio must be 4:5 portrait.
+*   The color palette is restricted to Navy #204050, Dark Brown #301800, Cream #F0E0B0, and Accent Red #B03030 (for arrows/highlights only).
+*   Do not invent, redraw, or alter the product label artwork from INPUT 2. It must be pasted pixel-faithful onto the product box.
+*   Do not render any text containing forbidden words: '#', 'www.', '.com', '@', 'FREE', '% OFF', 'GIVEAWAY', '$', 'antibacterial', 'kills bacteria', 'germ-killing', 'treats', 'cures', 'prevents', 'medicated', 'clinically', 'organic', 'unclogs', 'restores pH'.
+*   No mascots, cartoon characters, or celebrity endorsements.
+*   The background and its texture must be preserved from the reference; only the color should shift to match the brand palette.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference scene's subject and composition faithfully. The subject is a rectangular bar of soap and its corresponding rectangular cardboard box, displayed side-by-side on a round wooden pedestal in the bottom-center of the frame. The box is on the left, standing vertically and angled slightly right. The bar of soap is on the right, standing vertically and facing the viewer. The composition includes large, out-of-focus plant leaves entering the frame from the top-left and top-right corners. Maintain the reference's text zone placements: a main headline and subheadline at the top-center, a text block in the middle-left, a text block in the middle-right, and two decorative arrows pointing from the middle text blocks down to the products. The background is a plaster-textured wall with soft, dappled shadows from unseen leaves. DO NOT add any splashes, droplets, or other elements not present in the reference. DO NOT include any produce like lemons or limes.
+
+PRODUCT REPLACEMENT:
+*   Product Box (left position): Render a simple, natural-looking rectangular cardboard box. On the front of this box, paste the label from INPUT 2 (Cinco H Ranch Naturals Honey Vanilla Soap), pixel-faithful, do not redraw the design.
+*   Soap Bar (right position): Render a simple, rustic, rectangular bar of Cinco H Ranch Naturals Honey Vanilla Soap. It should have a natural, handcrafted appearance consistent with a honey and vanilla soap. It has NO decorative toppings, frosting, or embedded objects.
+
+TEXT CONTENT GUIDANCE:
+Brand voice: Cinco H Ranch Naturals — ranch, honest, no fluff. Short declarative headlines like 'THE RANCH STANDARD', 'BUILT FOR THE RANCH'. Never clinical, never spa-fluff, never corporate. Texas pride, natural ingredients, small-batch. No competitor names, no clinical trial language.
+Honey Vanilla Soap: Real Texas honey, lavender + vanilla essential oils. Claims: Gentle everyday cleansing / Nourishing lather / Soft, hydrated skin. Format: bar soap, all natural. NO medical claims, no clinical language.
+
+TEXT STRATEGY:
+*   Headline (top-center): "THE RANCH STANDARD" in a heavy, clean sans-serif font, rendered in Dark Brown #301800.
+*   Subheadline (below headline): "Real soap. No shortcuts." in a thin, clean sans-serif font, rendered in Navy #204050.
+*   Body Copy (middle-left): "Everyday Clean / For honest work and soft skin." in a thin, clean sans-serif font, rendered in Navy #204050.
+*   Body Copy (middle-right): "Nourishing Lather / Made with real Texas honey." in a thin, clean sans-serif font, rendered in Navy #204050.
+*   Arrows: The two hand-drawn style arrows pointing from the body copy to the products should be rendered in Accent Red #B03030.
+
+LOGO:
+Using INPUT 3, render the Cinco H Ranch Naturals logo as a small, standalone badge in the bottom-right corner. It should be approximately 8% of the total image width. Do not place it in a banner, lockup, or colored box.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Applied as the final pass over the entire image: The scene is shot with a high-resolution full-frame or medium format digital camera, using a sharp macro prime lens around 85-100mm to achieve a clean, controlled shallow depth of field that isolates the subject. The lighting is sourced from a single, large, heavily diffused key light, positioned high and to the front, creating soft, wrapping shadows with gentle penumbras and a bright, high-key feel. The color science is defined by a warm, earthy white balance. The color palette is meticulously graded to feature deep Navy (#204050) and rich Dark Brown (#301800) against a warm, inviting Cream (#F0E0B0) background, with pops of Accent Red (#B03030) for the arrows. The post-processing exhibits a gentle S-curve, lifting the mid-tones for an airy brightness while maintaining detail, with slightly lifted blacks to avoid harsh contrast, resulting in a digitally pristine image devoid of any grain or noise.

@@ -1,0 +1,99 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/processed/img_6ce7b5f914fd.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260424_043308_566.png
+PRODUCTS: Peanut Punch
+TIMESTAMP: 2026-04-24T04:34:31.129715
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** A person's right hand is holding a small bottle. The hand enters the frame from the left and is positioned centrally, presenting the product towards the viewer. The grip is natural, with the thumb on the left side of the bottle and the fingers wrapped around the right.
+
+**PRODUCT COUNT:** 1
+
+**PRODUCT DETAILS:** The product is a small, white plastic bottle with a blue screw-on cap. It is held upright, slightly angled towards the right. The bottle occupies the center-right portion of the frame. The cap is on and sealed. A blue shrink-wrap label covers the main body of the bottle.
+
+**COMPOSITION:**
+*   **Top-left:** Pink background with the words "GRAB IT" in large, white font.
+*   **Top-center:** Pink background with the "naadan" logo in white and yellow/orange.
+*   **Top-right:** The top of the blue bottle cap against the pink background.
+*   **Mid-left:** The words "LIKE NEVER BEFORE" in large, white font, next to the person's thumb.
+*   **Mid-center:** The main body of the bottle, held by the hand.
+*   **Mid-right:** The person's fingers curled around the bottle against the pink background.
+*   **Bottom-left:** The person's wrist and forearm extending out of the frame.
+*   **Bottom-center:** Pink background with the website address at the very bottom.
+*   **Bottom-right:** Pink background.
+
+The framing is a medium close-up. The visual hierarchy starts with the bottle and hand, followed by the large white headline, and then the brand logo at the top.
+
+**PRODUCE / INGREDIENTS:** NONE
+
+**TEXT:**
+*   **Logo (top center):** "naadan" in a white, lowercase, sans-serif font, with a stylized 'n' in yellow and orange. Below it, "feel home" in a smaller, thin, white sans-serif font.
+*   **Headline (center left):** "GRAB IT LIKE NEVER BEFORE" in a very heavy, rounded, sans-serif display font. The color is white with a light pink outline.
+*   **Product Label:**
+    *   "naadan" logo, same as above.
+    *   "100% NATURAL" in a white, sans-serif font inside a green, leafy badge.
+    *   "SPICY BUTTER MILK" in a white, condensed, sans-serif font, stacked vertically.
+    *   Arabic text: "اللبن حار" in a white font.
+*   **Website (bottom center):** "naadanfoodstuff.com" in a small, white, sans-serif font.
+
+**DECORATIVE ELEMENTS:**
+*   A large, faded, low-opacity version of the headline text "GRAB IT LIKE NEVER BEFORE" is layered in the background behind the hand and bottle.
+*   The "naadan" logo includes a stylized, fluid "n" shape in yellow and orange.
+*   On the product label, there is a green, leaf-bordered circular badge containing the text "100% NATURAL".
+*   An illustration of a small, red-brown clay pot filled with a white liquid is on the bottom of the product label.
+
+**BACKGROUND:** The background is a solid, vibrant magenta/hot pink color with a subtle, textured pattern. The large, low-opacity text serves as a background design element.
+
+**LIGHTING:** The lighting is soft and diffused, coming from the front and slightly to the left. It creates gentle highlights on the top of the hand, fingers, and the left side of the bottle. Shadows are soft and minimal, helping to define the form of the hand and product without being harsh.
+
+**MOOD:** Vibrant, energetic, bold, modern, refreshing.
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution digital camera and a sharp prime lens, the aesthetic is defined by a clean, graphic sensibility. The lighting is artificial, high-key, and sourced from a large, diffuse modifier, resulting in exceptionally soft shadows with smooth falloff and broad, controlled highlights that prevent specular blowouts. The focus is tack sharp with a moderate depth of field, rendering the primary visual plane with exacting clarity. A heavily stylized, vibrant color grade dominates the image, built upon an intense duotone palette of saturated magenta and cyan. The contrast curve is punchy, creating bright, clean whites, while the shadows are lifted and heavily infused with the dominant magenta hue. The entire image is digitally pristine, exhibiting no film grain or sensor noise, emphasizing a polished, commercial look with precise color separation.
+
+**Keywords:** Saturated Duotone, High-Key Studio, Digitally Clean, Soft Diffuse Light, Graphic & Vibrant, Magenta-Tinted Shadows.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The wordmark "naadan"
+*   The tagline "feel home"
+*   The headline text "GRAB IT"
+*   The headline text "LIKE NEVER BEFORE"
+*   The large, faded, low-opacity background text "GRAB IT LIKE NEVER BEFORE"
+*   The URL "naadanfoodstuff.com"
+*   The product label text "SPICY BUTTER MILK"
+*   The product label text "100% NATURAL"
+*   The product label text in Arabic: "اللبن حار"
+*   The green, leaf-bordered circular badge on the label
+*   The illustration of a small, red-brown clay pot on the label
+*   Any text, logos, or branding associated with the "naadan" brand.
+
+STRICT CONSTRAINTS:
+*   Aspect ratio 4:5 (portrait).
+*   Every bottle label MUST come EXACTLY from the provided product image. Do NOT redraw, recolor, modify, or invent labels. Preserve the label pixel-faithful.
+*   No mascots, cartoon characters, smiley fruits, or personified objects. No gym equipment or sports gear.
+*   The background and color grade must use ONLY the Island Splash palette: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), warm sand/tan (#A89078).
+*   FORBIDDEN: hashtags, # symbols, URLs, www, .com, social handles (@), fake promotions/discounts (FREE, 50% OFF, GIVEAWAY), pricing, phone numbers. All text must be in English.
+*   The style overlay applies as the final unifying step over the entire image so all elements feel like one cohesive shot.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the scene faithfully: A person's right hand enters the frame from the left, holding a small beverage bottle in a natural grip, presenting it towards the viewer. The framing is a medium close-up, with the hand and bottle as the central focus. The background is a solid color with a subtle texture. Do NOT add any splashes, produce, fruit, ingredients, or other decorative elements.
+
+PRODUCT REPLACEMENT:
+The single bottle held in the hand is replaced with a standard-shaped beverage bottle. The bottle's label must be pasted pixel-faithful from INPUT 2 (Island Splash Peanut Punch), do not redraw or alter it. The bottle cap must be matte BLACK, do not inherit the cap color from the reference.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Peanut Punch: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+-   Headline, split into two lines in the center-left zone: "REAL PEANUT POWER".
+-   Render the headline in a very heavy, rounded, sans-serif display font, in warm sand/tan (#A89078).
+-   In the background, behind the hand and bottle, render the same headline text "REAL PEANUT POWER" as a large, low-opacity, faded decorative element, using a tone-on-tone color from the brand palette (e.g., deep coral orange #E4843C against a warm golden orange #F0A86C background).
+-   Do not add any other text, body copy, or taglines.
+
+LOGO:
+Render the logo from INPUT 3 (the last input image) as a small, clean badge, approximately 8% of the frame width, in the bottom-right corner. No background box, no effects, no lockup text.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Shot with a high-resolution digital camera and a sharp prime lens, the aesthetic is defined by a clean, graphic sensibility. The lighting is artificial, high-key, and sourced from a large, diffuse modifier, resulting in exceptionally soft shadows with smooth falloff and broad, controlled highlights that prevent specular blowouts. The focus is tack sharp with a moderate depth of field. A heavily stylized color grade dominates the image, built upon the Island Splash brand palette of dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), and warm sand/tan (#A89078). The contrast curve is punchy, creating warm, clean highlights, while the shadows are lifted and heavily infused with the dark teal (#243C3C) hue. The entire image is digitally pristine, exhibiting no film grain or sensor noise, emphasizing a polished, commercial look with precise color separation. This style is applied as the final pass over the entire image.

@@ -1,0 +1,96 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/processed/web_img_3bf053e5b2e1.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260424_044513_447.png
+PRODUCTS: Guava Pine
+TIMESTAMP: 2026-04-24T04:46:42.041825
+
+=== REVERSE ANALYSIS ===
+SUBJECT: The main focus is a can of Alani Energy drink. The can is positioned vertically in the center of the frame, surrounded at its base by fruits, flowers, and ice cubes resting in shallow water against a beach sunset.
+
+PRODUCT COUNT: 1
+
+PRODUCT DETAILS:
+- **Container type:** Aluminum beverage can.
+- **Position in frame:** Centered vertically and slightly to the right, occupying most of the frame's height.
+- **Angle:** Facing forward, slightly turned to the viewer's left.
+- **Size relative to image:** The can takes up approximately 75% of the image height.
+- **Cap/lid state:** The can is sealed with its silver lid and tab intact.
+
+COMPOSITION:
+- **Top-left:** Out-of-focus palm fronds against a pink and purple sky.
+- **Top-center:** The top portion of the beverage can and a pink sky.
+- **Top-right:** Out-of-focus palm fronds against a pink and orange sky.
+- **Middle-left:** The left side of the can, a pink hibiscus flower, and a quarter slice of guava.
+- **Middle-center:** The center of the can, featuring the brand and product name.
+- **Middle-right:** The right side of the can, the setting sun over the ocean horizon, and a pink hibiscus flower.
+- **Bottom-left:** A halved guava and ice cubes in pink-tinted water.
+- **Bottom-center:** The base of the can, a whole strawberry, a lime slice, and ice cubes.
+- **Bottom-right:** A whole strawberry, two lime wedges, and ice cubes in the water.
+- **Framing:** The shot is a tight, centered medium shot.
+- **Visual hierarchy:** The eye is drawn first to the can, then to the surrounding fruits and flowers at its base.
+
+PRODUCE / INGREDIENTS:
+- **Guava:** One half of a pink guava and one quarter slice.
+- **Strawberry:** Two whole strawberries.
+- **Lime:** One slice and two wedges.
+- **Ice:** Multiple ice cubes, both whole and partially crushed, are scattered at the base of the can.
+
+TEXT:
+- **On the can:**
+    - "Alani" in a large, white, script font.
+    - "ENERGY" in a smaller, white, sans-serif font below "Alani".
+    - "Sunset Guava Splash" in a script font. "Sunset" and "Splash" are dark pink, while "Guava" is light pink.
+    - "GUAVA • STRAWBERRY • LIME" in a white, all-caps, sans-serif font on a red-orange banner.
+    - "ZERO SUGAR" and "200 MG CAFFEINE" in a white, all-caps, sans-serif font on a red banner near the bottom.
+
+DECORATIVE ELEMENTS:
+- Water droplets cover the entire surface of the can.
+- Droplets and small splashes of liquid are suspended in the air to the left and right of the can.
+- Two pink hibiscus flowers with green leaves are placed at the base of the can, one on the left and one on the right.
+
+BACKGROUND: The background is a photographic scene of a tropical beach at sunset. The sky is a gradient of pink, purple, and orange with soft clouds. The sun is visible on the horizon, reflecting on the surface of the ocean. Silhouettes of palm trees are visible in the top corners and on the distant shoreline to the left. The foreground consists of shallow water reflecting the colors of the sunset.
+
+LIGHTING: The lighting is warm and golden, coming from the setting sun in the background, which creates a rim light effect on the right side of the can and the fruit. A soft, frontal fill light illuminates the front of the can and ingredients, making the text legible and the details clear. Highlights are visible on the water droplets, ice cubes, and wet surfaces. Shadows are soft and cast directly below the objects in the foreground.
+
+MOOD:
+- Tropical
+- Refreshing
+- Vibrant
+- Serene
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution full-frame digital camera and a sharp prime lens to achieve a clean, noise-free image with a shallow depth of field that isolates the foreground. The lighting is highly controlled and artificial, designed to emulate a low, warm natural source, utilizing a large, soft key light from the front to create soft, diffused shadows and a bright, even exposure on the primary subject. A strong backlight provides a subtle rim effect and enhances specular highlights. The color science is defined by a hyper-saturated, warm analogous palette dominated by vibrant pinks, oranges, and reds, with a distinct magenta cast in the mid-tones and shadows. Highlights are pushed towards a warm yellow and have a soft, luminous roll-off. Post-processing involves a heavily stylized grade with a gentle S-curve, lifted blacks, and a prominent glow or bloom effect applied to the highlights, creating a dreamy, polished aesthetic, while aggressive local sharpening ensures crisp textural detail.
+
+Keywords: Hyper-Real, Saturated, Luminous Glow, Tropical Warmth, Commercial Polish, Soft Contrast
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The wordmark "Alani" in white script font.
+*   The word "ENERGY" in white sans-serif font.
+*   The product name "Sunset Guava Splash" in script font.
+*   The flavor list "GUAVA • STRAWBERRY • LIME" on a red-orange banner.
+*   The claims "ZERO SUGAR" and "200 MG CAFFEINE" on a red banner.
+*   Any red-orange or red banners on the product container.
+*   Any text string containing "Sunset", "Splash", "Alani", "Energy", "Sugar", or "Caffeine".
+
+STRICT CONSTRAINTS:
+The Island Splash label must be pasted from the provided input image, pixel-faithful. Do not redraw, modify, or add text to the label. No mascots, cartoon characters, or personified objects. The background and color grade must use ONLY the Island Splash palette: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), warm sand/tan (#A89078). All reference colors must be replaced with this palette. Do not render hashtags, URLs, social media handles, or promotional text.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference ad's scene and composition faithfully. The subject is a single beverage container, positioned vertically in the center. The background is a photographic tropical beach at sunset, with out-of-focus palm fronds in the top corners. The shot is a tight, centered medium shot. The base of the container sits in shallow water, surrounded by ice cubes and two pink hibiscus flowers. The entire surface of the container is covered in condensation water droplets, and there are small splashes of liquid suspended in the air around it. DO NOT include any fruit or produce from the reference; no guava, no strawberries, no limes. The scene contains ONLY the beverage container, ice, flowers, and water.
+
+PRODUCT REPLACEMENT:
+The central aluminum can from the reference is replaced with a glass beverage bottle with a matte BLACK cap. Paste the label from INPUT 2 (Island Splash Guava Pine) onto this bottle, pixel-faithful, do not redraw it.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Guava Pine: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+No headline or body copy. The ad is purely visual, matching the reference's text-free composition.
+
+LOGO:
+Using the LAST INPUT image, render the Island Splash logo as a small, clean badge in the bottom-right corner. It should be approximately 8% of the total image width. Do not place it in a box or combine it with any other text.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Shot with a high-resolution full-frame digital camera and a sharp prime lens to achieve a clean, noise-free image with a shallow depth of field that isolates the foreground. The lighting is highly controlled and artificial, designed to emulate a low, warm natural source, utilizing a large, soft key light from the front to create soft, diffused shadows and a bright, even exposure on the primary subject. A strong backlight provides a subtle rim effect and enhances specular highlights. The color science is defined by the Island Splash brand palette, dominated by dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), and warm sand/tan (#A89078). Highlights are pushed towards a warm golden orange and have a soft, luminous roll-off. Post-processing involves a heavily stylized grade with a gentle S-curve, lifted blacks, and a prominent glow or bloom effect applied to the highlights, creating a dreamy, polished aesthetic, while aggressive local sharpening ensures crisp textural detail. This is applied as the final pass over the entire image.

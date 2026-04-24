@@ -1,6 +1,6 @@
-import { signIn } from "./actions";
+import { adminSignIn } from "../../actions";
 
-export default async function Gate({
+export default async function AdminLogin({
   searchParams,
 }: {
   searchParams: Promise<{ error?: string }>;
@@ -11,12 +11,12 @@ export default async function Gate({
   return (
     <main className="min-h-screen flex items-center justify-center px-4">
       <form
-        action={signIn}
+        action={adminSignIn}
         className="w-full max-w-sm flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur"
       >
-        <h1 className="text-2xl font-semibold tracking-tight">Asset Ads</h1>
+        <h1 className="text-2xl font-semibold tracking-tight">Admin Access</h1>
         <p className="text-sm text-white/60">
-          Enter your brand password to view your ads.
+          Enter admin password to manage both brands.
         </p>
         <input
           type="password"

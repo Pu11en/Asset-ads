@@ -1,0 +1,104 @@
+BRAND: cinco-h-ranch (Cinco H Ranch Naturals)
+REF: /home/drewp/asset-ads/brand_assets/cinco-h-ranch/references/soap/img_13473aeff98e.jpg
+OUTPUT: /home/drewp/asset-ads/output/cinco-h-ranch_20260424_034613_274.png
+PRODUCTS: Honey Vanilla Soap
+TIMESTAMP: 2026-04-24T03:47:39.599094
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** The main focus is a still life arrangement featuring two rectangular bars of pink soap, stacked slightly offset. The top bar is garnished with pomegranate seeds and a sprig of rosemary. To the left of the soap is its product box. The soap and box are surrounded by their key ingredients: piles of pink salt, scattered pomegranate seeds, and sprigs of rosemary, all arranged on a wooden surface.
+
+**PRODUCT COUNT:** 1
+
+**PRODUCT DETAILS:** One rectangular cardboard product box is visible. It is positioned in the mid-left of the frame, standing upright. The box is shown at a three-quarter angle, revealing its front and right side. It is slightly smaller than the two stacked soap bars next to it. The box is closed.
+
+**COMPOSITION:**
+*   **Top-left:** Out-of-focus green foliage, white headline text.
+*   **Top-center:** Out-of-focus green foliage, white headline and body text.
+*   **Top-right:** Out-of-focus green foliage, a white logo.
+*   **Mid-left:** The product box, a sprig of rosemary, and a cut pomegranate.
+*   **Mid-center:** Two stacked pink soap bars are the central focus, with the product box partially entering the zone from the left.
+*   **Mid-right:** The right side of the stacked soap bars and a large, cut-open pomegranate.
+*   **Bottom-left:** A pile of coarse pink salt and scattered pomegranate seeds on a wooden surface.
+*   **Bottom-center:** Scattered pomegranate seeds and the wooden surface, directly in front of the soap. A white banner with a URL is at the very bottom edge.
+*   **Bottom-right:** A second pile of coarse pink salt, a sprig of rosemary, and the wooden surface.
+*   **Framing:** The shot is a medium close-up, tightly framed on the product and its ingredients.
+*   **Visual Hierarchy:** The eye is drawn first to the stacked pink soap bars, then to the product box, and finally scans the surrounding ingredients and text.
+
+**PRODUCE / INGREDIENTS:**
+*   Pomegranate: One half of a cut pomegranate and loose pomegranate seeds (arils) are visible.
+*   Pink Salt: Coarse, pink Himalayan salt is shown in two small piles and scattered on the surface.
+*   Rosemary: Two small sprigs of fresh rosemary are present.
+
+**TEXT:**
+*   **Top Banner Area:**
+    *   Headline: "PINK SALT & POMEGRANATE NATURAL SOAP" - All caps, heavy, white, sans-serif font.
+    *   Subheadline: "- BY HIMALAYAN BLENDS" - All caps, lighter weight, white, sans-serif font with wider letter spacing.
+    *   Body Copy: "Made with a blend of natural ingredients, including pink salt, pomegranate, rose geranium essential oil, coconut oil, apricot oil, rice bran oil, natural lye, and spring water, this soap is perfect for those seeking a gentle and effective skincare solution." - Sentence case, regular weight, white, sans-serif font.
+*   **On Product Box:**
+    *   "HANDMADE IN INDIA" - All caps, black, serif font.
+    *   "HIMALAYAN" - Title case, red, stylized display/serif font.
+    *   "BLENDS" - All caps, black, sans-serif font.
+    *   "Pink Salt & Pomegranate Natural Soap" - Title case, black, serif font.
+    *   "Coconut Oil, Apricot Oil, Rise Bran Oil, Pink Salt, Pomegranate, Rasanery Essential Oil, Natural Lye & Spring Water" - Title case, black, sans-serif font. (Note: "Rise" and "Rasanery" appear to be misspellings of "Rice" and "Rosemary").
+    *   Illegible text is printed vertically on the right side of the box.
+*   **Bottom Banner:**
+    *   "WWW.HIMALAYANBLENDS.IN" - All caps, white, sans-serif font.
+
+**DECORATIVE ELEMENTS:**
+*   A white logo icon of a feather or a stylized leaf is in the top right corner.
+*   A solid white banner runs across the very bottom of the image, containing the website URL.
+
+**BACKGROUND:** The immediate background is a dark, textured wooden surface or tabletop. The far background is a soft-focus photograph of green foliage, creating a natural, outdoor setting with circular bokeh highlights.
+
+**LIGHTING:** The scene is lit with soft, diffused light coming from the front and slightly to the right. Highlights on the soap, pomegranate seeds, and salt are gentle and not specular. Shadows are soft and cast towards the left and rear of the objects, adding dimension without harshness.
+
+**MOOD:** Natural, Artisanal, Fresh, Gentle, Rustic.
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a full-frame digital camera and a sharp prime lens at a wide aperture, this image achieves a very shallow depth of field, rendering the background into a soft, creamy bokeh. The lighting is soft and directional, emulating a large, diffused natural light source from a high, frontal angle, which creates gentle modeling and soft-edged shadows with no harsh specularity. The color science is built on a neutral-to-warm foundation, employing a grade that selectively enhances the saturation of the pink and magenta tones while desaturating and cooling the green elements in the background to create distinct color separation. The contrast is managed with a gentle S-curve, featuring slightly lifted blacks to preserve shadow detail and a soft roll-off in the highlights, preventing any clipping. The final image is processed for high clarity and sharpness, resulting in a pristine, clean aesthetic with no apparent digital noise or film grain.
+
+**Keywords:** Clean Commercial, Soft Diffused Light, Shallow Depth of Field, Selective Saturation, Desaturated Greens, High Clarity.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The headline "PINK SALT & POMEGRANATE NATURAL SOAP"
+*   The subheadline "- BY HIMALAYAN BLENDS"
+*   The body copy string "Made with a blend of natural ingredients, including pink salt, pomegranate, rose geranium essential oil, coconut oil, apricot oil, rice bran oil, natural lye, and spring water, this soap is perfect for those seeking a gentle and effective skincare solution."
+*   The brand name "Himalayan Blends"
+*   The text "HANDMADE IN INDIA"
+*   The wordmark "HIMALAYAN"
+*   The wordmark "BLENDS"
+*   The product name "Pink Salt & Pomegranate Natural Soap"
+*   The ingredient list "Coconut Oil, Apricot Oil, Rise Bran Oil, Pink Salt, Pomegranate, Rasanery Essential Oil, Natural Lye & Spring Water"
+*   The URL "WWW.HIMALAYANBLENDS.IN"
+*   The white feather or leaf logo icon
+*   The solid white banner at the bottom of the image
+
+STRICT CONSTRAINTS:
+*   Final image aspect ratio must be exactly 4:5 portrait.
+*   The color palette is strictly limited to: Navy (#204050), Dark Brown (#301800), Cream (#F0E0B0), and Accent Red (#B03030 for highlights only).
+*   The provided product label artwork on the soap bar must be preserved pixel-faithful from its input image. Do not redraw, re-render, or alter the label design.
+*   Do NOT render any fresh produce, raw ingredients, cut fruit, salt piles, or herb sprigs in the scene. The scene must be free of all decorative ingredients. Specifically, do not render pomegranates, pomegranate seeds, pink salt, or rosemary sprigs.
+*   Do not render any text containing '#', 'www.', '.com', '@', 'FREE', '% OFF', '$', or any medical or clinical claims.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference composition faithfully. The subject is a still life of two rectangular bars of soap, stacked slightly offset on a dark wooden surface. The camera angle is a medium close-up, tightly framed. The immediate background is the dark, textured wooden tabletop, and the far background is soft-focus green foliage with circular bokeh highlights. Do NOT add any decorative elements that are not described here. No product box. No splashes, no water droplets, no scattered ingredients.
+
+PRODUCT REPLACEMENT:
+*   The two stacked pink soap bars in the center of the frame are replaced by two stacked bars of Cinco H Ranch Naturals Honey Vanilla Soap. Paste the label artwork from INPUT 2 onto each bar, pixel-faithful. The bars are simple, rectangular tallow-colored soap.
+
+TEXT CONTENT GUIDANCE:
+*   Brand voice: Cinco H Ranch Naturals — ranch, honest, no fluff. Short declarative headlines like 'THE RANCH STANDARD', 'BUILT FOR THE RANCH'. Texas pride, natural ingredients, small-batch.
+*   Honey Vanilla Soap: Real Texas honey, lavender + vanilla essential oils. Claims: Gentle everyday cleansing / Nourishing lather / Soft, hydrated skin. Format: bar soap, all natural. NO medical claims, no clinical language.
+
+TEXT STRATEGY:
+*   **Headline (top-center):** In a heavy, all-caps, sans-serif font, render the text "BUILT FOR THE RANCH" in Cream (#F0E0B0).
+*   **Body Copy (below headline):** In a regular weight, sentence-case, sans-serif font, render these two lines of text in Cream (#F0E0B0):
+    *   Gentle lather for nourished, hydrated skin.
+    *   Made with real Texas honey and natural oils.
+
+LOGO:
+*   Render the Cinco H Ranch Naturals logo from INPUT 3. Place it in the bottom right corner. The logo should be small, approximately 8% of the total image width. Render it with no background box, banner, or additional text.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Applied as the final pass over the entire image: The scene is captured as if with a full-frame digital camera and a sharp prime lens at a wide aperture, achieving a very shallow depth of field that renders the background into a soft, creamy bokeh. The lighting is soft and directional, emulating a large, diffused natural light source from a high, frontal angle, which creates gentle modeling and soft-edged shadows with no harsh specularity. The color science is built on a neutral-to-warm foundation, employing a grade that shifts the entire scene's palette toward Cinco H Ranch Naturals brand colors: rich dark browns (#301800), deep navy blues (#204050) in the shadows, and warm creams (#F0E0B0) in the highlights. The contrast is managed with a gentle S-curve, featuring slightly lifted blacks to preserve shadow detail and a soft roll-off in the highlights, preventing any clipping. The final image is processed for high clarity and sharpness, resulting in a pristine, clean aesthetic with no apparent digital noise or film grain.
