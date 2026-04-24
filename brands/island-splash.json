@@ -7,7 +7,7 @@
     "posts_per_day": 2,
     "time_slots": ["09:00", "17:00"],
     "platforms": ["instagram"],
-    "instagram_account_id": "TODO: run blotato_list_accounts and fill in the IG account id",
+    "instagram_account_id": "27011",
     "carousel_max_slides": 10
   },
 
@@ -15,7 +15,7 @@
     "logo_path": "/home/drewp/.hermes/profiles/hermes-11/logos/island-splash/logo.png",
     "products_dir": "/home/drewp/splash-website/assets/products",
     "tally_path": "/home/drewp/asset-ads/flavor_usage.json",
-    "pool_dir": "/home/drewp/hermes-11/references",
+    "pool_dir": "/home/drewp/asset-ads/brand_assets/island-splash/references",
     "rules_path": "/home/drewp/asset-ads/formula_learning.json"
   },
 
@@ -37,7 +37,6 @@
   },
 
   "global_forbidden_text": [
-    { "pattern": "#",            "severity": "error",   "reason": "no hashtags" },
     { "pattern": "www.",         "severity": "error",   "reason": "no URLs" },
     { "pattern": ".com",         "severity": "error",   "reason": "no URLs" },
     { "pattern": "@",            "severity": "error",   "reason": "no social handles" },
