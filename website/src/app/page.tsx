@@ -1,5 +1,3 @@
-import { signIn } from "./actions";
-
 export default async function Gate({
   searchParams,
 }: {
@@ -11,7 +9,8 @@ export default async function Gate({
   return (
     <main className="min-h-screen flex items-center justify-center px-4">
       <form
-        action={signIn}
+        action="/api/login"
+        method="post"
         className="w-full max-w-sm flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur"
       >
         <h1 className="text-2xl font-semibold tracking-tight">Asset Ads</h1>
