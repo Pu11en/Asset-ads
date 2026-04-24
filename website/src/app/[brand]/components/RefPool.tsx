@@ -35,19 +35,20 @@ export function RefPool({ brand, brandColor }: Props) {
 
   const total = data?.total ?? 0;
   const poolEntries = Object.entries(data?.pools ?? {});
-  const poolStatus = total === 0 ? 'empty' : total < 5 ? 'low' : total < 10 ? 'filling' : 'ready';
-  const statusColor = { empty: '#ef4444', low: '#facc15', filling: '#f97316', ready: '#22c55e' }[poolStatus];
+  const poolStatus = total === 0 ? 'empty' : total < 25 ? 'low' : total < 100 ? 'building' : 'ready';
+  const statusColors = { empty: '#ef4444', low: '#facc15', building: '#f97316', ready: '#22c55e' } as const;
+  const resolvedStatusColor = statusColors[poolStatus];
 
   return (
     <div className="rounded-xl border border-white/10 bg-white/5 p-4">
       <div className="flex items-center justify-between mb-3">
         <div className="text-xs uppercase tracking-widest text-white/40">Ref Pool</div>
-        <span className="text-xs px-2 py-0.5 rounded font-medium" style={{ backgroundColor: `${statusColor}20`, color: statusColor }}>
+        <span className="text-xs px-2 py-0.5 rounded font-medium" style={{ backgroundColor: `${resolvedStatusColor}20`, color: resolvedStatusColor }}>
           {poolStatus.charAt(0).toUpperCase() + poolStatus.slice(1)}
         </span>
       </div>
 
-      <div className="text-2xl font-bold mb-3" style={{ color: statusColor }}>{total}</div>
+      <div className="text-2xl font-bold mb-3" style={{ color: resolvedStatusColor }}>{total}</div>
 
       {poolEntries.length === 0 ? (
         <p className="text-sm text-white/40">
@@ -80,14 +81,14 @@ export function RefPool({ brand, brandColor }: Props) {
         </div>
       )}
 
-      {total > 0 && total < 10 && (
+      {total > 0 && total < 100 && (
         <div className="mt-3 text-xs text-white/30 border-t border-white/5 pt-3">
-          Add {10 - total} more refs to enable auto-generation
+          Add {100 - total} more refs to reach the 100-ref campaign target
         </div>
       )}
-      {total >= 10 && (
+      {total >= 100 && (
         <div className="mt-3 text-xs text-white/30 border-t border-white/5 pt-3">
-          Auto-generation enabled · cron checks every 15 min
+          Library target reached · generate ads in explicit batches when ready
         </div>
       )}
     </div>

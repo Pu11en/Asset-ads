@@ -39,14 +39,14 @@ export function BrandStats({ brand, ads, brandColor }: Props) {
       .then(d => setPosts(d.posts ?? []));
   }, [brand]);
 
-  const scheduled = posts.filter(p => p.status === 'pending' || p.status === 'preapproved' || p.status === 'approved');
+  const planned = posts.filter(p => p.status !== 'rejected');
   const posted = posts.filter(p => p.status === 'posted');
   const rejected = posts.filter(p => p.status === 'rejected');
 
   const products = [...new Set(ads.map(a => a.product_name).filter(Boolean))];
   const latestAd = ads[0];
 
-  const nextPost = scheduled
+  const nextPost = planned
     .sort((a, b) => new Date(a.scheduled_at).getTime() - new Date(b.scheduled_at).getTime())[0];
 
   return (
@@ -58,17 +58,12 @@ export function BrandStats({ brand, ads, brandColor }: Props) {
         color={brandColor}
       />
       <StatCard
-        label="Scheduled"
-        value={scheduled.length}
-        sub="pending + preapproved + approved"
+        label="Planned"
+        value={planned.length}
+        sub="calendar entries"
         color={brandColor}
       />
-      <StatCard
-        label="Posted"
-        value={posted.length}
-        sub="on Instagram"
-        color="#22c55e"
-      />
+      <StatCard label="Posted" value={posted.length} sub="live posts" color="#22c55e" />
       <StatCard
         label="Rejected"
         value={rejected.length}
@@ -77,14 +72,14 @@ export function BrandStats({ brand, ads, brandColor }: Props) {
       />
       <StatCard
         label="Pool Status"
-        value={ads.length >= 10 ? 'Ready' : ads.length >= 3 ? 'Filling' : 'Low'}
-        sub={ads.length >= 10 ? `${ads.length} ads available` : 'Add more refs'}
-        color={ads.length >= 10 ? '#22c55e' : ads.length >= 3 ? '#facc15' : '#ef4444'}
+        value={ads.length >= 100 ? 'Ready' : ads.length >= 25 ? 'Building' : 'Low'}
+        sub={ads.length >= 100 ? `${ads.length} ads in library` : 'Build toward 100 ads'}
+        color={ads.length >= 100 ? '#22c55e' : ads.length >= 25 ? '#f97316' : '#ef4444'}
       />
 
       {nextPost && (
         <div className="col-span-2 sm:col-span-3 lg:col-span-5 rounded-xl border border-white/10 bg-white/5 p-4">
-          <div className="text-xs uppercase tracking-widest text-white/40 mb-2">Next Scheduled Post</div>
+          <div className="text-xs uppercase tracking-widest text-white/40 mb-2">Next Planned Post</div>
           <div className="flex items-center gap-4">
             <div className="flex gap-1">
               {nextPost.ad_ids.slice(0, 3).map((id, i) => (

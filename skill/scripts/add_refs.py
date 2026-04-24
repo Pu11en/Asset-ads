@@ -13,7 +13,6 @@ import argparse
 import json
 import shutil
 import sys
-from datetime import datetime
 from pathlib import Path
 
 
@@ -37,66 +36,63 @@ def load_brand(brand_slug: str) -> dict:
 
 
 def get_product_ref_dir(brand_slug: str, product_name: str) -> Path:
-    """Get the reference directory for a product."""
+    """Get the reference directory for a product.
+
+    Uses the brand config's pool_dir as base, with per-product subdirectory
+    when the brand uses product-specific pools (product_required=true).
+    Falls back to brand_assets/{brand}/references/{product}/ if no config.
+    """
     brand = load_brand(brand_slug)
-    
-    # Find the product
-    product = None
-    for p in brand.get('products', []):
-        if p['name'].lower() == product_name.lower():
-            product = p
-            break
-    
-    if not product:
-        # Try slug matching
-        prod_slug = slugify(product_name)
-        for p in brand.get('products', []):
-            if slugify(p['name']) == prod_slug:
-                product = p
-                break
-    
-    if not product:
-        raise ValueError(f"Product not found: {product_name}. Run --list-products to see available products.")
-    
-    # Build ref dir path
-    # Check if ref_dir is absolute or relative
-    ref_dir = product.get('ref_dir', '')
-    if not ref_dir:
-        # Default to brand_assets/<brand>/references/<product>/
-        ref_dir = f"brand_assets/{brand_slug}/references/{slugify(product['name'])}"
-    
-    path = Path(ref_dir)
-    if not path.is_absolute():
-        # Relative to repo root (where script is run from)
-        path = Path(ref_dir)
-    
-    return path
+
+    # Use pool_dir from brand config if set
+    pool_dir = brand.get("paths", {}).get("pool_dir", "")
+    if pool_dir:
+        # For brands with per-product pools, append the product subdirectory
+        if brand.get("product_required"):
+            prod_slug = slugify(product_name)
+            return Path(pool_dir) / prod_slug
+        # For flat pool brands, return the pool_dir directly
+        return Path(pool_dir)
+
+    # Fallback: construct from brand_assets template
+    prod_slug = slugify(product_name)
+    return Path(f"brand_assets/{brand_slug}/references/{prod_slug}")
 
 
 def list_products(brand_slug: str) -> list:
     """List all products for a brand."""
     brand = load_brand(brand_slug)
     products = brand.get('products', [])
-    
+
     print(f"\n=== Products for {brand.get('display_name', brand_slug)} ===\n")
-    
+
     if not products:
         print("No products found. Edit brands/{brand_slug}.json to add products.")
         return []
-    
+
+    # Use pool_dir from config if set, otherwise fall back to brand_assets template
+    configured_pool = brand.get("paths", {}).get("pool_dir", "")
+    if configured_pool:
+        pool_base = Path(configured_pool)
+    else:
+        pool_base = Path(f"brand_assets/{brand_slug}/references")
+
     for i, prod in enumerate(products, 1):
         prod_slug = slugify(prod['name'])
-        ref_dir = Path(f"brand_assets/{brand_slug}/references/{prod_slug}")
-        
+        if brand.get("product_required"):
+            ref_dir = pool_base / prod_slug
+        else:
+            ref_dir = pool_base
+
         # Count existing refs
         ref_count = 0
         if ref_dir.exists():
             refs = list(ref_dir.glob("*.jpg")) + list(ref_dir.glob("*.jpeg")) + list(ref_dir.glob("*.png"))
             ref_count = len(refs)
-        
+
         status = f"[{ref_count} refs]" if ref_count > 0 else "[no refs]"
         print(f"  {i}. {prod['name']} {status}")
-    
+
     print()
     return products
 
@@ -125,29 +121,115 @@ def show_pool(brand_slug: str, product_name: str) -> list:
     return refs
 
 
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+WEBSITE_PUBLIC = REPO_ROOT / "website" / "public"
+REFS_PUBLIC_DIR = WEBSITE_PUBLIC / "images" / "refs"
+REFS_DATA_DIR = WEBSITE_PUBLIC / "data" / "refs"
+
+
+def mark_ref_as_used(brand_slug: str, product_name: str, ref_path: Path) -> bool:
+    """
+    After successful ad generation, mark a ref as used:
+    1. Move it from brand_assets/{brand}/references/{product}/ to used-refs/ subfolder
+    2. Remove it from the website manifest (available pool)
+    Returns True on success.
+    """
+    prod_slug = slugify(product_name)
+    ref_dir = get_product_ref_dir(brand_slug, product_name)
+    used_dir = ref_dir / "used-refs"
+    used_dir.mkdir(parents=True, exist_ok=True)
+
+    # Move ref to used-refs/
+    dest_path = used_dir / ref_path.name
+    try:
+        shutil.move(str(ref_path), str(dest_path))
+        print(f"  [used] Moved to used-refs: {ref_path.name}")
+    except Exception as e:
+        print(f"  [used] ⚠️ Could not move to used-refs: {e}")
+        return False
+
+    # Remove from website manifest
+    manifest_path = REFS_DATA_DIR / f"{brand_slug}.json"
+    if manifest_path.exists():
+        try:
+            manifest = json.loads(manifest_path.read_text())
+        except (json.JSONDecodeError, OSError):
+            manifest = {"pools": {}, "products": []}
+    else:
+        manifest = {"pools": {}, "products": []}
+
+    pools = manifest.get("pools", {})
+    if prod_slug in pools:
+        img_key = f"/images/refs/{brand_slug}/{prod_slug}/{ref_path.name}"
+        if img_key in pools[prod_slug].get("images", []):
+            pools[prod_slug]["images"].remove(img_key)
+            # Increment usage count
+            usage = pools[prod_slug].setdefault("usage_count", {})
+            usage[ref_path.name] = usage.get(ref_path.name, 0) + 1
+            manifest["pools"] = pools
+            manifest_path.write_text(json.dumps(manifest, indent=2))
+
+    # Also remove the synced file from website public
+    synced_file = REFS_PUBLIC_DIR / brand_slug / prod_slug / ref_path.name
+    if synced_file.exists():
+        synced_file.unlink()
+        print(f"  [web] Removed from website pool: {ref_path.name}")
+
+    return True
+
+
+def sync_ref_to_website(brand_slug: str, product_name: str, src_path: Path, new_name: str) -> Path:
+    """Copy ref image into website public folder and update manifest."""
+    prod_slug = slugify(product_name)
+    dest_dir = REFS_PUBLIC_DIR / brand_slug / prod_slug
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    dest_path = dest_dir / new_name
+    shutil.copy2(src_path, dest_path)
+
+    # Update manifest
+    manifest_path = REFS_DATA_DIR / f"{brand_slug}.json"
+    REFS_DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+    manifest: dict = {"pools": {}, "products": []}
+    if manifest_path.exists():
+        try:
+            manifest = json.loads(manifest_path.read_text())
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    pools = manifest.get("pools", {})
+    if prod_slug not in pools:
+        pools[prod_slug] = {"images": [], "usage_count": {}}
+    img_path = f"/images/refs/{brand_slug}/{prod_slug}/{new_name}"
+    if img_path not in pools[prod_slug]["images"]:
+        pools[prod_slug]["images"].append(img_path)
+
+    manifest["pools"] = pools
+    if {"name": product_name, "slug": prod_slug} not in manifest.get("products", []):
+        manifest.setdefault("products", []).append({"name": product_name, "slug": prod_slug})
+
+    manifest_path.write_text(json.dumps(manifest, indent=2))
+    return dest_path
+
+
 def add_ref(brand_slug: str, product_name: str, image_path: str) -> str:
     """Add a single reference image to the pool."""
     image_path = Path(image_path)
-    
+
     if not image_path.exists():
         raise FileNotFoundError(f"Image not found: {image_path}")
-    
-    # Validate it's an image
+
     if image_path.suffix.lower() not in ['.jpg', '.jpeg', '.png', '.webp']:
         raise ValueError(f"Not an image file: {image_path.suffix}")
-    
-    # Get ref directory
+
     ref_dir = get_product_ref_dir(brand_slug, product_name)
     ref_dir.mkdir(parents=True, exist_ok=True)
-    
-    # Find next index
+
     existing = list(ref_dir.glob("*.jpg")) + list(ref_dir.glob("*.jpeg")) + list(ref_dir.glob("*.png"))
-    
-    # Find highest ref number
+
     max_num = 0
     for ref in existing:
         name = ref.stem
-        # Match pattern: product-name_ref_N
         parts = name.split('_ref_')
         if len(parts) == 2:
             try:
@@ -155,17 +237,21 @@ def add_ref(brand_slug: str, product_name: str, image_path: str) -> str:
                 max_num = max(max_num, num)
             except ValueError:
                 pass
-    
+
     next_num = max_num + 1
-    
-    # Generate filename
     prod_slug = slugify(product_name)
     new_name = f"{prod_slug}_ref_{next_num}{image_path.suffix.lower()}"
     dest_path = ref_dir / new_name
-    
-    # Copy the file
+
     shutil.copy2(image_path, dest_path)
-    
+
+    # Sync to website public folder for display
+    try:
+        sync_ref_to_website(brand_slug, product_name, dest_path, new_name)
+        print(f"  [web] Synced to website: images/refs/{brand_slug}/{prod_slug}/{new_name}")
+    except Exception as e:
+        print(f"  [web] Warning: could not sync to website: {e}")
+
     return str(dest_path)
 
 

@@ -67,8 +67,8 @@ export function AdminView({ islandAds, cincoAds, islandScheduled, cincoScheduled
         {/* Stats strip */}
         <div className="grid grid-cols-3 gap-3 mb-6">
           <StatCard label="Ads in Pool" value={ads.length} sub={`${products.length} products`} color={active.color} />
-          <StatCard label="Scheduled" value={scheduled.length} sub="pending + approved" color={active.color} />
-          <StatCard label="Pool Status" value={ads.length >= 10 ? 'Ready' : ads.length >= 3 ? 'Filling' : 'Low'} sub={ads.length >= 10 ? 'Auto-gen enabled' : 'Add more refs'} color={ads.length >= 10 ? '#22c55e' : ads.length >= 3 ? '#facc15' : '#ef4444'} />
+          <StatCard label="Planned" value={scheduled.length} sub="calendar entries" color={active.color} />
+          <StatCard label="Library Status" value={ads.length >= 100 ? 'Ready' : ads.length >= 25 ? 'Building' : 'Low'} sub={ads.length >= 100 ? '100-ad library reached' : 'Build toward 100 ads'} color={ads.length >= 100 ? '#22c55e' : ads.length >= 25 ? '#f97316' : '#ef4444'} />
         </div>
 
         {/* Ref Pool */}
@@ -82,8 +82,8 @@ export function AdminView({ islandAds, cincoAds, islandScheduled, cincoScheduled
         {/* Posts to Approve */}
         <section className="mb-10">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xs uppercase tracking-widest text-white/40">Posts to Approve</h2>
-            <span className="text-xs text-white/30">{active.name} · flat list, no clicks needed</span>
+            <h2 className="text-xs uppercase tracking-widest text-white/40">Planning Queue</h2>
+            <span className="text-xs text-white/30">{active.name} · review planned posts and timing</span>
           </div>
           <PendingQueue brand={activeBrand} brandColor={active.color} />
         </section>

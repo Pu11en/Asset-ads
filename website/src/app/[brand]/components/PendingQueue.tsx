@@ -90,18 +90,18 @@ export function PendingQueue({ brand, brandColor }: Props) {
     <div className="space-y-6">
       {actionable.length === 0 && past.length === 0 && (
         <div className="text-center py-16 text-white/40 text-sm rounded-2xl border border-white/10 bg-white/5">
-          No posts scheduled.
+          No planned posts yet.
         </div>
       )}
 
-      {/* Pending posts — horizontal carousel cards */}
+      {/* Actionable planned posts */}
       {actionable.map((post, idx) => {
         const { headline, body } = parseCaption(post.caption);
         const isActive = activePreview === idx;
 
         return (
           <div
-            key={post.blotato_id}
+            key={post.id}
             className="rounded-2xl border border-white/10 bg-white/5 overflow-hidden"
           >
             {/* Header row */}
@@ -185,7 +185,7 @@ export function PendingQueue({ brand, brandColor }: Props) {
         );
       })}
 
-      {/* Past/approved/rejected posts — compact row */}
+      {/* Archived planning items — compact row */}
       {past.length > 0 && (
         <details className="group">
           <summary className="text-xs uppercase tracking-widest text-white/40 cursor-pointer hover:text-white/60 list-none flex items-center gap-2 pb-3">
@@ -203,7 +203,7 @@ export function PendingQueue({ brand, brandColor }: Props) {
               }[post.status] ?? 'text-white/40 bg-white/10';
               return (
                 <div
-                  key={post.blotato_id}
+                  key={post.id}
                   className="flex items-center gap-3 px-4 py-3 rounded-xl border border-white/10 bg-white/5 opacity-60"
                 >
                   <div className="flex gap-1 flex-shrink-0">

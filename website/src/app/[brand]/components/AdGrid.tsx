@@ -28,7 +28,7 @@ export function AdGrid({ ads, brand, brandColor, scheduledCount }: Props) {
         <h2 className="text-lg font-semibold" style={{ color: 'rgba(255,255,255,0.5)' }}>
           Ad Pool
         </h2>
-        <span className="text-xs text-white/30">{ads.length} unused{scheduledCount !== undefined ? ` · ${scheduledCount} scheduled` : ''}</span>
+        <span className="text-xs text-white/30">{ads.length} unassigned{scheduledCount !== undefined ? ` · ${scheduledCount} planned` : ''}</span>
       </div>
 
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2">

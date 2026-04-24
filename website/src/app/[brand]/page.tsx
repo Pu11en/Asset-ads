@@ -36,15 +36,15 @@ export default async function BrandPage({
   if (auth !== slug) redirect('/');
 
   const ads = await getAdsForBrand(slug);
-  const scheduled = await loadScheduled(slug);
-  // Filter out ads that are already scheduled (ad_ids used in pending/approved/posted posts)
-  const scheduledIds = new Set<string>();
-  for (const post of scheduled) {
+  const planned = await loadScheduled(slug);
+  // Filter out ads that are already assigned to the campaign calendar.
+  const plannedIds = new Set<string>();
+  for (const post of planned) {
     if (post.status !== 'rejected') {
-      for (const id of post.ad_ids) scheduledIds.add(id);
+      for (const id of post.ad_ids) plannedIds.add(id);
     }
   }
-  const unusedAds = ads.filter(ad => !scheduledIds.has(ad.filename));
+  const unusedAds = ads.filter(ad => !plannedIds.has(ad.filename));
   const brandColor = BRAND_COLORS[slug] ?? '#FF6B35';
 
   return (
@@ -75,16 +75,21 @@ export default async function BrandPage({
       <h2 className="text-xs uppercase tracking-widest text-white/40 mb-4">Ref Pool</h2>
       <RefPool brand={slug} brandColor={brandColor} />
 
-      {/* Posts to Approve */}
+      {/* Campaign Calendar */}
       <div className="border-t border-white/10 mb-8 mt-6" />
-      <h2 className="text-xs uppercase tracking-widest text-white/40 mb-4">Posts to Approve</h2>
+      <h2 className="text-xs uppercase tracking-widest text-white/40 mb-4">Campaign Calendar</h2>
+      <CalendarGrid brand={slug} brandColor={brandColor} timeSlots={TIME_SLOTS} />
+
+      {/* Queue */}
+      <div className="border-t border-white/10 mb-8 mt-6" />
+      <h2 className="text-xs uppercase tracking-widest text-white/40 mb-4">Planning Queue</h2>
       <PendingQueue brand={slug} brandColor={brandColor} />
 
       {/* Divider */}
       <div className="border-t border-white/10 mb-8" />
 
       {/* Ad pool */}
-      <AdGrid ads={unusedAds} brand={slug} brandColor={brandColor} scheduledCount={scheduledIds.size} />
+      <AdGrid ads={unusedAds} brand={slug} brandColor={brandColor} scheduledCount={plannedIds.size} />
     </main>
   );
 }

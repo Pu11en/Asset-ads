@@ -198,7 +198,7 @@ function DayPanel({
   if (posts.length === 0) {
     return (
       <div className="col-span-7 mt-2 p-6 rounded-xl border border-white/10 bg-white/5 text-center text-white/40 text-sm">
-        No posts scheduled for {new Date(date).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
+        No planned posts for {new Date(date).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
       </div>
     );
   }
