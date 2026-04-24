@@ -1,8 +1,0 @@
-{
-  "framework": null,
-  "buildCommand": "echo 'Static site' && exit 0",
-  "outputDirectory": ".",
-  "installCommand": "echo 'No deps' && exit 0",
-  "cleanUrls": true,
-  "trailingSlash": true
-}
