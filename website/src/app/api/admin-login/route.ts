@@ -3,10 +3,10 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(req: NextRequest) {
   const formData = await req.formData();
   const password = String(formData.get('password') ?? '').trim();
-  const adminPassword = process.env.ADMIN_PASSWORD;
+  const adminPassword = process.env.ADMIN_PASSWORD?.trim();
 
   if (!adminPassword || password !== adminPassword) {
-    return NextResponse.redirect(new URL('/admin/login?error=1', req.url));
+    return NextResponse.redirect(new URL(`/admin/login?error=${adminPassword ? '1' : 'env'}`, req.url));
   }
 
   const res = NextResponse.redirect(new URL('/admin', req.url));

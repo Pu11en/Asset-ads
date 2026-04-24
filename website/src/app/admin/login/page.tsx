@@ -4,7 +4,7 @@ export default async function AdminLogin({
   searchParams: Promise<{ error?: string }>;
 }) {
   const params = await searchParams;
-  const error = params?.error === "1";
+  const error = params?.error;
 
   return (
     <main className="min-h-screen flex items-center justify-center px-4">
@@ -26,7 +26,9 @@ export default async function AdminLogin({
           className="w-full rounded-md border border-white/10 bg-black/40 px-3 py-2 text-sm outline-none focus:border-white/30"
         />
         {error ? (
-          <p className="text-sm text-red-400">Incorrect password.</p>
+          <p className="text-sm text-red-400">
+            {error === "env" ? "Admin login is not configured in production yet." : "Incorrect password."}
+          </p>
         ) : null}
         <button
           type="submit"

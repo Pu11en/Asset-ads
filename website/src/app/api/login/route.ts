@@ -4,11 +4,11 @@ export async function POST(req: NextRequest) {
   const formData = await req.formData();
   const password = String(formData.get('password') ?? '').trim().toLowerCase();
 
-  const islandSplash = process.env.ISLAND_SPLASH_PASSWORD?.toLowerCase();
-  const cincoHRanch = process.env.CINCO_H_RANCH_PASSWORD?.toLowerCase();
+  const islandSplash = process.env.ISLAND_SPLASH_PASSWORD?.trim().toLowerCase();
+  const cincoHRanch = process.env.CINCO_H_RANCH_PASSWORD?.trim().toLowerCase();
 
   if (!islandSplash || !cincoHRanch) {
-    return NextResponse.redirect(new URL('/?error=1', req.url));
+    return NextResponse.redirect(new URL('/?error=env', req.url));
   }
 
   const slug =
