@@ -45,7 +45,7 @@ def ig_account_id() -> str:
     if INSTAGRAM_ACCOUNT_ID:
         return INSTAGRAM_ACCOUNT_ID
     # Fetch accounts via Blotato API
-    resp = requests.get(f"{BASE_URL}/accounts", headers=HEADERS)
+    resp = requests.get(f"{BASE_URL}/accounts", headers={"blotato-api-key": BLOTATO_API_KEY})
     resp.raise_for_status()
     accounts = resp.json().get("accounts", [])
     for acc in accounts:
@@ -91,7 +91,7 @@ def upload_image_via_presigned(image_path: str) -> str:
     # 1. Get presigned URL
     r = requests.post(
         f"{BASE_URL}/media/uploads",
-        headers=HEADERS,
+        headers={"blotato-api-key": BLOTATO_API_KEY, "Content-Type": "application/json"},
         json={"filename": filename},
     )
     r.raise_for_status()
@@ -124,9 +124,9 @@ def post_to_instagram(image_urls: list[str], caption: str, scheduled_time: str) 
     """
     account_id = ig_account_id()
 
-    # Blotato expects scheduledTime as an ISO string with timezone
-    today = datetime.now().date().isoformat()
-    full_scheduled = f"{today}T{scheduled_time}:00"
+    # Blotato expects scheduledTime as an ISO string with UTC timezone
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    full_scheduled = f"{today}T{scheduled_time}:00Z"
 
     payload = {
         "post": {
@@ -145,7 +145,7 @@ def post_to_instagram(image_urls: list[str], caption: str, scheduled_time: str) 
 
     resp = requests.post(
         f"{BASE_URL}/posts",
-        headers=HEADERS,
+        headers={"blotato-api-key": BLOTATO_API_KEY, "Content-Type": "application/json"},
         json=payload,
     )
     resp.raise_for_status()

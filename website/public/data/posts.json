@@ -1,18 +1,1 @@
-[
-  {
-    "id": "post_1",
-    "caption": "Every sip is a trip to the islands! 🌴\n\nSlide 1: Mango Passion — Grab Your Wave\nSlide 2: Lime & Pine Ginger — Hydrate Naturally\nSlide 3: Guava, Sorrel & Mauby — Tropical Vibes\nSlide 4: Peanut Punch — Fuel Your Day\nSlide 5: The final call to action",
-    "hashtags": "#IslandSplash #TropicalJuice #CaribbeanFlavours #NaturalFruit #IslandLife",
-    "status": "draft",
-    "ads": ["slide_1_mango_passion", "slide_2_lime_pine_ginger", "slide_3_guava_sorrel_mauby", "slide_4_peanut_punch", "slide_5_mango_passion_cta"],
-    "created_at": "2026-04-12T03:30:00Z"
-  },
-  {
-    "id": "post_2",
-    "caption": "Natural fruit, zero artificial junk. Just the Caribbean in a bottle.",
-    "hashtags": "#IslandSplash #TropicalJuice #CaribbeanFlavours #NaturalFruit #IslandLife",
-    "status": "draft",
-    "ads": ["mango_passion", "mauby", "peanut_punch", "sorrel"],
-    "created_at": "2026-04-12T03:35:00Z"
-  }
-]
+[]

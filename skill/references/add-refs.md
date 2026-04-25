@@ -195,17 +195,16 @@ Tell the user what makes a good reference:
 
 ## After Adding References
 
-Once pool has images:
+**Generation happens automatically** — `add_refs.py` calls `asset_ads.py` for each ref immediately after storing it. You do NOT need to run generation separately.
 
 ```
-"✅ Your reference pool is ready!
+"✅ Added X ref photo(s) to [Brand] / [Product].
 
-Pool status:
-- Mango Passion: 5 refs
-- Mauby: 3 refs
-- Lime: 4 refs
+Pool now has Y reference images.
+Z ad(s) generated and added to the ad pool.
 
-Ready to generate an ad? Just say 'generate an ad'!"
+Ad pool status: [N] unused ads
+Scheduling triggers automatically at 10+ unused ads."
 ```
 
 ---

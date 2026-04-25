@@ -147,6 +147,20 @@ Works with:
 - Pinterest may show unrelated pins on the board
 - User should curate their Pinterest board before draining
 
+### yt-dlp errors "No video formats found" for every pin
+- **This is normal for image-only boards.** yt-dlp's Pinterest extractor only handles video pins.
+- The script automatically falls through to the HTML-based fallback scraper which handles image pins correctly.
+- As long as you see "📥 Using fallback scraper..." followed by "📦 Found N images" — it's working.
+
+### Duplicate images in pool (same photo, different filenames)
+- **Root cause:** The fallback scraper deduplicates by URL only. Pinterest serves the same image from multiple URLs (e.g., different CDN sizes/endpoints).
+- **Fix applied (Apr 2026):** Fallback now uses MD5 content hashing in addition to URL dedup. If you see `[skip] Duplicate content` in output, the dedup is working.
+- If older refs pre-date this fix, re-drain the board to get unique images only.
+
+### yt-dlp fails entirely with "is not a valid URL" error
+- **Root cause:** `--skip-download False` was invalid syntax. yt-dlp interpreted `False` as the URL positional argument.
+- **Fix applied (Apr 2026):** Flag removed. yt-dlp now runs without `--skip-download`, and the script falls through to the fallback scraper for image pins.
+
 ## After Draining
 
 Tell the user:

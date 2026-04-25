@@ -9,7 +9,7 @@
 
 **An AI social media manager that never sleeps.**
 
-Small business owners pay per brand per month. They chat with a web bot, the bot creates posts and ads, they approve, and it publishes automatically.
+Small business owners chat with a web bot, the bot creates posts and ads, they approve, and it publishes automatically.
 
 ---
 
@@ -40,14 +40,6 @@ One word: "yes" or "post it"
 Chooses the best time, or user specifies.
 
 ---
-
-## Pricing
-
-| Plan | Price | What You Get |
-|------|-------|--------------|
-| Starter | $49/mo | 1 brand, 30 posts, 5 ads, 2 platforms |
-| Growth | $99/mo | 1 brand, unlimited posts & ads, 4 platforms |
-| Pro | $199/mo | 3 brands, unlimited everything |
 
 ---
 
@@ -174,7 +166,6 @@ Want to add, edit, or remove any?"
 
 | Goal | Target |
 |------|--------|
-| Revenue | $4,000/mo |
 | Active Brands | ~80 |
 | Posts/Month | 500+ |
 | Ads/Month | 200+ |

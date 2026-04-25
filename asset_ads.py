@@ -762,7 +762,63 @@ def run_one(brand: dict, ref_path: str, locked_product: str | None = None) -> Pa
         tally[prod["name"]] = tally.get(prod["name"], 0) + 1
     save_tally(brand, tally)
 
+    # Copy to website public folder and update ads.json
+    sync_ad_to_website(brand, out_path, selected)
+
     return out_path
+
+
+def sync_ad_to_website(brand: dict, out_path: Path, selected: list[dict]) -> None:
+    """Copy generated ad to website/public/images/ads/{brand}/ and append to website/public/data/{brand}.json."""
+    import shutil
+
+    slug = brand["slug"]
+    brand_img_dir = REPO_ROOT / "website" / "public" / "images" / "ads" / slug
+    brand_img_dir.mkdir(parents=True, exist_ok=True)
+
+    # Copy image to brand-specific folder
+    dest_path = brand_img_dir / out_path.name
+    shutil.copy2(out_path, dest_path)
+
+    # Also copy sidecar if exists
+    sidecar = out_path.with_suffix(".instructions.txt")
+    if sidecar.exists():
+        shutil.copy2(sidecar, brand_img_dir / sidecar.name)
+
+    # Update brand-specific JSON file
+    brand_json_path = REPO_ROOT / "website" / "public" / "data" / f"{slug}.json"
+    ads_data = []
+    if brand_json_path.exists():
+        try:
+            ads_data = json.loads(brand_json_path.read_text())
+        except Exception:
+            ads_data = []
+
+    product_name = selected[0]["name"] if selected else out_path.stem
+
+    new_ad = {
+        "id": out_path.name,
+        "filename": out_path.name,
+        "path": f"/images/ads/{slug}/{out_path.name}",
+        "product_name": product_name,
+        "status": "new",
+        "brand": slug,
+        "created_at": datetime.now().isoformat()
+    }
+
+    # Replace if already exists by id (filename), otherwise append.
+    # Deduplicate on id so the same image file is never added twice.
+    replaced = False
+    for i, ad in enumerate(ads_data):
+        if ad.get("id") == new_ad["id"] or ad.get("filename") == new_ad["filename"]:
+            ads_data[i] = new_ad
+            replaced = True
+            break
+    if not replaced:
+        ads_data.append(new_ad)
+
+    brand_json_path.write_text(json.dumps(ads_data, indent=2))
+    log(brand, f"synced to website: {dest_path}")
 
 
 def resolve_pool_dir(brand: dict, locked_product: str | None) -> Path:

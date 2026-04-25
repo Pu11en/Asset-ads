@@ -106,7 +106,8 @@
     "Short declarative headlines like 'THE RANCH STANDARD', 'BUILT FOR THE RANCH'",
     "No competitor text leaks \u2014 audit every generation",
     "Background and color grade use brand palette: Navy #204050, Dark Brown #301800, Cream #F0E0B0, Accent Red #B03030",
-    "Logo small in corner \u2014 no effects, no boxes, no oversized placement"
+    "Logo small in corner \u2014 no effects, no boxes, no oversized placement",
+    "SOAP IN USE: When soap is shown being held, lathering, or in active use (in a person's hand, on skin, in shower), the soap bar must be RENDERED WITHOUT ITS LABEL. The label disappears when the soap is in use \u2014 only the plain tallow bar texture shows. Label only appears when soap sits standalone on a surface."
   ],
   "products": [
     {
@@ -244,7 +245,7 @@
     {
       "name": "Sunscreen Stick",
       "label_file": "sunscreen.png",
-      "pool_slug": "sunscreen",
+      "pool_slug": "sunscreen-stick",
       "container": "twist-up stick",
       "cap_rule": "twist-up stick with light/neutral cap \u2014 keep cap on as shown; do NOT make cap black",
       "triggers": [

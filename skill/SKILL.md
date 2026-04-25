@@ -1,97 +1,125 @@
 ---
 name: asset-ads
-description: Run a multi-brand social-media ad pipeline. Onboard new brands, manage reference image pools per product, generate on-brand ad creatives from those references, and schedule posts to connected social accounts.
-version: 0.3.0
-author: Drew Pullen
-license: MIT
-platforms: [linux, macos]
-metadata:
-  hermes:
-    tags: [ads, marketing, brand-management, social-media, image-generation, carousel]
+preamble-tier: 2
+version: 2.0.0
+description: |
+  Multi-brand social-media ad pipeline. You are the operational agent — orchestrate the entire flow via Telegram.
+  The website is just a dashboard for viewing; YOU do the work.
+  Brands: Island Splash (juice) and Cinco H Ranch (skincare).
+triggers:
+  - island splash
+  - cinco h ranch
+  - add refs
+  - generate ads
+  - compose posts
+  - run pipeline
+  - check status
+allowed-tools:
+  - Bash
+  - Read
+  - Glob
+  - Grep
+  - Write
+  - Edit
 ---
 
-# Asset Ads
+# Asset Ads — Your Pipeline
 
-Give Hermes the ability to run an ad pipeline for one or many brands. The agent
-is the center — it talks to the user (via chat), keeps brand state on disk,
-calls scripts to generate creatives, and writes output to a dashboard the user
-can view on the web.
+You are the agent. The website is just a dashboard you and the user check. YOU run the show.
 
-## When to Use
+## How It Flows
 
-- User wants to create ads for a product or brand
-- User mentions "references", "ad pool", "generate an ad", "schedule a post"
-- User says they want to onboard a new brand
-- User wants to add reference photos
-- User says "drain Pinterest", "pull from Pinterest", "fill my pool"
-
-## The 5 Flows
-
-### Flow 1: Onboard Brand
-Create a new brand from scratch.
-
-**Trigger:** "add a brand", "new brand", "set up my brand", "onboard"
-
-```bash
-python3 skill/scripts/onboard_brand.py --name "Brand Name" --products "Product 1" "Product 2"
+```
+User swipes refs → Gallery UI (approve/reject) → 3+ approved → YOU generate ads
+                                                              ↓
+                                          Composed into carousels (by YOU)
+                                                              ↓
+                                          User approves on dashboard
+                                                              ↓
+                                          YOU schedule via Blotato
 ```
 
-See `references/onboard-brand.md`
+## Your Tools
 
-### Flow 2: Add References
-Add reference photos to a product's pool.
+All scripts run from repo root: `/home/drewp/asset-ads`
 
-**Trigger:** "add these photos", "add to the pool", "upload refs"
+### Gallery (for approving refs)
+Tell user to go to: `http://localhost:3000/admin/swipe/{brand}/{category}`
 
-Two ways:
-1. **User sends images** → Use `add_refs.py`
-2. **Drain Pinterest board** → Use `drain_board.py`
-
-See `references/add-refs.md` and `references/drain-board.md`
-
-### Flow 3: Generate Ad
-Create an ad creative using reference photos and brand config.
-
-**Trigger:** "generate ad", "create an ad", "make me an ad"
-
-See `references/ad-generation-pipeline.md`
-
-### Flow 4: Schedule Post
-Post approved ads to social platforms.
-
-**Trigger:** "post this ad", "publish it", "schedule for tomorrow"
-
+Or run ad generation directly:
 ```bash
-python3 skill/scripts/schedule_post.py --post --brand <slug> --ad-id <id>
+python3 asset_ads.py --brand island-splash --pool
 ```
 
-See `references/schedule-post.md`
-
-## Quick Reference
-
-| User Says | Agent Does |
-|-----------|------------|
-| "onboard new brand" | Run `onboard_brand.py`, interview user |
-| "drain Pinterest board" | Run `drain_board.py` |
-| "add these photos" | Run `add_refs.py` |
-| "generate ad" | Run generation pipeline |
-| "post this ad" | Run `schedule_post.py --post` |
-| "show scheduled" | Run `schedule_post.py --show-scheduled` |
-
-## Scripts Location
-
-All scripts are in `skill/scripts/`. Run from repo root:
-
+### 1. Generate Ads (asset_ads.py)
 ```bash
-python3 skill/scripts/onboard_brand.py [args]
-python3 skill/scripts/add_refs.py [args]
-python3 skill/scripts/drain_board.py [args]
-python3 skill/scripts/schedule_post.py [args]
+python3 asset_ads.py --brand island-splash --pool
 ```
+- Reads refs from `brand_assets/{brand}/references/`
+- Generates ads into `output/` + `website/public/images/ads/`
+- Creates `.instructions.txt` sidecar with product, mood, headline
+
+### 2. Compose Posts (compose_posts.py) — NEW
+```bash
+python3 skill/scripts/compose_posts.py --brand island-splash --min-ads 3
+```
+- Reads all ad sidecars
+- Asks LLM to act as creative director
+- Groups ads into carousels (2-10 images each)
+- Generates unique captions + hashtags per post
+- Saves to `output/posts/{brand}_{timestamp}.json`
+
+### 3. Run Full Pipeline
+```bash
+python3 run_pipeline.py --brand island-splash
+```
+- Does everything: generate → compose → prepare
+- Or run individual steps:
+  - `--step generate` — just make ads
+  - `--step compose` — just make posts
+  - `--step prepare` — prep composed posts for scheduling
+
+## Carousel Rules
+
+- Instagram allows 1-10 images per carousel
+- You decide how many based on narrative (not formula)
+- All ads MUST be assigned to exactly one post
+- Group by visual narrative flow, not by flavor
+
+## State Files
+
+Hermes tracks state in these places:
+
+| What | Where |
+|------|-------|
+| Ref pool counts | `state/ref-pool/{brand}/{category}/index.json` |
+| Flavor rotation | `state/flavor-rotation.json` |
+| Composed posts | `output/posts/{brand}_{timestamp}.json` |
+| Ready for schedule | `output/scheduled/{brand}_ready.json` |
+| Ad library | `website/public/data/{brand}.json` |
+
+## Your Checklist
+
+When user says "island splash":
+1. Tell user to go to gallery → `http://localhost:3000/admin/swipe/island-splash/drinks`
+2. User swipes/approves refs
+3. When 3+ approved → YOU run `python3 asset_ads.py --brand island-splash --pool`
+4. When 3+ ads generated → YOU run `python3 skill/scripts/compose_posts.py --brand island-splash`
+5. Tell user to check dashboard at `http://localhost:3000/admin/posts`
+6. User approves composed posts
+7. YOU schedule via Blotato
+
+## Brand Voice
+
+**Island Splash:** Fun, laid-back, tropical, island time. Caribbean juice vibes.
+- Hashtags: `#IslandSplash #TropicalFlavors #CaribbeanJuice #NaturalIngredients`
+
+**Cinco H Ranch:** Honest, Texas ranch, historic homestead recipes. No fluff.
+- Hashtags: `#CincoHRanch #TexasMade #NaturalSkincare #RanchStandard`
 
 ## Non-negotiables
 
-- Reference pools and ad pools are **strictly separate**. Never mix
-- No medical claims in any brand copy
-- Generated output is **local-only** by default (`output/` is gitignored)
-- The dashboard copy under `website/public/images/ads/` ships to Vercel
+- Never feed generated ads back as refs
+- No medical claims in copy
+- Instagram carousel max: 10 images
+- Never schedule an ad twice

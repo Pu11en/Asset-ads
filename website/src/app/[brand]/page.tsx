@@ -1,5 +1,6 @@
 import { cookies } from 'next/headers';
 import { redirect, notFound } from 'next/navigation';
+import { readFile } from 'fs/promises';
 import { getBrand } from '@/lib/brands';
 import { getAdsForBrand } from '@/lib/ads';
 import { loadScheduled } from '@/lib/scheduled';
@@ -37,6 +38,14 @@ export default async function BrandPage({
 
   const ads = await getAdsForBrand(slug);
   const planned = await loadScheduled(slug);
+
+  // Load ad approval state
+  let approvalState: any = null;
+  try {
+    const raw = await readFile(`/home/drewp/asset-ads/output/ad-approval/${slug}.json`, 'utf8');
+    approvalState = JSON.parse(raw);
+  } catch { /* not found */ }
+
   // Filter out ads that are already assigned to the campaign calendar.
   const plannedIds = new Set<string>();
   for (const post of planned) {
@@ -88,8 +97,14 @@ export default async function BrandPage({
       {/* Divider */}
       <div className="border-t border-white/10 mb-8" />
 
-      {/* Ad pool */}
-      <AdGrid ads={unusedAds} brand={slug} brandColor={brandColor} scheduledCount={plannedIds.size} />
+      {/* Ad pool with approval */}
+      <AdGrid
+        ads={unusedAds}
+        brand={slug}
+        brandColor={brandColor}
+        scheduledCount={plannedIds.size}
+        approvalState={approvalState}
+      />
     </main>
   );
 }
