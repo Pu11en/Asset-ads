@@ -102,7 +102,6 @@ export default async function BrandPage({
         ads={unusedAds}
         brand={slug}
         brandColor={brandColor}
-        scheduledCount={plannedIds.size}
         approvalState={approvalState}
       />
     </main>

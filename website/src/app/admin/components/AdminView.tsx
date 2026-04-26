@@ -14,7 +14,7 @@ type Post = {
   post_id: string; ad_filenames: string[]; caption: string; hashtags?: string;
   scheduled?: boolean; scheduledAt?: string; blotatoPostId?: string; scheduledTime?: string;
   status?: string; post_type?: string; _filename?: string; _brand?: string;
-  blotatoStatus?: string; publicUrl?: string; errorMessage?: string;
+  blotatoStatus?: string; publicUrl?: string; errorMessage?: string; _archived?: boolean;
 };
 type ApprovalState = {
   pending_count: number; approved_count: number; skipped_count: number;

@@ -40,7 +40,7 @@ async function uploadToBlotato(imagePath: string): Promise<string> {
     body: fileBuffer,
   });
   if (!uploadRes.ok) throw new Error(`Upload failed: ${uploadRes.status}`);
-  return publicUrl;
+  return publicUrl ?? undefined;
 }
 
 // Pick a random future slot: AM = 9am, PM = 2pm, days out from now
@@ -153,7 +153,7 @@ export async function POST(req: NextRequest) {
     // Update batch file
     post.scheduled = true;
     post.scheduledAt = new Date().toISOString();
-    post.scheduledTime = scheduleMode !== 'immediate' ? pickSlot(scheduleMode) : null;
+    post.scheduledTime = scheduleMode !== 'immediate' ? pickSlot(scheduleMode) : undefined;
     post.blotatoPostId = blotatoPostId;
     require('fs').writeFileSync(batchPath, JSON.stringify(batch, null, 2));
 
