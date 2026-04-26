@@ -33,7 +33,7 @@ export function AdGrid({ ads, brand, brandColor, approvalState }: Props) {
 
   // Sync local state from approvalState prop
   useEffect(() => {
-    if (!approvalState) return;
+    if (!approvalState || !approvalState.ads) return;
     const updates: Record<string, string> = {};
     for (const [id, ad] of Object.entries(approvalState.ads)) {
       if (ad.status !== 'pending') updates[id] = ad.status;

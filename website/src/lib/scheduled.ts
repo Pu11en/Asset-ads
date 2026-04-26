@@ -17,7 +17,8 @@ export async function loadScheduled(brand: string): Promise<ScheduledPost[]> {
   const filePath = path.join(process.cwd(), 'public', 'data', 'scheduled', `${brand}.json`);
   try {
     const raw = await readFile(filePath, 'utf8');
-    return JSON.parse(raw);
+    const data = JSON.parse(raw);
+    return Array.isArray(data) ? data : (data.posts ?? []);
   } catch {
     return [];
   }
