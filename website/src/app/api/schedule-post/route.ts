@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
+import fs from 'fs/promises';
+import * as fsSync from 'fs';
 
 const BLOTATO_KEY = process.env.BLOTATO_API_KEY || '';
 const BASE_URL = 'https://backend.blotato.com/v2';
@@ -17,14 +19,14 @@ function getImagePath(brand: string, filename: string): string {
   let base = filename.replace(/\.(instructions|instructions\.txt)$/, '');
   const websiteImages = `/home/drewp/asset-ads/website/public/images/ads/${brand}/${base}.png`;
   const outputDir = `/home/drewp/asset-ads/output/${base}.png`;
-  try { require('fs').accessSync(websiteImages); return websiteImages; } catch {}
-  try { require('fs').accessSync(outputDir); return outputDir; } catch {}
+  try { fsSync.accessSync(websiteImages); return websiteImages; } catch {}
+  try { fsSync.accessSync(outputDir); return outputDir; } catch {}
   return websiteImages;
 }
 
 async function uploadToBlotato(imagePath: string): Promise<string> {
   const filename = imagePath.split('/').pop() || 'image.png';
-  const fileBuffer = require('fs').readFileSync(imagePath);
+  const fileBuffer = fsSync.readFileSync(imagePath);
 
   const presignRes = await fetch(`${BASE_URL}/media/uploads`, {
     method: 'POST',
@@ -100,7 +102,7 @@ async function schedulePostViaBlotato(
 function findBatchFile(brand: string): string | null {
   const postsDir = '/home/drewp/asset-ads/output/posts';
   try {
-    const files = require('fs').readdirSync(postsDir)
+    const files = fsSync.readdirSync(postsDir)
       .filter((f: string) => f.startsWith(`${brand}_`) && f.endsWith('.json'))
       .sort().reverse();
     return files[0] ? path.join(postsDir, files[0]) : null;
@@ -119,7 +121,7 @@ export async function POST(req: NextRequest) {
     const batchPath = findBatchFile(brand);
     if (!batchPath) return NextResponse.json({ error: 'No posts found' }, { status: 404 });
 
-    const batch: Batch = JSON.parse(require('fs').readFileSync(batchPath, 'utf-8'));
+    const batch: Batch = JSON.parse(fsSync.readFileSync(batchPath, 'utf-8'));
     const post = batch.posts.find((p: Post) => p.post_id === post_id);
     if (!post) return NextResponse.json({ error: 'Post not found' }, { status: 404 });
     if (post.scheduled) return NextResponse.json({ error: 'Already scheduled', blotatoPostId: post.blotatoPostId }, { status: 409 });
@@ -155,7 +157,7 @@ export async function POST(req: NextRequest) {
     post.scheduledAt = new Date().toISOString();
     post.scheduledTime = scheduleMode !== 'immediate' ? pickSlot(scheduleMode) : undefined;
     post.blotatoPostId = blotatoPostId;
-    require('fs').writeFileSync(batchPath, JSON.stringify(batch, null, 2));
+    fsSync.writeFileSync(batchPath, JSON.stringify(batch, null, 2));
 
     return NextResponse.json({
       success: true,
