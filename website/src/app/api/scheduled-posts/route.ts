@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
 import { readFile } from 'fs/promises';
+import * as fsSync from 'fs';
 
 const BLOTATO_KEY = process.env.BLOTATO_API_KEY || '';
 const BASE_URL = 'https://backend.blotato.com/v2';
@@ -9,13 +10,13 @@ const BASE_URL = 'https://backend.blotato.com/v2';
 function getAllBatchFiles(brand: string): { path: string; data: any }[] {
   const postsDir = '/home/drewp/asset-ads/output/posts';
   try {
-    const files = require('fs').readdirSync(postsDir)
+    const files = fsSync.readdirSync(postsDir)
       .filter((f: string) => f.startsWith(`${brand}_`) && f.endsWith('.json'))
       .sort()
       .reverse();
     return files.map((f: string) => ({
       path: path.join(postsDir, f),
-      data: JSON.parse(require('fs').readFileSync(path.join(postsDir, f), 'utf-8')),
+      data: JSON.parse(fsSync.readFileSync(path.join(postsDir, f), 'utf-8')),
     }));
   } catch {
     return [];
