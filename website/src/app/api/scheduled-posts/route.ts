@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
-import { readFile } from '@/lib/fs';
+import { readFile } from 'fs/promises';
 
 const BLOTATO_KEY = process.env.BLOTATO_API_KEY || '';
 const BASE_URL = 'https://backend.blotato.com/v2';

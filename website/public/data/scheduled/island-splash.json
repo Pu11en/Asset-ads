@@ -1,1 +1,65 @@
-[]
+{
+  "posts": [
+    {
+      "post_id": "post_1",
+      "ad_filenames": [
+        "splash_20260420_103950.instructions",
+        "splash_20260420_122603.instructions",
+        "splash_20260420_172255.instructions",
+        "splash_20260421_120154.instructions"
+      ],
+      "post_type": "carousel",
+      "caption": "Real fruit. Real flavor. Real Caribbean \ud83c\udf3a\ud83c\udf79\n\nWhich one's calling your name? \ud83d\udc47\ud83c\udf34",
+      "hashtags": "#tropicalvibes #TropicalJuice #freshjuice #tropical #caribbeanstyle",
+      "creative_concept": "Tropical escape in every bottle",
+      "caption_angle": "Island getaway vibes",
+      "recommended_slots": [
+        "anytime"
+      ],
+      "scheduled": true,
+      "scheduledAt": "2026-04-25T23:12:32.553Z",
+      "scheduledTime": "2026-04-26T14:00:00Z",
+      "blotatoPostId": "9b155903-6d3e-4e30-a349-1287539e73df"
+    },
+    {
+      "post_id": "post_2",
+      "ad_filenames": [
+        "splash_20260421_142132.instructions",
+        "splash_20260421_155700_097.instructions",
+        "splash_20260421_161719_501.instructions",
+        "splash_20260421_162637_568.instructions"
+      ],
+      "post_type": "carousel",
+      "caption": "The Caribbean doesn't do boring \ud83d\udcaa\ud83c\udf79\n\nTag someone who needs a tropical escape! \ud83c\udfdd\ufe0f\ud83d\udca8",
+      "hashtags": "#foodporn #tropical #natural #foodstagram #FreshJuice",
+      "creative_concept": "Bold Caribbean flavors",
+      "caption_angle": "Authentic Caribbean taste",
+      "recommended_slots": [
+        "anytime"
+      ],
+      "scheduled": true,
+      "scheduledAt": "2026-04-25T23:12:26.553Z",
+      "scheduledTime": "2026-04-26T19:00:00Z",
+      "blotatoPostId": "2e069d3f-d5ba-4125-ae95-8f425aceb9be"
+    },
+    {
+      "post_id": "instagram_DXkX-OBFPG1",
+      "ad_filenames": [
+        "island-splash_20260424_045502_670.instructions",
+        "island-splash_20260424_044858_323.instructions",
+        "island-splash_20260424_043308_566.instructions",
+        "island-splash_20260424_044325_100.instructions",
+        "island-splash_20260424_044513_447.instructions",
+        "island-splash_20260424_043709_284.instructions"
+      ],
+      "post_type": "carousel",
+      "caption": "Caribbean your daily tropical reset \ud83c\udf79\nGuava Pine & Lime \ud83c\udf79\nCaribbean approved \u2705",
+      "hashtags": "#IslandSplash #TropicalVibes #CaribbeanStyle #FreshJuice #GuavaJuice",
+      "blotatoStatus": "published",
+      "publicUrl": "https://www.instagram.com/p/DXkX-OBFPG1/",
+      "scheduled": true,
+      "scheduledAt": "2026-04-25T14:00:00.000Z"
+    }
+  ],
+  "updated_at": "2026-04-25T17:31:35.537449"
+}
