@@ -392,7 +392,11 @@ FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
 None of these may appear in the output. The reference brand does not exist in the {name} ad.)
 
 STRICT CONSTRAINTS:
-(brand rules — palette, label preservation, no mascots/forbidden props, no hashtags/URLs)
+(brand rules — palette, label preservation, no mascots/forbidden props, no hashtags/URLs, no medical claims)
+- The product label is pasted PIXEL-FAITHFUL from the INPUT image — do NOT redraw or recreate the label
+- Product lighting MUST match the scene's lighting direction and quality — never preserve "original product lighting"
+- Product must cast a natural shadow on the scene surface — no floating, no hard-edged pasted shadow
+- Use upgraded product images when available (`upgraded_*.png` — opaque, higher quality)
 
 REFERENCE SUBJECT & COMPOSITION:
 (paragraph — keep subject X, keep composition Y, DO NOT add Z absent elements)
@@ -400,13 +404,20 @@ REFERENCE SUBJECT & COMPOSITION:
 PRODUCT REPLACEMENT:
 (the N products in ref → N {name} products. For each, specify its scene position and the exact INPUT index whose label to paste pixel-faithful. Apply the per-product cap/container rule from rule 5a. Do not inherit container or cap styles from the reference.)
 
+LIGHTING & SHADOW MATCH (CRITICAL — prevents "pasted-in" look):
+- Analyze the reference's lighting: direction (overhead, side, backlit), quality (hard/soft), and color temperature (warm/cool/neutral)
+- State the product's lighting as a constraint: "The product catches highlights consistent with the scene's [direction] [quality] [temperature] lighting"
+- State the shadow constraint: "A soft, diffuse shadow grounds the product on [surface], consistent with the scene's shadow direction and softness"
+- If the scene has rim lighting, say "no highlight on the product that contradicts the scene's rim light"
+- Never write "preserve original lighting" or "match the product's original lighting" — always reference the SCENE's lighting
+
 TEXT CONTENT GUIDANCE:
 {voice_block}
 
 TEXT STRATEGY:
 - Write a headline matching the brand voice. Follow the reference font feel (serif headline -> serif, sans-serif -> sans-serif).
 - Write body copy lines matching the reference text density. Keep each line short and honest.
-- Render all text in brand palette colors (navy #204050, dark brown #301800, cream #F0E0B0).
+- Render all text in brand palette colors — Island Splash: #243C3C (dark teal), #F0A86C (warm orange), #E4843C (deep coral), #A89078 (warm sand); Cinco H Ranch: use brand palette. Pick ONE color that contrasts well with the scene.
 - Write freely using the brand voice. Do NOT invent clinical, corporate, or spa-fluff language.
 
 LOGO:
@@ -826,7 +837,7 @@ def resolve_pool_dir(brand: dict, locked_product: str | None) -> Path:
 
     For brands with product_required + a locked product, each product has its own
     sub-pool at <pool_dir>/<product.pool_slug>/. Otherwise (e.g. Island Splash rotation)
-    use the top-level pool_dir directly.
+    use the approved/ subdirectory — never the root pool.
     """
     base = Path(brand["paths"]["pool_dir"])
     if brand.get("product_required") and locked_product:
@@ -835,7 +846,7 @@ def resolve_pool_dir(brand: dict, locked_product: str | None) -> Path:
             raise RuntimeError(f"locked product '{locked_product}' not in brand '{brand['slug']}'")
         slug = prod.get("pool_slug") or prod["name"].lower().replace(" ", "-")
         return base / slug
-    return base
+    return base / "approved"
 
 
 def list_pool(brand: dict, locked_product: str | None = None) -> list[Path]:

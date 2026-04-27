@@ -15,7 +15,7 @@
     "logo_path": "/home/drewp/.hermes/profiles/hermes-11/logos/island-splash/logo.png",
     "products_dir": "/home/drewp/splash-website/assets/products",
     "tally_path": "/home/drewp/asset-ads/flavor_usage.json",
-    "pool_dir": "/home/drewp/hermes-11/references/all-drinks",
+    "pool_dir": "/home/drewp/asset-ads/brand_assets/island-splash/references",
     "rules_path": "/home/drewp/asset-ads/formula_learning.json"
   },
 
@@ -57,7 +57,7 @@
   "products": [
     {
       "name": "Mango Passion",
-      "label_file": "MangoPassion.png",
+      "label_file": "upgraded_MangoPassion.png",
       "container": "bottle",
       "cap_rule": "matte BLACK cap — always, with no exceptions; never inherit cap color from reference",
       "keywords": ["mango", "passion fruit", "passionfruit"],
@@ -66,7 +66,7 @@
     },
     {
       "name": "Mauby",
-      "label_file": "Mauby.png",
+      "label_file": "upgraded_Mauby.png",
       "container": "bottle",
       "cap_rule": "matte BLACK cap — always, with no exceptions; never inherit cap color from reference",
       "keywords": ["mauby", "bark"],
@@ -75,7 +75,7 @@
     },
     {
       "name": "Peanut Punch",
-      "label_file": "peanutpunch.png",
+      "label_file": "upgraded_peanutpunch.png",
       "container": "bottle",
       "cap_rule": "matte BLACK cap — always, with no exceptions; never inherit cap color from reference",
       "keywords": ["peanut"],
@@ -84,7 +84,7 @@
     },
     {
       "name": "Lime",
-      "label_file": "Lime.png",
+      "label_file": "upgraded_Lime.png",
       "container": "bottle",
       "cap_rule": "matte BLACK cap — always, with no exceptions; never inherit cap color from reference",
       "keywords": ["lime", "citrus"],
@@ -93,7 +93,7 @@
     },
     {
       "name": "Guava Pine",
-      "label_file": "GuavaPine.png",
+      "label_file": "upgraded_GuavaPine.png",
       "container": "bottle",
       "cap_rule": "matte BLACK cap — always, with no exceptions; never inherit cap color from reference",
       "keywords": ["guava", "pineapple"],
@@ -102,7 +102,7 @@
     },
     {
       "name": "Sorrel",
-      "label_file": "sorrel.png",
+      "label_file": "upgraded_sorrel.png",
       "container": "bottle",
       "cap_rule": "matte BLACK cap — always, with no exceptions; never inherit cap color from reference",
       "keywords": ["sorrel", "hibiscus"],
@@ -111,7 +111,7 @@
     },
     {
       "name": "Pine Ginger",
-      "label_file": "pineginger.png",
+      "label_file": "upgraded_pineginger.png",
       "container": "bottle",
       "cap_rule": "matte BLACK cap — always, with no exceptions; never inherit cap color from reference",
       "keywords": ["pineapple", "ginger"],
