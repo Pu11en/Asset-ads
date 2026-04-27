@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { adminSignOut } from '../../actions';
 
 const BRANDS = [
@@ -186,10 +187,17 @@ export function AdminView({
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <header className="flex items-center justify-between px-6 py-5 border-b border-white/10 sticky top-0 z-50 bg-black/80 backdrop-blur">
-        <div>
-          <div className="text-xs uppercase tracking-widest text-white/50">Asset Ads</div>
-          <h1 className="text-2xl font-bold">Admin</h1>
+      <header className="flex items-center justify-between px-6 py-4 border-b border-white/10 sticky top-0 z-50 bg-black/80 backdrop-blur">
+        <div className="flex items-center gap-6">
+          <div>
+            <div className="text-xs uppercase tracking-widest text-white/50">Asset Ads</div>
+            <h1 className="text-xl font-bold">Admin</h1>
+          </div>
+          <nav className="flex items-center gap-1 ml-4">
+            <Link href="/admin" className="px-3 py-1.5 text-xs font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-md transition">Ad Pool</Link>
+            <Link href="/admin/swipe/island-splash/drinks" className="px-3 py-1.5 text-xs font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-md transition">Ref Gallery</Link>
+            <Link href="/admin/posts" className="px-3 py-1.5 text-xs font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-md transition">Posts</Link>
+          </nav>
         </div>
         <form action={adminSignOut}>
           <button type="submit" className="rounded-md border border-white/10 px-3 py-1.5 text-xs text-white/70 hover:text-white hover:border-white/30 transition">Sign out</button>
