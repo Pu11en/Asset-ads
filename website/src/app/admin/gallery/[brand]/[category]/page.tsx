@@ -156,6 +156,32 @@ export default function GalleryPage() {
     }
   };
 
+  const [generating, setGenerating] = useState(false);
+
+  const handleGenerateAds = async () => {
+    if (state.approved < 3) return;
+    setGenerating(true);
+    try {
+      const res = await fetch('/api/queue', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'generate_ads', brand }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        alert('Generate ads job added to queue. Hermes will process it shortly.');
+      } else {
+        alert(data.error || 'Failed to add job to queue');
+      }
+    } catch (err) {
+      console.error('Failed to add job:', err);
+      alert('Failed to add job to queue');
+    } finally {
+      setGenerating(false);
+    }
+  };
+
+
   const handleReject = async (filename?: string) => {
     const toReject = filename ? [filename] : Array.from(selected);
     if (toReject.length === 0) return;
@@ -243,11 +269,33 @@ export default function GalleryPage() {
             </button>
           </div>
 
-          {/* Progress */}
-          <div className="flex items-center gap-6 text-sm mt-4">
-            <span className="text-emerald-400">{state.approved} approved</span>
-            <span className="text-red-400">{state.rejected} rejected</span>
-            <span className="text-white/60">{refs.length} remaining</span>
+
+          {/* Progress + Navigation */}
+          <div className="flex items-center justify-between mt-4">
+            <div className="flex items-center gap-6 text-sm">
+              <span className="text-emerald-400">{state.approved} approved</span>
+              <span className="text-red-400">{state.rejected} rejected</span>
+              <span className="text-white/60">{refs.length} remaining</span>
+            </div>
+            <div className="flex items-center gap-3">
+              {state.approved >= 3 && (
+                <button
+                  onClick={handleGenerateAds}
+                  disabled={generating}
+                  className="px-4 py-2 bg-blue-600 hover:bg-blue-500 disabled:bg-blue-600/50 rounded-lg text-sm font-medium transition flex items-center gap-2"
+                >
+                  {generating ? '◌ Adding to queue...' : '🎨 Generate Ads'}
+                </button>
+              )}
+              {state.approved > 0 && (
+                <button
+                  onClick={() => router.push(`/admin/gallery/${brand}/${category}/approved`)}
+                  className="px-4 py-2 bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/50 rounded-lg text-sm font-medium transition text-emerald-400"
+                >
+                  ✓ View {state.approved} Approved →
+                </button>
+              )}
+            </div>
           </div>
 
           {/* Actions */}

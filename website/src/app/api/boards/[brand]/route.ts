@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { execSync, spawn } from 'child_process';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 
 const BOARDS_DIR = '/home/drewp/asset-ads/state/boards';
+const QUEUE_FILE = '/home/drewp/asset-ads/state/board-queue/queue.json';
 
 function getBoardsFile(brand: string) {
   return path.join(BOARDS_DIR, `${brand}.json`);
@@ -21,6 +21,25 @@ function saveBoards(brand: string, boards: any[]) {
   const dir = path.dirname(getBoardsFile(brand));
   if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
   writeFileSync(getBoardsFile(brand), JSON.stringify(boards, null, 2));
+}
+
+function addJobToQueue(job: any) {
+  // Ensure queue directory exists
+  const queueDir = path.dirname(QUEUE_FILE);
+  if (!existsSync(queueDir)) mkdirSync(queueDir, { recursive: true });
+  
+  let queue = { jobs: [], last_updated: new Date().toISOString() };
+  if (existsSync(QUEUE_FILE)) {
+    try {
+      queue = JSON.parse(readFileSync(QUEUE_FILE, 'utf8'));
+    } catch {}
+  }
+  
+  // Add new job
+  queue.jobs.push(job);
+  queue.last_updated = new Date().toISOString();
+  
+  writeFileSync(QUEUE_FILE, JSON.stringify(queue, null, 2));
 }
 
 // GET /api/boards/[brand] - list boards for brand
@@ -65,17 +84,19 @@ export async function POST(
   boards.push(board);
   saveBoards(brand, boards);
 
-  // Run scraper immediately (synchronous - takes a few seconds)
-  try {
-    execSync(`cd /home/drewp/asset-ads && python3 skill/scripts/drain_board.py --brand ${brand} --board-url "${boardUrl}" --pool ${pool} --max-images ${maxImages}`, {
-      stdio: 'pipe',
-      timeout: 120000
-    });
-  } catch (e) {
-    console.error('Scraper error:', e);
-  }
+  // Add job to queue for Hermes to process
+  addJobToQueue({
+    id: `scrape-${Date.now()}`,
+    type: 'scrape',
+    brand,
+    url: boardUrl,
+    pool,
+    maxImages,
+    status: 'pending',
+    addedAt: new Date().toISOString(),
+  });
 
-  return NextResponse.json({ success: true, board });
+  return NextResponse.json({ success: true, board, message: 'Board added to queue for processing' });
 }
 
 // DELETE /api/boards/[brand] - remove a board

@@ -121,6 +121,11 @@ export async function GET(
         url: `/images/refs/${brand}/${poolDir.poolSlug}/${path.basename(f)}`,
       })),
       approved: approved.length,
+      approved_files: approved.map(f => ({
+        filename: path.basename(f),
+        path: f,
+        url: `/images/refs/${brand}/${poolDir.poolSlug}/approved/${path.basename(f)}`,
+      })),
       rejected: rejected.length,
       used: used.length,
       total_unapproved: unapprovedFiltered.length,

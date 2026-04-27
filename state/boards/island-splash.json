@@ -28,5 +28,15 @@
     "addedAt": "2026-04-27T22:28:25.048Z",
     "imageCount": 0,
     "lastScraped": null
+  },
+  {
+    "id": "1777329154196",
+    "url": "https://www.pinterest.com/abbyv4774/drink-ad/",
+    "pool": "drinks",
+    "maxImages": 100,
+    "status": "pending",
+    "addedAt": "2026-04-27T22:32:34.196Z",
+    "imageCount": 0,
+    "lastScraped": null
   }
 ]

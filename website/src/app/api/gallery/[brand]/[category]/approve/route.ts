@@ -1,13 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
-import { existsSync, readFileSync } from "fs";
+import { existsSync, readFileSync, writeFileSync } from "fs";
 import { copyFile, mkdir } from "fs/promises";
 import path from "path";
-import { execSync } from "child_process";
 
 const REPO_ROOT = "/home/drewp/asset-ads";
 
 const POOL_SLUG_MAP: Record<string, Record<string, string>> = {
   "island-splash": { "all-drinks": "drinks", "drinks": "drinks" },
+  "cinco-h-ranch": { "skincare": "skincare" },
 };
 
 function resolvePoolSlug(brand: string, category: string): string {
@@ -73,12 +73,13 @@ export async function POST(
 
   const successCount = results.filter(r => r.success).length;
 
-  // Update state via state_manager.py
+  // Update state file directly
   try {
-    execSync(
-      `cd ${REPO_ROOT} && python3 state_manager.py approve ${brand} ${successCount} --category ${poolSlug}`,
-      { encoding: "utf8" }
-    );
+    const statePath = path.join(REPO_ROOT, "state", "ref-pool", brand, poolSlug, "index.json");
+    const state = existsSync(statePath) ? JSON.parse(readFileSync(statePath, "utf8")) : {};
+    state.approved = (state.approved || 0) + successCount;
+    state.unapproved = Math.max(0, (state.unapproved || 0) - successCount);
+    writeFileSync(statePath, JSON.stringify(state, null, 2));
   } catch (err) {
     console.error("Failed to update state:", err);
   }
