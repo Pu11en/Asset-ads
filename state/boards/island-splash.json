@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1777328826202",
+    "url": "https://www.pinterest.com/justinmmmah/drink-ads/",
+    "pool": "drinks",
+    "maxImages": 100,
+    "status": "pending",
+    "addedAt": "2026-04-27T22:27:06.202Z",
+    "imageCount": 0,
+    "lastScraped": null
+  },
+  {
+    "id": "1777328866260",
+    "url": "https://www.pinterest.com/ateekdesigns/energy-drink-ads/",
+    "pool": "drinks",
+    "maxImages": 100,
+    "status": "pending",
+    "addedAt": "2026-04-27T22:27:46.260Z",
+    "imageCount": 0,
+    "lastScraped": null
+  },
+  {
+    "id": "1777328905048",
+    "url": "https://www.pinterest.com/ccfandrew/drink-ad/",
+    "pool": "drinks",
+    "maxImages": 100,
+    "status": "pending",
+    "addedAt": "2026-04-27T22:28:25.048Z",
+    "imageCount": 0,
+    "lastScraped": null
+  }
+]

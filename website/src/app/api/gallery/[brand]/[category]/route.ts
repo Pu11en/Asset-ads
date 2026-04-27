@@ -1,22 +1,26 @@
 import { NextRequest, NextResponse } from "next/server";
 import { readdir } from "fs/promises";
 import { existsSync, readFileSync } from "fs";
+import { spawn } from "child_process";
 import path from "path";
 
 const REPO_ROOT = "/home/drewp/asset-ads";
 const IMAGE_EXTS = [".jpg", ".jpeg", ".png", ".webp"];
+const SCRAPER = REPO_ROOT + "/skill/scripts/drain_board.py";
+const QUEUE_FILE = REPO_ROOT + "/state/board-queue.json";
 
 function isImage(filename: string) {
   const ext = path.extname(filename).toLowerCase();
   return IMAGE_EXTS.includes(ext);
 }
 
-// Maps URL slug (used in public/images/) to actual physical directory name
-// Some brands use different names in URLs vs filesystem (e.g. island-splash: "drinks" in URL = "all-drinks" on disk)
 const POOL_SLUG_MAP: Record<string, Record<string, string>> = {
   "island-splash": {
-    "all-drinks": "drinks",   // URL slug -> physical dir
+    "all-drinks": "drinks",
     "drinks": "drinks",
+  },
+  "cinco-h-ranch": {
+    "skincare": "skincare",
   },
 };
 
@@ -33,18 +37,17 @@ async function getPoolDir(brand: string, category: string): Promise<{ poolDir: s
       if (config.paths?.pool_dir) {
         const poolBase = config.paths.pool_dir;
         const slug = resolvePoolSlug(brand, category);
-        // poolBase already contains the category name? Use it directly
-        if (poolBase.endsWith(category) || poolBase.includes(`/${category}`)) {
+        if (poolBase.endsWith(slug) || poolBase.includes(`/${slug}`)) {
           return { poolDir: poolBase, poolSlug: slug };
         }
-        return { poolDir: path.join(poolBase, category), poolSlug: slug };
+        return { poolDir: path.join(poolBase, slug), poolSlug: slug };
       }
     } catch (e) {
       console.error("Config parse error:", e);
     }
   }
   const slug = resolvePoolSlug(brand, category);
-  return { poolDir: path.join(REPO_ROOT, "brand_assets", brand, category), poolSlug: slug };
+  return { poolDir: path.join(REPO_ROOT, "brand_assets", brand, slug), poolSlug: slug };
 }
 
 async function getRefsInDir(dir: string): Promise<string[]> {
@@ -53,18 +56,36 @@ async function getRefsInDir(dir: string): Promise<string[]> {
   return files.filter(isImage).map(f => path.join(dir, f));
 }
 
+function processBoardQueue() {
+  if (!existsSync(QUEUE_FILE)) return;
+  try {
+    const queueData = readFileSync(QUEUE_FILE, "utf8");
+    const queue = JSON.parse(queueData);
+    const pending = queue.filter((b: any) => b.status === "pending");
+    if (pending.length === 0) return;
+
+    const board = pending[0];
+    const cmd = `cd ${REPO_ROOT} && python3 ${SCRAPER} --brand ${board.brand} --board-url "${board.boardUrl}" --pool ${board.pool} --max-images ${board.maxImages} &`;
+    spawn("bash", ["-c", cmd], { detached: true, stdio: "ignore" });
+  } catch (e) {
+    console.error("Queue processing error:", e);
+  }
+}
+
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ brand: string; category: string }> }
 ) {
   const { brand, category } = await params;
 
+  // Process any pending boards in background
+  processBoardQueue();
+
   const poolDir = await getPoolDir(brand, category);
   if (!poolDir) {
     return NextResponse.json({ error: "Brand not found" }, { status: 404 });
   }
 
-  // Get all images in each subdir
   const [unapproved, approved, rejected, used] = await Promise.all([
     getRefsInDir(poolDir.poolDir),
     getRefsInDir(path.join(poolDir.poolDir, "approved")),
@@ -72,17 +93,14 @@ export async function GET(
     getRefsInDir(path.join(poolDir.poolDir, "used")),
   ]);
 
-  // Calculate processed files
   const processedFiles = new Set([
     ...approved.map(f => path.basename(f)),
     ...rejected.map(f => path.basename(f)),
     ...used.map(f => path.basename(f)),
   ]);
 
-  // Filter unapproved
   const unapprovedFiltered = unapproved.filter(f => !processedFiles.has(path.basename(f)));
 
-  // Get state from state_manager's JSON
   const statePath = path.join(REPO_ROOT, "state", "ref-pool", brand, poolDir.poolSlug, "index.json");
   let state = { approved: 0, rejected: 0, used: 0, trigger_threshold: 3, triggered: false };
   if (existsSync(statePath)) {

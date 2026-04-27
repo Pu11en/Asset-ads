@@ -195,7 +195,7 @@ export function AdminView({
           </div>
           <nav className="flex items-center gap-1 ml-4">
             <Link href="/admin" className="px-3 py-1.5 text-xs font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-md transition">Ad Pool</Link>
-            <Link href="/admin/swipe/island-splash/drinks" className="px-3 py-1.5 text-xs font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-md transition">Ref Gallery</Link>
+            <Link href="/admin/gallery/island-splash/drinks" className="px-3 py-1.5 text-xs font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-md transition">Ref Gallery</Link>
             <Link href="/admin/posts" className="px-3 py-1.5 text-xs font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-md transition">Posts</Link>
           </nav>
         </div>

@@ -7,9 +7,9 @@ Uses pinterest-dl (https://github.com/sean1832/pinterest-dl) for reliable
 board scraping via the reverse-engineered Pinterest API.
 
 Usage:
-  python3 skill/scripts/drain_board.py --brand island-splash --board-url "https://www.pinterest.com/user/board/XXXXX" --pool all-drinks
-  python3 skill/scripts/drain_board.py --brand island-splash --board-url "https://pin.it/XXXXX" --pool all-drinks --max-images 50
-  python3 skill/scripts/drain_board.py --brand island-splash --board-url "https://pin.it/XXXXX" --pool all-drinks --dry-run
+  python3 skill/scripts/drain_board.py --brand island-splash --board-url "https://www.pinterest.com/user/board/XXXXX" --pool drinks
+  python3 skill/scripts/drain_board.py --brand island-splash --board-url "https://pin.it/XXXXX" --pool drinks --max-images 50
+  python3 skill/scripts/drain_board.py --brand island-splash --board-url "https://pin.it/XXXXX" --pool drinks --dry-run
 """
 
 import argparse
@@ -28,6 +28,8 @@ WEBSITE_PUBLIC = REPO_ROOT / "website" / "public"
 REFS_PUBLIC_DIR = WEBSITE_PUBLIC / "images" / "refs"
 REFS_DATA_DIR = WEBSITE_PUBLIC / "data" / "refs"
 PINTEREST_DL_BIN = "/home/drewp/.local/bin/pinterest-dl"
+COOKIES_FILE = REPO_ROOT / "pinterest-cookies.json"
+IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp"}
 
 
 # ── Pinterest scraping ──────────────────────────────────────────────────────────
@@ -90,6 +92,10 @@ def scrape_pinterest_board(board_url: str, max_images: int = None, output_dir: s
         '-n', str(max_images) if max_images else '500',
     ]
 
+    # Use cookies if available
+    if COOKIES_FILE.exists():
+        cmd.extend(['-c', str(COOKIES_FILE)])
+
     cmd.append(resolved_url)
 
     print(f"📥 Scraping Pinterest board via API...")
@@ -104,9 +110,18 @@ def scrape_pinterest_board(board_url: str, max_images: int = None, output_dir: s
 
             # Fall back to browser client
             print(f"   Retrying with browser client...")
-            cmd_browser = [x.replace('--client', 'api', '--client', 'chromium')
-                           if x == '--client' else x for x in cmd]
-            cmd_browser[cmd_browser.index('api')] = 'chromium'
+            cmd_browser = []
+            skip_next = False
+            for x in cmd:
+                if skip_next:
+                    skip_next = False
+                    continue
+                if x == '--client':
+                    cmd_browser.append('--client')
+                    cmd_browser.append('chromium')
+                    skip_next = True
+                else:
+                    cmd_browser.append(x)
 
             result = subprocess.run(cmd_browser, capture_output=True, text=True, timeout=300)
             if result.returncode != 0:
@@ -163,7 +178,7 @@ def get_ref_dir(brand_slug: str, pool_name: str) -> Path:
     - product_required=true brands (e.g. cinco-h-ranch):
         pool_dir/references/{product_slug}/
     - flat-pool brands (e.g. island-splash):
-        pool_dir/  (pool_dir already IS the pool path — pool_name is the brand-level pool slug)
+        pool_dir/{pool_slug}/ unless pool_dir already points at that pool
     """
     config = load_brand_config(brand_slug)
 
@@ -176,8 +191,9 @@ def get_ref_dir(brand_slug: str, pool_name: str) -> Path:
         prod_slug = slugify(pool_name)
         ref_dir = pool_dir / prod_slug
     else:
-        # Flat pool — pool_dir already IS the pool path
-        ref_dir = pool_dir
+        # Flat pool — pool_name is the brand-level pool slug
+        pool_slug = slugify(pool_name)
+        ref_dir = pool_dir if pool_dir.name == pool_slug else pool_dir / pool_slug
 
     ref_dir.mkdir(parents=True, exist_ok=True)
     return ref_dir
@@ -188,6 +204,85 @@ def get_ref_dir(brand_slug: str, pool_name: str) -> Path:
 def load_brand_products(brand_slug: str) -> list:
     config = load_brand_config(brand_slug)
     return config.get('products', [])
+
+
+def load_ref_manifest(brand_slug: str) -> dict:
+    manifest_path = REFS_DATA_DIR / f"{brand_slug}.json"
+    if manifest_path.exists():
+        try:
+            return json.loads(manifest_path.read_text())
+        except (json.JSONDecodeError, OSError):
+            pass
+    return {"pools": {}, "products": []}
+
+
+def ref_manifest_entry(brand_slug: str, pool_slug: str, filename: str) -> dict:
+    return {
+        "filename": filename,
+        "url": f"/images/refs/{brand_slug}/{pool_slug}/{filename}",
+    }
+
+
+def sync_ref_to_website(brand_slug: str, pool_name: str, src_path: Path, new_name: str) -> Path:
+    """Copy ref image into website public folder and update manifest."""
+    pool_slug = slugify(pool_name)
+    dest_dir = REFS_PUBLIC_DIR / brand_slug / pool_slug
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    dest_path = dest_dir / new_name
+    shutil.copy2(src_path, dest_path)
+
+    REFS_DATA_DIR.mkdir(parents=True, exist_ok=True)
+    manifest_path = REFS_DATA_DIR / f"{brand_slug}.json"
+    manifest = load_ref_manifest(brand_slug)
+
+    pools = manifest.setdefault("pools", {})
+    pool = pools.setdefault(pool_slug, {"images": [], "usage_count": {}})
+    images = pool.setdefault("images", [])
+    entry = ref_manifest_entry(brand_slug, pool_slug, new_name)
+    if not any((img.get("filename") if isinstance(img, dict) else Path(str(img)).name) == new_name for img in images):
+        images.append(entry)
+
+    if not manifest.get("products"):
+        manifest["products"] = [
+            {"name": product["name"], "slug": slugify(product["name"])}
+            for product in load_brand_products(brand_slug)
+            if product.get("name")
+        ]
+
+    manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
+    return dest_path
+
+
+def update_ref_pool_state(brand_slug: str, pool_name: str, added_count: int) -> None:
+    """Increment unapproved count for refs staged into a pool."""
+    if added_count <= 0:
+        return
+
+    pool_slug = slugify(pool_name)
+    state_path = REPO_ROOT / "state" / "ref-pool" / brand_slug / pool_slug / "index.json"
+    state_path.parent.mkdir(parents=True, exist_ok=True)
+
+    if state_path.exists():
+        try:
+            state = json.loads(state_path.read_text())
+        except (json.JSONDecodeError, OSError):
+            state = {}
+    else:
+        state = {}
+
+    from datetime import datetime
+
+    state.setdefault("brand", brand_slug)
+    state["category"] = pool_slug
+    state["unapproved"] = state.get("unapproved", 0) + added_count
+    state.setdefault("approved", 0)
+    state.setdefault("rejected", 0)
+    state.setdefault("used", 0)
+    state.setdefault("trigger_threshold", 3)
+    state.setdefault("triggered", False)
+    state["last_updated"] = datetime.now().isoformat()
+
+    state_path.write_text(json.dumps(state, indent=2) + "\n")
 
 
 def add_ref_to_pool(brand_slug: str, pool_name: str, image_path: Path) -> str:
@@ -205,7 +300,7 @@ def add_ref_to_pool(brand_slug: str, pool_name: str, image_path: Path) -> str:
         product = products[0] if products else {'name': pool_name}
 
     # Find next index to avoid overwrites
-    existing = list(ref_dir.glob('*.jpg')) + list(ref_dir.glob('*.jpeg')) + list(ref_dir.glob('*.png'))
+    existing = [ref for ref in ref_dir.iterdir() if ref.is_file() and ref.suffix.lower() in IMAGE_EXTS]
     max_num = 0
     for ref in existing:
         parts = ref.stem.split('_ref_')
@@ -222,6 +317,9 @@ def add_ref_to_pool(brand_slug: str, pool_name: str, image_path: Path) -> str:
 
     shutil.copy2(image_path, dest_path)
     print(f"      [ref] ✅ Staged: {dest_name}")
+
+    sync_ref_to_website(brand_slug, pool_name, dest_path, dest_name)
+    print(f"      [web] Synced: images/refs/{brand_slug}/{slugify(pool_name)}/{dest_name}")
 
     return str(dest_path)
 
@@ -337,9 +435,11 @@ def main():
             for err in errors[:3]:
                 print(f"   {err}")
 
+        update_ref_pool_state(args.brand, args.pool, len(results))
+
         # Show pool status
         ref_dir = get_ref_dir(args.brand, args.pool)
-        total = len(list(ref_dir.glob('*.jpg'))) + len(list(ref_dir.glob('*.jpeg'))) + len(list(ref_dir.glob('*.png')))
+        total = len([ref for ref in ref_dir.iterdir() if ref.is_file() and ref.suffix.lower() in IMAGE_EXTS])
         print(f"\n📊 Pool '{args.pool}' now has {total} reference images")
         print(f"📝 No ads generated. Run 'splash go' or 'cinco go' when ready.")
 

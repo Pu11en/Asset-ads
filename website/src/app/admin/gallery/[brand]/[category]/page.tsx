@@ -9,6 +9,15 @@ type Ref = {
   url: string;
 };
 
+type Board = {
+  id: string;
+  url: string;
+  pool: string;
+  status: string;
+  imageCount: number;
+  addedAt: string;
+};
+
 type PoolData = {
   brand: string;
   category: string;
@@ -29,21 +38,25 @@ type PoolData = {
   };
 };
 
-export default function SwipePage() {
+export default function GalleryPage() {
   const params = useParams();
   const router = useRouter();
   const brand = params.brand as string;
   const category = params.category as string;
 
   const [data, setData] = useState<PoolData | null>(null);
+  const [boards, setBoards] = useState<Board[]>([]);
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(true);
   const [actionLoading, setActionLoading] = useState(false);
+  const [showAddBoard, setShowAddBoard] = useState(false);
+  const [boardUrl, setBoardUrl] = useState("");
+  const [addingBoard, setAddingBoard] = useState(false);
 
   const fetchRefs = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/swipe/${brand}/${category}`);
+      const res = await fetch(`/api/gallery/${brand}/${category}`);
       if (res.ok) {
         const json = await res.json();
         setData(json);
@@ -55,9 +68,51 @@ export default function SwipePage() {
     }
   }, [brand, category]);
 
+  const fetchBoards = useCallback(async () => {
+    try {
+      const res = await fetch(`/api/boards/${brand}`);
+      if (res.ok) {
+        const json = await res.json();
+        setBoards(json.boards || []);
+      }
+    } catch (err) {
+      console.error("Failed to fetch boards:", err);
+    }
+  }, [brand]);
+
   useEffect(() => {
     fetchRefs();
-  }, [fetchRefs]);
+    fetchBoards();
+  }, [fetchRefs, fetchBoards]);
+
+  const handleAddBoard = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!boardUrl.trim()) return;
+
+    setAddingBoard(true);
+    try {
+      const res = await fetch(`/api/boards/${brand}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ boardUrl: boardUrl.trim(), pool: category }),
+      });
+      if (res.ok) {
+        setBoardUrl("");
+        setShowAddBoard(false);
+        fetchBoards();
+        // Refresh refs after a moment (scraping happens in background)
+        setTimeout(fetchRefs, 2000);
+      } else {
+        const err = await res.json();
+        alert(err.error || "Failed to add board");
+      }
+    } catch (err) {
+      console.error("Failed to add board:", err);
+      alert("Failed to add board");
+    } finally {
+      setAddingBoard(false);
+    }
+  };
 
   const toggleSelect = (filename: string) => {
     const newSelected = new Set(selected);
@@ -83,7 +138,7 @@ export default function SwipePage() {
     if (selected.size === 0) return;
     setActionLoading(true);
     try {
-      const res = await fetch(`/api/swipe/${brand}/${category}/approve`, {
+      const res = await fetch(`/api/gallery/${brand}/${category}/approve`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ filenames: Array.from(selected) }),
@@ -107,7 +162,7 @@ export default function SwipePage() {
 
     setActionLoading(true);
     try {
-      const res = await fetch(`/api/swipe/${brand}/${category}/reject`, {
+      const res = await fetch(`/api/gallery/${brand}/${category}/reject`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ filenames: toReject }),
@@ -138,7 +193,7 @@ export default function SwipePage() {
       <div className="min-h-screen bg-black text-white flex items-center justify-center">
         <div className="text-center">
           <div className="w-8 h-8 border-2 border-white/20 border-t-white/60 rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-white/60">Loading refs...</p>
+          <p className="text-white/60">Loading...</p>
         </div>
       </div>
     );
@@ -147,7 +202,7 @@ export default function SwipePage() {
   if (!data) {
     return (
       <div className="min-h-screen bg-black text-white flex items-center justify-center">
-        <p className="text-white/60">Failed to load refs</p>
+        <p className="text-white/60">Failed to load</p>
       </div>
     );
   }
@@ -176,12 +231,23 @@ export default function SwipePage() {
               </div>
             </div>
 
-            {/* Progress */}
-            <div className="flex items-center gap-6 text-sm">
-              <span className="text-emerald-400">{state.approved} approved</span>
-              <span className="text-red-400">{state.rejected} rejected</span>
-              <span className="text-white/60">{refs.length} remaining</span>
-            </div>
+            {/* Add Board Button */}
+            <button
+              onClick={() => setShowAddBoard(true)}
+              className="px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-sm font-medium transition flex items-center gap-2"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+              </svg>
+              Add Board
+            </button>
+          </div>
+
+          {/* Progress */}
+          <div className="flex items-center gap-6 text-sm mt-4">
+            <span className="text-emerald-400">{state.approved} approved</span>
+            <span className="text-red-400">{state.rejected} rejected</span>
+            <span className="text-white/60">{refs.length} remaining</span>
           </div>
 
           {/* Actions */}
@@ -196,7 +262,7 @@ export default function SwipePage() {
               onClick={deselectAll}
               className="px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg text-sm text-white/60 transition"
             >
-              Deselect All
+              Deselect
             </button>
             <div className="flex-1" />
             <span className="text-sm text-white/60">
@@ -207,25 +273,41 @@ export default function SwipePage() {
               disabled={selected.size === 0 || actionLoading}
               className="px-6 py-2 bg-emerald-600 hover:bg-emerald-500 disabled:bg-emerald-600/50 disabled:cursor-not-allowed rounded-lg text-sm font-medium transition"
             >
-              {actionLoading ? "Approving..." : `Approve Selected (${selected.size})`}
+              {actionLoading ? "..." : `Approve (${selected.size})`}
             </button>
             <button
               onClick={() => handleReject()}
               disabled={selected.size === 0 || actionLoading}
               className="px-6 py-2 bg-red-600/50 hover:bg-red-600 disabled:bg-red-600/30 disabled:cursor-not-allowed rounded-lg text-sm font-medium transition"
             >
-              {actionLoading ? "Rejecting..." : `Reject Selected (${selected.size})`}
+              {actionLoading ? "..." : `Reject (${selected.size})`}
             </button>
           </div>
         </div>
       </header>
+
+      {/* Boards List */}
+      {boards.length > 0 && (
+        <div className="max-w-7xl mx-auto px-4 py-4 border-b border-white/10">
+          <h2 className="text-xs uppercase tracking-widest text-white/40 mb-3">Pinterest Boards</h2>
+          <div className="flex flex-wrap gap-2">
+            {boards.map(board => (
+              <div key={board.id} className="px-3 py-2 bg-white/5 rounded-lg border border-white/10 flex items-center gap-3">
+                <span className={`w-2 h-2 rounded-full ${board.status === 'pending' ? 'bg-yellow-400' : 'bg-emerald-400'}`} />
+                <span className="text-sm text-white/70 truncate max-w-xs">{board.url}</span>
+                <span className="text-xs text-white/40">{board.imageCount} images</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Gallery */}
       <main className="max-w-7xl mx-auto px-4 py-8">
         {refs.length === 0 ? (
           <div className="text-center py-20">
             <p className="text-white/60 text-lg">No refs to review</p>
-            <p className="text-white/40 text-sm mt-2">Add refs by scraping a Pinterest board</p>
+            <p className="text-white/40 text-sm mt-2">Add a Pinterest board above to get started</p>
           </div>
         ) : (
           <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
@@ -253,7 +335,7 @@ export default function SwipePage() {
                     }}
                   />
 
-                  {/* Checkbox overlay */}
+                  {/* Checkbox */}
                   <div className={`
                     absolute top-2 left-2 w-6 h-6 rounded-md border-2 flex items-center justify-center transition-all
                     ${isSelected
@@ -268,7 +350,7 @@ export default function SwipePage() {
                     )}
                   </div>
 
-                  {/* Reject button */}
+                  {/* X button */}
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
@@ -286,6 +368,58 @@ export default function SwipePage() {
           </div>
         )}
       </main>
+
+      {/* Add Board Modal */}
+      {showAddBoard && (
+        <div className="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-4">
+          <div className="bg-zinc-900 border border-white/10 rounded-2xl w-full max-w-lg p-6">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-lg font-semibold">Add Pinterest Board</h2>
+              <button
+                onClick={() => setShowAddBoard(false)}
+                className="text-white/60 hover:text-white"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            <form onSubmit={handleAddBoard}>
+              <label className="block text-sm text-white/60 mb-2">Board URL</label>
+              <input
+                type="url"
+                value={boardUrl}
+                onChange={(e) => setBoardUrl(e.target.value)}
+                placeholder="https://www.pinterest.com/..."
+                className="w-full px-4 py-3 bg-black/40 border border-white/20 rounded-lg text-white placeholder-white/40 outline-none focus:border-white/40"
+                required
+              />
+
+              <p className="text-xs text-white/40 mt-3 mb-6">
+                Paste a Pinterest board URL. Images will be scraped automatically.
+              </p>
+
+              <div className="flex gap-3">
+                <button
+                  type="button"
+                  onClick={() => setShowAddBoard(false)}
+                  className="flex-1 px-4 py-3 bg-white/10 hover:bg-white/20 rounded-lg text-sm transition"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={addingBoard || !boardUrl.trim()}
+                  className="flex-1 px-4 py-3 bg-blue-600 hover:bg-blue-500 disabled:bg-blue-600/50 disabled:cursor-not-allowed rounded-lg text-sm font-medium transition"
+                >
+                  {addingBoard ? "Adding..." : "Add Board"}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
