@@ -1,0 +1,127 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/all-drinks/approved/508203139215279484.png
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260427_012014_943.png
+PRODUCTS: Lime
+TIMESTAMP: 2026-04-27T01:21:44.153826
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** The main subject is a tube of aloe soothing gel. It is standing upright, slightly off-center to the right, on a stack of rough, tan-colored rocks. The tube is surrounded by several fresh, green aloe vera plant leaves in the foreground and background.
+
+**PRODUCT COUNT:** 1
+
+**PRODUCT DETAILS:**
+*   **Product 1:**
+    *   **Container type:** A mint-green plastic squeeze tube with a brown horizontal band in the middle and a light-colored, wood-grain-textured cap.
+    *   **Position in frame:** The tube is centered horizontally and vertically, standing upright. Its base rests on a rock just below the image's horizontal midline.
+    *   **Angle:** The tube is positioned front-facing, with all label text clearly visible to the viewer.
+    *   **Size relative to image:** The tube occupies approximately two-thirds of the total image height.
+    *   **Cap/lid state:** The cap is on and closed.
+
+**COMPOSITION:**
+*   **Top-left:** A solid white background with the vertical text "FOODOGRAPHY WORKSHOPS" and the beginning of the main headline.
+*   **Top-center:** A solid white background with the large, white headline "FOODOGRAPHY."
+*   **Top-right:** A solid white background and the top crimped edge of the green product tube.
+*   **Mid-left:** A solid white background, vertical text "ISSUE / 2019", and the tips of out-of-focus aloe leaves.
+*   **Mid-center:** The main body of the green product tube standing on a rock, with aloe leaves visible behind it.
+*   **Mid-right:** The right side of the product tube and an out-of-focus aloe leaf.
+*   **Bottom-left:** A vertical barcode with text next to it, set against several in-focus green aloe leaves.
+*   **Bottom-center:** The tan, layered rock platform that the product is resting on, with aloe leaves behind it.
+*   **Bottom-right:** The edge of the rock platform and a large, in-focus aloe leaf. Fine print is visible at the very bottom edge.
+*   **Framing:** The shot is a medium close-up, tightly framed on the product and its immediate environment.
+*   **Visual hierarchy:** The eye is drawn first to the green product tube, then to the large headline text at the top, and finally to the surrounding aloe leaves and rock.
+
+**PRODUCE / INGREDIENTS:**
+Several green, spiky aloe vera plant leaves are visible in the foreground and background, surrounding the product base.
+
+**TEXT:**
+*   **Headline (top banner):** "FOODOGRAPHY." - Sans-serif, heavy weight, white.
+*   **Vertical text (top-left):** "FOODOGRAPHY WORKSHOPS" - Sans-serif, regular weight, black, all caps.
+*   **Vertical text (mid-left):** "ISSUE / 2019" - Sans-serif, regular weight, black, all caps.
+*   **Vertical text (bottom-left):** "FOOD STUDIO" - Sans-serif, regular weight, black, all caps.
+*   **Product Label (brand):** "Pasión" (script font), "泊纯" (sans-serif) - white.
+*   **Product Label (name):** "Aloe" (textured script font), "SOOTHING GEL" (sans-serif, all caps) - white.
+*   **Product Label (name, Chinese):** "芦荟 舒缓凝胶" - sans-serif, white.
+*   **Product Label (description on brown band):** "蕴含芦荟精华 清爽保湿不粘腻" - sans-serif, white.
+*   **Product Label (use):** "适用于任何肌肤 FOR ALL SKIN TYPES" - sans-serif, white, English is all caps.
+*   **Fine Print (bottom-right):** "© 摄界出品 2019 COLLECTION COPYRIGHT BY FOODOGRAPHY PHOTO STUDIO ALL RIGHTS RESERVED. THE USE OF THE PICTURE FOR UNAUTHORIZED REPRODUCTION WILL BE PROSECUTED." - Sans-serif, very small, black.
+
+**DECORATIVE ELEMENTS:**
+*   A vertical barcode is in the bottom-left corner.
+*   A small, white line-art icon of an aloe plant is on the product tube.
+*   Water droplets are visible on the surface of the product tube and on the aloe leaves.
+
+**BACKGROUND:**
+The background is a solid, bright white, consistent with a studio setting.
+
+**LIGHTING:**
+*   **Direction:** The primary light source is from the front and slightly to the left.
+*   **Quality:** The lighting is soft and diffused, creating even illumination with gentle transitions between light and shadow.
+*   **Highlights:** Soft highlights are visible on the left side of the tube's curved surface and on the individual water droplets.
+*   **Shadows:** Shadows are very soft and light, appearing on the right side of the tube and subtly underneath the rock, grounding the objects.
+
+**MOOD:**
+*   Fresh
+*   Clean
+*   Natural
+*   Soothing
+*   Bright
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution full-frame or medium format digital camera and a sharp macro prime lens to achieve a shallow but controlled depth of field with pristine clarity. The lighting is high-key, utilizing a large, heavily diffused artificial source positioned to create soft, wrapping highlights and open, luminous shadows with minimal contrast. The color science is built on a clean, neutral-to-cool white balance, featuring a vibrant, mint-to-teal green as the dominant hue against a pure white background. Saturation is moderately boosted in the greens to create a fresh, energetic feel, while other tones remain more subdued. Post-processing involves a precise color grade to purify the whites and enhance the specific green hue, a lifted black point on the tone curve to maintain airy shadows, and significant sharpening to accentuate fine details like water droplets and textures, all while ensuring a complete absence of digital noise or grain.
+
+**Keywords:** High-Key, Clean, Commercial, Crisp, Soft Light, Vibrant
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The headline "FOODOGRAPHY" in heavy white sans-serif.
+*   The vertical text "FOODOGRAPHY WORKSHOPS"
+*   The vertical text "ISSUE / 2019"
+*   The vertical text "FOOD STUDIO"
+*   The product brand name "Pasión"
+*   The product brand name "泊纯"
+*   The product name "Aloe"
+*   The product name "SOOTHING GEL"
+*   Any Chinese characters, including "芦荟 舒缓凝胶" and "蕴含芦荟精华 清爽保湿不粘腻"
+*   The text "适用于任何肌肤 FOR ALL SKIN TYPES"
+*   The fine print "© 摄界出品 2019 COLLECTION COPYRIGHT BY FOODOGRAPHY PHOTO STUDIO ALL RIGHTS RESERVED. THE USE OF THE PICTURE FOR UNAUTHORIZED REPRODUCTION WILL BE PROSECUTED."
+*   Any vertical barcodes.
+*   The white line-art icon of an aloe plant.
+*   Any water droplets on the product or background elements.
+
+STRICT CONSTRAINTS:
+- The product label is pasted PIXEL-FAITHFUL from the INPUT image — do NOT redraw or recreate the label
+- Product lighting MUST match the scene's lighting direction and quality — never preserve "original product lighting"
+- Product must cast a natural shadow on the scene surface — no floating, no hard-edged pasted shadow
+- Use upgraded product images when available (`upgraded_*.png` — opaque, higher quality)
+- No mascots, cartoon characters, smiley fruits, or personified objects.
+- Do not render any hashtags, URLs, social media handles, or pricing.
+- No medical or health claims.
+- The scene must NOT contain any aloe vera leaves, plants, or other produce.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference ad's core subject and composition faithfully. The subject is a single product standing upright, slightly off-center to the right, on a stack of rough, tan-colored rocks. The composition is a medium close-up, tightly framed on the product and the rock stack it rests upon, against a clean, solid-colored background. Do NOT add any aloe leaves, water droplets, or other decorative elements that were in the reference; the scene contains only the product on the rocks.
+
+PRODUCT REPLACEMENT:
+- The single aloe gel tube in the center is replaced by one Island Splash bottle.
+- The bottle is Island Splash Lime. Paste the label pixel-faithful from INPUT 2.
+- The bottle must have a matte BLACK cap, per brand rules for this product.
+
+LIGHTING & SHADOW MATCH (CRITICAL — prevents "pasted-in" look):
+- The scene is lit with a primary light source from the front and slightly to the left. The light quality is soft and diffused, creating even illumination.
+- The product catches soft, wrapping highlights consistent with the scene's soft, front-left lighting.
+- A very soft, light shadow grounds the product on the rock surface, consistent with the scene's shadow direction and softness.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Lime: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+- Top banner headline: "Real Lime." Rendered in a heavy, clean sans-serif font in dark teal (#243C3C).
+- Vertical text, mid-left: "ISLAND SPLASH" in a regular-weight sans-serif, all caps, dark teal (#243C3C).
+- Vertical text, bottom-left: "A FAMILY RECIPE" in a regular-weight sans-serif, all caps, dark teal (#243C3C).
+
+LOGO:
+Render the Island Splash logo from the LAST INPUT image. Place it in the bottom-right corner. It must be small, roughly 8% of the total image width, with no background box or extra effects.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Applied as the final pass over the entire image: shot with a high-resolution full-frame camera and a sharp macro prime lens to achieve a shallow but controlled depth of field with pristine clarity. The lighting is high-key, utilizing a large, heavily diffused artificial source positioned to create soft, wrapping highlights and open, luminous shadows with minimal contrast. The color grade shifts the entire palette to Island Splash brand colors: the background is a solid warm sand/tan (#A89078), with text in dark teal (#243C3C) and accents of warm golden orange (#F0A86C) and deep coral orange (#E4843C) influencing the overall tone. Post-processing includes a lifted black point on the tone curve to maintain airy shadows, and significant sharpening to accentuate textures on the rocks, all while ensuring a complete absence of digital noise or grain.

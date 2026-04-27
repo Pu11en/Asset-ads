@@ -1,0 +1,121 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/all-drinks/508203139215279926.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260426_195919_311.png
+PRODUCTS: Mango Passion
+TIMESTAMP: 2026-04-26T20:00:50.684067
+
+=== REVERSE ANALYSIS ===
+**SUBJECT**
+The main subject is a glass jar of Bertolli pasta sauce. The jar is positioned vertically in the center of the frame, facing forward. It is surrounded by text and illustrations of ingredients.
+
+**PRODUCT COUNT**
+1
+
+**PRODUCT DETAILS**
+*   **Container Type:** A clear glass jar with a curved profile.
+*   **Position:** Centered in the image, both horizontally and vertically.
+*   **Angle:** Photographed straight-on, with the label facing the viewer directly.
+*   **Size:** The jar occupies approximately half the height of the total image.
+*   **Cap/Lid State:** A metallic gold screw-on cap is on the jar and is closed.
+
+**COMPOSITION**
+*   **Top-left:** The upper portion of the background burlap texture, with the text "ASIAGO CHEE" and decorative leafy lines.
+*   **Top-center:** The text "ASIAGO CHEESE from VENETO" is prominent. The very top of the product's cap is at the bottom of this zone.
+*   **Top-right:** The upper portion of the burlap background, with the text "ESE from" and decorative leafy lines.
+*   **Center-left:** The left side of the pasta sauce jar, next to an illustration of tomatoes on the vine, all framed by decorative swirls.
+*   **Center-center:** The main label of the Bertolli pasta sauce jar.
+*   **Center-right:** The right side of the pasta sauce jar, next to an illustration of a wedge of cheese, all framed by decorative swirls.
+*   **Bottom-left:** The burlap background, the words "MADE WITH," and the left part of the Bertolli logo badge, framed by decorative swirls.
+*   **Bottom-center:** The Bertolli logo badge and the words "ESSENTIAL ITALIAN INGREDIENTS" on the burlap background, framed by decorative swirls.
+*   **Bottom-right:** The burlap background, the words "ITALIAN INGREDIENTS," and the right part of the decorative frame.
+*   **Framing:** The shot is a medium close-up, tightly framed around the product and its surrounding graphic elements.
+*   **Visual Hierarchy:** The eye is drawn first to the centered product jar, then to the large "VENETO" text above it, followed by the illustrated ingredients and the brand name at the bottom.
+
+**PRODUCE / INGREDIENTS**
+*   **Tomatoes:** To the left of the jar is an illustration of two whole red tomatoes on a green vine and one half-sliced tomato showing its interior.
+*   **Cheese:** To the right of the jar is an illustration of a wedge of light-yellow Asiago cheese with a smaller broken piece in front of it.
+
+**TEXT**
+*   **Top Zone:**
+    *   "ASIAGO CHEESE": All-caps serif font with a slightly distressed texture, black.
+    *   "from": Lowercase script font, black.
+    *   "VENETO": All-caps, heavy, slightly distressed sans-serif font, black.
+*   **Product Label:**
+    *   "BERTOLLI": White script font.
+    *   "IMPORTED": All-caps, sans-serif, white.
+    *   "ALPINE-AGED": All-caps, sans-serif, white.
+    *   "Asiago": Large, stylized script font, gold.
+    *   "Cheese": Script font, white.
+    *   "PAIRED WITH": All-caps, sans-serif, white.
+    *   "Artichokes": Large, stylized script font, green.
+    *   "SAUCE": All-caps, sans-serif, white.
+    *   "NET WT 24 OZ (1 LB 8 OZ) 680g": Fine print, sans-serif, white.
+*   **Bottom Zone:**
+    *   "BERTOLLI": Serif font in gold, inside an oval badge.
+    *   "DAL 1865": Small, all-caps sans-serif font below "BERTOLLI," gold.
+    *   "MADE WITH ESSENTIAL ITALIAN INGREDIENTS": All-caps sans-serif font curving around the badge, black.
+
+**DECORATIVE ELEMENTS**
+A central frame is created with thin, black, hand-drawn style lines featuring leafy swirls and flourishes. This frame surrounds the product jar and the illustrated ingredients. Two small leafy sprigs flank the "from" text at the top. The Bertolli logo at the bottom is enclosed in a gold oval badge topped with a small crest.
+
+**BACKGROUND**
+The background is a solid image of a light brown/beige woven burlap fabric, showing a clear, rough texture. The image has a slight vignette, with the edges and corners being subtly darker than the center.
+
+**LIGHTING**
+The lighting is soft and diffuse, appearing to come from the front. Soft highlights are visible on the glass jar's left shoulder and on the gold cap. Shadows are very soft and minimal, existing primarily as a faint drop shadow behind the jar and illustrations to create separation from the background.
+
+**MOOD**
+Rustic, Authentic, Traditional, Artisanal, Hearty.
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a full-frame digital cinema camera using a standard macro lens to maintain a clean, high-fidelity image with a moderately deep depth of field and no discernible lens distortion. The scene is illuminated by a single, large, heavily diffused light source, creating exceptionally soft, wraparound light with faint, soft-edged shadows and broad, subdued highlights. The color science is built on a warm, earthy, and desaturated palette dominated by beiges and tans, with a creamy, warm-white temperature. The dynamic range is significantly compressed, featuring a low-contrast tonal curve with lifted, warm-brown shadows and pulled-in, off-white highlights, avoiding any true blacks or whites. In post-production, a heavy color grade is applied to unify the warm tones, and a distinct, soft vignette is added to darken the perimeter and guide the eye inward, resulting in a smooth, graphic, and almost matte finish.
+
+**KEYWORDS:** Warm & Earthy, Low-Contrast, Diffuse Lighting, Desaturated, Graphic Vignette, Textured Matte
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The wordmark "BERTOLLI" in any font or color, on the label or in the badge.
+*   The text "ASIAGO CHEESE".
+*   The text "from".
+*   The text "VENETO".
+*   The text "IMPORTED".
+*   The text "ALPINE-AGED".
+*   The text "Asiago" or "Cheese" on the product label.
+*   The text "PAIRED WITH".
+*   The text "Artichokes".
+*   The text "SAUCE".
+*   The text "NET WT 24 OZ (1 LB 8 OZ) 680g".
+*   The text "DAL 1865".
+*   The text "MADE WITH ESSENTIAL ITALIAN INGREDIENTS".
+*   Any illustration of tomatoes or cheese.
+*   The gold oval badge with a crest.
+*   Any thin, black, hand-drawn leafy swirls or flourishes.
+
+STRICT CONSTRAINTS:
+*   Final image aspect ratio must be 4:5 portrait.
+*   The background and color grade must use ONLY the brand palette: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), warm sand/tan (#A89078).
+*   The Island Splash product label must come EXACTLY from the provided input image. Do NOT redraw, recolor, modify, or invent labels. Preserve it pixel-faithful.
+*   Do NOT render any fresh fruit, produce, or raw ingredients. Specifically forbid any illustrations of tomatoes or cheese.
+*   Do NOT render any mascots, cartoon characters, or personified objects.
+*   Do NOT render any text containing: hashtags (#), URLs (www., .com), social media handles (@), promotions (FREE, % OFF, GIVEAWAY), or prices ($). All text must be in English.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference ad's core composition. The subject is a single glass bottle, positioned vertically in the exact center of the frame, shot straight-on. The shot is a medium close-up, tightly framed around the bottle. The bottle is surrounded by a decorative frame element, reinterpreted as thin, tropical-style line art using brand colors. The background must be a textured woven fabric, like burlap, but rendered in a warm sand/tan (#A89078) from the brand palette. Do NOT include the reference ad's illustrated tomatoes or cheese; the bottle is the only subject. The composition reserves space for a large headline at the top and a smaller tagline curving around the bottom, mirroring the reference layout.
+
+PRODUCT REPLACEMENT:
+*   The central glass jar of pasta sauce is replaced with a clear glass beverage bottle containing a vibrant orange-yellow liquid. The bottle must have a matte BLACK cap.
+*   Paste the label from INPUT 2 (Island Splash Mango Passion) onto the front of this bottle, pixel-faithful, do not redraw or alter it. Ensure the label is perfectly centered on the bottle.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Mango Passion: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+*   **Top Headline:** In the top-center text zone, render the words "REAL MANGO. REAL PASSION." Use a bold, clean, slightly rounded sans-serif font, matching the heavy feel of the reference headline. Render this text in dark teal (#243C3C).
+*   **Bottom Tagline:** In the bottom text zone, curving slightly beneath the bottle, render the words "ISLAND RECIPE. REAL GOOD." Use an all-caps sans-serif font, smaller than the headline. Render this text in dark teal (#243C3C).
+
+LOGO:
+Render INPUT 3 (the Island Splash logo) as a small, clean graphic badge, approximately 8% of the total image width. Place it in the bottom-right corner. Do not add any background box, banner, or lockup text around it.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+This style is applied as the final pass over the entire image. Shot with a full-frame digital cinema camera using a standard macro lens to maintain a clean, high-fidelity image with a moderately deep depth of field and no discernible lens distortion. The scene is illuminated by a single, large, heavily diffused light source, creating exceptionally soft, wraparound light with faint, soft-edged shadows and broad, subdued highlights. The color science is built on the Island Splash brand palette: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), and warm sand/tan (#A89078). The dynamic range is significantly compressed, featuring a low-contrast tonal curve with lifted, dark teal shadows and pulled-in, warm sand highlights, avoiding any true blacks or whites. In post-production, a heavy color grade is applied to unify the brand tones, and a distinct, soft vignette is added to darken the perimeter and guide the eye inward, resulting in a smooth, graphic, and almost matte finish.

@@ -1,0 +1,81 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/all-drinks/508203139215287693.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260426_215054_375.png
+PRODUCTS: Guava Pine
+TIMESTAMP: 2026-04-26T21:52:16.214358
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** The main focus is a plastic Coca-Cola bottle positioned diagonally, as if in motion. It is surrounded by and passing through a large, dynamic splash of dark liquid, which is sculpted into a shape resembling an infinity symbol or a figure-eight.
+
+**PRODUCT COUNT:** 1
+
+**PRODUCT DETAILS:** The product is a 2-liter plastic Coca-Cola bottle. It is positioned diagonally in the center of the frame, angled from the lower-left to the upper-right. The bottle is sealed with a gold-colored cap over a yellow plastic ring.
+
+**COMPOSITION:**
+*   **Top-left:** The upper arc of the liquid splash against a white background.
+*   **Top-center:** The crest of the liquid splash's upper loop.
+*   **Top-right:** The neck of the bottle and the liquid splash originating from it.
+*   **Center-left:** The thickest part of the liquid splash, where it curves and crashes.
+*   **Center:** The main body of the Coca-Cola bottle, featuring its red and white label.
+*   **Center-right:** The right-side loop of the liquid splash.
+*   **Bottom-left:** The lower arc of the liquid splash, with droplets.
+*   **Bottom-center:** The bottom curve of the liquid splash.
+*   **Bottom-right:** The lower right curve of the splash.
+
+The framing is medium, centered on the subject with significant white space around it. The visual hierarchy leads the eye to the central bottle, then follows the continuous motion of the liquid splash.
+
+**PRODUCE / INGREDIENTS:** NONE
+
+**TEXT:**
+*   On the bottle's red label, in a white script font: "Coca-Cola"
+*   On the bottle's red label, below the main logo, in a white sans-serif font: "2L"
+*   On a yellow band at the top of the red label, in a black, bold, sans-serif font: "EMBALAGEM" and "RETORNÁVEL".
+
+**DECORATIVE ELEMENTS:** A large, continuous splash of dark brown, carbonated liquid forms an infinity loop around the bottle. Numerous smaller droplets and splatters radiate outwards from the main splash.
+
+**BACKGROUND:** The background is solid, flat white.
+
+**LIGHTING:** The lighting is bright and multi-directional, characteristic of a studio setup. It creates sharp, clear highlights on the plastic bottle and on the surface of the liquid. The liquid has a wet, high-gloss appearance. Shadows are primarily contained within the folds and denser areas of the liquid itself, creating depth and texture.
+
+**MOOD:** Dynamic, energetic, refreshing, fluid.
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution medium format digital system and a tack-sharp macro lens to capture extreme detail, employing a deep depth of field achieved through a small aperture and likely focus stacking. The lighting is constructed with multiple high-speed studio strobes, producing hard, specular highlights that sculpt form, define texture, and freeze motion against a pure, clipped-white, high-key background. The color science is dominated by a warm, analogous palette of rich, highly saturated umbers, deep reds, and amber-gold highlights. In post-production, an aggressive S-curve grade creates extreme contrast, crushing the blacks to near-absolute zero while maintaining information in the bright, specular reflections. The final image is exceptionally clean and digitally pristine, with enhanced clarity and texture and a complete absence of noise or grain, resulting in a hyper-real, graphic aesthetic.
+
+**Keywords:** High-Key, Specular, High-Contrast, Graphic, Digital Clarity, Warm Palette.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The script wordmark "Coca-Cola"
+*   The sans-serif text "2L"
+*   The yellow band text "EMBALAGEM" and "RETORNÁVEL"
+*   Any red and white circular logos or label designs
+*   Any text in a white script font on a red background
+
+STRICT CONSTRAINTS:
+*   The product label MUST be rendered exactly from the provided input image. Do NOT redraw, recolor, modify, or invent labels.
+*   The background and overall color grade must use ONLY the brand palette: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), warm sand/tan (#A89078). Replace all reference colors with these brand colors.
+*   Do not render any mascots, cartoon characters, or personified objects.
+*   Do not render any text containing: 'www.', '.com', '@', '#', 'FREE', '% OFF', 'GIVEAWAY', '$'. All text must be in English.
+*   The final output must be a 4:5 aspect ratio.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference subject and composition faithfully. The subject is a single bottle positioned diagonally from lower-left to upper-right, as if in motion. It is surrounded by and passing through a large, dynamic splash of liquid sculpted into a figure-eight or infinity-loop shape. The framing is a medium shot, centered on the subject. The background is a solid, flat color. DO NOT add any produce, fruit, or ingredients. Keep only the bottle and the sculpted liquid splash.
+
+PRODUCT REPLACEMENT:
+*   The single central bottle: replace the reference bottle with a generic bottle shape. Paste the label from INPUT 2 (Island Splash Guava Pine) pixel-faithful onto this bottle. The bottle must have a matte BLACK cap.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Guava Pine: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+*   No headline.
+*   No body copy.
+(The reference ad contains no headlines or body copy, only on-label text which is being replaced. The Island Splash ad will therefore also have no text.)
+
+LOGO:
+Render the logo from INPUT 3 as a small badge, approximately 8% of the frame width, in the bottom-right corner. It must have no background box or additional lockup text.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+This style is applied as the final pass over the entire image. Shot with a high-resolution medium format digital system and a tack-sharp macro lens to capture extreme detail, employing a deep depth of field. The lighting is constructed with multiple high-speed studio strobes, producing hard, specular highlights that sculpt form, define texture, and freeze motion against a solid warm sand/tan (#A89078) high-key background. The color science is dominated by the brand palette: the dynamic liquid splash is rendered in a mix of deep coral orange (#E4843C) and warm golden orange (#F0A86C), with dark teal (#243C3C) in the deepest shadows. In post-production, an aggressive S-curve grade creates extreme contrast. The final image is exceptionally clean and digitally pristine, with enhanced clarity and texture and a complete absence of noise or grain, resulting in a hyper-real, graphic aesthetic.

@@ -1,0 +1,103 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/all-drinks/approved/508203139224430316.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260426_172622_155.png
+PRODUCTS: Mango Passion, Mauby
+TIMESTAMP: 2026-04-26T17:27:47.379266
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** The main subject is a large bottle of orange juice, positioned centrally and tilted slightly. It is surrounded by dynamic elements: a whole orange, a half-slice of an orange, green leaves, and a liquid splash. A second, smaller bottle is also present on the right side.
+
+**PRODUCT COUNT:** 2
+
+**PRODUCT DETAILS:**
+*   **Product 1:** A large, clear plastic bottle with a hexagonal-like base and rounded shoulders is in the center of the image. It is angled slightly toward the viewer's left. It is the largest single element in the composition. Its green cap is on and closed.
+*   **Product 2:** A smaller, clear plastic bottle of the same design is in the bottom right corner. It is positioned upright, facing the viewer directly. It is significantly smaller than the central bottle. Its green cap is on and closed.
+
+**COMPOSITION:**
+*   **Top-left:** A brand logo and green leaves.
+*   **Top-center:** The top of the central bottle, a half-slice of an orange, and falling green leaves against a light blue sky.
+*   **Top-right:** An out-of-focus orange and falling leaves.
+*   **Center-left:** A whole orange with a small stem and leaves attached.
+*   **Center:** The main body of the central, large juice bottle.
+*   **Center-right:** The headline text and a splash of orange juice.
+*   **Bottom-left:** Green leaves and a dark green graphic element.
+*   **Bottom-center:** A large splash of orange juice that curves up around the base of the central bottle.
+*   **Bottom-right:** The smaller juice bottle and a "New" text badge, both sitting on a dark green graphic element.
+*   **Framing:** The image is a wide, panoramic banner.
+*   **Visual Hierarchy:** The eye is drawn first to the large central bottle, then to the brand logo in the top left, and finally to the text and smaller bottle on the right.
+
+**PRODUCE / INGREDIENTS:**
+*   One whole orange is to the left of the main bottle.
+*   One out-of-focus whole orange is in the top right.
+*   One half-slice of an orange is visible at the top, behind the main bottle.
+*   Green leaves are shown attached to the whole orange, as well as floating independently throughout the scene.
+
+**TEXT:**
+*   **Top-left logo:** "Brand" in a white script font with a brown outline, within an orange oval. Below it, on a green ribbon, is "100% Natural Juice" in a white sans-serif font.
+*   **Center-right headline:** "HERE COMES" on the top line and "THE FRESHEST JUICE" on the bottom line. The font is a green, slightly curved serif.
+*   **Bottom-right badge:** "New" in a white script font with a green outline.
+*   **Product Labels:** Both bottles feature the "Brand" logo and smaller text below it that reads "Orange Juice".
+
+**DECORATIVE ELEMENTS:**
+*   A large splash of orange-colored liquid originates from the bottom center and curves up and around the main bottle.
+*   Small yellow and orange droplets are scattered throughout the composition.
+*   Out-of-focus circular light flares (bokeh) are visible in the green lower portion of the background.
+*   A solid, dark green, curved shape runs along the bottom edge of the entire image.
+
+**BACKGROUND:** The background is a soft-focus gradient. The top is light blue, which transitions to a pale yellow-white in the middle, and then to a blurry, bright green at the bottom, suggestive of an outdoor scene.
+
+**LIGHTING:** The lighting is bright and soft, appearing to come from the front and slightly above. Highlights are visible on the surfaces of the plastic bottles and on the oranges, which also have small water droplets reflecting light. There are no harsh shadows.
+
+**MOOD:**
+*   Fresh
+*   Vibrant
+*   Natural
+*   Refreshing
+*   Bright
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution digital camera system, potentially medium format, and a sharp macro prime lens to achieve pristine clarity. The aperture is set wide to produce an extremely shallow depth of field, which isolates elements from the background and renders out-of-focus areas into a soft, creamy bokeh. The lighting is high-key and multi-source, designed to emulate bright, diffused sunlight with a strong, warm directional key, ample fill light to eliminate harsh shadows, and pronounced backlighting that creates glowing rim lights and specular highlights on surfaces. The color science is defined by an intensely saturated, split-complementary palette of vibrant oranges and yellows against lush greens and a cool cyan background. The overall contrast is low, with a lifted black point and compressed highlights to create a bright, airy dynamic range. Post-processing involves heavy color grading to push saturation, a gentle S-curve to add pop while keeping shadows open, and a subtle bloom or glow effect layered over the entire image to enhance the ethereal, clean aesthetic, with all digital noise meticulously removed.
+
+**Keywords:** High-Key, Saturated, Shallow Depth of Field, Soft Glow, Digital Composite, Commercial Polish.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+- The wordmark "Brand" in a white script font
+- The tagline "100% Natural Juice"
+- The headline "HERE COMES THE FRESHEST JUICE"
+- The badge text "New" in a white script font
+- The product label text "Orange Juice"
+- Any orange oval logos or green ribbon graphics
+- Any whole oranges, half-slices of oranges, or green leaves
+
+STRICT CONSTRAINTS:
+- Aspect ratio 4:5.
+- The scene background and color grade must use ONLY this palette: dark teal #243C3C, warm golden orange #F0A86C, deep coral orange #E4843C, warm sand/tan #A89078.
+- Bottle labels MUST be pasted pixel-faithful from the provided input images. Do NOT redraw, alter, or invent new labels or text on the labels.
+- Do NOT render any mascots, cartoon characters, or personified objects.
+- Do NOT render any text containing: 'www.', '.com', '@', '#', 'FREE', '% OFF', 'GIVEAWAY', '$', or any URLs, social media handles, or promotional language.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference ad's core subject and composition faithfully. The subject is a large bottle positioned centrally and tilted slightly, and a second, smaller bottle in the bottom right corner. The bottles are surrounded by a dynamic liquid splash and small droplets. The large splash originates from the bottom center and curves up around the base of the central bottle. Do NOT include any produce or ingredients from the reference; NO oranges, NO orange slices, NO green leaves are permitted in the image.
+The composition is a close-up product shot. The top of the large bottle is in the top-center. The main headline text zone is in the center-right. The small bottle is in the bottom-right. The background is a soft-focus gradient.
+
+PRODUCT REPLACEMENT:
+- Central large tilted bottle: Recreate the reference's clear plastic bottle with a hexagonal-like base and rounded shoulders. It must have a matte BLACK cap. For the label, paste INPUT 2 (Island Splash Mango Passion) pixel-faithful onto the bottle surface; do not redraw the label.
+- Bottom-right smaller bottle: Recreate the reference's smaller, upright clear plastic bottle of the same design. It must have a matte BLACK cap. For the label, paste INPUT 3 (Island Splash Mauby) pixel-faithful onto the bottle surface; do not redraw the label.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Mango Passion: use brand voice, keep it plain and honest
+  Mauby: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+- Headline (in center-right text zone): "Real Island Flavor."
+- Render the headline in a warm, clean, slightly curved serif font, matching the feel of the reference headline.
+- Render all text in dark teal #243C3C.
+- No body copy, no other text elements.
+
+LOGO:
+- In the bottom-left corner, render the logo from INPUT 4. It should be a small badge, approximately 8% of the frame width. Render it with no background box, banner, or lockup text.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Applied as the final pass over the entire image: A shot with a high-resolution digital camera system and a sharp macro prime lens. The aperture is set wide to produce an extremely shallow depth of field, rendering out-of-focus areas into a soft, creamy bokeh. Lighting is high-key and multi-source, emulating bright, diffused sunlight with a strong, warm directional key, ample fill light to eliminate harsh shadows, and pronounced backlighting creating glowing rim lights and specular highlights. The color science is defined by the brand palette: dark teal #243C3C, warm golden orange #F0A86C, deep coral orange #E4843C, and warm sand/tan #A89078. Overall contrast is low, with a lifted black point and compressed highlights for a bright, airy dynamic range. Post-processing includes a gentle S-curve to add pop while keeping shadows open, and a subtle bloom or glow effect layered over the entire image to enhance the ethereal, clean aesthetic, with all digital noise meticulously removed.

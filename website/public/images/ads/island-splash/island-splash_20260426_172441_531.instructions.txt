@@ -1,0 +1,130 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/all-drinks/approved/508203139217013406.png
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260426_172441_531.png
+PRODUCTS: Lime
+TIMESTAMP: 2026-04-26T17:26:21.404153
+
+=== REVERSE ANALYSIS ===
+**SUBJECT**
+The main subject is a single, clear bottle of green grape-flavored tea. The bottle is positioned centrally, standing upright and presented as the hero product.
+
+**PRODUCT COUNT**
+1
+
+**PRODUCT DETAILS**
+*   **Container:** A clear, tall, cylindrical plastic bottle with a slight curve.
+*   **Position:** Located in the center of the image, standing upright on a wooden surface. Its base is in the lower third, and its cap is in the upper third of the frame.
+*   **Angle:** Photographed from a straight-on, eye-level perspective.
+*   **Size:** It is the largest single object, occupying approximately two-thirds of the image's vertical height.
+*   **Cap/Lid:** The white plastic screw-cap is on and securely closed.
+
+**COMPOSITION**
+*   **Top-left:** Blue sky with out-of-focus green leaves and grapes. The beginning of a large black headline. Three white ovals with text.
+*   **Top-center:** Blue sky with clouds. The main headline in large, heavy black characters.
+*   **Top-right:** The end of the headline. A green square brand logo. The top of the product bottle against the blue sky.
+*   **Middle-left:** Blue sky and a blurred green grape branch. The upper portion of the bottle's label. A single, sharp green grape floats in the air.
+*   **Middle-center:** The main body of the product bottle, featuring its label with text and an illustration of green grapes.
+*   **Middle-right:** The side of the bottle against the blue sky. A thin white line swooshes in the air next to a floating green grape.
+*   **Bottom-left:** A QR code and its description, resting on a bed of green moss.
+*   **Bottom-center:** The base of the bottle sits on a round wooden surface, which is on top of green moss. A second, decorative QR code and its description are here.
+*   **Bottom-right:** A large bunch of fresh green grapes with leaves rests on the moss. White text is overlaid on the grapes.
+*   **Framing:** The shot is a medium close-up, tightly focused on the product and its immediate environment.
+*   **Visual Hierarchy:** The eye is drawn first to the large black headline, then down to the centrally-placed product bottle, and finally to the supporting elements like the fresh grapes and QR codes at the bottom.
+
+**PRODUCE / INGREDIENTS**
+Fresh green grapes are visible. A large, detailed bunch is in the bottom-right foreground. Several individual grapes are scattered and appear to be floating around the bottle. Out-of-focus grape vines and leaves are visible in the background on the left.
+
+**TEXT**
+*   **Headline (Top):** 回味悠长青提香 高调登场! (Long-lasting green grape aroma, high-profile debut!)
+    *   Font: Heavy, black, sans-serif display font.
+*   **Tags (Below headline):** 真果 (Real Fruit), 真茶 (Real Tea), 真低糖 (Real Low Sugar)
+    *   Font: White, clean sans-serif inside thin white ovals.
+*   **Brand Logo (Top right & on bottle):** 奈雪の茶 (Nayuki's Tea)
+    *   Font: White sans-serif text inside a green square.
+*   **Bottle Label (Vertical Text):** 青乌提龙香茶 (Qing Wu Ti Long Xiang Cha - Product Name)
+    *   Font: Black, clean sans-serif.
+*   **Bottle Label (Circular badge):** 低糖 (Low Sugar)
+*   **Bottle Label (Small text):** 好茶真果汁 (Good Tea Real Juice), 使用罗汉果汁替代三氯蔗糖 (Uses monk fruit juice to replace sucralose), 果汁茶饮料 (Fruit Juice Tea Drink), 净含量: 500mL (Net Content: 500mL).
+    *   Font: Small, black, sans-serif.
+*   **Stylized Text (Middle left):** Zhui Xue guo zhi Cha
+    *   Font: White, thin, elegant script.
+*   **QR Code Labels (Bottom left):** 奈雪官方旗舰店 (Nayuki Official Flagship Store), 奈雪的茶商城 (Nayuki's Tea Mall)
+    *   Font: Black, sans-serif.
+*   **Slogan (Bottom right):** 罗汉果汁做代糖 真果真茶真低糖 (Monk fruit juice as a sugar substitute. Real fruit, real tea, real low sugar.)
+    *   Font: White, sans-serif.
+*   **Fine Print (Bottom right):** *真果:指添加真实果汁,总果汁含量(以原果汁计)≥40% (*Real fruit: refers to the addition of real fruit juice, the total juice content (calculated as original juice) is ≥40%)
+    *   Font: Small, white, sans-serif.
+
+**DECORATIVE ELEMENTS**
+*   A thin, white, swooping line arches in the air on the right side of the bottle.
+*   White ovals frame the text tags "真果", "真茶", "真低糖".
+*   A white circular badge on the bottle's label contains the text "低糖".
+*   The QR code for "奈雪的茶商城" features a decorative sunburst border.
+*   A few soft, out-of-focus green orbs are scattered in the sky, resembling bokeh or floating dewdrops.
+
+**BACKGROUND**
+The background is a photograph of a bright blue sky with soft, wispy white clouds. The immediate foreground consists of a cross-section of a wooden log or stump, which is placed on a bed of vibrant green moss.
+
+**LIGHTING**
+*   **Direction:** The primary light source is bright and appears to come from the front and slightly above.
+*   **Quality:** The light is soft and diffused, creating clean highlights and gentle, minimal shadows.
+*   **Highlights:** Bright, soft highlights are visible on the bottle's plastic surface, the cap, and the wet-looking surfaces of the green grapes.
+*   **Shadows:** Shadows are very soft and subtle, noticeable only at the base of the bottle and underneath the bunch of grapes.
+
+**MOOD**
+*   Fresh
+*   Natural
+*   Bright
+*   Refreshing
+*   Clean
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution digital cinema or medium format camera, utilizing a sharp macro prime lens to achieve pristine clarity and a controlled, shallow depth of field that isolates the subject. The lighting is high-key and meticulously diffused, created with large, soft sources to emulate bright, ambient daylight, resulting in open, transparent shadows with a cool tint and broad, clean highlights with sharp specular reflections. The color science is defined by a cool overall temperature, featuring a vibrant, heavily graded palette of saturated lime greens and crisp cyans against pure whites. Blacks are lifted and desaturated, compressing the dynamic range into the upper mid-tones and highlights for an airy, low-contrast feel. In post-production, a gentle S-curve is applied to the tones, while selective color work boosts the vibrancy of the key hues, and significant digital sharpening is used to enhance textural detail, creating a polished, hyper-real look devoid of any grain or noise.
+
+**Keywords:** High-Key, Diffused, Vibrant, Clean, Saturated, Commercial.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The headline "回味悠长青提香 高调登场!"
+*   The text tags "真果", "真茶", "真低糖" and their containing white ovals.
+*   The brand name and logo "奈雪の茶" (Nayuki's Tea) and its green square background.
+*   The vertical bottle label text "青乌提龙香茶"
+*   The circular badge on the bottle with the text "低糖"
+*   The small bottle label text strings: "好茶真果汁", "使用罗汉果汁替代三氯蔗糖", "果汁茶饮料", "净含量: 500mL"
+*   The stylized script text "Zhui Xue guo zhi Cha"
+*   Any QR codes.
+*   The QR code labels "奈雪官方旗舰店" and "奈雪的茶商城"
+*   The slogan "罗汉果汁做代糖 真果真茶真低糖"
+*   The fine print "*真果:指添加真实果汁,总果汁含量(以原果汁计)≥40%"
+*   Any depiction of grapes, grape vines, or grape leaves.
+*   The decorative sunburst border around the QR code.
+
+STRICT CONSTRAINTS:
+- The product label MUST be pasted directly from the provided product input image, pixel-faithful. Do not redraw, re-render, or modify the label design.
+- The color palette for the entire image is strictly limited to dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), and warm sand/tan (#A89078).
+- No mascots, cartoon characters, or smiley fruits.
+- No hashtags, URLs, www, .com, social media handles (@), promotional text, or prices. All text must be in English.
+- The Island Splash logo appears only once, small in a bottom corner, with no background box.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the scene's subject and composition faithfully. The subject is a single, clear beverage bottle standing upright in the center of the frame. The composition is an eye-level medium close-up shot. The bottle rests on a round wooden surface placed on a bed of moss. The background is a bright, soft-focus sky. Retain the abstract decorative elements like the thin, white, swooping line in the air and the soft, out-of-focus bokeh orbs in the sky. DO NOT include any produce, fruit, or ingredients from the reference; specifically, there must be NO grapes, vines, or leaves anywhere in the image.
+
+PRODUCT REPLACEMENT:
+- The single central bottle from the reference is replaced by one Island Splash Lime bottle. The bottle is a clear, tall, cylindrical shape. The cap MUST be matte BLACK. Paste the label from INPUT 2 (Island Splash Lime) onto the bottle, pixel-faithful, do not redraw it.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Lime: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+- Headline (Top): "Real Lime. Real Simple." Render in a heavy, bold, clean sans-serif font in dark teal (#243C3C).
+- Body Copy (Bottom right): Render three short lines of text in a clean, simple sans-serif font in warm sand/tan (#A89078).
+  - Line 1: Made with real lime.
+  - Line 2: No shortcuts.
+  - Line 3: The island way.
+
+LOGO:
+Render the logo from the LAST INPUT image. It should be a small badge, approximately 8% of the frame width, placed in the bottom-right corner. It must have no background box or banner.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Shot with a high-resolution digital cinema or medium format camera, utilizing a sharp macro prime lens to achieve pristine clarity and a controlled, shallow depth of field that isolates the subject. The lighting is high-key and meticulously diffused, created with large, soft sources to emulate bright, ambient daylight, resulting in open, transparent shadows with a cool tint and broad, clean highlights with sharp specular reflections. The color science is defined by a cool overall temperature, featuring a vibrant, heavily graded palette of dark teal #243C3C, warm golden orange #F0A86C, deep coral orange #E4843C, and warm sand/tan #A89078. Blacks are lifted and desaturated, compressing the dynamic range into the upper mid-tones and highlights for an airy, low-contrast feel. In post-production, a gentle S-curve is applied to the tones, while selective color work boosts the vibrancy of the key hues, and significant digital sharpening is used to enhance textural detail, creating a polished, hyper-real look devoid of any grain or noise, applied as the final pass over the entire image.

@@ -1,0 +1,110 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/all-drinks/508203139215287280.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260426_200110_695.png
+PRODUCTS: Mauby, Peanut Punch, Pine Ginger, Sorrel, Guava Pine, Lime
+TIMESTAMP: 2026-04-26T20:02:38.064107
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** The main focus is a rustic, idyllic scene promoting apple juice. A wooden wheelbarrow filled with hay and cartons of "Добрый" apple juice sits in a sunny orchard under a lush apple tree. In the foreground, a large carton of the same juice stands next to a glass of juice and a freshly sliced apple, all set against a wooden fence.
+
+**PRODUCT COUNT:** 6
+
+**PRODUCT DETAILS:**
+*   **Product 1 (Foreground):** A rectangular green paperboard juice carton is positioned in the bottom-right corner. It is facing the viewer directly. It is the largest product in the frame. The white plastic cap is on and closed.
+*   **Product 2-6 (Background):** Five identical, smaller juice cartons are nestled in hay inside a wooden wheelbarrow located in the center-left of the image. One carton is lying on its side, while the other four are standing upright at various angles. All have their white caps on and closed.
+
+**COMPOSITION:**
+*   **Top-left:** Sun flares through the leafy branches of an apple tree laden with red apples. A small, light-colored house is visible in the distant background.
+*   **Top-center:** More sunlit apple tree leaves and red apples hang from branches.
+*   **Top-right:** The trunk and branches of the apple tree, with more leaves and apples.
+*   **Center-left:** A wooden wheelbarrow filled with hay and five cartons of juice sits on a grassy lawn.
+*   **Center:** The wheelbarrow, the main trunk of the apple tree, and the green grass of the orchard.
+*   **Center-right:** The thick trunk of the apple tree and the sunlit green grass behind it.
+*   **Bottom-left:** The wheel of the wheelbarrow and a dark brown wooden picket fence. A blank, lighter brown wooden sign is nailed to the fence.
+*   **Bottom-center:** The wooden fence continues, with a clear glass filled with apple juice sitting in front of it.
+*   **Bottom-right:** The large, primary product carton, a sliced red apple, and the wooden fence.
+*   **Framing:** This is a medium shot with significant foreground and background elements creating a sense of depth.
+*   **Visual Hierarchy:** The eye is drawn first to the large product carton and glass in the bottom-right, then to the wheelbarrow of products in the center, and finally to the sun-drenched orchard background.
+
+**PRODUCE / INGREDIENTS:**
+*   Red apples are visible hanging from the tree branches throughout the upper half of the image.
+*   One red apple, cut into sections with one slice leaning against it, is in the bottom-right foreground.
+
+**TEXT:**
+*   All text is on the product packaging.
+*   Brand Name: "Добрый" (Dobryy) is written in large, white, stylized serif font with a thin dark outline.
+*   Flavor Name: "Деревенские яблочки" (Derevenskiye yablochki) is written below the brand name in a smaller, white, clean sans-serif font.
+*   Badge Text: Inside a circular green and red badge, the word "НОВИНКА!" (NOVINKA!) is in a white, bold, sans-serif font. Below it, following the curve of the badge, are the words "С МЯКОТЬЮ" (S MYAKOT'YU) in a white sans-serif font.
+*   Text Zone: All text is confined to the labels of the juice cartons.
+
+**DECORATIVE ELEMENTS:**
+*   On the packaging, there are green, swirling, leafy/vine-like graphics.
+*   A circular red and green badge is on the front of the main carton.
+*   A blank, rectangular wooden sign is affixed to the foreground fence with four metallic-colored rivets.
+*   A bright sun flare/light leak effect is prominent in the top-left of the image.
+
+**BACKGROUND:** The background is a photographic scene of a sunny apple orchard on a bright day. It features a lush, green grass lawn, a mature apple tree with a thick, textured trunk, and a small, light-colored house with a dark roof visible in the far distance.
+
+**LIGHTING:** The lighting is bright and warm, with a strong directional source coming from the top-left, simulating direct sunlight. This creates a hazy, sun-drenched effect with a visible flare. Highlights on the apples, leaves, and top edges of objects are bright and distinct. Shadows are soft and cast towards the right and bottom, noticeable under the tree and behind the wheelbarrow.
+
+**MOOD:**
+*   Wholesome
+*   Natural
+*   Rustic
+*   Sunny
+*   Idyllic
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution full-frame digital camera and a moderate telephoto prime lens to achieve spatial compression and a controlled, shallow depth of field with smooth, creamy bokeh. The lighting is meticulously crafted to simulate a low, directional golden hour sun, producing brilliant, warm-toned highlights with a soft bloom and casting soft-edged, illuminated shadows. The color science is defined by a heavily graded, warm-biased palette with intensely saturated, vibrant greens, rich reds, and luminous golden yellows. The overall contrast is punchy, utilizing a gentle S-curve with significantly lifted black points that render shadows as warm, earthy tones rather than true black. Extensive post-processing ensures a flawless, noise-free image, with a prominent, stylized lens flare and light-ray effect added to enhance the idyllic and hyper-realistic atmosphere.
+
+**Keywords:** Golden Hour, Hyper-Real, Saturated, Warm Palette, Luminous, Clean Digital.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The brand name "Добрый" in stylized serif font.
+*   The flavor name "Деревенские яблочки" in sans-serif font.
+*   The badge text "НОВИНКА!"
+*   The badge text "С МЯКОТЬЮ"
+*   Any text in Cyrillic script.
+*   The circular red and green badge graphic on the packaging.
+*   The green, swirling, leafy/vine-like graphics on the packaging.
+*   Any apples, either on the tree or sliced in the foreground.
+
+STRICT CONSTRAINTS:
+*   Final image aspect ratio must be 4:5 portrait.
+*   The background and color grade must use ONLY the brand palette: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), warm sand/tan (#A89078).
+*   All product labels MUST be pasted pixel-faithfully from the provided INPUT images. Do NOT redraw, recolor, modify, or invent labels.
+*   No mascots, cartoon characters, or personified objects.
+*   Do not render any text, headlines, body copy, hashtags, URLs, or social media handles. The only text in the image is what appears on the product labels themselves.
+*   Do not include any apples or other produce; the scene is the orchard setting, not the fruit.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference scene faithfully. The subject is a rustic, idyllic scene in a sunny orchard. A wooden wheelbarrow filled with hay and bottles of juice sits in the middle-ground under a lush tree. In the foreground, one large bottle of juice stands next to a clear glass of juice, all set against a wooden fence. The composition is a medium shot with significant foreground and background elements creating depth. The framing places a sun flare through leafy branches in the top-left, the wheelbarrow in the center-left, the main product in the bottom-right, and a wooden fence across the bottom. DO NOT include any red apples hanging from the tree or sliced in the foreground. The tree is leafy but without fruit.
+
+PRODUCT REPLACEMENT:
+*   The large juice carton in the bottom-right foreground is replaced by one Island Splash bottle. The container is a clear glass bottle with a matte BLACK cap. Paste the label from INPUT 2 (Island Splash Mauby) onto this bottle, pixel-faithful. Next to it, place a clear glass filled with a brownish, mauby-colored beverage.
+*   The five smaller juice cartons in the wheelbarrow are replaced by five Island Splash bottles, all clear glass with matte BLACK caps.
+    *   Bottle 1: Paste label from INPUT 3 (Island Splash Peanut Punch), pixel-faithful.
+    *   Bottle 2: Paste label from INPUT 4 (Island Splash Pine Ginger), pixel-faithful.
+    *   Bottle 3: Paste label from INPUT 5 (Island Splash Sorrel), pixel-faithful.
+    *   Bottle 4: Paste label from INPUT 6 (Island Splash Guava Pine), pixel-faithful.
+    *   Bottle 5: Paste label from INPUT 7 (Island Splash Lime), pixel-faithful.
+*   Do not inherit any container shapes or cap colors from the reference. All bottles are the standard Island Splash shape with matte BLACK caps.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Mauby: use brand voice, keep it plain and honest
+  Peanut Punch: use brand voice, keep it plain and honest
+  Pine Ginger: use brand voice, keep it plain and honest
+  Sorrel: use brand voice, keep it plain and honest
+  Guava Pine: use brand voice, keep it plain and honest
+  Lime: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+*   There is NO headline, body copy, or any other text in this advertisement. The image is purely visual, with all text confined to the product labels.
+
+LOGO:
+*   Render the logo from INPUT 8. Place it in the bottom-right corner. It should be a small badge, approximately 8% of the image width. It must have no background box or banner.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Shot with a high-resolution full-frame digital camera and a moderate telephoto prime lens to achieve spatial compression and a controlled, shallow depth of field with smooth, creamy bokeh. The lighting is meticulously crafted to simulate a low, directional golden hour sun, producing brilliant, warm-toned highlights with a soft bloom and casting soft-edged, illuminated shadows. The color science is defined by a heavily graded, brand-compliant palette of dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), and warm sand/tan (#A89078). The overall contrast is punchy, utilizing a gentle S-curve with significantly lifted black points that render shadows as warm, deep teals and rich browns rather than true black. Extensive post-processing ensures a flawless, noise-free image, with a prominent, stylized lens flare and light-ray effect added to enhance the idyllic and hyper-realistic atmosphere, applied as the final pass over the entire image.

@@ -1,0 +1,117 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/all-drinks/approved/508203139224446176.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260426_172855_751.png
+PRODUCTS: Peanut Punch
+TIMESTAMP: 2026-04-26T17:30:27.129767
+
+=== REVERSE ANALYSIS ===
+**SUBJECT**
+The main subject is a single bottle of green plum-flavored drink. The bottle is positioned upright in the center-left of the frame, covered in condensation droplets. It is part of a still life arrangement that includes a clear glass teacup filled with a golden liquid, a wooden bowl of whole green plums, and a single green plum cut in half.
+
+**PRODUCT COUNT**
+1
+
+**PRODUCT DETAILS**
+*   **Container type:** A clear plastic bottle with a gradient label that is green at the top and translucent white at the bottom.
+*   **Position in frame:** The bottle stands vertically in the center-left of the image.
+*   **Angle:** It is shot straight-on, with the front label facing the viewer.
+*   **Size relative to image:** The bottle occupies approximately two-thirds of the image's height.
+*   **Cap/lid state:** A white, ribbed screw-on cap is on the bottle and fully closed.
+
+**COMPOSITION**
+*   **Top-left:** Out-of-focus green foliage against a blue sky.
+*   **Top-center:** The top of the bottle cap and out-of-focus green leaves against a blue sky with a soft cloud.
+*   **Top-right:** A branch with out-of-focus green plums and leaves against the blue sky.
+*   **Center-left:** The upper portion of the bottle next to a glass teacup filled with a yellow beverage.
+*   **Center-center:** The main label of the product bottle.
+*   **Center-right:** A light brown wooden bowl filled with whole green plums.
+*   **Bottom-left:** A green plum cut in half, resting on a wooden surface in front of the teacup.
+*   **Bottom-center:** The base of the bottle on the wooden surface.
+*   **Bottom-right:** Whole green plums on the wooden surface, out-of-focus foreground leaves, and a social media watermark.
+*   **Framing:** The shot is a medium close-up.
+*   **Visual hierarchy:** The eye is led first to the central bottle, then to the surrounding plums and the teacup.
+
+**PRODUCE / INGREDIENTS**
+Whole, round green plums are visible in a wooden bowl, on a branch in the background, and resting on the wooden surface. One green plum is cut in half in the foreground, showing its pit.
+
+**TEXT**
+All text is in Chinese characters.
+*   **On the bottle label (top):**
+    *   `冰镇* #植物精萃` (translation: Ice-cold* #PlantExtract)
+    *   Font: Thin, clean, sans-serif in a dark green color.
+*   **On the bottle label (center):**
+    *   `一大口`
+    *   `青梅` (translation: A Big Gulp / Green Plum)
+    *   Font: Heavy, white, sans-serif display font.
+*   **On the bottle label (bottom fine print):**
+    *   `多汁青梅融合茶香，带来清新解腻果汁风味`
+    *   `饮料 | 净含量: 280mL`
+    *   `≥45%`
+    *   Font: Thin, black, sans-serif font.
+*   **On the image (bottom right corner):**
+    *   `小红书` logo
+    *   `小红书号：158325102`
+    *   Font: Clean, white, sans-serif.
+
+**DECORATIVE ELEMENTS**
+*   Condensation droplets cover the bottle.
+*   A circular green badge is on the bottom right of the label, containing a white line-art illustration of a plum.
+
+**BACKGROUND**
+The background is a photographic scene depicting a bright, sunny day outdoors. It consists of a light-colored wooden tabletop in the foreground, with out-of-focus (bokeh) green foliage and a bright blue sky with soft white clouds in the back.
+
+**LIGHTING**
+The scene is lit with bright, natural daylight. The quality of the light is soft and diffused, coming from the front and slightly to the right. Highlights are soft on the plums and glassware, and shadows are gentle and light, indicating indirect or filtered sunlight.
+
+**MOOD**
+*   Refreshing
+*   Natural
+*   Bright
+*   Thirst-quenching
+*   Summery
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution full-frame digital camera and a sharp prime lens (approximately 50-85mm) at a wide aperture (f/1.8-f/2.8) to achieve a very shallow depth of field with smooth, creamy bokeh. The lighting mimics bright, high-angle natural sunlight, using a hard key source to create crisp specular highlights, which is then balanced with strong, diffused fill light to lift the shadows and produce a high-key, low-contrast overall look. The color science is defined by a highly saturated and vibrant palette, pushing the relationship between luminous, yellow-biased greens and a clean cyan-blue sky, contrasted by warm honey tones in the mid-ground. Post-processing involves a gentle S-curve for contrast, selective sharpening on the subject, and a subtle bloom or halation effect on the brightest highlights to create a soft, ethereal glow, resulting in an exceptionally clean, noise-free final image.
+
+**Keywords:** High-Key, Vibrant, Shallow Depth of Field, Clean, Commercial, Sunny.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+  - Any and all Chinese characters
+  - The text string "冰镇* #植物精萃"
+  - The text string "一大口"
+  - The text string "青梅"
+  - The text string "多汁青梅融合茶香，带来清新解腻果汁风味"
+  - The text string "饮料 | 净含量: 280mL"
+  - The text string "≥45%"
+  - The "小红书" logo
+  - The text string "小红书号：158325102"
+  - The circular green badge with a white line-art illustration of a plum
+
+STRICT CONSTRAINTS:
+- The final image must use ONLY the Island Splash brand palette: dark teal #243C3C, warm golden orange #F0A86C, deep coral orange #E4843C, warm sand/tan #A89078. Replace all colors from the reference with this palette.
+- The bottle label MUST be preserved exactly from its input image. Do not redraw, recolor, modify, or invent labels.
+- Do not render any mascots, cartoon characters, or personified objects.
+- Do not add any text like hashtags, URLs, social media handles, promotions, or pricing. All text must be in English.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference scene's subject and composition faithfully. The subject is a still life arrangement featuring a single bottle of a beverage, positioned upright in the center-left, covered in realistic condensation droplets. Next to the bottle is a clear glass teacup filled with a golden liquid. The arrangement sits on a light-colored wooden surface. The background is a soft-focus, out-of-focus bokeh of foliage against a sky. The shot is a medium close-up. DO NOT include any of the green plums from the reference image—no whole plums, no cut plums, no plums on branches. The wooden bowl from the reference is present, but it is empty.
+
+PRODUCT REPLACEMENT:
+- The single bottle of green plum drink is replaced by one bottle of Island Splash Peanut Punch.
+- The bottle is a clear plastic container, covered in condensation.
+- The bottle cap MUST be matte BLACK. Do not inherit the white cap from the reference.
+- Paste INPUT 2 (Island Splash Peanut Punch) as the bottle label, pixel-faithful, do not redraw it.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Peanut Punch: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+- No headline or body copy. The only text visible is on the product label itself, which comes from INPUT 2. The composition should remain clean and minimalist, focusing on the product.
+
+LOGO:
+Render the logo from the LAST INPUT image as a small, standalone badge in the bottom-right corner. It should be approximately 8% of the frame width. Render it with no background box, no banner, and no additional text lockup.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Shot with a high-resolution full-frame digital camera and a sharp prime lens (approximately 50-85mm) at a wide aperture (f/1.8-f/2.8) to achieve a very shallow depth of field with smooth, creamy bokeh. The lighting mimics bright, high-angle natural sunlight, using a hard key source to create crisp specular highlights, which is then balanced with strong, diffused fill light to lift the shadows and produce a high-key, low-contrast overall look. The color science is defined by a highly saturated and vibrant palette defined by brand colors: dark teal (#243C3C) for shadows and deep background elements, warm golden orange (#F0A86C) and deep coral orange (#E4843C) for mid-tones and highlights, and warm sand/tan (#A89078) for neutral surfaces and fill light. Post-processing involves a gentle S-curve for contrast, selective sharpening on the subject, and a subtle bloom or halation effect on the brightest highlights to create a soft, ethereal glow, resulting in an exceptionally clean, noise-free final image. This style is applied as the final pass over the entire image.

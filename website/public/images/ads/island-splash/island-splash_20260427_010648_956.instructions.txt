@@ -1,0 +1,118 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/all-drinks/approved/508203139215279484.png
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260427_010648_956.png
+PRODUCTS: Mango Passion
+TIMESTAMP: 2026-04-27T01:08:31.547752
+
+=== REVERSE ANALYSIS ===
+**SUBJECT**
+The main subject is a green tube of aloe soothing gel. It is standing upright, angled slightly toward the viewer's right, and is positioned in the center-right of the frame. The tube is resting on a stack of rough, light-brown rocks and is surrounded by fresh aloe vera leaves. The surface of the tube is covered in small, glistening water droplets.
+
+**PRODUCT COUNT**
+1
+
+**PRODUCT DETAILS**
+The single product is a soft-sided, squeezable tube. It stands vertically in the center-right of the frame, occupying approximately two-thirds of the image's height. The tube is angled slightly to its left, showing the front label clearly. The cap, which is on the tube, has a light-colored, wood-grain texture and appearance.
+
+**COMPOSITION**
+*   **Top-Left:** A solid white background with the vertical text "FOODOGRAPHY WORKSHOPS" and the beginning of the headline "FOO".
+*   **Top-Center:** The middle of the white headline "DOGRA" against a solid white background.
+*   **Top-Right:** The end of the headline "PHY." against a solid white background, with the top of the green product tube entering the frame from below.
+*   **Center-Left:** Out-of-focus green aloe leaves against the white background.
+*   **Center-Center:** The main body of the green product tube, featuring its branding and product name in white text.
+*   **Center-Right:** The right side of the product tube and a sharp, in-focus aloe leaf behind it.
+*   **Bottom-Left:** A vertical barcode element and "FOOD STUDIO" text, with several in-focus aloe leaves.
+*   **Bottom-Center:** The wood-textured cap of the product tube resting on a stack of rocks, with aloe leaves in the foreground.
+*   **Bottom-Right:** The textured, light-brown rocks supporting the product, with a prominent aloe leaf covered in water droplets. Fine print text is visible at the very bottom.
+
+The framing is a medium shot, tightly focused on the product and its immediate environment. The visual hierarchy draws the eye first to the brightly colored product tube, then to the surrounding natural elements (aloe, rocks), and finally to the text elements on the periphery.
+
+**PRODUCE / INGREDIENTS**
+Several fresh, green, spiky aloe vera plant leaves. They are positioned in the foreground and background, surrounding the base of the product. Some leaves are in sharp focus, showing detailed texture and water droplets, while others are softly blurred in the background.
+
+**TEXT**
+*   **Headline (Top Banner):** "FOODOGRAPHY." in a large, heavy, white sans-serif font.
+*   **Left Margin (Vertical):**
+    *   "FOODOGRAPHY WORKSHOPS" in a black, regular weight sans-serif font.
+    *   "ISSUE / 2019" in a black, regular weight sans-serif font.
+    *   "FOOD STUDIO" in a black, regular weight sans-serif font, next to a barcode.
+*   **On Product Tube (from top to bottom):**
+    *   "Pasión" in a white script font, followed by Chinese characters "泊纯".
+    *   "Aloe" in a white, handwritten-style script font.
+    *   "SOOTHING" in a white, spaced-out, sans-serif font.
+    *   "GEL" in a white, spaced-out, sans-serif font.
+    *   "芦荟" (Aloe Vera) in large white Chinese characters.
+    *   "舒缓凝胶" (Soothing Gel) in large white Chinese characters.
+    *   On a brown band: "蕴含芦荟精华" and "清爽保湿不粘腻" in white Chinese characters.
+    *   Below the band: "适用于任何肌肤" (For all skin types) in white Chinese characters.
+    *   "FOR ALL SKIN TYPES" in a smaller, white sans-serif font.
+*   **Fine Print (Bottom Right):** Very small, white, all-caps sans-serif text including "IMAGE BY FOODOGRAPHY PHOTO STUDIO ALL RIGHTS RESERVED." and "THE UNAUTHORIZED REPRODUCTION WILL BE PROSECUTED."
+
+**DECORATIVE ELEMENTS**
+*   Fine water droplets cover the surface of the product tube and some of the aloe leaves.
+*   A small, white line-art icon of an aloe vera plant is on the lower portion of the tube.
+*   A vertical barcode is in the bottom left corner.
+
+**BACKGROUND**
+The background is a solid, seamless, bright white studio backdrop with no texture or gradient.
+
+**LIGHTING**
+The lighting is soft and diffused, coming from the front and slightly to the right. It creates broad, gentle highlights on the left side of the tube and on the water droplets. Shadows are soft and minimal, appearing subtly to the left of and behind the tube and within the crevices of the rocks.
+
+**MOOD**
+Fresh, Natural, Clean, Soothing, Minimalist.
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution digital camera, likely a full-frame or medium format sensor, paired with a sharp macro prime lens to achieve pristine clarity and detail. The aperture creates a shallow depth of field, isolating the subject with a smooth, gradual focus fall-off and creamy, non-distracting bokeh. The lighting is a high-key studio setup, employing a large, heavily diffused primary source that produces soft, wrapping light with minimal, open shadows and a very low-contrast ratio. The color science is defined by a neutral-to-cool white balance, featuring a clean, analogous palette of vibrant but controlled greens against pure, bright whites and muted earth tones. Post-processing involves a meticulous color grade that ensures a clean white point and slightly lifted blacks, with a gentle contrast curve that maintains an airy, bright exposure. The final image is digitally pristine, with enhanced sharpness and a complete absence of grain or noise, resulting in a polished and modern commercial aesthetic.
+
+**Keywords:** High-Key, Diffused, Clean, Crisp, Commercial, Low-Contrast.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The headline "FOODOGRAPHY." or any of its parts "FOO", "DOGRA", "PHY."
+*   The text string "FOODOGRAPHY WORKSHOPS"
+*   The text string "ISSUE / 2019"
+*   The text string "FOOD STUDIO"
+*   Any barcodes
+*   The brand name "Pasión"
+*   The Chinese characters "泊纯"
+*   The word "Aloe" in handwritten script
+*   The word "SOOTHING"
+*   The word "GEL"
+*   The Chinese characters "芦荟"
+*   The Chinese characters "舒缓凝胶"
+*   The Chinese characters "蕴含芦荟精华"
+*   The Chinese characters "清爽保湿不粘腻"
+*   The Chinese characters "适用于任何肌肤"
+*   The text string "FOR ALL SKIN TYPES"
+*   The fine print "IMAGE BY FOODOGRAPHY PHOTO STUDIO ALL RIGHTS RESERVED."
+*   The fine print "THE UNAUTHORIZED REPRODUCTION WILL BE PROSECUTED."
+*   Any line-art icon of an aloe vera plant
+
+STRICT CONSTRAINTS:
+*   Aspect ratio 4:5.
+*   The background must be a solid, seamless studio backdrop using a color from the brand palette, such as warm sand/tan (#A89078).
+*   The final image must be color graded using ONLY the Island Splash brand palette: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), warm sand/tan (#A89078).
+*   No mascots, cartoon characters, smiley fruits, or personified objects.
+*   FORBIDDEN: aloe vera leaves, plant leaves, fruit slices, splashes, ice, or any other decorative produce or ingredients. The scene contains only the product, the rocks it sits on, and the studio background.
+*   Do NOT invent or render hashtags, URLs, social media handles, QR codes, or phone numbers.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference composition faithfully. The main subject is a single product bottle standing upright on a stack of rough, light-brown rocks. The bottle is positioned in the center-right of the frame, angled slightly toward the viewer's right. The bottle's surface is covered in small, glistening water droplets. The framing is a medium shot, tightly focused on the product. Do NOT include any of the reference's aloe vera leaves or any other plants, produce, or ingredients; the bottle and rocks are surrounded by empty studio space. The visual hierarchy must place focus on the product bottle.
+
+PRODUCT REPLACEMENT:
+*   The single product tube is replaced by a single Island Splash bottle. Position it center-right, standing on the stack of rocks. The bottle must have a matte BLACK cap. On the bottle, paste INPUT 2 (Island Splash Mango Passion) as the bottle label, pixel-faithful, do not redraw or alter the label design.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Mango Passion: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+*   Headline (Top Banner): In a large, heavy sans-serif font, render the text "REAL FRUIT. REAL FLAVOR." in warm sand/tan (#A89078).
+*   Left Margin (Vertical Text): In a regular weight sans-serif font, smaller than the headline, render the text "OUR FAMILY RECIPE" in dark teal (#243C3C). Position it vertically in the upper-left margin, similar to the reference.
+
+LOGO:
+*   Render the logo from the LAST INPUT image as a small, standalone badge in the bottom-right corner. It should be approximately 8% of the total image width. Do not place it in a box, on a banner, or add any text to it.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Applied as the final pass over the entire image: shot with a high-resolution digital camera, paired with a sharp macro prime lens to achieve pristine clarity and detail. The aperture creates a shallow depth of field, isolating the subject with a smooth, gradual focus fall-off and creamy, non-distracting bokeh. The lighting is a high-key studio setup, employing a large, heavily diffused primary source that produces soft, wrapping light with minimal, open shadows and a very low-contrast ratio. The color science is defined by a warm, inviting grade, featuring a palette of dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), and warm sand/tan (#A89078). Post-processing involves a meticulous color grade that ensures a clean white point and slightly lifted blacks, with a gentle contrast curve that maintains an airy, bright exposure. The final image is digitally pristine, with enhanced sharpness and a complete absence of grain or noise, resulting in a polished and modern commercial aesthetic.

@@ -1,0 +1,102 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/all-drinks/508203139215287283.png
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260426_200823_068.png
+PRODUCTS: Mauby
+TIMESTAMP: 2026-04-26T20:09:52.067385
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** The main subject is a bottle of Njuze mango drink hanging from a mango tree branch, surrounded by several ripe mangoes and green leaves. The bottle is the central focus, positioned slightly to the right of the image's vertical midline.
+
+**PRODUCT COUNT:** 1
+
+**PRODUCT DETAILS:**
+*   **Product 1:** A clear plastic bottle with a ribbed lower section and a smooth, curved upper section. It is positioned in the center-right of the frame, angled directly toward the viewer. The bottle takes up approximately half the height of the image. It has a green plastic screw cap, which is on and closed.
+
+**COMPOSITION:**
+*   **Top-left:** The "Njuze" brand logo is set against a light blue gradient background.
+*   **Top-center:** A mango tree branch with green leaves and small flower clusters extends across this zone.
+*   **Top-right:** The mango branch continues, featuring more leaves and flowers.
+*   **Middle-left:** The text "From Ripe & Fresh" is prominent. A single ripe mango hangs in this zone.
+*   **Middle-center:** The main bottle of Njuze juice is centered, framed by mango leaves.
+*   **Middle-right:** A cluster of three ripe mangoes hangs from the branch.
+*   **Bottom-left:** The text "Mangoes!" is located here, below the rest of the headline.
+*   **Bottom-center:** The base of the juice bottle and a partially visible mango behind it.
+*   **Bottom-right:** The lower portion of the mango cluster. The corner of the image is graphically peeled back to reveal a logo.
+*   **Framing:** The shot is a medium close-up, tightly framed around the product and ingredients.
+*   **Visual Hierarchy:** The eye is drawn first to the bottle and the bright mangoes surrounding it, then to the large green text on the left.
+
+**PRODUCE / INGREDIENTS:**
+*   **Mangoes:** Several ripe mangoes with red, orange, and yellow skins are shown hanging from a branch.
+*   **Mango Branch:** A woody mango tree branch with attached green leaves and small clusters of mango flowers is visible at the top of the image.
+
+**TEXT:**
+*   **Top-left:** "Njuze" in a stylized, heavy, green sans-serif font with a white outline.
+*   **Left Side:** "From Ripe & Fresh Mangoes!" in a bold, rounded, bright green sans-serif font with a thin light-green outline.
+*   **On the Bottle Label:**
+    *   "Njuze"
+    *   "BELIEVE IN QUALITY & PROMISE"
+    *   "FOR THE REAL TASTE OF MANGOES"
+    *   "Real Mango Drink"
+    *   "350 ml"
+*   **Bottom-right:** "A NEST Product" in a clean black sans-serif font.
+
+**DECORATIVE ELEMENTS:**
+*   A swoosh logo in red, white, and blue is positioned above the "Njuze" brand name.
+*   The bottom-right corner of the advertisement is designed to look like a page-curl or peel, revealing a white surface and a logo underneath.
+*   A circular logo with red and blue swooshes and the word "NEST" is visible in the peeled-back corner.
+
+**BACKGROUND:** The background is a smooth, clean gradient that transitions from light blue at the top to a warm, pale yellow at the bottom.
+
+**LIGHTING:** The lighting is bright and diffuse, simulating soft daylight. The main light source appears to be from the front and slightly to the left, creating soft highlights on the bottle and mangoes. Shadows are minimal and soft, appearing gently behind the leaves and fruit, without any harsh edges.
+
+**MOOD:**
+*   Fresh
+*   Natural
+*   Vibrant
+*   Appetizing
+*   Sunny
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution full-frame or medium format digital camera and a sharp telephoto prime lens to achieve a pristine, noise-free image with controlled, selective focus. The depth of field is moderately shallow, isolating the subject with a smooth, artificial-looking bokeh in the background. The lighting is high-key, employing a large, heavily diffused primary light source from a high angle to simulate warm sunlight, combined with extensive soft fill to lift shadows and wrap the subject in a luminous, even glow. The color science is defined by a vibrant, highly saturated split-complementary palette, juxtaposing a cool, light cyan in the upper highlights against a dominant base of warm, golden yellows and rich oranges. Colors are graded for maximum punch and appeal, with a gentle contrast curve that boosts mid-tones and features a soft, blooming roll-off in the highlights, creating a hyper-real and impeccably clean digital aesthetic.
+
+**Keywords:** Luminous, High-Key, Saturated, Diffused, Vibrant, Hyper-Real
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The wordmark "Njuze"
+*   The headline "From Ripe & Fresh Mangoes!"
+*   The swoosh logo in red, white, and blue above the brand name
+*   The bottle-label strings "BELIEVE IN QUALITY & PROMISE", "FOR THE REAL TASTE OF MANGOES", "Real Mango Drink", "350 ml"
+*   The text "A NEST Product"
+*   The decorative page-curl or peel-back effect in the bottom-right corner
+*   The circular logo with red and blue swooshes and the word "NEST"
+
+STRICT CONSTRAINTS:
+*   The final image must be in a 4:5 aspect ratio (portrait).
+*   The background, lighting, and overall color grade must strictly use the Island Splash brand palette: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), warm sand/tan (#A89078).
+*   No mascots, cartoon characters, or personified objects.
+*   The product label must be preserved pixel-perfectly from the provided INPUT image. Do not redraw, re-render, or modify the label design in any way.
+*   Do not render any URLs, hashtags, social media handles, promotional text, prices, or phone numbers. All text must be in English.
+*   Do not render any of the reference's produce or ingredients. Forbid mango fruits entirely.
+
+REFERENCE SUBJECT & COMPOSITION:
+*   Recreate the scene's core subject: a single bottle hanging from a tropical tree branch with green leaves. The bottle is the central focus, positioned slightly to the right of the image's vertical midline. The composition is a medium close-up, tightly framed. The branch extends across the top of the frame.
+*   Maintain the reference's composition for text placement: there is a large open zone on the left side for a headline.
+*   Do NOT add any splashes, droplets, or decorative elements not described here. Specifically, do NOT include any fruit (like mangoes) in the scene. The background is a clean, smooth gradient.
+
+PRODUCT REPLACEMENT:
+*   The central hanging bottle: Replace the reference bottle with a clear plastic beverage bottle. Apply a matte BLACK screw cap. The bottle's label must be pasted directly and pixel-faithfully from INPUT 2 (Island Splash Mauby), preserving its design and colors without modification.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Mauby: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+*   Headline: On the left side of the image, render the text "Our Family's Mauby Recipe." Use a bold, rounded, sans-serif font similar to the reference. Render the text in dark teal (#243C3C).
+*   Do not add any other body copy, taglines, or text.
+
+LOGO:
+*   Render the logo from INPUT 3. Place it as a small, clean badge in the bottom-right corner, approximately 8% of the total image width. Do not add a background box, banner, or any other text around it.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+*   Applied as the final pass over the entire image: The scene is shot with a high-resolution full-frame or medium format digital camera and a sharp telephoto prime lens to achieve a pristine, noise-free image with controlled, selective focus. The depth of field is moderately shallow, isolating the subject with a smooth bokeh in the background. The lighting is high-key, employing a large, heavily diffused primary light source from a high angle to simulate warm sunlight, combined with extensive soft fill to lift shadows and wrap the subject in a luminous, even glow. The color science is defined by a palette of dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), and warm sand/tan (#A89078). Colors are graded for maximum punch and appeal, with a gentle contrast curve that boosts mid-tones and features a soft, blooming roll-off in the highlights, creating a hyper-real and impeccably clean digital aesthetic.

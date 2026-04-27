@@ -1,0 +1,115 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/asset-ads/brand_assets/island-splash/references/approved/upgraded_GuavaPine.png
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260427_013033_311.png
+PRODUCTS: Guava Pine
+TIMESTAMP: 2026-04-27T01:32:15.439689
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** A bottle of "Island Splash" juice is the central subject. It is positioned upright in the sand on a tropical beach, surrounded by fresh fruit that represents its flavor.
+
+**PRODUCT COUNT:** 1
+
+**PRODUCT DETAILS:**
+*   **Product 1:**
+    *   **Container type:** A clear plastic bottle with a slightly tapered neck and straight sides.
+    *   **Position in frame:** Centered vertically and horizontally.
+    *   **Angle:** Photographed from a straight-on, eye-level perspective.
+    *   **Size relative to image:** The bottle occupies approximately two-thirds of the image's height.
+    *   **Cap/lid state:** A brown, ribbed, screw-on cap is on the bottle and fully closed.
+
+**COMPOSITION:**
+*   **Top-left:** Blue sky with white clouds and a lens flare effect.
+*   **Top-center:** Blue sky, clouds, and the cap of the juice bottle.
+*   **Top-right:** Green palm tree fronds against a blue sky.
+*   **Middle-left:** The turquoise ocean meeting the white sand beach.
+*   **Middle-center:** The upper half of the juice bottle, featuring the brand and flavor labels.
+*   **Middle-right:** Palm trees and the beach in the background.
+*   **Bottom-left:** Whole and halved pink guavas resting on the sand.
+*   **Bottom-center:** The base of the juice bottle sitting in the sand.
+*   **Bottom-right:** Sliced pineapple and two whole mangos on the sand.
+*   **Framing:** This is a medium shot, tightly framed around the product and its ingredients in the foreground, with the background scene visible but soft-focused.
+*   **Visual hierarchy:** The viewer's eye is drawn first to the bottle, then to the surrounding fruit, and finally to the beach background.
+
+**PRODUCE / INGREDIENTS:**
+*   **Guava:** One whole green guava and one guava cut in half, revealing its pink flesh and seeds.
+*   **Pineapple:** Two large wedges of sliced pineapple.
+*   **Mango:** Two whole, reddish-yellow mangos.
+
+**TEXT:**
+*   **On the logo sticker:**
+    *   "Island Splash" - A stylized, heavy display font in white with a dark outline.
+    *   "JUICE" - A black, sans-serif font, located within a silhouette shape at the bottom of the logo.
+*   **On the flavor label:**
+    *   "Guava"
+    *   "Pine"
+    *   This text is a clean, black, sans-serif font of medium weight.
+*   All text is located on labels affixed to the center of the bottle.
+
+**DECORATIVE ELEMENTS:**
+*   The primary logo is a custom-shaped sticker.
+*   Within the logo sticker are small illustrations of a pineapple, an orange-like fruit, and a coconut.
+*   The word "JUICE" is placed inside a black silhouette shape that resembles the state of Florida.
+
+**BACKGROUND:**
+*   The background is a photographic scene of a tropical beach. It features white sand in the foreground, turquoise ocean water with small waves, and a bright blue sky with scattered white clouds. Several palm trees are visible on the right side of the frame. The background is softly out of focus.
+
+**LIGHTING:**
+*   **Direction:** The primary light source comes from the upper left.
+*   **Quality:** Bright and soft, characteristic of natural, diffused sunlight.
+*   **Highlight behavior:** Soft highlights are visible on the left side of the bottle, the fruit, and the water. A subtle lens flare is present in the top-left corner.
+*   **Shadow characteristics:** Soft shadows are cast to the right and slightly behind the bottle and fruit, indicating the light's direction.
+
+**MOOD:**
+*   Tropical
+*   Fresh
+*   Vibrant
+*   Relaxing
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution full-frame digital camera and a sharp prime lens around 50-85mm to produce a clean, shallow depth of field with a smooth and creamy bokeh. The lighting is intentionally bright and high-key, replicating a diffused overhead sun with significant frontal fill light to create soft-edged shadows and maintain detail across a wide dynamic range. The color science is dominated by a warm color temperature and a vibrant, complementary teal-and-orange palette; cyans in the sky and water are pushed to high saturation, contrasting with the warm, peachy tones of the mid-tones and highlights. Highlights exhibit a gentle, controlled rolloff, while shadows are lifted and infused with a subtle cool/teal bias. Post-processing is polished and commercial, featuring a smooth S-curve for punchy yet clean contrast, and an absence of any film grain or digital noise, resulting in a hyper-real and immaculate final image.
+
+**Keywords:** Vibrant, High-Key, Teal & Orange, Shallow Depth of Field, Polished, Commercial
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The wordmark "Island Splash" in a stylized, heavy display font
+*   The word "JUICE" in a black, sans-serif font
+*   The text "Guava" on any product label
+*   The text "Pine" on any product label
+*   Small illustrations of a pineapple, an orange-like fruit, or a coconut on any logo or sticker
+*   The black silhouette shape that resembles the state of Florida
+*   Any text placed within a silhouette shape on a logo
+
+STRICT CONSTRAINTS:
+*   The final image aspect ratio is 4:5.
+*   The product label is pasted PIXEL-FAITHFUL from the INPUT image — do NOT redraw or recreate the label.
+*   Product lighting MUST match the scene's lighting direction and quality — never preserve "original product lighting."
+*   Product must cast a natural shadow on the scene surface — no floating, no hard-edged pasted shadow.
+*   No mascots, cartoon characters, smiley fruits, or personified objects.
+*   No text may be rendered in the image except for the logo and the product label. This means no headlines, no body copy, no taglines, no URLs, no hashtags, no social media handles, no promotional text like 'FREE' or '% OFF', and no pricing.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference composition faithfully. A single bottle of juice sits upright in the sand on a tropical beach. The composition is a medium shot, centered on the bottle, photographed from a straight-on, eye-level perspective. The background is a soft-focus tropical beach scene featuring white sand in the foreground, ocean water, a bright sky with scattered white clouds, and palm trees on the right side of the frame. CRITICAL: The bottle is the sole subject on the sand. Do NOT add any other objects. Specifically, there are NO fruits, NO produce, NO guavas, NO pineapples, NO mangos, and NO splashes anywhere in the scene.
+
+PRODUCT REPLACEMENT:
+*   The single bottle in the center of the frame is an Island Splash juice bottle. The bottle is clear plastic with a slightly tapered neck and straight sides. Paste the label from INPUT 2 (Island Splash Guava Pine), pixel-faithful, onto the bottle. Do not redraw the label. The bottle must have a matte BLACK cap, overriding any cap color from the reference.
+
+LIGHTING & SHADOW MATCH (CRITICAL — prevents "pasted-in" look):
+*   The scene is lit by bright, soft, diffused sunlight coming from the upper left.
+*   The product catches soft highlights on its left side, consistent with the scene's bright, diffused upper-left lighting.
+*   A soft, diffuse shadow grounds the product on the sand, cast to the right and slightly behind the bottle, consistent with the scene's lighting direction and shadow softness.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Guava Pine: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+*   No headline.
+*   No body copy.
+*   The image is purely visual with no text overlays.
+
+LOGO:
+*   Render the logo from INPUT 3 as a small, clean badge, approximately 8% of the total image width. Place it in the bottom-right corner. It must have a transparent background, with no box, banner, or additional text.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Applied as the final pass over the entire image: A polished, commercial, hyper-real aesthetic shot with a high-resolution digital camera and a sharp prime lens (50-85mm) for a clean, shallow depth of field with smooth, creamy bokeh. The lighting is bright and high-key, from a diffused sun source with significant frontal fill light, creating soft-edged shadows. The color grade is dominated by the Island Splash brand palette: dark teal #243C3C for shadows and deep water, warm golden orange #F0A86C and deep coral orange #E4843C for highlights and mid-tones, and warm sand/tan #A89078 for the beach. Highlights have a gentle, controlled rolloff, and shadows are lifted with a subtle dark teal bias. The contrast is a smooth S-curve, with an absence of any film grain or digital noise.

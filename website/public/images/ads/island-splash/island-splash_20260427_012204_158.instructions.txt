@@ -1,0 +1,131 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/all-drinks/approved/508203139216888624.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260427_012204_158.png
+PRODUCTS: Mauby, Peanut Punch, Pine Ginger, Sorrel
+TIMESTAMP: 2026-04-27T01:23:52.983930
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** The main subjects are two bottles of VITA brand cold brew tea, floating diagonally against a bright blue sky. A larger bottle of Tie Guan Yin flavor is on the left, and a smaller bottle of Jasmine flavor is positioned slightly behind and to the right of it. They are presented as crisp, clean, and refreshing.
+
+**PRODUCT COUNT:** 4
+
+**PRODUCT DETAILS:**
+1.  **Large Bottle:** A 500mL uniquely shaped plastic bottle, positioned on the left side of the frame, tilted diagonally from bottom-left to top-right. The top portion is opaque white with a dotted texture, while the bottom is clear, revealing the brown tea inside. The white cap is on.
+2.  **Small Bottle:** A smaller plastic bottle of the same design, positioned in the center, slightly behind the large bottle. It is also tilted diagonally. The top is opaque white, the bottom is clear revealing a lighter, yellow-colored tea. The white cap is on.
+3.  **Carton 1:** A small, rectangular white carton with product branding, located in the bottom right corner, partially obscured by the carton in front of it.
+4.  **Carton 2:** A small, rectangular white carton with product branding, located in the bottom right corner, in front of the other carton.
+
+**COMPOSITION:**
+*   **Top-left:** The cap and upper part of the large bottle, with floating green leaves against a blue sky.
+*   **Top-center:** The main headline text against a bright blue sky.
+*   **Top-right:** A single floating green leaf against the blue sky.
+*   **Middle-left:** The main body and label of the large bottle, set against a stylized cityscape.
+*   **Middle-center:** The smaller bottle, a subheadline, and the intersection of the two bottles.
+*   **Middle-right:** The sky background and the beginning of a green text banner.
+*   **Bottom-left:** The clear base of the large bottle showing the tea, with the cityscape below.
+*   **Bottom-center:** The base of the small bottle and the green text banner.
+*   **Bottom-right:** The two small product cartons and clouds, at the end of the green banner.
+The framing is a medium shot, with a clear visual hierarchy that starts with the large bottle, moves to the large headline text, then to the smaller bottle and supporting text.
+
+**PRODUCE / INGREDIENTS:** Several blurred, green tea leaves are shown floating in the air around the bottles. A small, stylized graphic of a green tea sprig is also visible on the label of the large bottle.
+
+**TEXT:**
+*   **Headline (top center):** 冷泡更回甘! (Cold brew is more refreshing/sweet aftertaste!). Font is a heavy, white, stylized display type with a light drop shadow.
+*   **Subheadline (center):** 無糖零負擔 (Sugar-free, zero burden). Font is a white, stylized display type, thinner than the headline.
+*   **Banner (bottom center):** 維他冷泡無糖茶 (Vita Cold Brew Sugar-Free Tea). Font is a clean, white sans-serif.
+*   **Large Bottle Label:**
+    *   Brand: VITA
+    *   Product: 冷泡 無糖茶 (Cold Brew Sugar-Free Tea)
+    *   Flavor (vertical): 鐵觀音 (Tie Guan Yin) in blue text.
+    *   Flavor Seal (circular): 鐵觀音
+    *   Fine Print: Cold Brew No Sugar, 500mL
+*   **Small Bottle Label:**
+    *   Brand: 維他 (Vita)
+    *   Product: 冷泡 無糖茶 (Cold Brew Sugar-Free Tea)
+    *   Flavor (vertical): 香片 (Jasmine) in green text.
+    *   Flavor Seal (circular): 香片
+*   **Carton Labels:** VITA, 冷泡茶 (Cold Brew Tea)
+
+**DECORATIVE ELEMENTS:**
+*   Three small, white, wavy lines are positioned above the first character of the headline to suggest coldness.
+*   Small, white, transparent bubbles float around the subheadline text.
+*   A green, textured banner with torn edges sits in the lower portion of the image.
+*   Circular seal-like badges denote the flavor on each bottle (鐵觀音 and 香片).
+*   A single yellow teardrop shape is printed on the label of each bottle.
+
+**BACKGROUND:** The background is a composite image. The top two-thirds consist of a bright, light-blue sky with a subtle gradient. The bottom third features a stylized, blue-tinted cityscape on the left and fluffy white clouds on the right.
+
+**LIGHTING:** The lighting is bright and diffuse, mimicking an open, sunny day. The light source appears to be from the top-front, creating clean, soft highlights on the curves of the plastic bottles. Shadows are minimal and soft, mainly used as drop shadows on the text to enhance readability.
+
+**MOOD:**
+*   Refreshing
+*   Light
+*   Clean
+*   Healthy
+*   Modern
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution digital cinema camera and pristine, sharp optics, the image is defined by a digitally-achieved, infinite depth of field, rendering all planes in perfect focus, which is characteristic of a multi-layered composite. The lighting is commercial high-key, employing large, extremely soft and diffuse sources to wrap around the subjects, eliminating all but the softest form shadows and creating broad, controlled specular highlights with a smooth roll-off. The color science is built on a cool, cyan-dominated palette, which is accented by highly saturated, vibrant lime greens and warm ambers. The contrast curve features lifted blacks and bright mid-tones, maintaining an airy, low-contrast feel while ensuring colors pop with high saturation. Post-processing is intensive, resulting in an impeccably clean, noise-free image with precise color separation and a subtle glow effect on the highlights to enhance the hyper-real and polished commercial finish.
+
+**Keywords:** High-Key, Vibrant, Digital Composite, Diffuse Lighting, Cool Palette, Hyper-Real.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+- The headline text "冷泡更回甘!"
+- The subheadline text "無糖零負擔"
+- The banner text "維他冷泡無糖茶"
+- The brand name "VITA" or "維他"
+- The product name "冷泡 無糖茶" or "Cold Brew Sugar-Free Tea" or "冷泡茶"
+- The flavor name "鐵觀音" (Tie Guan Yin)
+- The flavor name "香片" (Jasmine)
+- The fine print "Cold Brew No Sugar, 500mL"
+- The circular seal-like badges with "鐵觀音" or "香片"
+- Any and all Chinese characters
+- Any green tea leaves, floating or otherwise
+- Any stylized green tea sprig graphics
+- The three small, white, wavy lines decorative element
+- The small, white, transparent bubbles decorative element
+- The green, textured banner with torn edges
+- The single yellow teardrop shape printed on labels
+- Any bottle design with an opaque white top and clear bottom
+
+STRICT CONSTRAINTS:
+- The product label is pasted PIXEL-FAITHFUL from the INPUT image — do NOT redraw or recreate the label.
+- Product lighting MUST match the scene's lighting direction and quality — never preserve "original product lighting".
+- Product must cast a natural shadow or contact shadow on the scene surface/other objects — no floating, no hard-edged pasted shadow.
+- Use upgraded product images when available (`upgraded_*.png` — opaque, higher quality).
+- The color palette for the entire ad must be ONLY: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), warm sand/tan (#A89078).
+- No mascots, cartoon characters, or smiley fruits.
+- No hashtags, URLs, www, .com, social handles (@), fake promotions (FREE, % OFF, GIVEAWAY), pricing, or phone numbers. All text must be in English.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference scene faithfully. The main subjects are four product bottles, presented as crisp and clean. A larger bottle floats on the left, tilted diagonally from bottom-left to top-right. A second, smaller bottle floats slightly behind it and to the right, on the same diagonal axis. In the bottom-right corner, two more bottles are placed, one slightly behind the other. The background is a composite: the top two-thirds are a bright sky, and the bottom third is a stylized, clean cityscape. Do NOT add any floating leaves, fruit, splashes, or other decorative elements not mentioned here.
+
+PRODUCT REPLACEMENT:
+- Large floating bottle (left): Replace with a bottle of Island Splash Mauby. The bottle has a matte BLACK cap. Paste the label pixel-faithful from INPUT 2.
+- Small floating bottle (center): Replace with a bottle of Island Splash Peanut Punch. The bottle has a matte BLACK cap. Paste the label pixel-faithful from INPUT 3.
+- Bottle in bottom-right (back): Replace with a bottle of Island Splash Pine Ginger. The bottle has a matte BLACK cap. Paste the label pixel-faithful from INPUT 4.
+- Bottle in bottom-right (front): Replace with a bottle of Island Splash Sorrel. The bottle has a matte BLACK cap. Paste the label pixel-faithful from INPUT 5.
+
+LIGHTING & SHADOW MATCH (CRITICAL — prevents "pasted-in" look):
+- The scene is lit by bright, diffuse daylight, as if from an open, sunny day. The light source is top-front.
+- The products catch clean, soft highlights consistent with the scene's bright, top-front, diffuse daylight.
+- Subtle, soft contact shadows ground the products where they overlap, consistent with the scene's diffuse lighting direction and softness. The two bottles in the bottom corner cast soft, diffuse shadows onto the surface they rest on.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Mauby: use brand voice, keep it plain and honest
+  Peanut Punch: use brand voice, keep it plain and honest
+  Pine Ginger: use brand voice, keep it plain and honest
+  Sorrel: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+- Headline (top center): "Real Caribbean Flavor." Render in a heavy, clean, display sans-serif font in warm golden orange (#F0A86C).
+- Subheadline (middle-center): "An Honest Taste of the Islands." Render in a thinner, clean sans-serif font, smaller than the headline, in warm golden orange (#F0A86C).
+- Banner text (bottom-center): "Island Splash Family Recipes." Render in a clean sans-serif font inside a simple, solid banner colored dark teal (#243C3C). Text color is warm sand/tan (#A89078).
+
+LOGO:
+Render the logo from INPUT 6 as a small, clean badge, roughly 8% of the frame width, in the bottom-left corner. No background box or effects.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Shot with a high-resolution digital cinema camera and pristine, sharp optics, the image is defined by a digitally-achieved, infinite depth of field, rendering all planes in perfect focus. The lighting is commercial high-key, employing large, extremely soft and diffuse sources to wrap around the subjects, eliminating all but the softest form shadows and creating broad, controlled specular highlights with a smooth roll-off. The color science is built on the Island Splash brand palette: a base of dark teal (#243C3C) and warm sand/tan (#A89078), accented by vibrant warm golden orange (#F0A86C) and deep coral orange (#E4843C). Post-processing is intensive, resulting in an impeccably clean, noise-free image with precise color separation and a subtle glow effect on the highlights to enhance the hyper-real and polished commercial finish. This style is applied as the final pass over the entire image for a unified, cohesive finish. Aspect ratio 4:5.

@@ -1,0 +1,87 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/all-drinks/508203139215287284.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260426_200413_204.png
+PRODUCTS: Mango Passion
+TIMESTAMP: 2026-04-26T20:05:35.151411
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** The main focus is a bottle of apple cider and fresh apples set on a wooden surface in an orchard. The bottle is centered, dewy with condensation, and flanked by a whole red apple on the right and sliced red apples on the left. The scene is framed by overhanging apple tree branches with leaves and red apples.
+
+**PRODUCT COUNT:** 1
+
+**PRODUCT DETAILS:**
+*   **Product 1:** A clear glass bottle of cider, positioned vertically in the center of the frame. It takes up approximately 75% of the image's height. The bottle has a sealed, gold-colored metal cap. It is covered in small droplets of condensation.
+
+**COMPOSITION:**
+*   **Top-Left:** An apple tree branch with green leaves and a red apple hangs into the frame. A cloudy blue sky is visible behind it.
+*   **Top-Center:** More apple tree branches and leaves hang down, with the sky and clouds visible between them.
+*   **Top-Right:** A large, out-of-focus red apple and green leaves on a branch dominate this section.
+*   **Mid-Left:** The distant rows of an apple orchard with green grass. The top portion of the cider bottle, including the cap, is present.
+*   **Mid-Center:** The main body of the cider bottle, featuring the brand label.
+*   **Mid-Right:** Apple trees with numerous red apples in the mid-ground. The right side of the cider bottle is visible.
+*   **Bottom-Left:** Two slices of a red apple sit on a dark, wet-looking wooden surface, likely the top of a barrel.
+*   **Bottom-Center:** The base of the cider bottle and the edge of the sliced apples on the wooden surface.
+*   **Bottom-Right:** A whole, wet red apple with a single green leaf attached to its stem, resting on the wooden barrel top.
+
+The framing is a medium shot, tightly focused on the product setup. The visual hierarchy starts with the cider bottle, followed by the fresh apples in the foreground, and finally the orchard in the background.
+
+**PRODUCE / INGREDIENTS:** Red apples are visible. There are whole apples hanging from trees in the foreground and background. In the immediate foreground, there is one whole red apple with a green leaf and one red apple cut into two slices, showing the white flesh and core. Green leaves are attached to the apple trees.
+
+**TEXT:** All text is on the product label.
+*   At the top of the label, in small print: "est. MCMXCI". The font is a thin, clean serif in a light color.
+*   The main brand name: "COUNTY". The font is a heavy, bold, slightly condensed serif in a light color, possibly off-white.
+*   Below the brand name, on a separate banner: "CIDER". The font is a clean, sans-serif in all caps, light-colored.
+*   Below "CIDER," inside a darker circle: "APPLE". The font is a clean, sans-serif in all caps, light-colored.
+
+**DECORATIVE ELEMENTS:**
+The product label is a pentagonal shape, resembling a house outline. The background of the label has a subtle honeycomb or hexagonal pattern. Within the "APPLE" circle on the label is a small illustration of two green apples and one red-and-yellow apple on a branch with leaves. The bottle and the whole apple in the foreground are covered in droplets of condensation. The wooden surface has small puddles of liquid on it.
+
+**BACKGROUND:** The background is a photographic scene of a sunlit apple orchard. It features rows of apple trees with red apples, lush green grass on the ground, and a blue sky with white and grey clouds.
+
+**LIGHTING:** The lighting is bright and directional, appearing to come from an upper-left angle, simulating sunlight. It creates strong highlights on the left side of the bottle, the apples, and the tops of the leaves. The quality is a mix of soft and hard; the overall illumination is soft and diffused, but the reflections on the condensation droplets are sharp and specular. Shadows are visible on the right side of the bottle and beneath the apples on the wooden surface, but they are not excessively dark.
+
+**MOOD:** Natural, Fresh, Sunny, Rustic, Crisp.
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution full-frame or medium format digital sensor and a sharp prime lens to achieve pristine clarity and a shallow depth of field that isolates the foreground. The lighting is meticulously sculpted to emulate a warm, late-afternoon sun, using a strong, high-angle key light to create bright, hard specular highlights, complemented by soft, broad fill light to maintain detail in the shadows. The color science is defined by a highly saturated and vibrant palette, with a distinct warm temperature overall. Golden-yellow highlights contrast with lush, rich greens and deep reds, while shadows carry a subtle cool-green bias. Post-processing employs a pronounced S-curve for high contrast, significant clarity and texture enhancement for a hyper-realistic effect, and selective color grading to boost the primary hues, resulting in a completely clean, noise-free, and polished final image.
+
+**Keywords:** Vibrant, High-Contrast, Hyper-Realistic, Golden, Saturated, Sculpted.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The wordmark "COUNTY"
+*   The text string "CIDER"
+*   The text string "APPLE"
+*   The text string "est. MCMXCI"
+*   The pentagonal, house-shaped product label
+*   Any honeycomb or hexagonal patterns on labels or backgrounds
+*   The illustration of apples on the product label
+*   Any whole or sliced red apples in the foreground
+
+STRICT CONSTRAINTS:
+*   The provided Island Splash label must be preserved pixel-faithful; do not redraw, modify, or add text to it.
+*   No mascots, cartoon characters, or personified objects.
+*   The background and overall color grade must exclusively use the Island Splash brand palette: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), warm sand/tan (#A89078).
+*   No forbidden text elements: no URLs, no '.com', no social media handles with '@', no hashtags, no promotions like 'FREE' or '% OFF', no pricing symbols like '$'.
+*   Render at a 4:5 aspect ratio.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference scene's subject and composition faithfully. The subject is a single, dewy glass bottle standing on a dark wooden surface in a sunlit orchard. The composition is a medium shot, with the bottle centered vertically. The top of the frame is filled with overhanging tree branches and leaves against a sky. The background is a photographic, out-of-focus orchard. The bottle MUST be covered in small, realistic droplets of condensation. DO NOT add any props or elements not present in the reference. Specifically, there must be NO whole or sliced apples placed in the foreground on the wooden surface. The scene is just the bottle on the wood, within the orchard setting.
+
+PRODUCT REPLACEMENT:
+*   The central bottle: Replace the reference cider bottle with a clear glass bottle for Island Splash Mango Passion. The bottle must have a matte BLACK cap. Paste the label from INPUT 2 onto the bottle, pixel-faithful, without redrawing.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Mango Passion: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+*   No headline.
+*   No body copy.
+*   All text is contained entirely on the product label, which is applied via the PRODUCT REPLACEMENT step. Do not render any additional text in the image.
+
+LOGO:
+*   Render the logo from INPUT 3 as a small, clean badge in the bottom-right corner. It should be approximately 8% of the total image width. Do not place it in a box or banner.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Shot with a high-resolution full-frame sensor and a sharp prime lens to achieve pristine clarity and a shallow depth of field that isolates the bottle. The lighting is meticulously sculpted to emulate a warm, late-afternoon sun, using a strong, high-angle key light to create bright, hard specular highlights on the condensation, complemented by soft, broad fill light to maintain detail in the shadows. The color science is defined by the Island Splash brand palette: the scene is color-graded with warm golden orange (#F0A86C) highlights, deep coral orange (#E4843C) and warm sand/tan (#A89078) midtones, and shadows that carry a dark teal (#243C3C) bias. Post-processing employs a pronounced S-curve for high contrast, significant clarity and texture enhancement for a hyper-realistic effect, resulting in a completely clean, noise-free, and polished final image. This style is applied as the final pass over the entire image.

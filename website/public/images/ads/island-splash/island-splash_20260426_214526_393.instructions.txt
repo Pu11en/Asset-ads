@@ -1,0 +1,122 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/all-drinks/508203139215287285.png
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260426_214526_393.png
+PRODUCTS: Peanut Punch
+TIMESTAMP: 2026-04-26T21:47:02.413867
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** The main subject is a bottle of orange fruit beverage and a pile of fresh oranges placed on a wooden surface. The bottle is positioned centrally, slightly to the right, standing upright among the oranges.
+
+**PRODUCT COUNT:** 1
+
+**PRODUCT DETAILS:**
+*   **Product 1:**
+    *   **Container type:** A clear plastic bottle with a narrow neck and wider body.
+    *   **Position in frame:** It is located in the center of the image, slightly to the right, sitting on a wooden table among a pile of oranges.
+    *   **Angle:** The bottle is viewed from straight-on, at eye level.
+    *   **Size relative to image:** It occupies approximately the central half of the image's height.
+    *   **Cap/lid state:** A white, ribbed, plastic screw-cap is on the bottle and appears to be closed.
+
+**COMPOSITION:**
+*   **Top-left:** A heavily blurred background of an orange grove, including one large out-of-focus orange.
+*   **Top-center:** The white cap and neck of the juice bottle, with the blurred orchard and bright sky behind it.
+*   **Top-right:** A large green decorative badge with text dominates this area, set against the blurred background of orange trees.
+*   **Center-left:** A pile of whole, fresh oranges.
+*   **Center-center:** The main label of the juice bottle, surrounded by oranges.
+*   **Center-right:** The right side of the juice bottle and several oranges.
+*   **Bottom-left:** Oranges on a wooden tabletop, with an orange decorative wave shape at the very bottom.
+*   **Bottom-center:** The base of the juice bottle and oranges on the wooden table.
+*   **Bottom-right:** Oranges on the table, the brand logo, and a decorative orange wave at the bottom edge.
+*   **Framing:** The shot is a medium close-up, tightly framed on the product and ingredients.
+*   **Visual hierarchy:** The eye is drawn first to the green text badge and the product bottle, then to the pile of fresh oranges, and finally to the logo in the bottom right.
+
+**PRODUCE / INGREDIENTS:**
+There is a pile of approximately ten whole, fresh oranges with bright orange, textured peels. They are arranged on a wooden surface around the base of the bottle.
+
+**TEXT:**
+*   **Badge (Upper Right):**
+    *   "YOUR DAILY DOSE OF": All-caps, heavy, white sans-serif font.
+    *   "VITAMIN C": All-caps, heavy, white sans-serif font on a golden ribbon.
+*   **Bottle Label:**
+    *   "Premium PRODUCT": "Premium" is in a white script font, "PRODUCT" is in a white sans-serif font, both on a golden banner.
+    *   "FRUITS UP": Large, stylized, all-caps display font in green with a white outline.
+    *   "ORANGE": All-caps, black sans-serif font.
+    *   "Fruit Beverage": Sentence case, black sans-serif font.
+    *   "READY TO SERVE FRUIT BEVERAGE": All-caps, white sans-serif font on a green banner at the bottom of the label.
+*   **Logo (Bottom Right):**
+    *   "FRUITS UP": Stylized, all-caps display font in white with a green outline.
+
+**DECORATIVE ELEMENTS:**
+*   A large, green, cloud-shaped badge with a white outline is in the upper right. It features stylized green leaves emerging from its top and sides.
+*   A golden-orange ribbon is integrated into the bottom of the green badge.
+*   A logo in the bottom right corner features three stylized teardrop/leaf shapes (orange, magenta, and green-teal) next to the brand name.
+*   A large, curved, semi-transparent orange shape forms a border along the bottom of the image.
+*   On the bottle label, there is a small green square symbol containing a green dot.
+
+**BACKGROUND:**
+The background is a photographic scene of a sunlit orange orchard. The trees are green with oranges on them, and a bright sky is visible. The entire background is soft and out of focus. The foreground surface is a weathered wooden tabletop with visible grain and cracks.
+
+**LIGHTING:**
+The scene is lit with bright, soft light, simulating outdoor sunlight. The light source appears to be coming from the top and slightly to the right, creating soft highlights on the top-right surfaces of the oranges and the bottle. Shadows are soft and diffuse, visible on the left sides and underneath the oranges, grounding them on the wooden surface.
+
+**MOOD:**
+*   Natural
+*   Fresh
+*   Vibrant
+*   Healthy
+*   Sunny
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution full-frame digital camera and a sharp prime lens at a very wide aperture to create an extremely shallow depth of field. The lighting is bright and high-key, mimicking a warm, overhead sun with a large, soft source that creates soft-edged shadows, supplemented by ample fill light to keep the scene bright and minimize deep blacks. The color science is defined by a hyper-saturated, warm-dominant palette, pushing vibrant oranges and yellows against lush, slightly cool-toned greens. In post-production, the image is graded with a strong, warm cast, particularly in the bright, slightly bloomed highlights. A commercial S-curve is applied to boost contrast in the mid-tones while keeping the shadows lifted and clean, resulting in a pristine, noise-free image with a glossy, hyper-realistic finish and pronounced, soft-focus bokeh in the background.
+
+**Keywords:** Vibrant, High-Key, Saturated, Warm, Commercial, Shallow Depth of Field.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The text "YOUR DAILY DOSE OF"
+*   The text "VITAMIN C"
+*   The text "Premium PRODUCT"
+*   The wordmark "FRUITS UP"
+*   The text "ORANGE"
+*   The text "Fruit Beverage"
+*   The text "READY TO SERVE FRUIT BEVERAGE"
+*   The green, cloud-shaped badge with leaf decorations
+*   The golden-orange ribbon element
+*   The logo featuring three stylized teardrop/leaf shapes (orange, magenta, green-teal)
+*   The large, curved, semi-transparent orange wave shape at the bottom of the image
+*   The small green square symbol containing a green dot from the bottle label
+*   Any text, logos, or branding associated with the "Fruits Up" brand
+
+STRICT CONSTRAINTS:
+*   Final image aspect ratio must be 4:5.
+*   The background scene and all color grading must use ONLY the Island Splash brand palette: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), warm sand/tan (#A89078).
+*   The product bottle label must be pasted pixel-faithful from its provided INPUT image. Do NOT redraw, alter, or add text to the label.
+*   The final ad must not contain any mascots, cartoon characters, or personified objects.
+*   ABSOLUTELY NO hashtags, # symbols, URLs (www, .com), social media handles (@), fake promotions (FREE, % OFF), prices ($), or phone numbers. All text must be in English.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference scene faithfully: a single beverage bottle standing upright on a weathered wooden tabletop. The bottle is positioned centrally, slightly to the right. The background is a photographic, soft-focus, sunlit tropical grove, rendered with an extremely shallow depth of field. The composition must reserve empty space in the upper right for a text block and in the bottom right for a small logo, mirroring the reference's layout. DO NOT add any whole oranges, orange slices, peanuts, or any other produce, ingredients, or props to the scene. The bottle stands alone on the wooden surface.
+
+PRODUCT REPLACEMENT:
+*   The single bottle in the center of the frame: This is now a bottle of Island Splash Peanut Punch.
+*   Container: A clear plastic beverage bottle. It must have a matte BLACK screw-cap. Do not use the white cap from the reference.
+*   Label: Paste the label from INPUT 2 (Island Splash Peanut Punch) onto the bottle, pixel-faithful, without redrawing or altering it.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Peanut Punch: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+*   In the upper-right corner of the image, where the reference had a decorative badge, create a text block with a solid color background from the brand palette.
+*   Headline: "Real Peanut. Real Energy."
+*   Font: Render the text in a heavy, bold, all-caps sans-serif font, similar to the reference headline.
+*   Color: Render the text in warm sand/tan (#A89078) on a dark teal (#243C3C) background block.
+
+LOGO:
+*   Render the logo from the LAST INPUT image.
+*   Place it once in the bottom-right corner.
+*   The logo should be small, approximately 8% of the total image width.
+*   Do not place the logo in a box, on a banner, or with any additional text.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Shot with a high-resolution full-frame digital camera and a sharp prime lens at a very wide aperture to create an extremely shallow depth of field. The lighting is bright and high-key, mimicking a warm, overhead sun with a large, soft source that creates soft-edged shadows, supplemented by ample fill light to keep the scene bright and minimize deep blacks. The color science is defined by the brand palette: deep dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), and warm sand/tan (#A89078). In post-production, the image is graded with a strong, warm cast, particularly in the bright, slightly bloomed highlights. A commercial S-curve is applied to boost contrast in the mid-tones while keeping the shadows lifted and clean, resulting in a pristine, noise-free image with a glossy, hyper-realistic finish and pronounced, soft-focus bokeh in the background. This style is applied as the final pass over the entire image.

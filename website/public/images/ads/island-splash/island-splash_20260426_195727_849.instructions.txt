@@ -1,0 +1,103 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/all-drinks/508203139215279492.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260426_195727_849.png
+PRODUCTS: Sorrel, Guava Pine, Lime
+TIMESTAMP: 2026-04-26T19:58:59.302923
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** Three cosmetic products from a "Tea Tree" line are arranged on a textured rock. Two products, a tube and a bottle, stand upright in the center. A third, smaller tube lies horizontally in front of them. The setting is natural, by a body of water.
+
+**PRODUCT COUNT:** 3
+
+**PRODUCT DETAILS:**
+*   **Product 1:** A squeeze tube, standing upright on the left. It is angled slightly toward the right. It is the tallest object in the main group. The cap is on and closed.
+*   **Product 2:** A clear, cylindrical spray/pump bottle, standing upright on the right. It is slightly shorter than the tube. The cap is on and closed.
+*   **Product 3:** A smaller squeeze tube with a pointed applicator tip, lying horizontally in the foreground across the center. The cap is on and closed.
+
+**COMPOSITION:**
+*   **Top-Left:** Out-of-focus green leaves against a bright sky.
+*   **Top-Center:** A bright, hazy sky with the very top of out-of-focus leaves.
+*   **Top-Right:** Out-of-focus green leaves against a light blue sky.
+*   **Mid-Left:** The upper half of the large standing tube.
+*   **Mid-Center:** The cap of the large tube and the cap of the bottle, with a water splash emanating from the bottle's top. The horizon line of the water is visible.
+*   **Mid-Right:** The upper half of the bottle and some out-of-focus leaves.
+*   **Bottom-Left:** A small, green leafy plant sits on a textured brown rock. The bottom of the large tube is also visible.
+*   **Bottom-Center:** The small tube lies on the rock. The bases of the two standing products rest here as well.
+*   **Bottom-Right:** The textured rock, a sprig of spiky green leaves, and a watermark.
+*   **Framing:** Medium shot, focused on the products in an environmental setting.
+*   **Visual Hierarchy:** The eye is drawn first to the two standing products in the center, then to the smaller tube in the foreground, and finally to the natural elements in the background and foreground.
+
+**PRODUCE / INGREDIENTS:** Green leaves and branches are visible. There are out-of-focus branches framing the top of the image, a small leafy plant in the bottom left, and a sprig of pointed leaves on the bottom right.
+
+**TEXT:**
+*   **On large tube and bottle:**
+    *   "Tea Tree" (Large, white, bold sans-serif font)
+    *   "TEA TREE REPAIRING FACIAL CLEANSER" (on tube) / "TEA TREE REPAIRING FACIAL TONER" (on bottle) (Smaller, white, clean sans-serif)
+    *   "茶树清透修护洁面膏" (on tube) / "茶树清透修护爽肤水" (on bottle) (Chinese characters, white, clean sans-serif style)
+    *   "净含量:100g" (on tube) / "净含量:100ml" (on bottle) (Small, white text)
+    *   "MY IC OKA" (Brand name on silver band, grey sans-serif, partially obscured)
+    *   "美 天" (Chinese characters on silver band, grey)
+*   **On small tube:**
+    *   "Tea Tree" (Visible, in the same style as the other products)
+*   **Watermark (Bottom right):**
+    *   "@" symbol, "studiosix" (White, sans-serif)
+    *   "weibo.com/studiosix" (White, sans-serif)
+
+**DECORATIVE ELEMENTS:** Clear water splashes are present. A distinct splash rises from the top of the bottle's pump. Smaller splashes and droplets are around the bases of the standing products on the rock.
+
+**BACKGROUND:** The background is a photographic scene of a calm body of water meeting a bright, light-blue sky at a low horizon line. The scene is framed at the top by out-of-focus, blurred green foliage.
+
+**LIGHTING:** The lighting is bright, diffuse, and appears to come from the front and above, simulating natural daylight. Soft highlights appear on the plastic and silver parts of the containers and on the water splashes. Shadows are soft and subtle, cast beneath the products on the rock.
+
+**MOOD:** Natural, Refreshing, Clean, Calm, Bright.
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution medium format digital sensor and a sharp macro prime lens to achieve a critically sharp focus with a shallow depth of field that renders the background elements into a soft, creamy bokeh. The lighting is meticulously crafted using a large, heavily diffused key light, simulating bright, overcast daylight to create a high-key exposure with soft, wrapping shadows and broad, controlled highlights. The color science is defined by a cool overall temperature, with a distinct cyan cast in the whites and mid-tones, creating a fresh, aquatic feel. The color palette is dominated by a highly saturated, vibrant lime and forest green, which is selectively boosted against the cool blue background and more muted, earthy browns. Post-processing involves a gentle S-curve for clean contrast, with lifted shadows that are tinted slightly teal, and significant HSL secondary corrections to isolate and perfect the greens and cyans, resulting in an impeccably clean, polished, and hyperreal finish with no visible noise or grain.
+
+**Keywords:** High-Key, Polished, Vibrant Green, Cool Cyan, Soft Light, Shallow Focus
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The text "Tea Tree"
+*   The text "TEA TREE REPAIRING FACIAL CLEANSER"
+*   The text "TEA TREE REPAIRING FACIAL TONER"
+*   The Chinese characters "茶树清透修护洁面膏"
+*   The Chinese characters "茶树清透修护爽肤水"
+*   The text "净含量:100g"
+*   The text "净含量:100ml"
+*   The brand name "MY IC OKA"
+*   The Chinese characters "美 天"
+*   The watermark text "@"
+*   The watermark text "studiosix"
+*   The watermark URL "weibo.com/studiosix"
+*   Any text in a language other than English.
+
+STRICT CONSTRAINTS:
+*   The background and color grade must use ONLY the Island Splash brand palette: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), warm sand/tan (#A89078).
+*   Bottle labels must come EXACTLY from the provided product images. Do NOT redraw, recolor, modify, or invent labels.
+*   No mascots, cartoon characters, or personified objects. Props must be tropical/Caribbean themed.
+*   Do not render any headlines, body copy, hashtags, # symbols, URLs, www, .com, social handles (@), promotions (FREE, % OFF), or prices ($). The ad is purely visual.
+*   The Island Splash logo appears once only: small, in a corner, with no background box or added effects.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference ad's subject and composition faithfully. The subject is three beverage bottles arranged on a textured, wet rock surface next to a calm body of water. Two bottles stand upright in the center-left and center-right positions. A third bottle lies horizontally on the rock in the foreground. The composition is a medium shot focusing on the products. The background is a calm body of water with a low horizon line against a bright sky. The top of the frame features soft-focus, out-of-focus tropical leaves and foliage. A small, leafy tropical plant sits on the rock in the bottom-left. Keep the clear water splashes seen in the reference, with a distinct splash rising from the top of the center-right bottle and smaller droplets around the bases of the standing bottles. Do NOT include any produce, fruit, or ingredients like tea tree leaves; the foliage is purely for setting.
+
+PRODUCT REPLACEMENT:
+*   Upright bottle, center-left position: replace with an Island Splash Sorrel bottle. The bottle has a matte BLACK cap. For the label, paste INPUT 2 (Island Splash Sorrel) pixel-faithful, do not redraw.
+*   Upright bottle, center-right position: replace with an Island Splash Guava Pine bottle. The bottle has a matte BLACK cap. For the label, paste INPUT 3 (Island Splash Guava Pine) pixel-faithful, do not redraw.
+*   Horizontal bottle, foreground position: replace with an Island Splash Lime bottle. The bottle has a matte BLACK cap. For the label, paste INPUT 4 (Island Splash Lime) pixel-faithful, do not redraw.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Sorrel: use brand voice, keep it plain and honest
+  Guava Pine: use brand voice, keep it plain and honest
+  Lime: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+*   No headline or body copy. The ad is purely visual, focusing on the products and the environment. Do not render any text on the main image area.
+
+LOGO:
+*   Render the logo from INPUT 5 as a small, clean badge in the bottom-right corner. It should be approximately 8% of the total image width. Do not place it in a box, banner, or lockup.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Shot with a high-resolution medium format digital sensor and a sharp macro prime lens to achieve a critically sharp focus with a shallow depth of field that renders the background elements into a soft, creamy bokeh. The lighting is meticulously crafted using a large, heavily diffused key light, simulating bright, overcast daylight to create a high-key exposure with soft, wrapping shadows and broad, controlled highlights. The color grade shifts the palette to the Island Splash brand: warm and inviting. The scene is dominated by dark teal (#243C3C) in the deep water and shadows, warm golden orange (#F0A86C) and deep coral orange (#E4843C) in the highlights and reflected light, and warm sand/tan (#A89078) for the rock surfaces. Post-processing involves a gentle S-curve for clean contrast, with lifted shadows that are tinted with dark teal, and significant HSL secondary corrections to isolate and perfect the oranges and teals, resulting in an impeccably clean, polished, and hyperreal finish with no visible noise or grain. This style is applied as the final pass over the entire image.

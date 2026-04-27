@@ -1,0 +1,101 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/hermes-11/references/all-drinks/508203139215287287.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260426_214722_421.png
+PRODUCTS: Pine Ginger, Sorrel
+TIMESTAMP: 2026-04-26T21:49:01.516321
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** Two cartons of fruit juice are the central subject. They are positioned upright on a wooden surface, with the right carton slightly forward and larger in the frame than the left carton. They are presented as if sitting in an orchard, with fresh tree branches and leaves draping over them.
+
+**PRODUCT COUNT:** 2
+
+**PRODUCT DETAILS:**
+*   **Product 1 (Left):** A tall, rectangular paperboard juice carton is positioned on the left side of the frame, slightly behind the other carton. It is shown at a three-quarter angle, revealing its front and right side panels. It appears smaller due to perspective. A yellow, round, screw-on cap is securely on top.
+*   **Product 2 (Right):** A tall, rectangular paperboard juice carton of the same type is positioned on the right side of the frame, slightly in front of the left carton. It is also shown at a three-quarter angle, revealing its front and left side panels. It is the larger and more prominent of the two. A yellow, round, screw-on cap is securely on top.
+
+**COMPOSITION:**
+*   **Top-left:** Clear blue sky and a few out-of-focus green leaves.
+*   **Top-center:** The top of the right juice carton, its cap, and a tree branch with green leaves resting on it, set against a blue sky.
+*   **Top-right:** A branch with vibrant green leaves against a blue sky.
+*   **Mid-left:** The upper half of the left juice carton, with a tree branch crossing over it. The background is a blurred orchard.
+*   **Mid-center:** The main body of the right juice carton, featuring its branding and fruit illustration.
+*   **Mid-right:** The edge of the right carton and the blurred green background of the orchard.
+*   **Bottom-left:** The lower portion of the left juice carton, resting on a wooden surface, showing an illustration of cherries.
+*   **Bottom-center:** The base of the right juice carton on the wooden surface, showing an illustration of a peach.
+*   **Bottom-right:** The light-colored wooden surface in the foreground, with the blurred green grass and trees of the orchard in the background.
+*   **Framing:** The shot is a medium close-up, focusing tightly on the products within their environment.
+*   **Visual Hierarchy:** The eye is led first to the larger, foreground carton on the right, then to the smaller carton on the left, and finally to the background orchard scene.
+
+**PRODUCE / INGREDIENTS:**
+*   An illustration of four glossy, red cherries on a branch with leaves is on the front of the left carton.
+*   An illustration of a large, orange-and-yellow peach on a branch with green leaves is on the front of the right carton.
+*   An illustration of a large green apple is visible behind the text on both cartons.
+*   Physical, real green leaves on tree branches are arranged in the foreground, appearing to grow around and over the cartons.
+
+**TEXT:**
+*   **Brand Name (on both cartons):** "Сады Придонья" in a white, stylized serif font, set within a red, shield-like shape.
+*   **Tagline (on both cartons):** Below the brand name, "КАЧЕСТВО ИЗ ПЕРВЫХ РУК" in a smaller, all-caps, white sans-serif font.
+*   **Left Carton Flavor:** "ЯБЛОКО ВИШНЯ" in a large, bold, green sans-serif font. Below this, "apple-cherry nectar" in a smaller, white, lowercase sans-serif font.
+*   **Right Carton Flavor:** "ЯБЛОКО ПЕРСИК" in a large, bold, green sans-serif font. Below this, "с мякотью" in a smaller green sans-serif font, and "apple-peach juice" in a smaller, white, lowercase sans-serif font.
+*   **Volume (on both cartons):** "1л" in a stylized, green font near the bottom right of the front panel.
+*   **Side Panels:** Illegible fine print is visible on the side panels of both cartons.
+
+**DECORATIVE ELEMENTS:**
+The brand name "Сады Придонья" is contained within a red, curved, shield-like shape. Above the text within this shape is a small, yellow icon of what appears to be a tree or plant with three branches inside a small circle.
+
+**BACKGROUND:** The scene is a photographic depiction of an outdoor setting. In the immediate foreground is a light-colored wooden surface or table. The background is a sunlit orchard with green trees and grass, all soft-focused. The upper portion of the background is a bright, clear blue sky with a few faint wisps of white clouds.
+
+**LIGHTING:** The lighting is bright, natural, and diffuse, characteristic of a clear, sunny day. The light source appears to be from above and slightly to the right, creating soft highlights on the cartons, leaves, and fruit illustrations. Shadows are soft and minimal, cast by the cartons onto the wooden surface.
+
+**MOOD:** Natural, Fresh, Sunny, Wholesome, Vibrant.
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution full-frame digital camera and a sharp macro or short telephoto prime lens to achieve pristine clarity and controlled, shallow depth of field. The lighting is high-key and highly diffused, emulating bright, idealized daylight with a large, soft key source that creates soft, open shadows and broad, gentle highlights with a smooth roll-off. The color science is defined by a highly saturated, warm-leaning palette, dominated by lush, vibrant greens and rich, deep reds, all set against a clean, light cyan sky. The post-processing is meticulous, featuring a clean, noise-free digital look, a gentle S-curve for contrast that keeps the mid-tones bright, and selective color enhancement to create a hyper-real, polished aesthetic. A subtle, soft bloom is applied to the highlights, enhancing the bright, fresh atmosphere without sacrificing sharpness on the focal plane.
+
+**Keywords:** High-Key, Saturated, Clean, Diffused, Commercial, Vibrant.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The brand name "Сады Придонья"
+*   The tagline "КАЧЕСТВО ИЗ ПЕРВЫХ РУК"
+*   The flavor text "ЯБЛОКО ВИШНЯ"
+*   The flavor text "apple-cherry nectar"
+*   The flavor text "ЯБЛОКО ПЕРСИК"
+*   The flavor text "с мякотью"
+*   The flavor text "apple-peach juice"
+*   The volume text "1л"
+*   The red, shield-like shape containing the brand name.
+*   The small yellow icon of a tree or plant inside a circle.
+*   Any illustrations of cherries, peaches, or apples on the product containers.
+*   Any Russian or Cyrillic text.
+
+STRICT CONSTRAINTS:
+*   Aspect ratio: 4:5.
+*   Final color palette must be ONLY: dark teal #243C3C, warm golden orange #F0A86C, deep coral orange #E4843C, warm sand/tan #A89078.
+*   Product labels from INPUT 2 and INPUT 3 must be preserved pixel-faithful; do not redraw or alter them.
+*   No mascots, cartoon characters, or personified objects.
+*   No hashtags, URLs, social media handles, promotions, discounts, or pricing. All text is English.
+*   Do not render any text, logos, brand marks, or decorative typography from the reference image.
+*   The only logo allowed is the Island Splash logo from the final input image, placed once, small, in a bottom corner.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the scene of two bottles standing upright on a light-colored wooden surface, outdoors in an orchard setting. The right bottle is slightly forward and larger in the frame than the left bottle. Keep the fresh tree branches and green leaves from the reference, draping over and around the bottles. The background is a soft-focus, sunlit orchard with a clear sky above. The shot is a medium close-up, focusing tightly on the products. DO NOT add any splashes, juice droplets, or additional produce not present in the reference scene.
+
+PRODUCT REPLACEMENT:
+*   Left carton (smaller, slightly behind): Replace with a clear glass Island Splash bottle. Paste the label from INPUT 2 (Island Splash Pine Ginger) pixel-faithful onto the bottle. The bottle must have a matte BLACK cap.
+*   Right carton (larger, foreground): Replace with a clear glass Island Splash bottle. Paste the label from INPUT 3 (Island Splash Sorrel) pixel-faithful onto the bottle. The bottle must have a matte BLACK cap.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Pine Ginger: use brand voice, keep it plain and honest
+  Sorrel: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+*   In the top-center zone where the reference brand name was, render the headline "Real Fruit. Real Flavor." in a clean, simple, medium-weight serif font. Color: dark teal #243C3C.
+*   Keep text minimal, matching the reference text density. Do not add any other body copy or taglines.
+
+LOGO:
+Render the logo from INPUT 4 as a small badge, approximately 8% of the frame width. Place it in the bottom-right corner. Render with a transparent background, no box or banner.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Applied as the final pass over the entire image: The scene is shot with a high-resolution full-frame digital camera and a sharp macro or short telephoto prime lens to achieve pristine clarity and controlled, shallow depth of field. The lighting is high-key and highly diffused, emulating bright, idealized daylight with a large, soft key source that creates soft, open shadows and broad, gentle highlights with a smooth roll-off. The color science is defined by a color grade using the Island Splash palette of dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), and warm sand/tan (#A89078), shifting the scene's greens, sky, and wood tones towards this branded palette. The post-processing is meticulous, featuring a clean, noise-free digital look, a gentle S-curve for contrast that keeps the mid-tones bright, and selective color enhancement to create a polished aesthetic. A subtle, soft bloom is applied to the highlights, enhancing the bright atmosphere without sacrificing sharpness on the focal plane.
