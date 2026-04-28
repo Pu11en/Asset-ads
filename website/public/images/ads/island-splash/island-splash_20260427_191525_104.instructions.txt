@@ -1,0 +1,140 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/asset-ads/brand_assets/island-splash/references/drinks/approved/drinks_ref_17.png
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260427_191525_104.png
+PRODUCTS: Mauby
+TIMESTAMP: 2026-04-27T19:16:50.659214
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** The main subject is a can of Sanpellegrino Momenti Clementine & Peach sparkling drink. The can is positioned vertically in the center of the frame and is surrounded by floating, fresh-looking clementines and peaches.
+
+**PRODUCT COUNT:** 1
+
+**PRODUCT DETAILS:**
+*   **Container Type:** A slim aluminum beverage can.
+*   **Position:** Located in the vertical center of the image, slightly off-set to the right of the absolute center.
+*   **Angle:** The can is facing forward, angled slightly to its right, so the label is clearly legible.
+*   **Size:** It occupies approximately 70% of the image's height.
+*   **Cap/lid state:** The top of the can is visible and it is sealed/closed.
+
+**COMPOSITION:**
+*   **Top-left:** The "DAL" portion of the brand logo, a light blue-white background, and several orange circular shapes.
+*   **Top-center:** The Sanpellegrino brand logo with its red star. The very top of the product can.
+*   **Top-right:** The end of the "ITALIAN SPARKLING DRINKS" tagline, a large peach-colored circle, and a slice of peach.
+*   **Mid-left:** Two segments of a clementine and the left side of the can.
+*   **Mid-center:** The main label of the Sanpellegrino Momenti can is the focal point.
+*   **Mid-right:** A whole peach, a whole clementine with a green leaf, and several pink and orange circles.
+*   **Bottom-left:** A halved peach with its pit visible and the beginning of the headline text.
+*   **Bottom-center:** The base of the can and the main headline text.
+*   **Bottom-right:** The end of the headline text against a blurry background with circular shapes.
+*   **Framing:** This is a medium shot, tightly framed around the product and its ingredients.
+*   **Visual Hierarchy:** The eye is drawn first to the can in the center, then down to the large text at the bottom, and then to the surrounding fruit.
+
+**PRODUCE / INGREDIENTS:**
+*   Clementine: Two segments are on the left, and one whole clementine with a single green leaf is on the right.
+*   Peach: One half with the pit exposed is on the bottom left, one slice is at the top right, and one whole peach is on the mid-right.
+
+**TEXT:**
+*   **Top Banner:**
+    *   "DAL 1932" - A clean, white, sans-serif font inside the red star logo.
+    *   "SANPELLEGRINO" - A custom, dark blue serif font with thick and thin strokes.
+    *   "ITALIAN SPARKLING DRINKS" - A smaller, dark blue, all-caps sans-serif font.
+*   **On the Can Label:**
+    *   "DAL 1932" - A dark, sans-serif font.
+    *   "SANPELLEGRINO" - The brand's custom serif font in a dark color.
+    *   "ITALIAN SPA...ING DRINKS" - A dark, all-caps sans-serif font (partially obscured).
+    *   "Momenti" - A dark red, flowing script font.
+    *   "CLEMENTINE & PEACH" - A brown, all-caps sans-serif font.
+    *   "SPARKLING DRINK WITH 4% CLEMENTINE AND 4% PEACH JUICES FROM CONCENTRATE WITH OTHER NATURAL FLAVORS" - Small, brown, all-caps sans-serif font.
+    *   "11.15FL OZ (330mL)" - Small, brown, all-caps sans-serif font.
+    *   "35 CALORIES PER CAN" - White sans-serif text inside a small grey circle. "35" is large and bold.
+*   **Bottom Headline:**
+    *   "Take the time for taste" - "Take the time" is a dark blue, elegant script. "for taste" is a dark blue, bold sans-serif.
+    *   "WITH FLAVORS" - Heavy, bold, dark blue, all-caps sans-serif.
+    *   "THAT FIT YOUR STYLE." - Heavy, bold, dark blue, all-caps sans-serif.
+
+**DECORATIVE ELEMENTS:**
+*   A red, five-pointed star logo appears at the top of the ad and on the can's label.
+*   Abstract, out-of-focus circular shapes in shades of peach, orange, and pink are scattered throughout the image, both in the background and foreground.
+*   The body of the can has a subtle, wavy, pink-and-white line pattern.
+*   A small, solid grey circular badge on the can highlights the calorie count.
+
+**BACKGROUND:**
+The background is a soft, out-of-focus gradient that transitions from a very light, almost white, cool blue at the top to a slightly deeper, muted blue tone at the bottom.
+
+**LIGHTING:**
+The scene is lit with bright, soft, diffused light, seemingly from the front and slightly elevated. Highlights are visible on the metallic rim of the can and on the wet surfaces of the fruit. Shadows are minimal and very soft, serving to create dimension rather than contrast.
+
+**MOOD:**
+*   Refreshing
+*   Light
+*   Vibrant
+*   Chic
+*   Natural
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution digital cinema camera and sharp macro prime lenses, creating a pristine and artifact-free image. The depth of field is controlled and moderately deep, rendering the central subject with perfect clarity while allowing background elements to fall into a soft, pleasing focus with clean, circular bokeh. The lighting is high-key and studio-based, utilizing large, heavily diffused sources to create an almost shadowless environment with extremely soft, wraparound light that eliminates all harshness. The color science is defined by a bright, airy palette of pastels, primarily soft pinks and oranges, set against a clean, near-white background. Saturation is selectively boosted in the warm tones to create vibrant but not overpowering color, while the overall temperature is balanced to feel luminous and fresh. Post-processing involves a significant digital composite, with a low-contrast curve, a lifted black point creating milky shadows, and a gentle highlight roll-off, resulting in a compressed dynamic range that enhances the bright, clean, and ethereal quality of the final image.
+
+**Keywords:** High-Key, Pastel, Diffused-Lighting, Clean, Low-Contrast, Commercial.
+
+=== FINAL IMAGE-GEN PROMPT ===
+PRODUCE/INGREDIENT STRIPPER (CRITICAL — strip ALL produce and ingredient elements from the reference):
+REMOVE: Two segments of a clementine
+REMOVE: One whole clementine with a single green leaf
+REMOVE: One half peach with the pit exposed
+REMOVE: One slice of peach
+REMOVE: One whole peach
+
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+- The wordmark "SANPELLEGRINO" (custom dark blue serif)
+- The tagline "ITALIAN SPARKLING DRINKS" (dark blue all-caps sans-serif)
+- The date string "DAL 1932"
+- The script font word "Momenti"
+- The product name "CLEMENTINE & PEACH"
+- The descriptive text "SPARKLING DRINK WITH 4% CLEMENTINE AND 4% PEACH JUICES FROM CONCENTRATE WITH OTHER NATURAL FLAVORS"
+- The volume text "11.15FL OZ (330mL)"
+- The callout "35 CALORIES PER CAN"
+- The headline phrase "Take the time for taste" (in script and sans-serif)
+- The headline phrase "WITH FLAVORS" (heavy bold sans-serif)
+- The headline phrase "THAT FIT YOUR STYLE." (heavy bold sans-serif)
+- The red, five-pointed star logo
+- The subtle, wavy, pink-and-white line pattern on the can body
+- The small, solid grey circular badge with "35"
+- Any peaches, clementines, oranges, fruit slices, fruit segments, or green leaves
+
+STRICT CONSTRAINTS:
+- The product label is pasted PIXEL-FAITHFUL from the INPUT image — do NOT redraw or recreate the label
+- Product lighting MUST match the scene's lighting direction and quality — never preserve "original product lighting"
+- Product must cast a natural shadow on the scene surface — no floating, no hard-edged pasted shadow
+- Use upgraded product images when available (`upgraded_*.png` — opaque, higher quality)
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference ad's composition faithfully in a 4:5 aspect ratio. The main subject is a single beverage bottle, positioned vertically in the center of the frame, slightly off-set to the right. The bottle is surrounded by floating, abstract, out-of-focus circular shapes scattered in the background and foreground, creating a sense of depth. This is a medium shot, tightly framed around the product. The visual hierarchy draws the eye to the central bottle, then to the large headline text at the bottom. Do NOT add any splashes, ice, condensation, or any produce/ingredient elements. The scene contains only the bottle and the decorative circles against a clean background.
+
+PRODUCT REPLACEMENT:
+- The central Sanpellegrino can is replaced with a glass bottle of Island Splash Mauby.
+- The bottle label is pasted pixel-faithful from INPUT 2 (Island Splash Mauby). Do not redraw the label.
+- The bottle must have a matte BLACK cap. Do not inherit the metallic top from the reference.
+
+LIGHTING & SHADOW MATCH (CRITICAL — prevents "pasted-in" look):
+- The scene is lit with bright, soft, diffused light from the front and slightly elevated.
+- The product catches soft highlights consistent with the scene's frontal, diffused, soft lighting.
+- A soft, diffuse shadow grounds the base of the bottle where it would conceptually rest, consistent with the scene's minimal shadow direction and softness.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Mauby: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+- At the bottom of the image, in the same position as the reference headline, render the following text.
+- Headline Part 1: "A taste" in an elegant, flowing script font.
+- Headline Part 2: "of the islands." in a clean, bold sans-serif font.
+- Body Copy Line 1: "REAL BARK." in a heavy, bold, all-caps sans-serif.
+- Body Copy Line 2: "REAL FLAVOR." in a heavy, bold, all-caps sans-serif.
+- Render all text in dark teal (#243C3C) for high contrast against the light background.
+- FORBIDDEN in text: URLs, hashtags, pricing, social handles, promotions.
+
+LOGO:
+- In the bottom right corner, render the Island Splash logo from INPUT 3. It must be a small badge, approximately 8% of the frame width. Render the logo directly on the background with no containing box, banner, or additional text.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Applied as the final pass over the entire image: shot with a high-resolution digital cinema camera and sharp macro prime lenses, creating a pristine and artifact-free image. The depth of field is controlled and moderately deep, rendering the central bottle with perfect clarity while allowing background and foreground decorative circles to fall into a soft, pleasing focus with clean, circular bokeh. The lighting is high-key and studio-based, utilizing large, heavily diffused sources to create an almost shadowless environment with extremely soft, wraparound light that eliminates all harshness. The color science is defined by a color grade that shifts the entire palette to dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), and warm sand/tan (#A89078). Post-processing involves a low-contrast curve, a lifted black point creating milky shadows, and a gentle highlight roll-off, resulting in a compressed dynamic range that enhances the bright, clean, and ethereal quality of the final image.

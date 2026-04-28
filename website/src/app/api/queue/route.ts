@@ -4,16 +4,36 @@ import path from 'path';
 
 const QUEUE_FILE = '/home/drewp/asset-ads/state/board-queue/queue.json';
 
-function addJobToQueue(job: any) {
+type Job = {
+  id: string;
+  type: string;
+  brand: string;
+  url?: string;
+  pool?: string;
+  maxImages?: number;
+  status: string;
+  addedAt: string;
+};
+
+type Queue = {
+  jobs: Job[];
+  last_updated: string;
+};
+
+function getQueue(): Queue {
+  if (existsSync(QUEUE_FILE)) {
+    try {
+      return JSON.parse(readFileSync(QUEUE_FILE, 'utf8'));
+    } catch { /* */ }
+  }
+  return { jobs: [], last_updated: '' };
+}
+
+function addJobToQueue(job: Job) {
   const queueDir = path.dirname(QUEUE_FILE);
   if (!existsSync(queueDir)) mkdirSync(queueDir, { recursive: true });
   
-  let queue = { jobs: [], last_updated: new Date().toISOString() };
-  if (existsSync(QUEUE_FILE)) {
-    try {
-      queue = JSON.parse(readFileSync(QUEUE_FILE, 'utf8'));
-    } catch {}
-  }
+  const queue = getQueue();
   
   // Check if same job already pending
   if (job.type === 'generate_ads') {
@@ -25,7 +45,6 @@ function addJobToQueue(job: any) {
   
   queue.jobs.push(job);
   queue.last_updated = new Date().toISOString();
-  
   writeFileSync(QUEUE_FILE, JSON.stringify(queue, null, 2));
   return { success: true };
 }
@@ -58,7 +77,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Invalid job type' }, { status: 400 });
   }
 
-  const job = {
+  const job: Job = {
     id: `${type}-${Date.now()}`,
     type,
     brand,

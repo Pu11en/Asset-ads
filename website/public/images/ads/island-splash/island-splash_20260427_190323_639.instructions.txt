@@ -1,0 +1,93 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/asset-ads/brand_assets/island-splash/references/drinks/approved/drinks_ref_1.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260427_190323_639.png
+PRODUCTS: Mango Passion
+TIMESTAMP: 2026-04-27T19:04:37.177590
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** The main subject is a plastic bottle of orange-colored beverage. It is positioned slightly left of the center, standing upright. A long, continuous orange peel is spiraled around the bottle from the base to the cap.
+
+**PRODUCT COUNT:** 1
+
+**PRODUCT DETAILS:** The product is a clear, plastic, contoured beverage bottle filled with an orange liquid. It is positioned slightly left of center, standing vertically on a stone surface. It is viewed from a straight-on, slightly low angle. The bottle occupies a significant portion of the vertical space in the frame. The red cap is on and closed.
+
+**COMPOSITION:**
+*   **Top-left:** Blue sky with white clouds, out-of-focus green and yellow foliage, and the top of the bottle's cap.
+*   **Top-center:** Blue sky with clouds and the very top of the orange peel on the cap.
+*   **Top-right:** Bright, hazy, sunlit sky and out-of-focus yellow and green foliage.
+*   **Mid-left:** The main body of the beverage bottle, wrapped in an orange peel.
+*   **Mid-center:** The bottle's label and the headline text "TASTE THE REAL FRUIT".
+*   **Mid-right:** The headline text "TASTE THE REAL FRUIT" against a blurry, sun-drenched background of foliage.
+*   **Bottom-left:** The base of the bottle and the textured stone surface it rests on.
+*   **Bottom-center:** The textured, light-colored stone surface.
+*   **Bottom-right:** The edge of the stone surface, the "FRUITS UP" logo, and a curved orange graphic element at the very bottom.
+
+The framing is medium, focusing on the product within its environment. The visual hierarchy starts with the bottle, moves to the "TASTE THE REAL FRUIT" text, and then to the logo in the bottom right.
+
+**PRODUCE / INGREDIENTS:** A single, long orange peel is spiraled around the bottle.
+
+**TEXT:**
+*   **On the bottle label:** "FRUITS UP" in a stylized, multi-colored display font. Below it, in a smaller sans-serif font, are the words "With Real Fruit Juice" and "Sparkling Orange Drink".
+*   **Central headline:** To the right of the bottle, "TASTE THE" in a clean, brown, sans-serif font. Below it, in a larger, bolder red sans-serif font, is "REAL FRUIT".
+*   **Bottom right logo:** "FRUITS UP" in a white and green, stylized, rounded display font with a drop shadow.
+
+**DECORATIVE ELEMENTS:**
+*   Two parallel brown lines frame the text "REAL FRUIT," one above and one below.
+*   The "FRUITS UP" logo in the bottom right corner has three tear-drop/leaf shapes behind it: one orange, one magenta, and one teal.
+*   A solid orange, curved shape forms a graphic border at the bottom right of the image.
+
+**BACKGROUND:** The background is a photographic scene of a sunlit, outdoor environment, possibly an orchard or park. The foliage is heavily blurred, creating a bokeh effect with green and golden-yellow tones. The sky is blue with soft white clouds, and there is a bright sun flare in the upper right. The bottle rests on a rough, textured, light-colored stone slab.
+
+**LIGHTING:** The lighting is bright and warm, appearing to originate from the upper right and slightly behind the subject. This creates a strong rim light on the right side of the bottle and the orange peel. The quality of light is soft and diffused, suggesting a sunny, hazy day. Highlights are pronounced on the bottle's right edge. Shadows are soft and fall towards the front and left of the bottle on the stone surface.
+
+**MOOD:** Natural, Refreshing, Sunny, Vibrant, Appetizing.
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution digital cinema camera and a sharp prime lens, utilizing a wide aperture to achieve a shallow depth of field with smooth, creamy bokeh that isolates the foreground from the soft-focus background. The lighting is high-key and directional, emulating a diffused, late-afternoon sun from the right to create soft-edged shadows and a gentle highlight wrap, balanced by a strong frontal fill light. The color science is dominated by a warm, analog-complementary palette, with intensely saturated oranges and yellows set against a mildly desaturated cyan sky. In post-production, the image is graded to enhance this warmth, featuring a moderate contrast S-curve with lifted black points, compressed highlights that roll off smoothly, and a distinct, soft bloom effect applied to the brightest areas to create a luminous, clean, and polished commercial aesthetic with no visible grain or digital noise.
+
+**Keywords:** Warm Commercial, High-Key, Shallow Depth of Field, Saturated Palette, Highlight Bloom, Soft Contrast.
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The wordmark "FRUITS UP" in any style (multi-colored on label, white/green in logo)
+*   The headline string "TASTE THE REAL FRUIT"
+*   The on-label text strings "With Real Fruit Juice" and "Sparkling Orange Drink"
+*   The two parallel brown lines used to frame text
+*   The three tear-drop/leaf shapes (orange, magenta, teal) behind the logo
+*   The solid orange, curved graphic shape at the bottom right of the image
+
+STRICT CONSTRAINTS:
+*   Final aspect ratio must be 4:5 portrait.
+*   The product label is pasted PIXEL-FAITHFUL from the INPUT image — do NOT redraw or recreate the label.
+*   Product lighting MUST match the scene's lighting direction and quality — never preserve "original product lighting".
+*   Product must cast a natural shadow on the scene surface — no floating, no hard-edged pasted shadow.
+*   No mascots, cartoon characters, or personified objects.
+*   No hashtags, URLs, social media handles, or any text not specified in the TEXT STRATEGY block.
+*   No medical or health claims.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference ad's core subject and composition faithfully. The subject is a single, centered beverage bottle standing upright on a rough, light-colored stone slab. The background is a soft-focus, photographic scene of sunlit outdoor foliage and a hazy sky, creating a beautiful bokeh effect. The camera angle is straight-on and slightly low. The composition leaves open space to the right of the bottle for text. DO NOT include the orange peel spiraled around the bottle from the reference image. DO NOT invent or add any other elements absent from the reference, such as splashes, ice, condensation, or loose fruit.
+
+PRODUCT REPLACEMENT:
+*   The single bottle in the scene is an Island Splash Mango Passion beverage bottle. The bottle is a clear, contoured plastic shape. It must have a matte BLACK cap.
+*   Paste the label from INPUT 2 (Island Splash Mango Passion) onto the bottle, pixel-faithful. Do not redraw or alter the label design.
+
+LIGHTING & SHADOW MATCH (CRITICAL — prevents "pasted-in" look):
+*   The scene is lit with bright, warm, diffused light from the upper right and slightly behind the bottle, simulating a hazy, sunny day.
+*   The product catches a soft rim light on its right side, consistent with the scene's upper-right backlight.
+*   A soft, diffuse shadow grounds the product on the stone surface, falling towards the front and left, consistent with the scene's shadow direction and softness.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Mango Passion: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+*   In the open space to the right of the bottle, render the following two-line headline in a clean, simple, sans-serif font, using the dark teal brand color #243C3C.
+*   Headline Line 1: THE REAL TASTE
+*   Headline Line 2: OF MANGO
+
+LOGO:
+*   Render the Island Splash logo from INPUT 3. It must be a small, clean badge placed in the bottom-right corner of the image, approximately 8% of the total image width. Do not place it in a box, on a banner, or add any other text to it.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Applied as the final pass over the entire image: shot with a high-resolution digital cinema camera and a sharp prime lens, utilizing a wide aperture to achieve a shallow depth of field with smooth, creamy bokeh that isolates the foreground from the soft-focus background. The lighting is high-key and directional, emulating a diffused, late-afternoon sun from the right to create soft-edged shadows and a gentle highlight wrap, balanced by a strong frontal fill light. The color science is dominated by the Island Splash brand palette: dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), and warm sand/tan (#A89078). In post-production, the image is graded to enhance this warmth, featuring a moderate contrast S-curve with lifted black points, compressed highlights that roll off smoothly, and a distinct, soft bloom effect applied to the brightest areas to create a luminous, clean, and polished commercial aesthetic with no visible grain or digital noise.

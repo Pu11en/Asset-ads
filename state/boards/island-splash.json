@@ -1,42 +1,23 @@
 [
   {
-    "id": "1777328826202",
-    "url": "https://www.pinterest.com/justinmmmah/drink-ads/",
+    "url": "https://www.pinterest.com/mark0950/drinks-advertising/",
     "pool": "drinks",
-    "maxImages": 100,
-    "status": "pending",
-    "addedAt": "2026-04-27T22:27:06.202Z",
-    "imageCount": 0,
-    "lastScraped": null
+    "maxImages": 20,
+    "addedAt": "2026-04-28T04:18:12.142Z",
+    "status": "pending"
   },
   {
-    "id": "1777328866260",
-    "url": "https://www.pinterest.com/ateekdesigns/energy-drink-ads/",
-    "pool": "drinks",
+    "url": "https://www.pinterest.com/thidalwin115/soft-drink-advertising-design/",
+    "pool": "all-drinks",
     "maxImages": 100,
-    "status": "pending",
-    "addedAt": "2026-04-27T22:27:46.260Z",
-    "imageCount": 0,
-    "lastScraped": null
+    "addedAt": "2026-04-28T04:30:10.503Z",
+    "status": "pending"
   },
   {
-    "id": "1777328905048",
-    "url": "https://www.pinterest.com/ccfandrew/drink-ad/",
+    "url": "https://www.pinterest.com/abbyv4774/drink-advertisement-2/",
     "pool": "drinks",
     "maxImages": 100,
-    "status": "pending",
-    "addedAt": "2026-04-27T22:28:25.048Z",
-    "imageCount": 0,
-    "lastScraped": null
-  },
-  {
-    "id": "1777329154196",
-    "url": "https://www.pinterest.com/abbyv4774/drink-ad/",
-    "pool": "drinks",
-    "maxImages": 100,
-    "status": "pending",
-    "addedAt": "2026-04-27T22:32:34.196Z",
-    "imageCount": 0,
-    "lastScraped": null
+    "addedAt": "2026-04-28T04:34:54.634Z",
+    "status": "pending"
   }
 ]

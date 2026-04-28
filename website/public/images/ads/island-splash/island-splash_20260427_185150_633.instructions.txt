@@ -1,0 +1,116 @@
+BRAND: island-splash (Island Splash)
+REF: /home/drewp/asset-ads/brand_assets/island-splash/references/drinks/approved/drinks_ref_1.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260427_185150_633.png
+PRODUCTS: Lime
+TIMESTAMP: 2026-04-27T18:53:11.034163
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** The main subject is a bottle of orange-flavored soft drink. It is standing upright on a rough, stone-like surface. A long, continuous peel of an orange is spiraled around the entire length of the bottle, from the base up to and around the cap. The bottle is positioned slightly to the left of the center.
+
+**PRODUCT COUNT:** 1
+
+**PRODUCT DETAILS:**
+*   **Product 1:**
+    *   **Container type:** A clear plastic bottle with a curved, contoured shape.
+    *   **Position in frame:** Positioned in the left half of the frame, standing vertically on a stone surface.
+    *   **Angle:** The bottle is shown from a front-on, slightly low angle.
+    *   **Size relative to image:** It occupies approximately 80% of the image's height.
+    *   **Cap/lid state:** The red-orange cap is on the bottle and is closed.
+
+**COMPOSITION:**
+*   **Top-left:** The top of the bottle and orange peel against a background of blue sky, white clouds, and blurred treetops.
+*   **Top-center:** The cap of the bottle against a blue sky and blurred, sunlit foliage.
+*   **Top-right:** A brightly lit, hazy sky and blurred golden foliage. The text "TASTE THE" begins here.
+*   **Middle-left:** The upper half of the bottle, showing the "FRUITS UP" label, wrapped in the orange peel.
+*   **Middle-center:** The center of the bottle, with the text "REAL FRUIT" to its right.
+*   **Middle-right:** The text "TASTE THE REAL FRUIT" against a blurred, golden-lit background.
+*   **Bottom-left:** The base of the bottle and the start of the orange peel, resting on a textured stone surface.
+*   **Bottom-center:** The foreground is a rough, light-colored stone surface.
+*   **Bottom-right:** The edge of the stone surface, the "FRUITS UP" logo, and a solid orange graphic element at the very bottom corner.
+*   **Framing:** This is a medium close-up shot focused on the product.
+*   **Visual hierarchy:** The eye is drawn first to the bottle and the spiraling peel, then to the large "REAL FRUIT" text, and finally to the logo in the bottom right.
+
+**PRODUCE / INGREDIENTS:**
+An orange peel is spiraled around the bottle.
+
+**TEXT:**
+*   **On Bottle Label:**
+    *   "FRUITS UP": A stylized, arched display font in white with a dark outline.
+    *   "With Real Fruit Juice": Small, white sans-serif font.
+    *   "Sparkling Orange Fruit Drink": Very small, white sans-serif font.
+*   **Main Headline (Center-Right):**
+    *   "TASTE THE": All-caps, clean, heavy sans-serif font in a brown color.
+    *   "REAL FRUIT": Larger, all-caps, heavy sans-serif font in a reddish-brown color.
+*   **Logo (Bottom-Right):**
+    *   "FRUITS UP": A rounded, white, sans-serif display font.
+*   **Text Zones:** Text is present on the product label in the center-left, as a headline in the center-right, and as part of a logo in the bottom-right.
+
+**DECORATIVE ELEMENTS:**
+*   **Lines:** Two parallel, horizontal reddish-brown lines are positioned above and below the words "REAL FRUIT". A single, shorter horizontal line is to the right of "TASTE THE".
+*   **Shapes:** A solid, curved orange shape forms the bottom edge of the ad.
+*   **Icons:** The logo in the bottom-right corner includes three stylized leaf/droplet shapes: one large orange, one medium teal, and one small magenta.
+
+**BACKGROUND:**
+The background is a photographic scene of an outdoor, natural setting, possibly an orchard. It is heavily blurred, creating a soft-focus effect. It features green and golden-yellow foliage under a blue sky with soft white clouds. The right side of the background is much brighter, suggesting strong sunlight.
+
+**LIGHTING:**
+*   **Direction:** The primary light source is from the right and slightly behind the subject, creating a strong rim light and a bright, hazy glow in the background. There appears to be a softer fill light from the front.
+*   **Quality:** The light is soft and diffused.
+*   **Highlight behavior:** Bright, soft highlights are visible along the right side of the bottle and the orange peel.
+*   **Shadow characteristics:** Shadows are very soft and minimal. There is a subtle, soft shadow on the stone surface to the left of the bottle's base.
+
+**MOOD:**
+Natural, Sunny, Fresh, Vibrant, Refreshing.
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution full-frame digital camera and a sharp telephoto prime lens, this image utilizes a moderately wide aperture to create a shallow depth of field that isolates the sharply-focused foreground from a softly diffused background with smooth, clean bokeh. The lighting is high-key and heavily stylized to emulate a warm, golden hour sun, featuring a strong, slightly diffused key light from the upper right to create bright, specular highlights and a distinct rim, balanced by soft frontal fill to maintain detail in the shadows. The color science is defined by a heavily graded, warm-dominant palette, pushing oranges and yellows to high saturation while shifting any blues toward cyan for a complementary effect. The highlights are tinted a bright, luminous gold, while shadows remain deep yet clean with a subtle warm bias. Post-processing introduces a significant bloom and halation effect, particularly in the highlights, to enhance the sun-drenched atmosphere, all built upon a high-contrast S-curve with elevated mid-tones for a punchy, clean, and completely noise-free commercial finish.
+
+**Keywords:** Warm & Golden, High Saturation, Commercial Gloss, Shallow Depth of Field, Sunny Bloom, Vibrant Orange
+
+=== FINAL IMAGE-GEN PROMPT ===
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+*   The wordmark "FRUITS UP" on the bottle label
+*   The text "With Real Fruit Juice"
+*   The text "Sparkling Orange Fruit Drink"
+*   The headline "TASTE THE"
+*   The headline "REAL FRUIT"
+*   The logo wordmark "FRUITS UP" in the bottom right
+*   The two parallel, horizontal reddish-brown lines in the headline
+*   The single horizontal line next to "TASTE THE"
+*   The solid, curved orange graphic shape at the bottom of the ad
+*   The three stylized leaf/droplet shapes (orange, teal, magenta) in the logo
+
+STRICT CONSTRAINTS:
+*   The product label is pasted PIXEL-FAITHFUL from the INPUT image — do NOT redraw or recreate the label
+*   Product lighting MUST match the scene's lighting direction and quality — never preserve "original product lighting"
+*   Product must cast a natural shadow on the scene surface — no floating, no hard-edged pasted shadow
+*   Use upgraded product images when available (`upgraded_*.png` — opaque, higher quality)
+*   No mascots, cartoon characters, smiley fruits, or personified objects.
+*   No hashtags, URLs, social media handles, promotions, or pricing may be rendered in the image.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate the reference composition faithfully: a medium close-up shot of a single bottle standing upright on a rough, light-colored stone surface. The bottle is positioned slightly to the left of center. The background is a heavily blurred, soft-focus photographic scene of sunlit outdoor foliage under a sky with clouds. The composition must reserve empty space in the center-right for a headline and in the bottom-right for a logo. Do NOT add any fruit, produce, peels, splashes, or other decorative elements; the scene is only the bottle on the stone surface against the blurred natural background.
+
+PRODUCT REPLACEMENT:
+*   The single soft drink bottle is replaced by one bottle of Island Splash Lime. Paste the label pixel-faithful from INPUT 2. The bottle is a clear plastic container, and it must have a matte BLACK cap.
+
+LIGHTING & SHADOW MATCH (CRITICAL — prevents "pasted-in" look):
+*   The scene is lit by a strong, soft key light coming from the upper right and slightly behind the bottle, creating a bright rim light effect. A soft fill light illuminates the front.
+*   The product catches bright, soft highlights along its right side, consistent with the scene's high-right key light.
+*   A soft, diffuse shadow grounds the product on the stone surface, cast towards the front-left, consistent with the scene's shadow direction and softness.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Lime: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+*   In the center-right of the frame, render the headline in a heavy, clean, all-caps sans-serif font.
+*   Headline Line 1: "SUNSHINE IN A"
+*   Headline Line 2: "BOTTLE"
+*   Render all text in dark teal #243C3C for strong contrast against the bright background.
+
+LOGO:
+*   Render the logo from the LAST INPUT image. Place it in the bottom-right corner. It should be small, approximately 8% of the total image width, with no background box or added effects.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Applied as the final pass over the entire image: Shot with a high-resolution full-frame digital camera and a sharp telephoto prime lens, this image utilizes a moderately wide aperture to create a shallow depth of field that isolates the sharply-focused foreground from a softly diffused background with smooth, clean bokeh. The lighting is high-key and heavily stylized to emulate a warm, golden hour sun, featuring a strong, slightly diffused key light from the upper right to create bright, specular highlights and a distinct rim, balanced by soft frontal fill to maintain detail in the shadows. The color science is defined by a heavily graded palette of dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), and warm sand/tan (#A89078). The highlights are tinted a bright, luminous gold, while shadows remain deep yet clean with a subtle warm bias. Post-processing introduces a significant bloom and halation effect, particularly in the highlights, to enhance the sun-drenched atmosphere, all built upon a high-contrast S-curve with elevated mid-tones for a punchy, clean, and completely noise-free commercial finish.

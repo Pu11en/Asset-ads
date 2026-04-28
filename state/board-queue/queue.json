@@ -1,12 +1,62 @@
 {
   "jobs": [
     {
-      "id": "generate_ads-1777331704991",
+      "id": "generate-ads-1777336426",
       "type": "generate_ads",
       "brand": "island-splash",
       "status": "pending",
-      "addedAt": "2026-04-27T23:15:04.991Z"
+      "addedAt": "2026-04-27T19:33:46-05:00"
+    },
+    {
+      "id": "scrape-1777349684249",
+      "type": "scrape",
+      "brand": "island-splash",
+      "url": "https://www.pinterest.com/mark0950/drinks-advertising/",
+      "pool": "all-drinks",
+      "maxImages": 100,
+      "status": "pending",
+      "addedAt": "2026-04-28T04:14:44.249Z"
+    },
+    {
+      "id": "scrape-1777349768369",
+      "type": "scrape",
+      "brand": "island-splash",
+      "url": "https://www.pinterest.com/tomisynolabode/creative-soft-drink-ads/",
+      "pool": "drinks",
+      "maxImages": 30,
+      "status": "pending",
+      "addedAt": "2026-04-28T04:16:08.369Z"
+    },
+    {
+      "id": "scrape-1777349892142",
+      "type": "scrape",
+      "brand": "island-splash",
+      "url": "https://www.pinterest.com/mark0950/drinks-advertising/",
+      "pool": "drinks",
+      "maxImages": 20,
+      "status": "pending",
+      "addedAt": "2026-04-28T04:18:12.142Z"
+    },
+    {
+      "id": "scrape-1777350610503",
+      "type": "scrape",
+      "brand": "island-splash",
+      "url": "https://www.pinterest.com/thidalwin115/soft-drink-advertising-design/",
+      "pool": "all-drinks",
+      "maxImages": 100,
+      "status": "pending",
+      "addedAt": "2026-04-28T04:30:10.503Z"
+    },
+    {
+      "id": "scrape-1777350894636",
+      "type": "scrape",
+      "brand": "island-splash",
+      "url": "https://www.pinterest.com/abbyv4774/drink-advertisement-2/",
+      "pool": "drinks",
+      "maxImages": 100,
+      "status": "pending",
+      "addedAt": "2026-04-28T04:34:54.636Z"
     }
   ],
-  "last_updated": "2026-04-27T23:15:04.991Z"
+  "last_updated": "2026-04-28T04:34:54.637Z"
 }

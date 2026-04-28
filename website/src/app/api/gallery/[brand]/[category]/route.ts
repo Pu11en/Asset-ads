@@ -16,7 +16,6 @@ function isImage(filename: string) {
 
 const POOL_SLUG_MAP: Record<string, Record<string, string>> = {
   "island-splash": {
-    "all-drinks": "drinks",
     "drinks": "drinks",
   },
   "cinco-h-ranch": {
@@ -77,6 +76,11 @@ export async function GET(
   { params }: { params: Promise<{ brand: string; category: string }> }
 ) {
   const { brand, category } = await params;
+
+  // all-drinks doesn't exist — it's a legacy URL artifact
+  if (category === "all-drinks") {
+    return NextResponse.json({ error: "Category not found" }, { status: 404 });
+  }
 
   // Process any pending boards in background
   processBoardQueue();

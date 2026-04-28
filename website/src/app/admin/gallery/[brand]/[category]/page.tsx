@@ -94,7 +94,7 @@ export default function GalleryPage() {
       const res = await fetch(`/api/boards/${brand}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ boardUrl: boardUrl.trim(), pool: category }),
+        body: JSON.stringify({ url: boardUrl.trim(), pool: category }),
       });
       if (res.ok) {
         setBoardUrl("");
@@ -340,7 +340,7 @@ export default function GalleryPage() {
           <h2 className="text-xs uppercase tracking-widest text-white/40 mb-3">Pinterest Boards</h2>
           <div className="flex flex-wrap gap-2">
             {boards.map(board => (
-              <div key={board.id} className="px-3 py-2 bg-white/5 rounded-lg border border-white/10 flex items-center gap-3">
+              <div key={board.url} className="px-3 py-2 bg-white/5 rounded-lg border border-white/10 flex items-center gap-3">
                 <span className={`w-2 h-2 rounded-full ${board.status === 'pending' ? 'bg-yellow-400' : 'bg-emerald-400'}`} />
                 <span className="text-sm text-white/70 truncate max-w-xs">{board.url}</span>
                 <span className="text-xs text-white/40">{board.imageCount} images</span>

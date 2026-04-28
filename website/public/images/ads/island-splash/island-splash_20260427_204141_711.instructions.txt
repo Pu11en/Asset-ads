@@ -1,0 +1,110 @@
+BRAND: island-splash (Island Splash)
+REF: brand_assets/island-splash/references/drinks/approved/drinks_ref_23.png
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260427_204141_711.png
+PRODUCTS: Sorrel
+TIMESTAMP: 2026-04-27T20:43:06.656846
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** A deconstructed flat lay of a yellow juice and its ingredients. The arrangement includes a bottle of juice, lemon slices, a bowl of dark liquid with a measuring spoon, and a shaker with red spice, all positioned neatly on a white surface.
+
+**PRODUCT COUNT:** 1
+
+**PRODUCT DETAILS:**
+*   **Product 1:** A clear, cylindrical plastic bottle of yellow juice with a black, ribbed, screw-on cap. It is positioned vertically on the left side of the frame. The bottle is seen from a high, slightly angled overhead view. It occupies roughly two-thirds of the image's height. The cap is on and sealed.
+
+**COMPOSITION:**
+*   **Top-left:** The word "the" and the beginning of the word "yellow".
+*   **Top-center:** The word "yellow", the words "cold-press", and the USDA Organic seal.
+*   **Top-right:** The end of the word "yellow".
+*   **Center-left:** The upper half of the juice bottle.
+*   **Center-center:** A wooden bowl containing a dark liquid and a metal measuring spoon.
+*   **Center-right:** A spill of red powder.
+*   **Bottom-left:** The lower half of the juice bottle and one lemon slice.
+*   **Bottom-center:** Three lemon slices and the "CLEAN JUICE" brand name.
+*   **Bottom-right:** A clear glass spice shaker with red spice inside and spilled, and one lemon slice.
+*   **Framing:** The shot is a tightly framed, square composition.
+*   **Visual Hierarchy:** The eye is drawn first to the large, yellow "yellow" text, then to the bottle of juice, and then to the surrounding ingredients.
+
+**PRODUCE / INGREDIENTS:**
+*   Four slices of yellow lemon.
+*   A dark brown liquid (likely maple syrup) in a small wooden bowl.
+*   A reddish-brown powder/spice (likely cayenne pepper) in a glass shaker and spilled onto the background.
+
+**TEXT:**
+*   **Headline:** At the top of the image. "the" in a small, black, sans-serif font. "yellow" in a large, yellow, handwritten script font. "cold-press" in a smaller, yellow, sans-serif font below "yellow".
+*   **Brand Name:** At the bottom center, "CLEAN JUICE" in a bold, black, sans-serif font.
+*   **Bottle Label:**
+    *   "CLEAN JUICE" in a circular logo.
+    *   "YELLOW" printed vertically in a large, bold, black sans-serif font.
+    *   Ingredient list in smaller print: "ORGANIC LEMON", "ORGANIC CAYENNE", "ORGANIC MAPLE SYRUP", "FILTERED WATER".
+    *   A small USDA Organic seal is also on the bottle label.
+*   **Badge:** "USDA ORGANIC" in a black circular seal near the top center.
+*   **Measuring Spoon:** "1/4 TSP" is stamped into the metal handle.
+
+**DECORATIVE ELEMENTS:**
+*   A black circular badge with white text reading "USDA ORGANIC".
+*   The red spice is artfully spilled from the shaker in a swoosh-like pattern.
+
+**BACKGROUND:** The background is a solid, bright white surface with a very subtle, uniform texture, similar to watercolor paper or a painted surface.
+
+**LIGHTING:** The lighting is bright and soft, appearing to come from the top or top-left. It creates soft, short shadows to the right and bottom of the objects, giving them dimension without being harsh. Highlights on the bottle and bowl are diffuse.
+
+**MOOD:** Clean, Fresh, Organic, Vibrant, Minimalist.
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a high-resolution full-frame digital camera and a sharp macro or standard prime lens, this image utilizes a moderately shallow depth of field to isolate the subjects against a pure, overexposed white background. The lighting is decidedly high-key, created by a very large, soft, and diffuse source positioned high and slightly to the side, which wraps around the forms to produce minimal, soft-edged shadows and broad, clean highlights without harsh specular reflections. The color science is built on a vibrant, warm palette where specific hues, particularly yellows and warm reds, are pushed to high saturation for maximum impact, contrasting against a perfectly neutral white point. Post-processing involves a contrast curve that elevates the mid-tones and keeps shadows open and imbued with a slight warmth, while the highlights on the background are pushed to pure white. The final image is exceptionally clean, with no visible noise or grain, and has a high degree of clarity applied to accentuate fine textures, achieving a luminous and polished commercial finish.
+
+**Keywords:** High-Key, Vibrant, Luminous, Commercial, Warm, Clean
+
+=== FINAL IMAGE-GEN PROMPT ===
+PRODUCE/INGREDIENT STRIPPER (CRITICAL — strip ALL produce and ingredient elements from the reference):
+REMOVE: Four slices of yellow lemon
+REMOVE: A dark brown liquid in a small wooden bowl
+REMOVE: A metal measuring spoon in the bowl
+REMOVE: A reddish-brown powder/spice
+REMOVE: A glass spice shaker
+REMOVE: Any spilled spices or powders
+
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+- The headline text "the", "yellow", and "cold-press"
+- The brand name "CLEAN JUICE"
+- The bottle-label text "CLEAN JUICE"
+- The bottle-label text "YELLOW"
+- The bottle-label ingredient list "ORGANIC LEMON", "ORGANIC CAYENNE", "ORGANIC MAPLE SYRUP", "FILTERED WATER"
+- The "USDA ORGANIC" circular badge
+- The text "1/4 TSP" stamped into the measuring spoon handle
+- Any circular logos on the bottle label that are not Island Splash
+- Any artfully spilled red powder patterns
+
+STRICT CONSTRAINTS:
+- The product label is pasted PIXEL-FAITHFUL from the INPUT image — do NOT redraw or recreate the label
+- Product lighting MUST match the scene's lighting direction and quality — never preserve "original product lighting"
+- Product must cast a natural shadow on the scene surface — no floating, no hard-edged pasted shadow
+- Use upgraded product images when available (`upgraded_*.png` — opaque, higher quality)
+- Aspect ratio 4:5
+
+REFERENCE SUBJECT & COMPOSITION:
+A minimalist, deconstructed flat lay of a single bottle of juice on a solid, bright white surface with a very subtle, uniform texture like watercolor paper. The shot is a tightly framed, high-angle overhead view. The bottle is positioned vertically on the left side of the frame, occupying roughly two-thirds of the image's height. The composition is clean and spacious. DO NOT include any of the reference's other objects: no lemon slices, no wooden bowls, no measuring spoons, no spice shakers, no spilled spices. The scene contains ONLY the bottle on the white background.
+
+PRODUCT REPLACEMENT:
+- The single juice bottle in the scene: Replace with a clear, cylindrical bottle filled with a dark magenta Sorrel liquid. The cap must be a matte BLACK ribbed screw-on cap. Paste the label from INPUT 2 (Island Splash Sorrel), pixel-faithful, do not redraw the label.
+
+LIGHTING & SHADOW MATCH (CRITICAL — prevents "pasted-in" look):
+- The product catches diffuse highlights consistent with the scene's bright, soft, top-left lighting.
+- A soft, short shadow grounds the product on the white surface, cast to the bottom-right, consistent with the scene's shadow direction and softness.
+- There are no harsh specular reflections on the bottle.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Sorrel: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+- In the top-center text zone, render the headline "Sorrel" in a large, handwritten script font, in deep coral orange (#E4843C).
+- Directly below the headline, render the sub-headline "A family recipe." in a smaller, clean sans-serif font, in dark teal (#243C3C).
+- No other text in the image.
+
+LOGO:
+- Render the logo from the LAST INPUT image. Place it in the bottom-right corner. It should be small, roughly 8% of the total image width. Do not place it in a box or banner.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Applied as the final pass over the entire image: shot with a high-resolution full-frame digital camera and a sharp macro or standard prime lens, this image utilizes a moderately shallow depth of field to isolate the subject against a pure, overexposed white background. The lighting is decidedly high-key, created by a very large, soft, and diffuse source positioned high and slightly to the side, which wraps around the form to produce minimal, soft-edged shadows and broad, clean highlights without harsh specular reflections. The color science is built on the Island Splash brand palette (dark teal #243C3C, warm golden orange #F0A86C, deep coral orange #E4843C, warm sand/tan #A89078). Post-processing involves a contrast curve that elevates the mid-tones and keeps shadows open and imbued with a slight warmth, while the highlights on the background are pushed to pure white. The final image is exceptionally clean, with no visible noise or grain, and has a high degree of clarity applied to accentuate fine textures, achieving a luminous and polished commercial finish.

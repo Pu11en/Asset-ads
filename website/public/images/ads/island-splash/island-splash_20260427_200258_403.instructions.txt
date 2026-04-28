@@ -1,0 +1,122 @@
+BRAND: island-splash (Island Splash)
+REF: brand_assets/island-splash/references/drinks/approved/drinks_ref_42.jpg
+OUTPUT: /home/drewp/asset-ads/output/island-splash_20260427_200258_403.png
+PRODUCTS: Peanut Punch, Pine Ginger
+TIMESTAMP: 2026-04-27T20:04:55.551539
+
+=== REVERSE ANALYSIS ===
+**SUBJECT:** A stylized product shot featuring two beverage cans. A person's left hand with orange nail polish enters from the upper left, holding a clear, flat disc. The overall scene is a geometric arrangement of objects.
+
+**PRODUCT COUNT:** 2
+
+**PRODUCT DETAILS:**
+*   **Product 1:** A slim, metallic orange beverage can with condensation droplets is positioned on the right side of the frame, standing upright on an orange block. It is shown from a straight-on angle and is the most prominent of the two cans. The can is sealed.
+*   **Product 2:** A second, identical slim can is positioned to the left and slightly behind the first. It stands on a taller orange block and is partially visible. It is angled slightly to the right. The can is sealed.
+
+**COMPOSITION:**
+*   **3x3 Grid Description:**
+    *   **Top-left:** A hand holds a clear disc with text. A small green plant is visible below it.
+    *   **Top-center:** The large brand name "GOOD IDEA".
+    *   **Top-right:** A large orange circle with text. The top of the primary product can is visible.
+    *   **Center-left:** The green plant sits atop an orange block, next to the secondary, partially-seen can.
+    *   **Center-center:** The primary product can stands on an orange block.
+    *   **Center-right:** The edge of the large orange circle is behind the primary product can.
+    *   **Bottom-left:** A clear sphere with text sits in front of the secondary can and orange block.
+    *   **Bottom-center:** The base of the orange block supporting the primary can, with a small clear sphere in front of it.
+    *   **Bottom-right:** A clear dish holding orange berries and a small green leaf.
+*   **Framing:** This is a medium shot with a slightly elevated camera angle.
+*   **Visual Hierarchy:** The eye is first drawn to the large "GOOD IDEA" text at the top, then to the central product can, and then to the various text elements within the circles and spheres.
+
+**PRODUCE / INGREDIENTS:**
+*   A small sprig with glossy green leaves.
+*   A cluster of small, round, orange berries (sea buckthorn) on a clear dish.
+
+**TEXT:**
+*   **Headline:** "GOOD IDEA®" in a heavy, white, sans-serif font, located in the top center.
+*   **Label copy (on cans):**
+    *   "HARNESS YOUR NATURAL ENERGY"
+    *   "GOOD IDEA®"
+    *   "FEEL GOOD • LIVE GOOD"
+    *   "HAVTORN sea berry"
+    *   "SPARKLING WATER"
+    *   "12 oz. (355 ml) ℮"
+    (All can text is a white, sans-serif font of varying weights.)
+*   **Callouts (within shapes):**
+    *   "ZERO JUNK" (inside a clear disc)
+    *   "ZERO CAFFEINE" (inside an orange circle)
+    *   "NATURAL ENERGY" (inside a clear sphere)
+    (All callout text is a heavy, white, sans-serif font.)
+
+**DECORATIVE ELEMENTS:**
+*   A large, solid orange circle in the upper right quadrant.
+*   Two orange rectangular blocks of different heights, used as platforms.
+*   Several clear, solid glass-like spheres and discs of varying sizes. One large disc is held by the hand, one large sphere is in the bottom left, and smaller spheres are scattered.
+*   A small, clear, flat-bottomed dish holding the berries.
+
+**BACKGROUND:** The background is a solid, warm, light brown or beige surface and wall, creating a clean, studio environment. A soft shadow line indicates where the horizontal surface meets the vertical wall.
+
+**LIGHTING:** The lighting is soft and diffused, coming from the front and slightly to the left. This creates gentle highlights on the top and left sides of the cans, spheres, and blocks. The shadows are soft and cast to the right and behind the objects.
+
+**MOOD:** Clean, modern, bright, energetic, minimalist.
+
+=== VIBE SHIFT ANALYSIS ===
+Shot with a full-frame digital cinema camera and modern, clinical prime lenses to achieve a tack-sharp image with a controlled, shallow depth of field and no optical aberrations. The scene is illuminated with high-key, artificial studio lighting from large, diffuse sources, creating a bright, airy atmosphere with minimal contrast. Shadows are extremely soft-edged, open, and carry the overall warm color cast of the scene, while highlights are broad and roll off gently without clipping. The color science is defined by a heavily graded, analogous palette dominated by vibrant oranges, peaches, and warm tans, with high but carefully managed saturation. The post-production process involves a significant color grade that lifts the black point, infusing the entire tonal range with a warm bias, resulting in a completely clean, noise-free image with no true blacks or pure whites.
+
+**Keywords:** Monochromatic Warm, High-Key, Soft-Diffuse, Commercial Clean, Vibrant Saturation, Lifted Shadows.
+
+=== FINAL IMAGE-GEN PROMPT ===
+PRODUCE/INGREDIENT STRIPPER (CRITICAL — strip ALL produce and ingredient elements from the reference):
+REMOVE: A small sprig with glossy green leaves
+REMOVE: A cluster of small, round, orange berries (sea buckthorn) on a clear dish
+
+FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
+- The brand name and wordmark "GOOD IDEA®"
+- The headline "GOOD IDEA®"
+- The callout text "ZERO JUNK"
+- The callout text "ZERO CAFFEINE"
+- The callout text "NATURAL ENERGY"
+- The label text "HARNESS YOUR NATURAL ENERGY"
+- The label text "FEEL GOOD • LIVE GOOD"
+- The label text "HAVTORN sea berry"
+- The label text "SPARKLING WATER"
+- The label text "12 oz. (355 ml) ℮"
+- Any text or logos appearing on the cans in the reference image
+
+STRICT CONSTRAINTS:
+- The product label is pasted PIXEL-FAITHFUL from the INPUT image — do NOT redraw or recreate the label
+- Product lighting MUST match the scene's lighting direction and quality — never preserve "original product lighting"
+- Product must cast a natural shadow on the scene surface — no floating, no hard-edged pasted shadow
+- Use upgraded product images when available (`upgraded_*.png` — opaque, higher quality)
+- No mascots, cartoon characters, smiley fruits, or personified objects.
+- FORBIDDEN: hashtags, # symbols, URLs, www, .com, social handles (@), fake promotions/discounts (FREE, 50% OFF, GIVEAWAY), pricing, phone numbers, medical claims.
+
+REFERENCE SUBJECT & COMPOSITION:
+Recreate a stylized, geometric product shot in a clean studio environment. The scene must include a person's left hand with nail polish entering from the upper left, holding a clear, flat glass disc. Two products are arranged on rectangular blocks of different heights. The composition must also include several clear, solid glass-like spheres and one large solid-colored circle in the background, arranged exactly as in the reference. The background is a flat surface meeting a vertical wall. DO NOT add any splashes, droplets, or other decorative elements that were not present in the reference.
+
+PRODUCT REPLACEMENT:
+- The primary beverage can on the right, standing on the lower block: replace with a clear glass bottle for Island Splash Peanut Punch. The bottle must have a matte BLACK cap. Paste the label pixel-faithful from INPUT 2.
+- The secondary beverage can on the left, partially seen on the taller block: replace with a clear glass bottle for Island Splash Pine Ginger. The bottle must have a matte BLACK cap. Paste the label pixel-faithful from INPUT 3.
+
+LIGHTING & SHADOW MATCH (CRITICAL — prevents "pasted-in" look):
+- The scene is lit with soft, diffused studio light from the front and slightly to the left.
+- The product catches highlights consistent with the scene's front-left, soft, neutral-temperature lighting.
+- A soft, diffuse shadow grounds the product on the blocks, consistent with the scene's shadow direction (cast to the right and behind) and softness.
+- There is no rim lighting or any highlight on the product that contradicts the scene's primary soft light source.
+
+TEXT CONTENT GUIDANCE:
+  Brand voice: plain and honest, no fluff
+  Peanut Punch: use brand voice, keep it plain and honest
+  Pine Ginger: use brand voice, keep it plain and honest
+
+TEXT STRATEGY:
+- Main Headline (top center, where "GOOD IDEA" was): "The Real Deal." in a heavy, clean sans-serif font.
+- Callout 1 (in clear disc held by hand): "Family Recipe" in a heavy, clean sans-serif font.
+- Callout 2 (in large background circle): "No Shortcuts" in a heavy, clean sans-serif font.
+- Callout 3 (in clear sphere, bottom-left): "Island Made" in a heavy, clean sans-serif font.
+- All text should be rendered in dark teal (#243C3C).
+
+LOGO:
+Render the logo from the LAST INPUT image as a small badge, roughly 8% of the frame width, in the bottom-right corner. No background box or other effects.
+
+STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
+Applied as the final pass over the entire image: The shot feels like it was captured with a full-frame digital cinema camera and modern, clinical prime lenses for a tack-sharp image with a controlled, shallow depth of field and no optical aberrations. The scene is illuminated with high-key, artificial studio lighting from large, diffuse sources, creating a bright, airy atmosphere with minimal contrast. Shadows are extremely soft-edged and open. The color science is defined by a heavy color grade using the Island Splash brand palette of dark teal (#243C3C), warm golden orange (#F0A86C), deep coral orange (#E4843C), and warm sand/tan (#A89078). This grade lifts the black point, infusing the entire tonal range with the brand palette's bias, resulting in a completely clean, noise-free image with no true blacks or pure whites.

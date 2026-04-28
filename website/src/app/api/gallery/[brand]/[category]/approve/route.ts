@@ -6,7 +6,7 @@ import path from "path";
 const REPO_ROOT = "/home/drewp/asset-ads";
 
 const POOL_SLUG_MAP: Record<string, Record<string, string>> = {
-  "island-splash": { "all-drinks": "drinks", "drinks": "drinks" },
+  "island-splash": { "drinks": "drinks" },
   "cinco-h-ranch": { "skincare": "skincare" },
 };
 
@@ -50,7 +50,9 @@ export async function POST(
   const poolSlug = resolvePoolSlug(brand, category);
 
   const approvedDir = path.join(poolDir, "approved");
+  const publicApprovedDir = path.join(REPO_ROOT, "website", "public", "images", "refs", brand, poolSlug, "approved");
   await mkdir(approvedDir, { recursive: true });
+  await mkdir(publicApprovedDir, { recursive: true });
 
   const results: { filename: string; success: boolean; error?: string }[] = [];
 
@@ -65,6 +67,9 @@ export async function POST(
       }
 
       await copyFile(src, dst);
+      // Also copy to public folder so website can serve it
+      const publicDst = path.join(publicApprovedDir, filename);
+      await copyFile(src, publicDst);
       results.push({ filename, success: true });
     } catch (err) {
       results.push({ filename, success: false, error: String(err) });

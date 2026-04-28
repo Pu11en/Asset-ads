@@ -18,7 +18,7 @@ type Post = {
   blotatoStatus?: string; publicUrl?: string; errorMessage?: string; _archived?: boolean;
 };
 type ApprovalState = {
-  pending_count: number; approved_count: number; skipped_count: number;
+  pending_count: number; approved_count: number; bad_count: number;
   ads: Record<string, { status: string; filename: string; reviewed_at: string | null }>;
 };
 
@@ -91,19 +91,26 @@ export function AdminView({
 
   const getAdStatus = (adId: string) =>
     localApproval[adId] ?? approval?.ads[adId]?.status ?? 'pending';
-
-  const handleAdAction = async (adId: string, action: 'approve' | 'skip' | 'reset') => {
+  const handleAdAction = async (adId: string, action: 'approve' | 'bad' | 'reset') => {
     setLoading(adId);
     try {
       const res = await fetch('/api/ads-review', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ brand: activeBrand, adId, action }),
       });
-      if (res.ok || res.status === 200) {
-        const newStatus = action === 'approve' ? 'approved' : action === 'skip' ? 'skipped' : 'pending';
+      const data = await res.json().catch(() => ({}));
+      if (res.ok) {
+        const newStatus = action === 'approve' ? 'approved' : action === 'bad' ? 'bad' : 'pending';
         setLocalApproval(prev => ({ ...prev, [adId]: newStatus }));
+      } else {
+        alert(`Error ${res.status}: ${data.error || 'Unknown error'}\nBrand: ${activeBrand}\nAd: ${adId}`);
       }
-    } finally { setLoading(null); }
+    } catch (e: any) {
+      alert(`Network error: ${e.message}\nBrand: ${activeBrand}\nAd: ${adId}`);
+    } finally {
+      setLoading(null);
+    }
   };
 
   // Drag-to-reorder drafts
@@ -182,7 +189,7 @@ export function AdminView({
   const adStatuses = Object.values(approval?.ads ?? {}).map(a => a.status);
   const pendingCount = adStatuses.filter(s => s === 'pending').length;
   const approvedCount = adStatuses.filter(s => s === 'approved').length;
-  const skippedCount = adStatuses.filter(s => s === 'skipped').length;
+  const badCount = adStatuses.filter(s => s === 'bad').length;
 
   return (
     <div className="min-h-screen">
@@ -196,7 +203,7 @@ export function AdminView({
           <nav className="flex items-center gap-1 ml-4">
             <Link href="/admin" className="px-3 py-1.5 text-xs font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-md transition">Ad Pool</Link>
             <Link href="/admin/gallery/island-splash/drinks" className="px-3 py-1.5 text-xs font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-md transition">Ref Gallery</Link>
-            <Link href="/admin/gallery/island-splash/drinks/approved" className="px-3 py-1.5 text-xs font-medium text-emerald-400/70 hover:text-emerald-400 hover:bg-emerald-400/10 rounded-md transition">✓ Approved (3)</Link>
+            <Link href="/admin/gallery/island-splash/drinks/approved" className="px-3 py-1.5 text-xs font-medium text-emerald-400/70 hover:text-emerald-400 hover:bg-emerald-400/10 rounded-md transition">✓ Approved</Link>
             <Link href="/admin/posts" className="px-3 py-1.5 text-xs font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-md transition">Posts</Link>
           </nav>
         </div>
@@ -228,7 +235,7 @@ export function AdminView({
           <StatCard
             label="Library"
             value={approvedCount > 0 ? `${approvedCount} approved` : 'Reviewing'}
-            sub={`${pendingCount} pending · ${skippedCount} skipped`}
+            sub={`${pendingCount} pending · ${badCount} bad`}
             color={approvedCount > 0 ? '#22c55e' : '#f97316'}
           />
         </div>
@@ -316,7 +323,7 @@ export function AdminView({
           <div className="flex items-center gap-6 mb-6 p-4 rounded-2xl bg-white/5 border border-white/10 text-sm">
             <div className="flex items-center gap-2"><span className="w-3 h-3 rounded-full bg-yellow-400" /><span className="text-white/70">{pendingCount} pending</span></div>
             <div className="flex items-center gap-2"><span className="w-3 h-3 rounded-full bg-emerald-400" /><span className="text-white/70">{approvedCount} approved</span></div>
-            <div className="flex items-center gap-2"><span className="w-3 h-3 rounded-full bg-white/20" /><span className="text-white/70">{skippedCount} skipped</span></div>
+            <div className="flex items-center gap-2"><span className="w-3 h-3 rounded-full bg-red-400" /><span className="text-white/70">{badCount} bad</span></div>
             {pendingCount === 0 && <span className="ml-auto text-emerald-400 text-sm font-medium">✓ All reviewed</span>}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -339,8 +346,9 @@ export function AdminView({
                         className="flex-1 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white text-sm font-bold transition flex items-center justify-center gap-2">
                         <span>✓</span> Approve
                       </button>
-                      <button disabled={loading === ad.id} onClick={() => handleAdAction(ad.id, 'skip')}
-                        className="flex-1 py-3 rounded-xl bg-white/10 hover:bg-white/20 disabled:opacity-50 text-white/70 text-sm font-medium transition border border-white/10">Skip</button>
+                      <button disabled={loading === ad.id} onClick={() => handleAdAction(ad.id, 'bad')}
+                        className="flex-1 py-3 rounded-xl bg-red-600 hover:bg-red-500 disabled:opacity-50 text-white text-sm font-bold transition border border-white/10">
+                        <span className="text-lg">✗</span> Bad</button>
                     </div>
                   </div>
                 </div>

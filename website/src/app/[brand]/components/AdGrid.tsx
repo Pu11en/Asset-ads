@@ -15,7 +15,7 @@ type Ad = {
 type ApprovalState = {
   pending_count: number;
   approved_count: number;
-  skipped_count: number;
+  bad_count: number;
   ads: Record<string, { status: string; filename: string; reviewed_at: string | null }>;
 };
 
@@ -45,7 +45,7 @@ export function AdGrid({ ads, brand, brandColor, approvalState }: Props) {
     return localApproval[adId] ?? approvalState?.ads[adId]?.status ?? 'pending';
   };
 
-  const handleAction = async (adId: string, action: 'approve' | 'skip' | 'reset') => {
+  const handleAction = async (adId: string, action: 'approve' | 'bad' | 'reset') => {
     setLoading(adId);
     try {
       const res = await fetch('/api/ads-review', {
@@ -55,7 +55,7 @@ export function AdGrid({ ads, brand, brandColor, approvalState }: Props) {
       });
       const data = await res.json();
       if (data.success) {
-        const newStatus = action === 'approve' ? 'approved' : action === 'skip' ? 'skipped' : 'pending';
+        const newStatus = action === 'approve' ? 'approved' : action === 'bad' ? 'bad' : 'pending';
         setLocalApproval(prev => ({ ...prev, [adId]: newStatus }));
       }
     } finally {
@@ -66,7 +66,7 @@ export function AdGrid({ ads, brand, brandColor, approvalState }: Props) {
   const counts = {
     pending: approvalState?.pending_count ?? ads.length,
     approved: approvalState?.approved_count ?? 0,
-    skipped: approvalState?.skipped_count ?? 0,
+    bad: approvalState?.bad_count ?? 0,
   };
 
   return (
@@ -82,8 +82,8 @@ export function AdGrid({ ads, brand, brandColor, approvalState }: Props) {
           <span className="text-sm text-white/70">{counts.approved} approved</span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="w-3 h-3 rounded-full bg-white/20" />
-          <span className="text-sm text-white/70">{counts.skipped} skipped</span>
+          <span className="w-3 h-3 rounded-full bg-red-400" />
+          <span className="text-sm text-white/70">{counts.bad} bad</span>
         </div>
         <div className="ml-auto flex items-center gap-2">
           {counts.pending === 0 ? (
@@ -92,7 +92,7 @@ export function AdGrid({ ads, brand, brandColor, approvalState }: Props) {
             </div>
           ) : (
             <span className="text-white/30 text-sm">
-              {counts.approved} approved · {counts.pending} pending
+              {counts.approved} approved · {counts.bad} bad · {counts.pending} pending
             </span>
           )}
         </div>
@@ -105,7 +105,7 @@ export function AdGrid({ ads, brand, brandColor, approvalState }: Props) {
           const isLoading = loading === ad.id;
           const isPending = status === 'pending';
           const isApproved = status === 'approved';
-          const isSkipped = status === 'skipped';
+          const isBad = status === 'bad';
           const hasError = imageError[ad.id];
 
           return (
@@ -114,8 +114,8 @@ export function AdGrid({ ads, brand, brandColor, approvalState }: Props) {
               className={`rounded-2xl border overflow-hidden transition-all ${
                 isApproved
                   ? 'border-emerald-500/50 bg-emerald-500/5'
-                  : isSkipped
-                  ? 'border-white/10 bg-white/5 opacity-50'
+                  : isBad
+                  ? 'border-red-500/50 bg-red-500/5 opacity-60'
                   : 'border-white/10 bg-white/5 hover:border-white/20'
               }`}
             >
@@ -143,9 +143,9 @@ export function AdGrid({ ads, brand, brandColor, approvalState }: Props) {
                     Approved
                   </div>
                 )}
-                {isSkipped && (
-                  <div className="absolute top-3 left-3 px-3 py-1.5 rounded-full bg-white/20 text-white/70 text-xs font-medium">
-                    Skipped
+                {isBad && (
+                  <div className="absolute top-3 left-3 px-3 py-1.5 rounded-full bg-red-500/80 text-white text-xs font-medium">
+                    Bad
                   </div>
                 )}
                 {isPending && (
@@ -174,18 +174,18 @@ export function AdGrid({ ads, brand, brandColor, approvalState }: Props) {
                     </button>
                     <button
                       disabled={isLoading}
-                      onClick={() => handleAction(ad.id, 'skip')}
-                      className="flex-1 py-3 rounded-xl bg-white/10 hover:bg-white/20 disabled:opacity-50 text-white/70 text-sm font-medium transition border border-white/10"
+                      onClick={() => handleAction(ad.id, 'bad')}
+                      className="flex-1 py-3 rounded-xl bg-red-600 hover:bg-red-500 disabled:opacity-50 text-white text-sm font-bold transition border border-white/10"
                     >
-                      Skip
+                      <span className="text-lg">✗</span> Bad
                     </button>
                   </div>
                 )}
 
-                {(isApproved || isSkipped) && (
+                {(isApproved || isBad) && (
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-white/40">
-                      {isApproved ? '✓ Approved' : '○ Skipped'}
+                      {isApproved ? '✓ Approved' : '✗ Bad'}
                     </span>
                     <button
                       disabled={isLoading}

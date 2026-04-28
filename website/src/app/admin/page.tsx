@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 
 type Ad = { id: string; filename: string; path: string; product_name?: string; caption?: string; status?: string; created_at?: string };
 type ScheduledPost = { id: string; ad_ids: string[]; caption: string; hashtags?: string; scheduled_at: string; platform: string; status: string };
-type ApprovalState = { pending_count: number; approved_count: number; skipped_count: number; ads: Record<string, { status: string; filename: string; reviewed_at: string | null }> };
+type ApprovalState = { pending_count: number; approved_count: number; bad_count: number; ads: Record<string, { status: string; filename: string; reviewed_at: string | null }> };
 
 async function loadAds(slug: string): Promise<Ad[]> {
   try {
@@ -48,7 +48,7 @@ function filterPoolAds(ads: Ad[], approval: ApprovalState | null): Ad[] {
   return ads.filter(ad => {
     const key = getAdKey(ad);
     const adStatus = approval.ads[key]?.status;
-    return adStatus !== 'consumed' && adStatus !== 'skipped';
+    return adStatus !== 'consumed' && adStatus !== 'bad';
   });
 }
 
@@ -66,7 +66,7 @@ export default async function AdminPage() {
     loadApproval("cinco-h-ranch"),
   ]);
 
-  // Filter out consumed and skipped ads from pool display
+  // Filter out consumed and bad ads from pool display
   const filteredIslandAds = filterPoolAds(islandAds, islandApproval);
   const filteredCincoAds = filterPoolAds(cincoAds, cincoApproval);
 

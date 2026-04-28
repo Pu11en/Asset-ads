@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { existsSync, readFileSync } from "fs";
-import { rename, mkdir } from "fs/promises";
+import { existsSync, readFileSync, unlinkSync } from "fs";
 import path from "path";
-import { execSync } from "child_process";
 
 const REPO_ROOT = "/home/drewp/asset-ads";
 
 const POOL_SLUG_MAP: Record<string, Record<string, string>> = {
   "island-splash": { "all-drinks": "drinks", "drinks": "drinks" },
+  "cinco-h-ranch": { "skincare": "skincare" },
 };
 
 function resolvePoolSlug(brand: string, category: string): string {
@@ -47,25 +46,20 @@ export async function POST(
   }
 
   const poolDir = getPoolDir(brand, category);
-  const poolSlug = resolvePoolSlug(brand, category);
-
-  const rejectedDir = path.join(poolDir, "rejected");
-  await mkdir(rejectedDir, { recursive: true });
 
   const results: { filename: string; success: boolean; error?: string }[] = [];
 
   for (const filename of filenames) {
     try {
-      const src = path.join(poolDir, filename);
-      const dst = path.join(rejectedDir, filename);
+      const filePath = path.join(poolDir, filename);
 
-      if (!existsSync(src)) {
+      if (!existsSync(filePath)) {
         results.push({ filename, success: false, error: "File not found" });
         continue;
       }
 
-      // Move to rejected
-      await rename(src, dst);
+      // Permanently delete the file
+      unlinkSync(filePath);
       results.push({ filename, success: true });
     } catch (err) {
       results.push({ filename, success: false, error: String(err) });
@@ -73,16 +67,6 @@ export async function POST(
   }
 
   const successCount = results.filter(r => r.success).length;
-
-  // Update state via state_manager.py
-  try {
-    execSync(
-      `cd ${REPO_ROOT} && python3 state_manager.py reject ${brand} ${successCount} --category ${poolSlug}`,
-      { encoding: "utf8" }
-    );
-  } catch (err) {
-    console.error("Failed to update state:", err);
-  }
 
   return NextResponse.json({
     rejected: successCount,

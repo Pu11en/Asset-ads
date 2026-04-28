@@ -48,7 +48,7 @@ REPO_ROOT = Path(__file__).resolve().parent
 BRANDS_DIR = REPO_ROOT / "brands"
 OUTPUT_DIR = REPO_ROOT / "output"
 
-POOL_PROCESSED_DIRNAME = "used-refs"
+POOL_PROCESSED_DIRNAME = "used"
 POOL_EXTS = (".jpg", ".jpeg", ".png", ".webp")
 POOL_PACING_SECONDS = 20
 
@@ -380,8 +380,11 @@ NON-NEGOTIABLE RULES WHEN WRITING THE PROMPT:
 
 OUTPUT FORMAT — emit ONLY the final prompt as plain text, structured with these headers:
 
+PRODUCE/INGREDIENT STRIPPER (CRITICAL — strip ALL produce and ingredient elements from the reference):
+(This MUST be the first thing in your output. Read the REVERSE ANALYSIS's "PRODUCE / INGREDIENTS" and "COMPOSITION" sections carefully. List every single produce, fruit, vegetable, peel, garnish, herb, spice, leaf, or raw ingredient shown in or around the product. For each item, write EXACTLY: "REMOVE: [exact description from reference]". If the reference has NO produce, write: "REMOVE: None required". Do this FIRST before anything else.)
+
 FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
-(A concrete bullet list of EVERY text string, headline, tagline, wordmark, logo, brand name, URL, phone number, social handle, event badge, watermark, and ghosted/repeated text pattern that appears in the reference ad. Pull them verbatim from the REVERSE ANALYSIS. Quote exact strings. Example:
+(A concrete bullet list of EVERY text string, headline, tagline, wordmark, logo, brand name, URL, phone number, social handle, event badge, watermark, ghosted/repeated text pattern, and any decorative elements that appears in the reference ad. Pull them verbatim from the REVERSE ANALYSIS. Quote exact strings. Example:
   - The wordmark "JB'fresh" (red-and-black script)
   - The headline "Smoothie" in rounded sans-serif
   - The "SIAL Interfood Jakarta" event badge with "INSPIRE FOOD BUSINESS" and dates "12 - 15 Nov 2025" and booth "B2-F202"
@@ -389,7 +392,8 @@ FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
   - The bottle-label strings "JUICE DRINK", "YELLOW SMOOTHIE", "RED SMOOTHIE", "Mutti Vintamin", "16.9 fl oz (500mL)"
   - Any farmhouse/barn line-art on labels
   - Any sparkle/star decorative typography
-None of these may appear in the output. The reference brand does not exist in the {name} ad.)
+  - Any orange peel, lemon slice, lime wheel, fruit garnish, herb garnish, or any edible decoration shown with the product
+None of these may appear in the output. The reference brand does not exist in the {name} ad. Only the {name} product and scene backdrop remain.)
 
 STRICT CONSTRAINTS:
 (brand rules — palette, label preservation, no mascots/forbidden props, no hashtags/URLs, no medical claims)
@@ -419,6 +423,7 @@ TEXT STRATEGY:
 - Write body copy lines matching the reference text density. Keep each line short and honest.
 - Render all text in brand palette colors — Island Splash: #243C3C (dark teal), #F0A86C (warm orange), #E4843C (deep coral), #A89078 (warm sand); Cinco H Ranch: use brand palette. Pick ONE color that contrasts well with the scene.
 - Write freely using the brand voice. Do NOT invent clinical, corporate, or spa-fluff language.
+- ABSOLUTELY FORBIDDEN in any text you write: FREE, % OFF, GIVEAWAY, any discount/promotion language, URLs, hashtags, pricing, phone numbers, social handles, medical claims.
 
 LOGO:
 (the LAST INPUT image — render small, ~8% of frame width, single bottom corner, no banner, no box, no lockup text added.)
@@ -831,6 +836,34 @@ def sync_ad_to_website(brand: dict, out_path: Path, selected: list[dict]) -> Non
     brand_json_path.write_text(json.dumps(ads_data, indent=2))
     log(brand, f"synced to website: {dest_path}")
 
+    # Also initialize entry in ad-approval JSON so approve/bad buttons work
+    _sync_ad_to_approval(slug, out_path.name)
+
+
+def _sync_ad_to_approval(slug: str, ad_id: str) -> None:
+    """Add or update an ad entry in the approval JSON as 'pending'."""
+    import shutil
+    approval_dir = REPO_ROOT / "output" / "ad-approval"
+    approval_dir.mkdir(parents=True, exist_ok=True)
+    approval_file = approval_dir / f"{slug}.json"
+
+    # Build initial state if file doesn't exist
+    state = {"pending_count": 0, "approved_count": 0, "bad_count": 0, "consumed_count": 0, "ads": {}}
+    if approval_file.exists():
+        try:
+            state = json.loads(approval_file.read_text())
+        except Exception:
+            state = {"pending_count": 0, "approved_count": 0, "bad_count": 0, "consumed_count": 0, "ads": {}}
+
+    # Normalize ad key — strip extension
+    key = ad_id.replace(".png", "").replace(".jpg", "").replace(".jpeg", "")
+
+    # Only add if not already tracked (don't override existing status)
+    if key not in state["ads"] and ad_id not in state["ads"]:
+        state["ads"][key] = {"status": "pending", "filename": ad_id, "reviewed_at": None}
+        state["pending_count"] = state.get("pending_count", 0) + 1
+        approval_file.write_text(json.dumps(state, indent=2))
+
 
 def resolve_pool_dir(brand: dict, locked_product: str | None) -> Path:
     """Which directory to read refs from.
@@ -880,6 +913,10 @@ def run_pool(brand: dict, locked_product: str | None = None) -> int:
         try:
             out = run_one(brand, str(ref), locked_product=locked_product)
             ref.rename(processed_dir / ref.name)
+            # Remove the approved/ copy so it never shows up in the gallery again
+            approved_copy = pool_dir / "approved" / ref.name
+            if approved_copy.exists():
+                approved_copy.unlink()
             successes.append((ref.name, out))
             print(str(out))
             sys.stdout.flush()
