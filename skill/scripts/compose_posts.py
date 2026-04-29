@@ -20,8 +20,8 @@ from datetime import datetime
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 
-# Load env from Hermes profile (same as asset_ads.py)
-ENV_PATH = Path("/home/drewp/.hermes/profiles/hermes-11/.env")
+# Load env from local .env
+ENV_PATH = Path(__file__).resolve().parents[2] / ".env"
 with ENV_PATH.open() as f:
     for line in f:
         line = line.strip()

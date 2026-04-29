@@ -1,11 +1,11 @@
 {
   "brand": "island-splash",
   "category": "drinks",
-  "approved": 4,
+  "approved": 28,
   "rejected": 0,
   "used": 0,
   "trigger_threshold": 3,
   "triggered": false,
-  "unapproved": 119,
-  "last_updated": "2026-04-28T01:36:44.716486"
+  "unapproved": 629,
+  "last_updated": "2026-04-28T23:48:31.439350"
 }

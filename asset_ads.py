@@ -33,7 +33,7 @@ from pathlib import Path
 
 from PIL import Image
 
-ENV_PATH = Path("/home/drewp/.hermes/profiles/hermes-11/.env")
+ENV_PATH = Path(__file__).resolve().parent / ".env"
 with ENV_PATH.open() as f:
     for line in f:
         line = line.strip()
@@ -292,21 +292,6 @@ MOOD: 3–5 keywords.
 
 Be literal. Do NOT add clichés ("juicy splashes" unless they're actually there). Absence is as important as presence — if there are no splashes, SAY SO."""
 
-VIBE_SHIFT_PROMPT = """You are a professional cinematographer and color grading expert. Extract ONLY the visual aesthetic and technical characteristics of this image — ignore all subject matter, people, objects, or story elements.
-
-Create a detailed technical description that captures the pure visual treatment. Focus on:
-
-FILM/CAMERA: What film stock or digital equivalent would create this look? Camera type and lens characteristics (35mm, medium format, digital). Depth of field, focus qualities. Any lens effects (vignetting, distortion, bokeh).
-
-COLOR SCIENCE: Dominant color palette and temperature. Saturation levels and color relationships. Warm/cool biases. Shadow and highlight color characteristics.
-
-LIGHTING: Light source type and quality (natural, artificial, mixed). Shadow characteristics (soft, hard, direction). Highlight behavior and exposure style. Overall contrast and dynamic range.
-
-POST-PROCESSING: Color grading characteristics. Film grain or digital noise structure. Contrast curve and exposure tendencies. Distinctive processing effects.
-
-OUTPUT: Write a single paragraph starting with "Shot with..." using specific technical terms. End with a 5–6 keyword summary. Detailed enough to recreate this exact visual aesthetic on any subject matter."""
-
-
 def _brand_voice_block(selected: list[dict], brand: dict) -> str:
     """Build brand voice guidance for freeform text generation."""
     lines = []
@@ -325,7 +310,6 @@ def build_composer_system(brand: dict, selected: list[dict]) -> str:
     """Templated composer system prompt — substitutes brand identity throughout."""
     name = brand["display_name"]
     palette = brand["identity"]["palette"]["description"]
-    vibe_examples = ", ".join(f'"{p}"' for p in brand["identity"].get("allowed_vibe_phrases", [])) or '"Brand", "Vibe"'
     voice_block = _brand_voice_block(selected, brand)
 
     cap_lines = []
@@ -333,13 +317,12 @@ def build_composer_system(brand: dict, selected: list[dict]) -> str:
         cap_lines.append(f"    - {name} {p['name']} ({p['container']}): {p['cap_rule']}")
     cap_block = "\n".join(cap_lines) if cap_lines else f"    - All {name} products: see product config"
 
-    # Collect all forbidden text patterns for the composer
+    # Collect forbidden text patterns
     forbidden_patterns = list(brand.get("global_forbidden_text", []))
     selected_names = {p["name"] for p in selected}
     for p in brand.get("products", []):
         if p["name"] in selected_names:
             forbidden_patterns.extend(p.get("forbidden_text", []))
-    # Deduplicate by pattern string
     seen = set()
     unique_forbidden = []
     for item in forbidden_patterns:
@@ -349,89 +332,87 @@ def build_composer_system(brand: dict, selected: list[dict]) -> str:
             unique_forbidden.append(item)
     if unique_forbidden:
         forbidden_lines = "\n".join(f"    - '{item['pattern']}' — {item['reason']}" for item in unique_forbidden)
-        forbidden_block = f"""FORBIDDEN WORDS — NEVER use these in the TEXT STRATEGY, STRICT CONSTRAINTS, or any instruction that tells the image model what TO render. You may list them in the FORBIDDEN IN OUTPUT section (rule 2b) but nowhere else:
+        forbidden_block = f"""FORBIDDEN WORDS — NEVER use these anywhere in your output prompt:
 {forbidden_lines}"""
     else:
         forbidden_block = ""
 
-    return f"""You are a senior art director writing a final image-generation prompt for gemini-3-pro-image-preview. You will receive:
-  - a REVERSE ANALYSIS of a reference ad (what's in it, verbatim)
-  - a VIBE SHIFT analysis (the reference's pure cinematic aesthetic)
-  - the {name} brand rules
-  - the selected {name} product(s) to substitute into the ad
+    return f"""You are a senior art director executing a precise brand transfer. You receive:
+  - INPUT 1: the reference ad (competitor brand — DO NOT COPY its identity)
+  - INPUT 2 through N+1: the {name} product image(s), in left-to-right/top-to-bottom order matching the reference's product slots
+  - LAST INPUT: the {name} logo
+  - REVERSE ANALYSIS: a structured description of what's actually in INPUT 1
+  - SELECTED PRODUCTS: the {name} product(s) to place into INPUT 1's product slot(s)
 
-Your job: write the final prompt. The goal is to RECREATE the reference ad's subject, composition, and decorative elements faithfully, swapping ONLY the product for {name} product(s), and apply a color-grade overlay that shifts the palette toward the brand.
+YOUR JOB: transfer the LAYOUT from INPUT 1 to {name}, replacing only the competitor product/label with {name} product(s). Everything else — scene, lighting, camera angle, composition geometry — transfers unchanged.
 
-NON-NEGOTIABLE RULES WHEN WRITING THE PROMPT:
-  1. Keep the reference's SUBJECT. If the ref has a snow leopard, keep the snow leopard. If it has a person holding a fruit, keep the person and the fruit. Do not drop the subject.
-  2. Do NOT invent elements absent from the reference. If the reverse analysis says "NO splashes, NO produce, NO decorative elements," your prompt MUST forbid splashes/produce/decorative. No adding generic clichés like bursting fruit, ice crystals, or juice droplets unless the reference had them.
-  2a. NEVER instruct to preserve, keep, or render any of the reference's: text, headlines, taglines, body copy, URLs, phone numbers, logos, wordmarks, brand marks, watermarks, ghosted/repeated text patterns, or decorative typography. These are the reference brand's identity and do NOT belong in the {name} ad. Only the reference's SUBJECT (person, pose, product-grip, scene) and COMPOSITION (camera framing, text-zone positions) transfer. All text and logos in the output come from the {name} TEXT STRATEGY and LOGO blocks you write — nothing else.
-  2b. FIRST SECTION OF YOUR OUTPUT is a FORBIDDEN IN OUTPUT bullet list. Read the REVERSE ANALYSIS and extract every single text string, headline, tagline, logo name, wordmark, brand name, URL, phone number, social handle, event badge, date string, booth number, decorative-type element, ghosted pattern, and watermark mentioned. Quote them verbatim in quotes. Be exhaustive — if the reverse analysis names 10 text strings, your list has at least 10 bullets. This list is the first thing the image model reads. Missing strings is a failure.
-  3. The style overlay is a COLOR GRADE + LIGHTING + GRAIN + LENS FEEL on top of the recreated scene — NOT a repaint of the background. Take the Vibe Shift's lighting/grain/lens/contrast characteristics verbatim; replace its color-palette description with the {name} brand palette ({palette}). The scene keeps its structure; colors shift.
-  3a. KEEP the product subject (the advertised item itself). DROP all produce/ingredient/raw-material elements shown alongside the product in the reference — these are the reference brand's ingredient showcase and do not transfer. For example: if a juice brand shows a half-cut orange next to the bottle, do NOT include an orange in the {name} ad; if a sunscreen shows papaya leaves or fruit as ingredients, do NOT include papaya in the {name} ad. Only the product itself and the scene backdrop/setting transfer.
-  4. Text: match the reference's font feel (thin sans-serif -> thin sans-serif, heavy serif -> heavy serif). Colors from brand palette. Do NOT invent URLs, hashtags, pricing, phone numbers, social handles. Write text that matches the brand voice guidance — plain, honest, ranch-real. If the reference has minimal/no text, keep the ad minimal/no text.
-  4b. {forbidden_block}
-  5. Product replacement: swap the reference's product(s) for {name} product(s). The product images are provided as NUMBERED INPUTS. INPUT 1 is always the reference. INPUTS 2..N+1 are the {name} product images in the same order as the SELECTED PRODUCTS list you receive. Reference them by input index in your PRODUCT REPLACEMENT block (e.g., "Bottle in the front-right position: paste INPUT 2 ({name} <product name>) as the bottle label, pixel-faithful, do not redraw"). Do NOT say "using the provided image" generically — always say the INPUT number. Do NOT redraw the label design; the INPUT image IS the label.
-  5a. CONTAINER + CAP RULES (brand fact, by selected product):
+STRICT TRANSFER RULES:
+
+FROM INPUT 1 (THE REFERENCE) — COPY AS-IS:
+  ✓ Overall composition and framing (treat INPUT 1 as an EMPTY SCENE TEMPLATE — the competitor product(s) shown in INPUT 1 must be ABSENT from your output)
+  ✓ Product slot geometry: exact pixel position, angle, scale, and depth ordering of each product in the scene
+  ✓ Lighting: direction, quality (soft/hard), highlight behavior, shadow type and placement
+  ✓ Background: environment, surface, backdrop structure — apply BRAND PALETTE COLORS only (see STRICT CONSTRAINTS)
+  ✓ Camera angle and distance
+  ✓ Text zone positions (top banner, bottom strip, side margins — NOT the actual text)
+
+FROM INPUT 1 — NEVER COPY UNDER ANY CIRCUMSTANCE:
+  ✗ ANY competitor product visible in INPUT 1 — it must be completely absent from your output; do NOT keep it, hide it, blur it, or include it in any form
+  ✗ Any competitor brand name, logo, wordmark, or tagline
+  ✗ Any competitor product label, text, or packaging design
+  ✗ Any text visible in the reference (headlines, CTAs, fine print, URLs, phone numbers)
+  ✗ Any competitor decorative elements (swirls, badges, icons, frames, watermarks)
+  ✗ Any produce, fruit, leaves, garnishes, or raw ingredients shown with or near the competitor product
+  ✗ Any splash, bubble, or decorative element unique to the competitor brand
+
+FROM INPUT 2+ (THE {name} PRODUCT) — USE EXACTLY:
+  ✓ The product label image IS the label — paste it pixel-faithful, do NOT describe or redraw it
+  ✓ Match the product's container/cap to the scene's camera angle and shadow
+  ✓ The product must look like it belongs in the scene — adjust lighting to match the reference scene, not the product photo's original lighting
+
+FROM INPUT (LAST) — THE {name} LOGO:
+  ✓ Small standalone badge, ~8% frame width, one bottom corner, no box, no banner, no added text
+
+FORBIDDEN WORDS — never appear in any text you write:
+{forbidden_block}
+
+CAP/CONTAINER RULES:
 {cap_block}
-  Apply each product's container/cap rule literally. Do NOT inherit cap colors or container styles from the reference image.
-  6. Logo: a separate INPUT image (the LAST input). Render it as a SMALL badge, roughly 8% of frame width, in ONE bottom corner. NOT a banner. NOT a lockup. NOT oversized. No background box. One placement.
-  7. Aspect ratio: 4:5 (Instagram portrait).
 
-OUTPUT FORMAT — emit ONLY the final prompt as plain text, structured with these headers:
+ASPECT RATIO: 4:5 portrait
 
-PRODUCE/INGREDIENT STRIPPER (CRITICAL — strip ALL produce and ingredient elements from the reference):
-(This MUST be the first thing in your output. Read the REVERSE ANALYSIS's "PRODUCE / INGREDIENTS" and "COMPOSITION" sections carefully. List every single produce, fruit, vegetable, peel, garnish, herb, spice, leaf, or raw ingredient shown in or around the product. For each item, write EXACTLY: "REMOVE: [exact description from reference]". If the reference has NO produce, write: "REMOVE: None required". Do this FIRST before anything else.)
+OUTPUT FORMAT — write the final image-generation prompt using this EXACT structure:
 
-FORBIDDEN IN OUTPUT (from reference — MUST NOT appear in the final image):
-(A concrete bullet list of EVERY text string, headline, tagline, wordmark, logo, brand name, URL, phone number, social handle, event badge, watermark, ghosted/repeated text pattern, and any decorative elements that appears in the reference ad. Pull them verbatim from the REVERSE ANALYSIS. Quote exact strings. Example:
-  - The wordmark "JB'fresh" (red-and-black script)
-  - The headline "Smoothie" in rounded sans-serif
-  - The "SIAL Interfood Jakarta" event badge with "INSPIRE FOOD BUSINESS" and dates "12 - 15 Nov 2025" and booth "B2-F202"
-  - The URL "@jbfresh.com.vn" and its globe icon
-  - The bottle-label strings "JUICE DRINK", "YELLOW SMOOTHIE", "RED SMOOTHIE", "Mutti Vintamin", "16.9 fl oz (500mL)"
-  - Any farmhouse/barn line-art on labels
-  - Any sparkle/star decorative typography
-  - Any orange peel, lemon slice, lime wheel, fruit garnish, herb garnish, or any edible decoration shown with the product
-None of these may appear in the output. The reference brand does not exist in the {name} ad. Only the {name} product and scene backdrop remain.)
+WHAT THE REFERENCE INPUT 1 GIVES YOU:
+(List 3-5 concrete facts about the composition, lighting, backdrop, and product slot geometry from the REVERSE ANALYSIS. Be specific — "bottle centered, tilted 15° right, resting on white marble surface, soft frontal light with subtle upper-right catchlight" not "a bottle on a surface.")
+
+WHAT YOU MUST NOT COPY FROM INPUT 1:
+(List every competitor brand element — brand name, logo text, label design, decorative swirls, badges, watermarks, produce/ingredient props. Quote exact strings from the REVERSE ANALYSIS where possible. This list MUST be exhaustive.)
+
+PRODUCT PLACEMENT:
+(One line per product slot, in reference left-to-right order. Example: "Slot 1 (left-center, 30% from left edge, tilted 15°, fills 60% of frame height): paste INPUT 2 ({name} Mango Passion) label pixel-faithful into this exact region. Apply same angle and scale. Black cap." Repeat for each slot. Use INPUT numbers matching order: INPUT 2 = first product, INPUT 3 = second, etc.)
+
+LIGHTING:
+(Describe the scene lighting from INPUT 1 in 1-2 sentences. Write: "Match product highlights and shadows to this scene lighting — do not preserve the product photo's original lighting." Keep it locked to the reference.)
 
 STRICT CONSTRAINTS:
-(brand rules — palette, label preservation, no mascots/forbidden props, no hashtags/URLs, no medical claims)
-- The product label is pasted PIXEL-FAITHFUL from the INPUT image — do NOT redraw or recreate the label
-- Product lighting MUST match the scene's lighting direction and quality — never preserve "original product lighting"
-- Product must cast a natural shadow on the scene surface — no floating, no hard-edged pasted shadow
-- Use upgraded product images when available (`upgraded_*.png` — opaque, higher quality)
-
-REFERENCE SUBJECT & COMPOSITION:
-(paragraph — keep subject X, keep composition Y, DO NOT add Z absent elements)
-
-PRODUCT REPLACEMENT:
-(the N products in ref → N {name} products. For each, specify its scene position and the exact INPUT index whose label to paste pixel-faithful. Apply the per-product cap/container rule from rule 5a. Do not inherit container or cap styles from the reference.)
-
-LIGHTING & SHADOW MATCH (CRITICAL — prevents "pasted-in" look):
-- Analyze the reference's lighting: direction (overhead, side, backlit), quality (hard/soft), and color temperature (warm/cool/neutral)
-- State the product's lighting as a constraint: "The product catches highlights consistent with the scene's [direction] [quality] [temperature] lighting"
-- State the shadow constraint: "A soft, diffuse shadow grounds the product on [surface], consistent with the scene's shadow direction and softness"
-- If the scene has rim lighting, say "no highlight on the product that contradicts the scene's rim light"
-- Never write "preserve original lighting" or "match the product's original lighting" — always reference the SCENE's lighting
-
-TEXT CONTENT GUIDANCE:
-{voice_block}
+- COMPETITOR PRODUCTS MUST NOT APPEAR IN YOUR OUTPUT — the scene is empty except for the {name} product(s) you place. The reference's product(s) must be completely absent, not blurred, not cropped, not hidden.
+- Paste label from INPUT [N] pixel-faithful — do NOT redraw, describe, or alter the label design
+- Product must cast a natural contact shadow on the scene surface — no floating, no hard-edge pasted shadow
+- Adjust product brightness/contrast to match the scene's ambient light — never preserve "original product lighting"
+- BACKGROUND, SETTING & COLOR GRADE: replace ALL colors from INPUT 1 with the brand palette. The 60-30-10 dynamic rule applies: identify the dominant mood/tone of INPUT 1 (e.g. warm tropical, cool moody, bright citrus), then assign brand palette colors to fill that tone — 60% dominant color, 30% secondary, 10% accent. NEVER use colors outside the brand palette.
+- Brand palette: {palette}
+- No mascots, cartoon characters, personified objects
+- No hashtags, URLs, pricing, phone numbers, social handles, medical claims
+- Aspect ratio: 4:5 portrait
 
 TEXT STRATEGY:
-- Write a headline matching the brand voice. Follow the reference font feel (serif headline -> serif, sans-serif -> sans-serif).
-- Write body copy lines matching the reference text density. Keep each line short and honest.
-- Render all text in brand palette colors — Island Splash: #243C3C (dark teal), #F0A86C (warm orange), #E4843C (deep coral), #A89078 (warm sand); Cinco H Ranch: use brand palette. Pick ONE color that contrasts well with the scene.
-- Write freely using the brand voice. Do NOT invent clinical, corporate, or spa-fluff language.
-- ABSOLUTELY FORBIDDEN in any text you write: FREE, % OFF, GIVEAWAY, any discount/promotion language, URLs, hashtags, pricing, phone numbers, social handles, medical claims.
+(Write brand voice text for each text zone identified in WHAT THE REFERENCE GIVES YOU. Keep it plain and honest. If the reference has no text zones, write: No text. Use brand palette colors.)
 
 LOGO:
-(the LAST INPUT image — render small, ~8% of frame width, single bottom corner, no banner, no box, no lockup text added.)
+(Paste the LAST INPUT logo small, ~8% frame width, single bottom corner, no box.)
 
-STYLE OVERLAY (FINAL UNIFYING PASS — apply LAST, over everything above):
-(the modified Vibe Shift paragraph with brand palette swapped in. This is the final color grade + lighting + lens + grain treatment that ties the composed scene, the pasted product labels, and the text into one cohesive image. Even if an individual element looks slightly off, this unifying pass blends it into the final shot. Phrase it as "applied as the final pass over the entire image.")
-
-Do not wrap in markdown code fences. Do not add headings beyond those listed. Do not explain your reasoning — output the prompt only."""
+Do not use markdown fences. Do not add headings not listed above."""
 
 
 # ── Analysis calls ───────────────────────────────────────────────────────────
@@ -451,19 +432,8 @@ def reverse_analyze(ref_path: str) -> str:
     return _with_fallback("reverse_analyze", gemini, openrouter)
 
 
-def vibe_shift_analyze(ref_path: str) -> str:
-    def gemini():
-        client = _client()
-        resp = client.models.generate_content(
-            model=VISION_MODEL,
-            contents=[_image_part(ref_path), VIBE_SHIFT_PROMPT],
-        )
-        return resp.candidates[0].content.parts[0].text.strip()
-
-    def openrouter():
-        return _or_text_call(OR_TEXT_MODEL, None, [{"path": ref_path}, VIBE_SHIFT_PROMPT])
-
-    return _with_fallback("vibe_shift_analyze", gemini, openrouter)
+# vibe_shift_analyze removed — we use the reference's own lighting/composition directly
+# no separate aesthetic layer
 
 
 def _strip_md(text: str) -> str:
@@ -509,14 +479,11 @@ def build_brand_rules_block(brand: dict) -> str:
     return "\n".join(parts)
 
 
-def compose_prompt(brand: dict, selected: list[dict], reverse: str, vibe: str) -> str:
+def compose_prompt(brand: dict, selected: list[dict], reverse: str) -> str:
     rules_block = build_brand_rules_block(brand)
     product_names = ", ".join(p["name"] for p in selected)
     user = f"""REVERSE ANALYSIS:
 {reverse}
-
-VIBE SHIFT ANALYSIS:
-{vibe}
 
 SELECTED PRODUCTS (in order, one per ref product): {product_names}
 
@@ -624,11 +591,14 @@ def _build_input_index(brand: dict, selected: list[dict], has_logo: bool) -> str
     name = brand["display_name"]
     lines = [
         "INPUT IMAGE INDEX (the images attached to this request, in order):",
-        f"  INPUT 1 = REFERENCE ad. STRUCTURAL WIREFRAME ONLY — use it for subject placement, pose, composition, camera angle, and text-zone positions. DO NOT copy ANY of the following from INPUT 1 into the output: colors, background color/pattern, products, labels, caps, text, headlines, taglines, URLs, logos, wordmarks, brand marks, watermarks, ghosted/repeated text patterns, or decorative type. Every piece of text and every logo in the final image comes from {name} — not from INPUT 1. The reference brand does not exist in the output.",
+        f"  INPUT 1 = REFERENCE ad. Use it ONLY for: subject placement, pose, composition, camera angle, lighting direction, and text-zone positions. Every product label, cap, text, logo, brand mark, and decorative element in the OUTPUT must come from the INPUT product images listed below — NOT from INPUT 1. INPUT 1 has NO labels, logos, or text that should appear in the output.",
     ]
     for i, prod in enumerate(selected):
         lines.append(
-            f"  INPUT {i + 2} = {name} {prod['name']} product image ({prod['container']}). PASTE this label/artwork pixel-faithfully onto the corresponding product. Do NOT redraw, recolor, or restyle. Container/cap rule: {prod['cap_rule']}."
+            f"  INPUT {i + 2} = {name} {prod['name']} product image ({prod['container']}). "
+            f"This is the ONLY source for the product label. COPY the label artwork pixel-for-pixel onto the product. "
+            f"Do NOT redraw, recreate, or reimagine the label — the label image IS the label. "
+            f"Container/cap rule: {prod['cap_rule']}."
         )
     if has_logo:
         lines.append(
@@ -691,7 +661,6 @@ def save_sidecar(
     ref_path: str,
     selected: list[dict],
     reverse: str,
-    vibe: str,
     final_prompt: str,
     forbidden_warnings: list[dict],
 ) -> None:
@@ -709,7 +678,6 @@ def save_sidecar(
         f"TIMESTAMP: {datetime.now().isoformat()}\n"
         f"{warn_block}"
         f"\n=== REVERSE ANALYSIS ===\n{reverse}\n"
-        f"\n=== VIBE SHIFT ANALYSIS ===\n{vibe}\n"
         f"\n=== FINAL IMAGE-GEN PROMPT ===\n{final_prompt}\n"
     )
 
@@ -744,11 +712,8 @@ def run_one(brand: dict, ref_path: str, locked_product: str | None = None) -> Pa
         selected = pick_products(brand, product_count, produce, tally)
         log(brand, f"products: {', '.join(p['name'] for p in selected)}")
 
-    log(brand, "vibe-shift analysis")
-    vibe = vibe_shift_analyze(ref_path)
-
     log(brand, "composing final prompt")
-    final_prompt = compose_prompt(brand, selected, reverse, vibe)
+    final_prompt = compose_prompt(brand, selected, reverse)
 
     patterns = collect_forbidden_patterns(brand, selected)
     hits = scan_forbidden(final_prompt, patterns)
@@ -772,7 +737,7 @@ def run_one(brand: dict, ref_path: str, locked_product: str | None = None) -> Pa
     log(brand, f"generating image → {out_path}")
     generate_image(brand, ref_path, product_paths, brand["paths"]["logo_path"], selected, final_prompt, out_path)
 
-    save_sidecar(brand, out_path, ref_path, selected, reverse, vibe, final_prompt, warnings)
+    save_sidecar(brand, out_path, ref_path, selected, reverse, final_prompt, warnings)
 
     for prod in selected:
         tally[prod["name"]] = tally.get(prod["name"], 0) + 1
@@ -865,12 +830,12 @@ def _sync_ad_to_approval(slug: str, ad_id: str) -> None:
         approval_file.write_text(json.dumps(state, indent=2))
 
 
-def resolve_pool_dir(brand: dict, locked_product: str | None) -> Path:
+def resolve_pool_dir(brand: dict, locked_product: str | None, category: str | None = None) -> Path:
     """Which directory to read refs from.
 
     For brands with product_required + a locked product, each product has its own
     sub-pool at <pool_dir>/<product.pool_slug>/. Otherwise (e.g. Island Splash rotation)
-    use the approved/ subdirectory — never the root pool.
+    use <pool_dir>/<category>/approved/ — never the root pool.
     """
     base = Path(brand["paths"]["pool_dir"])
     if brand.get("product_required") and locked_product:
@@ -879,11 +844,13 @@ def resolve_pool_dir(brand: dict, locked_product: str | None) -> Path:
             raise RuntimeError(f"locked product '{locked_product}' not in brand '{brand['slug']}'")
         slug = prod.get("pool_slug") or prod["name"].lower().replace(" ", "-")
         return base / slug
+    if category:
+        return base / category / "approved"
     return base / "approved"
 
 
-def list_pool(brand: dict, locked_product: str | None = None) -> list[Path]:
-    pool_dir = resolve_pool_dir(brand, locked_product)
+def list_pool(brand: dict, locked_product: str | None = None, category: str | None = None) -> list[Path]:
+    pool_dir = resolve_pool_dir(brand, locked_product, category)
     pool_dir.mkdir(parents=True, exist_ok=True)
     (pool_dir / POOL_PROCESSED_DIRNAME).mkdir(parents=True, exist_ok=True)
     refs: list[Path] = []
@@ -893,9 +860,9 @@ def list_pool(brand: dict, locked_product: str | None = None) -> list[Path]:
     return refs
 
 
-def run_pool(brand: dict, locked_product: str | None = None) -> int:
-    refs = list_pool(brand, locked_product)
-    pool_dir = resolve_pool_dir(brand, locked_product)
+def run_pool(brand: dict, locked_product: str | None = None, category: str | None = None) -> int:
+    refs = list_pool(brand, locked_product, category)
+    pool_dir = resolve_pool_dir(brand, locked_product, category)
     if not refs:
         log(brand, f"pool is empty — nothing to do ({pool_dir})")
         return 1
@@ -914,7 +881,8 @@ def run_pool(brand: dict, locked_product: str | None = None) -> int:
             out = run_one(brand, str(ref), locked_product=locked_product)
             ref.rename(processed_dir / ref.name)
             # Remove the approved/ copy so it never shows up in the gallery again
-            approved_copy = pool_dir / "approved" / ref.name
+            # For nested layouts (island-splash), the copy lives in processed_dir
+            approved_copy = processed_dir / ref.name
             if approved_copy.exists():
                 approved_copy.unlink()
             successes.append((ref.name, out))
@@ -934,6 +902,7 @@ def main() -> int:
     parser.add_argument("--brand", default=DEFAULT_BRAND, help="Brand slug (matches brands/<slug>.json)")
     parser.add_argument("--product", default=None, help="Lock to one product (name or trigger keyword); overrides rotation")
     parser.add_argument("--pool", action="store_true", help="Drain the brand's pool dir sequentially")
+    parser.add_argument("--category", default=None, help="Pool category subdirectory (e.g. drinks for island-splash)")
     parser.add_argument("ref", nargs="?", help="Reference image path (required unless --pool)")
     args = parser.parse_args()
 
@@ -950,7 +919,7 @@ def main() -> int:
         args.product = find_or_fail["name"]
 
     if args.pool:
-        return run_pool(brand, locked_product=args.product)
+        return run_pool(brand, locked_product=args.product, category=args.category)
 
     if not args.ref:
         parser.error("ref path required unless --pool is set")

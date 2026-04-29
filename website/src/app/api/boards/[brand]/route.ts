@@ -88,10 +88,6 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
   }
 
   const boards = getBoards(brand);
-  const existing = boards.find(b => b.url === url);
-  if (existing) {
-    return NextResponse.json({ error: 'Board already added', board: existing }, { status: 409 });
-  }
 
   const board = {
     url,
@@ -116,7 +112,6 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
     addedAt: new Date().toISOString(),
   };
   addJobToQueue(job);
-  triggerScrape(brand, url, pool, maxImages);
 
   return NextResponse.json({ success: true, board, job });
 }

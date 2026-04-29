@@ -133,7 +133,7 @@ When user says "island splash" or wants to run the pipeline:
 ## Current Status (as of 2026-04-25)
 
 - Pinterest scraper: Working
-- Ref pool: Has approved refs in `/home/drewp/hermes-11/references/all-drinks/approved/`
+- Ref pool: `brand_assets/{brand}/references/` (approved refs)
 - Generated ads: 8 Island Splash ads in `website/public/images/ads/island-splash/`
 - Composed posts: 2 batches in `output/posts/`
 - Blotato: Needs API key configured

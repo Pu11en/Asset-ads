@@ -375,7 +375,7 @@ def main():
     parser.add_argument('--brand', required=True, help="Brand slug (e.g. island-splash, cinco-h-ranch)")
     parser.add_argument('--board-url', required=True, help="Pinterest board URL (short pin.it/... or full board URL)")
     parser.add_argument('--pool', default='all-drinks', help="Pool / product name (default: all-drinks)")
-    parser.add_argument('--max-images', type=int, default=None, help="Max images to fetch (default: all)")
+    parser.add_argument('--max-images', type=int, default=500, help="Max images to fetch (default: 500)")
     parser.add_argument('--dry-run', action='store_true', help="Preview images without downloading")
 
     args = parser.parse_args()

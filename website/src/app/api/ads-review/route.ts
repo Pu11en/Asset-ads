@@ -56,7 +56,7 @@ export async function GET(req: NextRequest) {
   const brand = searchParams.get('brand');
   if (!brand) return NextResponse.json({ error: 'brand required' }, { status: 400 });
 
-  const state = getApprovalState(brand);
+  const state = await getApprovalState(brand);
   if (!state) return NextResponse.json({ error: 'not found' }, { status: 404 });
 
   return NextResponse.json(state);

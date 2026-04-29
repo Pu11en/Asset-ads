@@ -42,7 +42,7 @@ import requests
 
 # Blotato API config
 BLOTATO_BASE = "https://backend.blotato.com/v2"
-ENV_PATH = Path.home() / ".hermes" / "profiles" / "hermes-11" / ".env"
+ENV_PATH = Path(__file__).resolve().parents[2] / ".env"
 
 
 def load_api_key() -> str:
@@ -56,7 +56,7 @@ def load_api_key() -> str:
                 line = line.strip()
                 if line.startswith("BLOTATO_API_KEY="):
                     return line.split("=", 1)[1].strip()
-    raise RuntimeError("BLOTATO_API_KEY not found. Set it in environment or ~/.hermes/profiles/hermes-11/.env")
+    raise RuntimeError("BLOTATO_API_KEY not found. Set it in asset-ads/.env")
 
 
 def blotato_headers() -> dict:
@@ -340,6 +340,68 @@ def schedule_carousel(
     return 0
 
 
+def schedule_from_composed(brand_slug: str) -> int:
+    """Read the latest composed post file and schedule it to Blotato."""
+    posts_dir = Path("output/posts")
+    if not posts_dir.exists():
+        print(f"\n❌ No composed posts found for {brand_slug}\n")
+        return 1
+
+    # Find latest composed post file for this brand
+    post_files = sorted(posts_dir.glob(f"{brand_slug}_*.json"), key=lambda f: f.stat().st_mtime, reverse=True)
+    if not post_files:
+        print(f"\n❌ No composed posts found for {brand_slug}\n")
+        return 1
+
+    latest = post_files[0]
+    with open(latest) as f:
+        data = json.load(f)
+
+    posts = data.get("posts", [])
+    if not posts:
+        print(f"\n❌ Composed post file is empty: {latest.name}\n")
+        return 1
+
+    print(f"\n=== Scheduling from: {latest.name} ({len(posts)} posts) ===\n")
+
+    scheduled_count = 0
+    for post in posts:
+        ad_ids = post.get("ad_filenames", [])
+        caption = post.get("caption", "Check out our latest!")
+        hashtags = post.get("hashtags", "")
+        post_id = post.get("post_id", "unknown")
+
+        if not ad_ids:
+            print(f"  Skipping {post_id}: no ad filenames")
+            continue
+
+        # Skip if already scheduled (check local scheduled file)
+        scheduled_path = Path(f"website/public/data/scheduled/{brand_slug}.json")
+        already_done = False
+        if scheduled_path.exists():
+            with open(scheduled_path) as f:
+                existing = json.load(f)
+            for ep in existing:
+                if ep.get("caption") == caption and set(ep.get("ad_ids", [])) == set(ad_ids):
+                    already_done = True
+                    print(f"  Skipping {post_id}: already scheduled")
+                    break
+
+        if already_done:
+            continue
+
+        try:
+            slot = None  # auto-select next open slot
+            result = schedule_carousel(brand_slug, ad_ids, caption, hashtags, slot, None)
+            if result == 0:
+                scheduled_count += 1
+        except Exception as e:
+            print(f"  ❌ Failed to schedule {post_id}: {e}")
+
+    print(f"\n✅ Scheduled {scheduled_count}/{len(posts)} posts from {latest.name}\n")
+    return 0
+
+
 def show_scheduled(brand_slug: str):
     scheduled_path = Path(f"website/public/data/scheduled/{brand_slug}.json")
     print(f"\n=== Scheduled Posts: {brand_slug} ===\n")
@@ -402,6 +464,7 @@ def main():
     parser.add_argument("--date", help="Preferred date: YYYY-MM-DD")
     parser.add_argument("--post-id", help="Blotato post ID to cancel")
     parser.add_argument("--at", help="ISO datetime override (e.g. 2026-04-25T09:00:00Z)")
+    parser.add_argument("--from-composed", action="store_true", help="Schedule from latest composed post file")
 
     args = parser.parse_args()
 
@@ -421,6 +484,12 @@ def main():
             print("\n❌ --brand and --post-id required\n")
             return 1
         return cancel_scheduled(args.brand, args.post_id)
+
+    if args.from_composed:
+        if not args.brand:
+            print("\n❌ --brand required\n")
+            return 1
+        return schedule_from_composed(args.brand)
 
     # Schedule carousel mode
     if args.carousel_ads:

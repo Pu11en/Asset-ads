@@ -4,8 +4,11 @@
       "id": "generate-ads-1777336426",
       "type": "generate_ads",
       "brand": "island-splash",
-      "status": "pending",
-      "addedAt": "2026-04-27T19:33:46-05:00"
+      "status": "error",
+      "addedAt": "2026-04-27T19:33:46-05:00",
+      "started_at": "2026-04-28T19:26:09.625092",
+      "error": "[island-splash] pool is empty \u2014 nothing to do (/home/drewp/asset-ads/brand_assets/island-splash/references/approved)\n",
+      "failed_at": "2026-04-28T19:26:11.235256"
     },
     {
       "id": "scrape-1777349684249",
@@ -14,8 +17,10 @@
       "url": "https://www.pinterest.com/mark0950/drinks-advertising/",
       "pool": "all-drinks",
       "maxImages": 100,
-      "status": "pending",
-      "addedAt": "2026-04-28T04:14:44.249Z"
+      "status": "done",
+      "addedAt": "2026-04-28T04:14:44.249Z",
+      "started_at": "2026-04-28T19:26:17.098911",
+      "completed_at": "2026-04-28T19:26:29.938310"
     },
     {
       "id": "scrape-1777349768369",
@@ -24,8 +29,10 @@
       "url": "https://www.pinterest.com/tomisynolabode/creative-soft-drink-ads/",
       "pool": "drinks",
       "maxImages": 30,
-      "status": "pending",
-      "addedAt": "2026-04-28T04:16:08.369Z"
+      "status": "done",
+      "addedAt": "2026-04-28T04:16:08.369Z",
+      "started_at": "2026-04-28T19:26:29.938750",
+      "completed_at": "2026-04-28T19:26:32.631106"
     },
     {
       "id": "scrape-1777349892142",
@@ -34,8 +41,10 @@
       "url": "https://www.pinterest.com/mark0950/drinks-advertising/",
       "pool": "drinks",
       "maxImages": 20,
-      "status": "pending",
-      "addedAt": "2026-04-28T04:18:12.142Z"
+      "status": "done",
+      "addedAt": "2026-04-28T04:18:12.142Z",
+      "started_at": "2026-04-28T19:26:32.631497",
+      "completed_at": "2026-04-28T19:26:34.974131"
     },
     {
       "id": "scrape-1777350610503",
@@ -44,8 +53,10 @@
       "url": "https://www.pinterest.com/thidalwin115/soft-drink-advertising-design/",
       "pool": "all-drinks",
       "maxImages": 100,
-      "status": "pending",
-      "addedAt": "2026-04-28T04:30:10.503Z"
+      "status": "done",
+      "addedAt": "2026-04-28T04:30:10.503Z",
+      "started_at": "2026-04-28T19:26:34.974586",
+      "completed_at": "2026-04-28T19:26:38.588907"
     },
     {
       "id": "scrape-1777350894636",
@@ -54,9 +65,57 @@
       "url": "https://www.pinterest.com/abbyv4774/drink-advertisement-2/",
       "pool": "drinks",
       "maxImages": 100,
-      "status": "pending",
-      "addedAt": "2026-04-28T04:34:54.636Z"
+      "status": "done",
+      "addedAt": "2026-04-28T04:34:54.636Z",
+      "started_at": "2026-04-28T19:26:38.589406",
+      "completed_at": "2026-04-28T19:26:45.534213"
+    },
+    {
+      "id": "scrape-1777426867016",
+      "type": "scrape",
+      "brand": "island-splash",
+      "url": "https://www.pinterest.com/jullialz/advertising-drinks/",
+      "pool": "drinks",
+      "maxImages": 100,
+      "status": "done",
+      "addedAt": "2026-04-29T01:41:07.016Z",
+      "started_at": "2026-04-28T23:05:13.402035",
+      "completed_at": "2026-04-28T23:05:18.520770"
+    },
+    {
+      "id": "compose-1777435384135",
+      "type": "compose",
+      "brand": "island-splash",
+      "status": "done",
+      "addedAt": "2026-04-29T04:03:04.135Z",
+      "started_at": "2026-04-28T23:05:37.831670",
+      "completed_at": "2026-04-28T23:05:59.461011"
+    },
+    {
+      "id": "scrape-1777437759466",
+      "type": "scrape",
+      "brand": "island-splash",
+      "url": "https://www.pinterest.com/robbyonedesign/drinks-advertisement-clips/",
+      "pool": "drinks",
+      "maxImages": 100,
+      "status": "done",
+      "addedAt": "2026-04-29T04:42:39.466Z",
+      "started_at": "2026-04-28T23:42:41.918453",
+      "completed_at": "2026-04-28T23:42:46.993943"
+    },
+    {
+      "id": "scrape-1777437826205",
+      "type": "scrape",
+      "brand": "island-splash",
+      "url": "https://www.pinterest.com/ksafari03/drink-poster-design-for-advertisement/",
+      "pool": "drinks",
+      "maxImages": 100,
+      "status": "error",
+      "addedAt": "2026-04-29T04:43:46.205Z",
+      "started_at": "2026-04-28T23:43:50.944699",
+      "error": "\n==================================================\n  PINTEREST BOARD DRAINER\n  (refs only \u2014 no generation)\n==================================================\n\nBrand: island-splash\nPool:  drinks\nURL:   https://www.pinterest.com/ksafari03/drink-poster-design-for-advertisement/\nMax:   100\n\n\ud83d\udce5 Scraping Pinterest board via API...\n   URL: https://www.pinterest.com/ksafari03/drink-poster-design-for-advertisement/\n   Output: /tmp/pinterest_1o_fxpv4\n\u26a0\ufe0f  Timed out after 5 minutes\n\n\u274c No images found!\n\nPoss",
+      "failed_at": "2026-04-28T23:48:46.181481"
     }
   ],
-  "last_updated": "2026-04-28T04:34:54.637Z"
+  "last_updated": "2026-04-29T04:43:46.205Z"
 }

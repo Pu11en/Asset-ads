@@ -35,6 +35,9 @@ export function AdminView({
   const [imageError, setImageError] = useState<Record<string, boolean>>({});
   const [archiveCollapsed, setArchiveCollapsed] = useState(false);
   const [lightboxUrl, setLightboxUrl] = useState<string | null>(null);
+  const [composing, setComposing] = useState<string | null>(null);
+  const [generating, setGenerating] = useState<string | null>(null);
+  const [adTab, setAdTab] = useState<'pending' | 'approved' | 'bad'>('pending');
 
   const active = BRANDS.find(b => b.slug === activeBrand)!;
   const ads = activeBrand === 'island-splash' ? islandAds : cincoAds;
@@ -89,8 +92,12 @@ export function AdminView({
     setLocalApproval(prev => ({ ...prev, ...updates }));
   }, [approval]);
 
-  const getAdStatus = (adId: string) =>
-    localApproval[adId] ?? approval?.ads[adId]?.status ?? 'pending';
+  const getAdKey = (id: string) => id.replace(/\.png$/, '').replace(/\.jpg$/, '').replace(/\.jpeg$/, '');
+
+  const getAdStatus = (adId: string) => {
+    const key = getAdKey(adId);
+    return localApproval[adId] ?? approval?.ads[key]?.status ?? 'pending';
+  };
   const handleAdAction = async (adId: string, action: 'approve' | 'bad' | 'reset') => {
     setLoading(adId);
     try {
@@ -156,6 +163,79 @@ export function AdminView({
       }
     } catch (e: any) { alert(`Error: ${e.message}`); }
     finally { setLoading(null); }
+  };
+
+  const handleCompose = async () => {
+    if (approvedCount === 0) return;
+    if (!confirm(`Compose posts from ${approvedCount} approved ads?`)) return;
+    setComposing(activeBrand);
+    try {
+      const res = await fetch('/api/queue', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'compose', brand: activeBrand }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        alert('Compose job added to queue. Posts will appear here when ready.');
+      } else {
+        alert(`Failed: ${data.error || 'Unknown error'}`);
+      }
+    } catch (e: any) {
+      alert(`Error: ${e.message}`);
+    } finally {
+      setComposing(null);
+    }
+  };
+
+  const handleDeletePost = async (post: Post) => {
+    if (!confirm(`Delete this post? Its ads will go back to the approved pool.`)) return;
+    setLoading(`delete-${post.post_id}`);
+    try {
+      const res = await fetch('/api/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ post_id: post.post_id, brand: post._brand || activeBrand, filename: post._filename, action: 'delete_post' }),
+      });
+      if (res.ok) {
+        setPosts(prev => prev.filter(p => p.post_id !== post.post_id));
+        // Refresh approval counts
+        setLocalApproval(prev => {
+          const updated = { ...prev };
+          // Reset consumed ads back to approved in local state
+          const adKeys = post.ad_filenames || [];
+          for (const fn of adKeys) {
+            const base = fn.replace(/\.(instructions|png|jpg|jpeg)$/, '');
+            delete updated[base];
+          }
+          return updated;
+        });
+      }
+    } finally {
+      setLoading(null);
+    }
+  };
+
+  const handleGenerate = async () => {
+    if (!confirm(`Generate ads from approved refs? This will pull from the gallery's approved refs.`)) return;
+    setGenerating(activeBrand);
+    try {
+      const res = await fetch('/api/queue', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'generate_ads', brand: activeBrand, pool: 'drinks' }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        alert('Generate ads job added to queue. Ads will appear in the pool when ready.');
+      } else {
+        alert(`Failed: ${data.error || 'Unknown error'}`);
+      }
+    } catch (e: any) {
+      alert(`Error: ${e.message}`);
+    } finally {
+      setGenerating(null);
+    }
   };
 
   const handleUndo = async (post: Post) => {
@@ -255,6 +335,7 @@ export function AdminView({
                   onSchedule={() => handleSchedule(post, idx)}
                   onMoveUp={() => movePost(idx, 'up')}
                   onMoveDown={() => movePost(idx, 'down')}
+                  onDelete={handleDeletePost}
                   loading={loading === `schedule-${post.post_id}`}
                   activeBrand={activeBrand}
                   posts={posts}
@@ -324,11 +405,40 @@ export function AdminView({
             <div className="flex items-center gap-2"><span className="w-3 h-3 rounded-full bg-yellow-400" /><span className="text-white/70">{pendingCount} pending</span></div>
             <div className="flex items-center gap-2"><span className="w-3 h-3 rounded-full bg-emerald-400" /><span className="text-white/70">{approvedCount} approved</span></div>
             <div className="flex items-center gap-2"><span className="w-3 h-3 rounded-full bg-red-400" /><span className="text-white/70">{badCount} bad</span></div>
-            {pendingCount === 0 && <span className="ml-auto text-emerald-400 text-sm font-medium">✓ All reviewed</span>}
+            <button
+              onClick={handleGenerate}
+              disabled={generating !== null}
+              className="ml-auto px-4 py-2 bg-purple-600 hover:bg-purple-500 disabled:bg-purple-600/50 rounded-lg text-sm font-medium transition flex items-center gap-2"
+            >
+              {generating ? '◌ Adding to queue…' : '🎨 Generate Ads'}
+            </button>
+            {approvedCount > 0 && (
+              <button
+                onClick={handleCompose}
+                disabled={composing !== null}
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-500 disabled:bg-blue-600/50 rounded-lg text-sm font-medium transition flex items-center gap-2"
+              >
+                {composing ? '◌ Adding to queue…' : '📝 Compose Posts'}
+              </button>
+            )}
+          </div>
+          <div className="flex gap-2 mb-4">
+            {(['pending', 'approved', 'bad'] as const).map(tab => (
+              <button key={tab} onClick={() => setAdTab(tab)}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition capitalize ${
+                  adTab === tab
+                    ? tab === 'pending' ? 'bg-yellow-400/20 text-yellow-400 border border-yellow-400/40' :
+                      tab === 'approved' ? 'bg-emerald-400/20 text-emerald-400 border border-emerald-400/40' :
+                      'bg-red-400/20 text-red-400 border border-red-400/40'
+                    : 'bg-white/5 text-white/40 border border-white/10 hover:bg-white/10'
+                }`}>
+                {tab} {tab === 'pending' ? `(${pendingCount})` : tab === 'approved' ? `(${approvedCount})` : `(${badCount})`}
+              </button>
+            ))}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {ads
-              .filter(ad => getAdStatus(ad.id) === 'pending')
+              .filter(ad => getAdStatus(ad.id) === adTab)
               .map(ad => (
                 <div key={ad.id} className="rounded-2xl border border-white/10 bg-white/5 hover:border-white/20 overflow-hidden transition-all">
                   <div className="relative aspect-square bg-black/60">
@@ -336,23 +446,55 @@ export function AdminView({
                       ? <div className="absolute inset-0 flex items-center justify-center text-white/30 text-sm">Image unavailable</div>
                       : <Image src={ad.path} alt={ad.product_name ?? ad.id} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" onError={() => setImageError(prev => ({ ...prev, [ad.id]: true }))} />
                     }
-                    <div className="absolute top-3 left-3 px-3 py-1.5 rounded-full bg-yellow-400/90 text-black text-xs font-semibold">Pending</div>
+                    <div className={`absolute top-3 left-3 px-3 py-1.5 rounded-full text-xs font-semibold ${
+                      adTab === 'pending' ? 'bg-yellow-400/90 text-black' :
+                      adTab === 'approved' ? 'bg-emerald-400/90 text-black' :
+                      'bg-red-400/90 text-black'
+                    }`}>{adTab}</div>
                   </div>
                   <div className="p-4">
                     <p className="text-sm font-medium text-white/80 truncate mb-1">{ad.product_name ?? ad.filename}</p>
                     <p className="text-xs text-white/30 font-mono truncate mb-4">{ad.filename}</p>
                     <div className="flex gap-2">
-                      <button disabled={loading === ad.id} onClick={() => handleAdAction(ad.id, 'approve')}
-                        className="flex-1 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white text-sm font-bold transition flex items-center justify-center gap-2">
-                        <span>✓</span> Approve
-                      </button>
-                      <button disabled={loading === ad.id} onClick={() => handleAdAction(ad.id, 'bad')}
-                        className="flex-1 py-3 rounded-xl bg-red-600 hover:bg-red-500 disabled:opacity-50 text-white text-sm font-bold transition border border-white/10">
-                        <span className="text-lg">✗</span> Bad</button>
+                      {adTab === 'pending' && (
+                        <button disabled={loading === ad.id} onClick={() => handleAdAction(ad.id, 'approve')}
+                          className="flex-1 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white text-sm font-bold transition flex items-center justify-center gap-2">
+                          <span>✓</span> Approve
+                        </button>
+                      )}
+                      {adTab === 'pending' && (
+                        <button disabled={loading === ad.id} onClick={() => handleAdAction(ad.id, 'bad')}
+                          className="flex-1 py-3 rounded-xl bg-red-600 hover:bg-red-500 disabled:opacity-50 text-white text-sm font-bold transition border border-white/10">
+                          <span className="text-lg">✗</span> Bad
+                        </button>
+                      )}
+                      {adTab === 'approved' && (
+                        <button disabled={loading === ad.id} onClick={() => handleAdAction(ad.id, 'reset')}
+                          className="flex-1 py-3 rounded-xl bg-yellow-600 hover:bg-yellow-500 disabled:opacity-50 text-white text-sm font-bold transition flex items-center justify-center gap-2">
+                          ↺ Reset
+                        </button>
+                      )}
+                      {adTab === 'approved' && (
+                        <button disabled={loading === ad.id} onClick={() => handleAdAction(ad.id, 'bad')}
+                          className="flex-1 py-3 rounded-xl bg-red-600 hover:bg-red-500 disabled:opacity-50 text-white text-sm font-bold transition border border-white/10">
+                          <span className="text-lg">✗</span> Bad
+                        </button>
+                      )}
+                      {adTab === 'bad' && (
+                        <button disabled={loading === ad.id} onClick={() => handleAdAction(ad.id, 'reset')}
+                          className="flex-1 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white text-sm font-bold transition flex items-center justify-center gap-2">
+                          ↺ Restore
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>
               ))}
+            {ads.filter(ad => getAdStatus(ad.id) === adTab).length === 0 && (
+              <div className="col-span-3 text-center py-12 text-white/30 text-sm">
+                {adTab === 'pending' ? 'No pending ads — all reviewed!' : adTab === 'approved' ? 'No approved ads yet' : 'No bad ads — looking good!'}
+              </div>
+            )}
           </div>
         </section>
       </div>
@@ -381,9 +523,10 @@ function StatCard({ label, value, sub, color }: { label: string; value: string |
   );
 }
 
-function DraftCard({ post, idx, total, slotPreview, onSchedule, onMoveUp, onMoveDown, loading, activeBrand, posts, setPosts, saveOrder, setLightboxUrl }: {
+function DraftCard({ post, idx, total, slotPreview, onSchedule, onMoveUp, onMoveDown, onDelete, loading, activeBrand, posts, setPosts, saveOrder, setLightboxUrl }: {
   post: Post; idx: number; total: number; slotPreview: string; onSchedule: () => void;
   onMoveUp: () => void; onMoveDown: () => void;
+  onDelete: (post: Post) => void;
   loading: boolean; activeBrand: string;
   posts: Post[];
   setPosts: React.Dispatch<React.SetStateAction<Post[]>>;
@@ -479,6 +622,10 @@ function DraftCard({ post, idx, total, slotPreview, onSchedule, onMoveUp, onMove
           <button disabled={loading} onClick={onSchedule}
             className="mt-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white text-sm font-bold transition">
             {loading ? '◌ Scheduling…' : `✓ Schedule — ${slotPreview}`}
+          </button>
+          <button disabled={loading} onClick={() => onDelete(post)}
+            className="mt-2 px-5 py-2.5 rounded-xl bg-white/10 hover:bg-red-600/50 text-white/60 hover:text-white text-sm font-medium transition border border-white/10 ml-2">
+            ✕ Delete
           </button>
         </div>
       )}

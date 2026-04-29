@@ -40,7 +40,7 @@ async function loadApproval(brand: string): Promise<ApprovalState | null> {
 // Normalize ad key: strip .png to match approval JSON keys (which may or may not have .png)
 function getAdKey(ad: Ad): string {
   const base = ad.id || ad.filename;
-  return base.replace(/\.png$/, '');
+  return base.replace(/\.png$/, '').replace(/\.jpg$/, '').replace(/\.jpeg$/, '');
 }
 
 function filterPoolAds(ads: Ad[], approval: ApprovalState | null): Ad[] {
@@ -48,7 +48,9 @@ function filterPoolAds(ads: Ad[], approval: ApprovalState | null): Ad[] {
   return ads.filter(ad => {
     const key = getAdKey(ad);
     const adStatus = approval.ads[key]?.status;
-    return adStatus !== 'consumed' && adStatus !== 'bad';
+    // Only show ads that are new (never reviewed) or pending review
+    // approved/bad/consumed ads are NOT shown in the pool
+    return !adStatus || adStatus === 'pending';
   });
 }
 
@@ -66,14 +68,10 @@ export default async function AdminPage() {
     loadApproval("cinco-h-ranch"),
   ]);
 
-  // Filter out consumed and bad ads from pool display
-  const filteredIslandAds = filterPoolAds(islandAds, islandApproval);
-  const filteredCincoAds = filterPoolAds(cincoAds, cincoApproval);
-
   return (
     <AdminView
-      islandAds={filteredIslandAds}
-      cincoAds={filteredCincoAds}
+      islandAds={islandAds}
+      cincoAds={cincoAds}
       islandApproval={islandApproval}
       cincoApproval={cincoApproval}
     />

@@ -257,141 +257,6 @@ def cmd_campaign_status(brand):
     print(f"  Status: {data.get('status', 'unknown')}")
 
 
-def cmd_init_campaign(brand, ref_count):
-    """Initialize a campaign."""
-    path = get_state_path("campaigns", brand, "current")
-    plan_path = path / "plan.json"
-    posts_path = path / "posts.json"
-
-    plan_data = {
-        "brand": brand,
-        "started_at": datetime.now().isoformat(),
-        "approved_refs_used": ref_count,
-        "ads_generated": 0,
-        "posts_created": 0,
-        "status": "generating"
-    }
-
-    posts_data = {"posts": []}
-
-    save_json(plan_path, plan_data)
-    save_json(posts_path, posts_data)
-
-    print(f"✓ Campaign initialized: {brand} ({ref_count} refs)")
-
-
-def cmd_add_post(brand, ad_ids, caption, hashtags):
-    """Add a post to the current campaign."""
-    path = get_state_path("campaigns", brand, "current")
-    plan_path = path / "plan.json"
-    posts_path = path / "posts.json"
-
-    plan_data = load_json(plan_path) or {}
-    posts_data = load_json(posts_path) or {"posts": []}
-
-    post_id = f"post_{len(posts_data['posts']) + 1:03d}"
-
-    post = {
-        "id": post_id,
-        "ad_ids": ad_ids,
-        "caption": caption,
-        "hashtags": hashtags,
-        "status": "pending_approval",
-        "created_at": datetime.now().isoformat()
-    }
-
-    posts_data["posts"].append(post)
-    plan_data["posts_created"] = len(posts_data["posts"])
-    plan_data["last_updated"] = datetime.now().isoformat()
-
-    save_json(plan_path, plan_data)
-    save_json(posts_path, posts_data)
-
-    print(f"✓ Post created: {post_id}")
-
-
-def cmd_approve_post(brand, post_id):
-    """Approve a post."""
-    path = get_state_path("campaigns", brand, "current", "posts.json")
-    data = load_json(path)
-
-    if not data:
-        print("Error: no posts found")
-        return
-
-    for post in data["posts"]:
-        if post["id"] == post_id:
-            post["status"] = "approved"
-            post["approved_at"] = datetime.now().isoformat()
-            save_json(path, data)
-            print(f"✓ Post {post_id} approved")
-            return
-
-    print(f"Error: post {post_id} not found")
-
-
-def cmd_schedule_post(brand, post_id):
-    """Mark post as scheduled."""
-    path = get_state_path("campaigns", brand, "current", "posts.json")
-    data = load_json(path)
-
-    if not data:
-        print("Error: no posts found")
-        return
-
-    for post in data["posts"]:
-        if post["id"] == post_id:
-            post["status"] = "scheduled"
-            post["scheduled_at"] = datetime.now().isoformat()
-            save_json(path, data)
-            print(f"✓ Post {post_id} scheduled")
-            return
-
-    print(f"Error: post {post_id} not found")
-
-
-def cmd_get_unapproved_refs(brand, category="drinks"):
-    """Get list of unapproved ref filenames."""
-    # Get pool_dir from brand config
-    cfg_path = REPO_ROOT / "brands" / f"{brand}.json"
-    if cfg_path.exists():
-        cfg = json.loads(cfg_path.read_text())
-        pool_dir = Path(cfg.get("paths", {}).get("pool_dir", REPO_ROOT / "brands" / brand))
-    else:
-        pool_dir = REPO_ROOT / "brands" / brand
-
-    pool_dir = pool_dir / category if category else pool_dir
-
-    if not pool_dir.exists():
-        return []
-
-    # Get already processed (approved/rejected/used)
-    approved_dir = pool_dir / "approved"
-    rejected_dir = pool_dir / "rejected"
-    used_dir = pool_dir / "used"
-
-    approved_files = set()
-    rejected_files = set()
-    used_files = set()
-
-    if approved_dir.exists():
-        approved_files = {p.name for p in approved_dir.iterdir() if p.suffix.lower() in ['.jpg', '.jpeg', '.png', '.webp']}
-    if rejected_dir.exists():
-        rejected_files = {p.name for p in rejected_dir.iterdir() if p.suffix.lower() in ['.jpg', '.jpeg', '.png', '.webp']}
-    if used_dir.exists():
-        used_files = {p.name for p in used_dir.iterdir() if p.suffix.lower() in ['.jpg', '.jpeg', '.png', '.webp']}
-
-    processed = approved_files | rejected_files | used_files
-
-    # Get unprocessed refs
-    unapproved = []
-    for p in sorted(pool_dir.iterdir()):
-        if p.suffix.lower() in ['.jpg', '.jpeg', '.png', '.webp'] and p.name not in processed:
-            unapproved.append(str(p))
-
-    print(json.dumps(unapproved))
-
-
 def main():
     parser = argparse.ArgumentParser(description="Asset Ads State Manager")
     subparsers = parser.add_subparsers(dest="cmd", help="Command")
@@ -451,28 +316,6 @@ def main():
     p = subparsers.add_parser("campaign-status", help="Show campaign status")
     p.add_argument("brand", help="Brand slug")
 
-    p = subparsers.add_parser("init-campaign", help="Initialize campaign")
-    p.add_argument("brand", help="Brand slug")
-    p.add_argument("ref_count", type=int, help="Number of refs used")
-
-    p = subparsers.add_parser("add-post", help="Add post to campaign")
-    p.add_argument("brand", help="Brand slug")
-    p.add_argument("--ad-ids", nargs="+", help="Ad IDs")
-    p.add_argument("--caption", default="", help="Caption")
-    p.add_argument("--hashtags", default="", help="Hashtags")
-
-    p = subparsers.add_parser("approve-post", help="Approve a post")
-    p.add_argument("brand", help="Brand slug")
-    p.add_argument("post_id", help="Post ID")
-
-    p = subparsers.add_parser("schedule-post", help="Schedule a post")
-    p.add_argument("brand", help="Brand slug")
-    p.add_argument("post_id", help="Post ID")
-
-    p = subparsers.add_parser("get-unapproved", help="Get list of unapproved refs")
-    p.add_argument("brand", help="Brand slug")
-    p.add_argument("--category", default="drinks", help="Category")
-
     args = parser.parse_args()
 
     if not args.cmd:
@@ -501,16 +344,6 @@ def main():
         cmd_get_flavor(args.brand)
     elif args.cmd == "campaign-status":
         cmd_campaign_status(args.brand)
-    elif args.cmd == "init-campaign":
-        cmd_init_campaign(args.brand, args.ref_count)
-    elif args.cmd == "add-post":
-        cmd_add_post(args.brand, args.ad_ids or [], args.caption, args.hashtags)
-    elif args.cmd == "approve-post":
-        cmd_approve_post(args.brand, args.post_id)
-    elif args.cmd == "schedule-post":
-        cmd_schedule_post(args.brand, args.post_id)
-    elif args.cmd == "get-unapproved":
-        cmd_get_unapproved_refs(args.brand, args.category)
 
 
 if __name__ == "__main__":

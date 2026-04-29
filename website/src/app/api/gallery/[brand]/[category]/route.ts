@@ -105,13 +105,14 @@ export async function GET(
 
   const unapprovedFiltered = unapproved.filter(f => !processedFiles.has(path.basename(f)));
 
-  const statePath = path.join(REPO_ROOT, "state", "ref-pool", brand, poolDir.poolSlug, "index.json");
-  let state = { approved: 0, rejected: 0, used: 0, trigger_threshold: 3, triggered: false };
-  if (existsSync(statePath)) {
-    try {
-      state = JSON.parse(readFileSync(statePath, "utf8"));
-    } catch {}
-  }
+  // Compute state from actual filesystem — never trust the stale JSON file
+  const state = {
+    approved: approved.length,
+    rejected: rejected.length,
+    used: used.length,
+    trigger_threshold: 3,
+    triggered: approved.length >= 3,
+  };
 
   return NextResponse.json({
     brand,
